@@ -5,6 +5,12 @@ Documentation for using the SkotOS library for Chat Theatres &amp; Stages
 
 Unless otherwise noted, the contents of this repository as declared public domain using the Creative Commons "No Rights Reserved" [CC0 Declaration](https://creativecommons.org/share-your-work/public-domain/cc0/).
 
+### CC0 Declarations
+
+Under US law it is a bit more difficult to declare something public domain (see [article](https://www.techdirt.com/articles/20150123/15564629797/why-we-still-cant-really-put-anything-public-domain-why-that-needs-to-change.shtml)). Creative Commons offers a [CC0 tool](https://creativecommons.org/choose/zero/) that combined with GPG signed commits to this repository, helps with this issue.
+
+The following parties have declared their contributions to this repository as public domain:
+
 * Noah Gibbs
 
 <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
@@ -24,13 +30,6 @@ This work is published from:
       content="UK" about="https://github.com/ChatTheatre/eOS-Doc">
   United Kingdom</span>.
 </p>
-
-### CC0 Declarations
-
-Under US law it is a bit more difficult to declare something public domain (see [article](https://www.techdirt.com/articles/20150123/15564629797/why-we-still-cant-really-put-anything-public-domain-why-that-needs-to-change.shtml)). Creative Commons offers a [CC0 tool](https://creativecommons.org/choose/zero/) that combined with GPG signed commits to this repository, helps with this issue.
-
-The following parties have declared their contributions to this repository as public domain:
-
 
 ## Contributing
 
