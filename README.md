@@ -1,6 +1,8 @@
 # SkotOS-Doc
 Documentation for using the SkotOS library for Chat Theatres &amp; Stages
 
+* [SkotOS Architecture](./architecture.md)
+
 ## Copyright & Status
 
 Unless otherwise noted, the contents of this repository as declared public domain using the Creative Commons "No Rights Reserved" [CC0 Declaration](https://creativecommons.org/share-your-work/public-domain/cc0/).
