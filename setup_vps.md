@@ -76,16 +76,9 @@ $ /sbin/iptables-restore < /etc/your-firewall-rules
 
 ## Build DGD
 
-SkotOS needs a modified build of DGD. It uses more sectors (memory and disk space) than unmodified DGD will accept. We would also like to support more than 255 simultaneous users, which also requires modification. DGD has compile options to fix this, but you'll need to use them. Similarly, DGD only allows outgoing network connections if they have been requested during compilation.
+SkotOS needs a modified build of DGD.
 
-In development, we recommend starting from the latest DGD in the GitHub repository and updating occasionally. In production, we recommend using exactly the same DGD version you've been using in development.
-
-Here is how you would build DGD:
-
-* `cd /var/skotos/dgd/src`
-* `make DEFINES='-DUINDEX_TYPE="unsigned long" -DUINDEX_MAX=ULONG_MAX -DEINDEX_TYPE="unsigned short" -DEINDEX_MAX=USHRT_MAX' clean install`
-
-This should build an interpreter named "dgd" in /var/skotos/dgd/bin/dgd. Go ahead and run it. It should fail with a message about usage, essentially telling you that you have to supply a config filename.
+[Here are build instructions](./building_dgd_for_skotos.md). You may have already made the modifications in a repo of your own, or you may need to do it in-place.
 
 ## Run DGD from Cron
 
