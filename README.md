@@ -1,7 +1,16 @@
 # SkotOS-Doc
 Documentation for using the SkotOS library for Chat Theatres &amp; Stages
 
+* [Setting up SkotOS](./setup.md)
 * [SkotOS Architecture](./architecture.md)
+
+Using SkotOS
+
+* [Maintenance](./Maintenance.md)
+* [Authentication](./Authentication.md)
+* [SkotOS Wiztool](./SkotOS_Wiztool.md)
+* [Staff_Plus_Commands](./Staff_Plus_Commands.md)
+* [StoryBuilder Documentation](./Story_Builder/)
 
 ## Copyright & Status
 
