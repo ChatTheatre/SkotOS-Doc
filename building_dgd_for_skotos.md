@@ -20,8 +20,8 @@ index c7338852..a70f91bb 100644
  /* sizeof(ssizet) <= sizeof(uindex), best kept at 16 bits */
 -typedef unsigned short ssizet;
 -# define SSIZET_MAX    USHRT_MAX
-+typedef unsigned long ssizet;
-+# define SSIZET_MAX    ULONG_MAX
++typedef unsigned int ssizet;
++# define SSIZET_MAX    UINT_MAX
 
  typedef unsigned short kfindex;
  # define KFTAB_SIZE    1024
@@ -44,6 +44,10 @@ From an appropriate directory, here is how you would clone and build DGD:
 
 * `git clone git@github.com:dworkin/dgd.git`
 * `cd dgd/src`
-* `make DEFINES='-DUINDEX_TYPE="unsigned long" -DUINDEX_MAX=ULONG_MAX -DEINDEX_TYPE="unsigned short" -DEINDEX_MAX=USHRT_MAX' clean install`
+* `make DEFINES='-DUINDEX_TYPE="unsigned int" -DUINDEX_MAX=UINT_MAX -DEINDEX_TYPE="unsigned short" -DEINDEX_MAX=USHRT_MAX' clean install`
 
-This should build an interpreter named "dgd" in dgd/bin/dgd. Go ahead and run it. It should fail with a message about usage, essentially telling you that you have to supply a config filename.
+This should build an interpreter named "dgd" in dgd/bin/dgd. Go ahead and run it. It should fail with a message about usage, essentially telling you that you have to supply a config filename. Great! You didn't supply the filename, it complained and exited. So it's working.
+
+## Random Notes
+
+On a MacOS X host, "long" means an eight-byte type, not a four-byte type. Try to use "int" (four-byte on both Mac and Linux) or "long long" (eight-byte on both) rather than "long", which varies between them.

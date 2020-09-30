@@ -38,6 +38,17 @@ When the initial cold boot is done, you should see something like this written t
 Apr 27 15:10:57 ** info:Boot completed.
 ```
 
+After the first time state is dumped you'll have a database file you can use (or you can manually statedump if you're logged in with staff privileges.)
+
+The following text indicates the statedump has happened:
+
+```
+Sep 30 13:16:39 ** info:Prepared for statedump.
+Sep 30 13:16:39 ** info:Global state save complete.
+```
+
+By default it occurs roughly once every two hours. You can adjust the DUMP_INTERVAL in skoot/usr/System/initd.c to be shorter if you'd like a more frequent statedump.
+
 ### Restart the Driver
 
 You should probably kill your driver now using ctrl-c. You'll see messages as it cleanly shuts down and does a statedump. You can now load the snapshot when you start SkotOS like this:
