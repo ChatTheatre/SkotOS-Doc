@@ -13,6 +13,8 @@ First, let's clone some repositories:
 
 * `git clone git@github.com:ChatTheatre/SkotOS.git ${SRCDIR}/SkotOS`
 * `git clone git@github.com:dworkin/dgd.git ${SRCDIR}/dgd`
+* `git clone git@github.com:ChatTheatre/orchil.git ${SRCDIR}/SkotOS`
+* `git clone git@github.com:ChatTheatre/websocket-to-tcp-tunnel.git ${SRCDIR}/SkotOS`
 
 ### Build the Driver
 
@@ -62,3 +64,112 @@ You'll know you restored correctly from the backup if you see this on the consol
 ```
 Apr 27 16:25:23 ** info:Reboot completed.
 ```
+
+### Set up the HTML Client
+
+This is (for now) pretty involved. We'll be setting up a web-to-game gateway and using it.
+
+You'll need DGD up and running. The port we'll be connecting to is 10443 - the Text Interface Port, or TextIF port.
+
+Next, we'll need to get Relay.js working. That will open up a websocket-to-game tunnel.
+
+```
+cd websocket-to-tcp-tunnel
+npm install  # Only the first time, to download dependencies
+node src/Relay.js --listen=10801 --send=10443 --host=localhost --name=gables --wsHeartbeat=30 --shutdownDelay=3 --tunnelInfo=false
+```
+
+If you're going to make object, you'll also need the Tree of Woe -- that is, the builder interface. That gets its own relay:
+
+```
+node src/Relay.js --listen=10802 --send=10090 --host=localhost --name=gables --wsHeartbeat=30 --shutdownDelay=3 --tunnelInfo=false
+```
+
+Leave this running. As soon as this process dies (for instance if you hit Ctrl-C) then your gateway stops working until you re-run it. It has to just sit and run.
+
+You'll also need to run an NGinX relay to serve your web files and handle your websockets.
+
+#### The Web Client Code
+
+You already checked out orchil, above. We'll be using it. First pop over into that directory and we'll make a profiles.js to use...
+
+```
+cd orchil
+vi profiles.js
+```
+
+Now here's what should be in it:
+
+```
+"use strict";
+// orchil/profiles.js
+var profiles = {
+        "portal_gables":{
+                "method":   "websocket",
+                "protocol": "ws",
+                "server":   "localhost", //"chat.gables.chattheatre.com",
+                "port":      10800,
+                "woe_port":  10802,
+                "path":     "/gables",
+                "extra":    "",
+                "reports":   false,
+                "chars":    true,
+        }
+};
+```
+
+#### NGinX on a Mac
+
+Homebrew, by default, will put your NGinX setup in /usr/local/etc/nginx/.
+
+You'll need to create a new file in /usr/local/etc/nginx/servers/skotos_nginx.conf:
+
+```
+# skotos_dev_nginx.conf
+
+# Websocket-based client connection for incoming port 10800, via relay at 10801 to TextIF at 10443
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+        '' close;
+        }
+
+upstream gables {
+    server 127.0.0.1:10801;
+}
+
+server {
+    listen *:10800;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    location /gables {
+      proxy_pass http://gables;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+    }
+}
+
+server {
+    listen 10900 default;
+
+    root /Users/noah/localsrc/dgd/orchil/;   # Or your own file location
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+You can test your configuration to make sure it's okay:
+
+```
+nginx -t
+```
+
+Now start NGinX:
+
+```
+sudo nginx
+```
+
+Now you should be able to connect. Point your web browser at "http://localhost:10900/gables/gables.htm". You'll be prompted in your browser for a user, a password and a character name. You don't have any of those, so you'll get a bad hash (that is, wrong password) and you'll be disconnected.
