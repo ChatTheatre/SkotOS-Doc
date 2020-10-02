@@ -3,6 +3,8 @@ title: Setting up SkotOS on a VPS Server
 layout: default
 ---
 
+NOTE: THESE DIRECTIONS ARE INCOMPLETE. For now, SkotOS isn't ready for a full deployment.
+
 For best reliability and stability, set your SkotOS instance up on a virtual private server (VPS). 
 
 Linode has proven to be a very stable locale for SkotOS games with high uptime, but any VPS should do the job. The following referrals codes can be used if you want to earn a month of free time:
@@ -98,3 +100,5 @@ Apr 27 16:25:23 ** info:Reboot completed.
 
 * Logfile consolidation and rotation
 * Regular backups of /var/skotos/SkotOS/skotos.database
+* Make the DUMP_INTERVAL in usr/System/initd.c something reasonable like 7200 again
+* Thin-auth
