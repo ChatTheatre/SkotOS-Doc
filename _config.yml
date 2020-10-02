@@ -30,6 +30,7 @@ github_username:  ChatTheatre
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
+  - jekyll-relative-links
 
 # Exclude from processing.
 # The following items will not be processed, by default.
