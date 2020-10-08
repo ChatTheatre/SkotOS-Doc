@@ -5,6 +5,14 @@ layout: default
 
 * [Installing SkotOS on a Production VPS Server](setup_vps.md)
 
+## Are You On a Mac?
+
+The SkotOS repo has a setup script called dev_scripts/mac_setup.sh in the repo. Once you clone it, you can run that script to automatically clone the other repos you need next to your SkotOS repo, to build DGD with the right options and to otherwise get you set up.
+
+The rest of this page is the manual equivalent of doing the same.
+
+## Setting It Up Manually?
+
 You'll want some kind of source directory for cloning SkotOS, DGD and similar tools. I'll refer to it as ${SRCDIR} here, but you can call it what you like.
 
 First, let's clone some repositories:
@@ -255,7 +263,9 @@ $0 = 10
 
 Note that this is raw DGD code, not anything sandboxed like Merry. You can do some real damage here if you feel like. This is also how you rebuild programs (objects) after you change their code, and a way you can add other development users or change your password if you're so inclined.
 
-## How Do I Log In (Dev/Web Edition.)
+See [Exploring SkotOS](Exploring_SkotOS.md) for more details on things you can do from here.
+
+## How Do I Log In? (Dev/Web Edition.)
 
 Or you can point your browser at localhost:10900/gables/gables.htm, as you did above. You're going to need to enter a (useless, ignored) username, password and character name... And then you'll get an actual development-user login. You can give the name "admin" and the password you chose ("adminpassword" if you just copied the line in.)
 
@@ -269,8 +279,12 @@ There's a nice login page available: http://localhost:10080/SAM/Prop/Theatre:Web
 
 As long as you're in LOCAL_LOCAL mode, as described above, you should be able to log in with your dev credentials for this login as well!
 
-And that will take you to... an empty list of theatres. There isn't one here yet. Hm.
+And that will take you to a Theatre area where you can create a character! When you hit the "play" link, after you have a character, it will take you to the web login above.
 
-## INCOMPLETE WORK
+You'll have to enter your username and password on the web console. But once you do, you should see rooms and things. Commands should work. You're in something that bears a more-than-passing resemblance... to a game.
 
-And from here, the hard part is matching these up. We have an outermost start (the login form) which leads partway to where we want to go (the incorrect list of theatres), but not all the way to where we want to be (the Gables client and successful login.)
+## But How Do I Make Objects?
+
+There's an excellent builder interface... that doesn't work yet. It's called the Tree of Woe. Future project: get it working.
+
+I see circumstancial evidence that the old Java client, called Zealotry, might work. But I haven't been able to verify that.
