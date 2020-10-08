@@ -28,9 +28,13 @@ This means that changing code in initd can be fiddly. The initd is normally only
 
 One alternative is to define a method called patch(). You'll see them in many places. When an object is ***recompiled***, its patch() method will be called. This is done via the SkotOS object manager, registered with the Kernellib.
 
-## Recompiling Code
+## Recompiling Code and Running Privileged Code
 
 If you're using the wiztool via the telnet port, the "compile" command has no security restrictions. That's important, because you can't normally just write code to compile objects in the System directory - try it with `code compile_object("/usr/System/initd")` and you'll discover you can't. But cd into /usr/System and type `compile initd.c` and it'll do it without complaint.
+
+Using the "compile" command will let you update LPC files dynamically. To update other file types (e.g. SAM files to generate HTML) you may need to change them and cold-boot or find a way to dynamically import new versions (e.g. TreeOfWoe builder interface.)
+
+Note: as of early Oct 2020, the TreeOfWoe builder interface doesn't work by clicking on it in the browser. There may be an alternative way to use it, but I haven't found it (yet?)
 
 ## Dumping LPC Objects on The Gables
 
