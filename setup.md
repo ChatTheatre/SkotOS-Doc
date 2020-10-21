@@ -5,11 +5,50 @@ layout: default
 
 * [Installing SkotOS on a Production VPS Server](setup_vps.md)
 
+See also: [Exploring SkotOS](./Exploring_SkotOS.md)
+
+## Requirements
+
+On a Mac, the setup script should take care of its own requirements. If you install manually, you need to deal with them, including the Homebrew package manager.
+
+### Requirement: SSH Key Registered With GitHub
+
+Do you have an SSH key? Check \~/.ssh/ and see if you have an id_rsa.pub file.
+
+If you don't, you'll need to create one:
+
+```
+$ ssh-keygen -t rsa -f ~/.ssh/id_rsa
+$ ssh-add -K ~/.ssh/id_rsa
+```
+
+If you haven't already added your SSH key to GitHub, you'll need to do that. Pop over to "https://github.com/settings/keys", click "New SSH Key" in the upper right, and paste the contents of your public key (\~/.ssh/id_rsa.pub) into the text box.
+
 ## Are You On a Mac?
 
 The SkotOS repo has a setup script called dev_scripts/mac_setup.sh in the repo. Once you clone it, you can run that script to automatically clone the other repos you need next to your SkotOS repo, to build DGD with the right options and to otherwise get you set up.
 
 The rest of this page is the manual equivalent of doing the same.
+
+Note that the setup script will liberally install things it needs like Homebrew, Node.js and potentially things like NGinX. If you don't want that software installed, you shouldn't run the script.
+
+### Requirement: Homebrew
+
+To install Homebrew, copy and paste the following into the terminal.
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+If you use the setup script, Homebrew will be installed automatically if you don't already have it.
+
+Similarly, Homebrew will install npm and nginx if you don't have them already.
+
+Once homebrew is installed you'll also need these packages:
+
+    brew install git
+    brew install npm
+    brew install nginx
 
 ## Setting It Up Manually?
 
@@ -20,7 +59,8 @@ First, let's clone some repositories:
 ```
 cd ${SRCDIR}
 git clone git@github.com:ChatTheatre/SkotOS.git
-git clone git@github.com:dworkin/dgd.git
+cd SkotOS
+git clone git@github.com:ChatTheatre/dgd.git
 git clone git@github.com:ChatTheatre/orchil.git
 git clone git@github.com:ChatTheatre/websocket-to-tcp-tunnel.git
 ```
@@ -35,7 +75,7 @@ SkotOS needs a modified build of DGD. It uses more sectors (memory and disk spac
 
 I'll assume you have DGD built. You can put it in your path or just type its location every time you run it. I'm going to write "dgd" in the commands here as though it was in your path.
 
-To start things going from your SkotOS directory, run:
+To start things going from inside your SkotOS directory, run:
 
 ```
 $ dgd skotos.dgd
