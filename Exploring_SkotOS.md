@@ -10,7 +10,7 @@ This guide can help.
 
 ## Local Setup
 
-If you've [set up your SkotOS for local development](setup.md), the most important debugging tool is an admin/dev-type account, such as the "admin" and "bobo" accounts in the local setup doc. Note that you're sometimes prevented from logging in as "admin", probably because it's a root-type ultra-privileged account. So you're going to need a non-admin dev account for a lot of this.
+If you've [set up your SkotOS for local development](setup.md), the most important debugging tool is an admin/dev-type account, such as the "admin" and "bobo" accounts in the default local setup. Note that you're sometimes prevented from logging in as "admin", probably because it's a root-type ultra-privileged account. So you're going to need a non-admin dev account for a lot of this.
 
 You can log into the [telnet and binary ports](SkotOS_Ports.md) as an admin user with almost no other setup. You don't need a body, a production account or all sorts of other things. On the less-fortunate side, you don't ***have*** a body necessarily and you can't easily see what normal users of SkotOS are doing. This is a sort of back-door login for playing with DGD code at the lowest level.
 
@@ -19,6 +19,16 @@ And if you learn DGD from some less complex setting like [eOS](https://github.co
 Once you've logged in, you have the ability to execute small snippets of code with the "code" command. For instance, if you type `"/usr/System/initd"->shutdown()` then you can shut down SkotOS.
 
 You can use the "compile" command to recompile objects. If you've changed the code, that won't just automatically change the behaviour of the game. You have to compile the program. If you "compile /usr/System/initd", for instance, that will update the code to initd to match the most recent code in the .c file.
+
+## Changing Local Passwords
+
+The default local setup uses a single authentication method, which is called DevUserD. A full, production SkotOS game has DevUserD for its most privileged developers but users a UserDB (such as thin-auth) for everything else. For local development you don't want to have to manage one of those.
+
+To change local passwords or developer passwords, log in as a developer on the developer telnet port (10098 by default.) The use this command:
+
+    code "/usr/System/sys/devuserd"->set_password("username", "password")
+
+This can create a new user if "username" isn't already a developer. It can also change the password of an existing user. It's not a great idea to leave extremely-privileged accounts on the highly-insecure default passwords.
 
 ## Updating Code and Statedumps
 

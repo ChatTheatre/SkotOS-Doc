@@ -2,6 +2,7 @@
 Documentation for using the SkotOS library for Chat Theatres &amp; Stages
 
 * [Setting up SkotOS](./setup.md)
+* [Exploring SkotOS](./Exploring_SkotOS.md)
 * [SkotOS Architecture](./architecture.md)
 
 Using SkotOS
