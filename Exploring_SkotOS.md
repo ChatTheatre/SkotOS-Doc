@@ -1,5 +1,5 @@
 ---
-title: Exploring and debugging SkotOS
+title: Exploring and Debugging SkotOS
 ---
 
 SkotOS is deep, complex, and has been worked on by many hands over many years. It's huge, sprawling and fascinating. It ran (and runs!) at least one text game for over 20 years. It has older features in varying states of deprecation, and it has many different implementations of many of its features. Some things don't work. Some things have pretty clearly never worked. There's just a lot there.
@@ -152,7 +152,9 @@ Once you do, you'll need to copy two directories into place from [ChatTheatre/Sk
 
 ## LPC Object Export to Git
 
-If you have a directory of LPC XML object files and you're trying to put them in Git, the "gh" command-line Git tool can help. If you have Homebrew you can use "brew install gh" to install it.
+If you have a directory of LPC XML object files, we'd recommend you put everything under a "vault" directory. So if you're exporting into skoot/data/vault, you might plan to make your Git repository in the "data" directory, or copy out just the files you want into a new empty directory's "vault" subdirectory.
+
+When you're trying to put them in Git, the "gh" command-line Git tool can help. If you have Homebrew you can use "brew install gh" to install it.
 
 ```
 brew install gh  # Install it
@@ -165,7 +167,7 @@ Once it's installed you can create new Git repos and upload them with a few comm
 cd /my/directory/of/objects
 gh repo create lots-of-lpc-objects --private  # this is the repo name on GitHub. You can also use --public for public.
 git init  # Make this local directory a Git repo
-git add .  # Add the files to it
+git add Theatre Lovecraft  # Add the files by name, or just "git add ." for all files
 git commit -m "Add my exported LPC objects"  # Here's a commit message
 git remote add origin git@github.com:saraht45/lots-of-lpc-objects.git  # This should match the repo name earlier
 ```
