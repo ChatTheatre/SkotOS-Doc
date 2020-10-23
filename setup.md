@@ -258,8 +258,8 @@ We're going to add a couple of lines:
    user_to_wiztool = ([ ]);
 
    user_to_hash = ([ ]);
-   user_to_hash["admin"] = to_hex(hash_md5("admin" + "adminpassword"));  /* ADD THIS LINE */
-   user_to_hash["admin"] = to_hex(hash_md5("bobo" + "bobopassword"));  /* ADD THIS LINE */
+   user_to_hash["admin"] = to_hex(hash_md5("admin" + "adminpwd"));  /* ADD THIS LINE */
+   user_to_hash["admin"] = to_hex(hash_md5("bobo" + "bobopwd"));  /* ADD THIS LINE */
 
    set_object_name("System:Developers");
 }

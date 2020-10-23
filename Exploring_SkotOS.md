@@ -129,6 +129,19 @@ Oct  7 07:44:51 ** debug:memory_watcher: 78 MB in use; 204 MB allocated
 
 And you can check vault_error.log, but it will only contain records of the same "can't dump" messages from your console, saying they have no state root.
 
+## Destroying Objects with the Vault Tool
+
+In addition to dumping objects, the Vault tool can destroy them, individually or in subdirectories. For instance, let's say on cold-boot SkotOS I've been bothered by the fact that I hate fish, and SkotOS has some of them. Ew.
+
+I can delete them from the vault ***before*** boot easily (`rm -rf skoot/Shared/Unsorted/S7/Pendragon/Animals/Fish`). But if I had a running copy of SkotOS they would still potentially be in memory and in my statedumps. Ew! No fish in my statedumps!
+
+Luckily they can be removed, one at a time or all at once.
+
+```
+code "/usr/System/sys/tool/vault"->destruct_object("Shared:Unsorted:S7:Pendragon:Animals:Fish:chub")
+code "/usr/System/sys/tool/vault"->destruct_subdir("Shared:Unsorted:S7:Pendragon:Animals:Fish")
+```
+
 ## Installing the Vault Tool
 
 Have an old SkotOS game you'd like to get LPC objects from? The Vault tool would be a great choice... But the game doesn't have it.
@@ -136,3 +149,32 @@ Have an old SkotOS game you'd like to get LPC objects from? The Vault tool would
 To install the vault tool, you'll need to copy it into place and compile it from the wiztool interface. That means you need a developer account, and to telnet in on the developer telnet port.
 
 Once you do, you'll need to copy two directories into place from [ChatTheatre/SkotOS](https://github.com/ChatTheatre/SkotOS) - [skoot/usr/System/sys/tool](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/sys/tool) and [skoot/usr/System/lib/tool](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/lib/tool). If you copy those five files into place in the same two directories and compile the tool from the wiztool interface ("cd /usr/System/sys/tool", "compile vault.c"), it should start working.
+
+## LPC Object Export to Git
+
+If you have a directory of LPC XML object files and you're trying to put them in Git, the "gh" command-line Git tool can help. If you have Homebrew you can use "brew install gh" to install it.
+
+```
+brew install gh  # Install it
+gh auth login    # Hook up gh to your github account - it'll tell you a series of steps to do this via browser
+```
+
+Once it's installed you can create new Git repos and upload them with a few commands:
+
+```
+cd /my/directory/of/objects
+gh repo create lots-of-lpc-objects --private  # this is the repo name on GitHub. You can also use --public for public.
+git init  # Make this local directory a Git repo
+git add .  # Add the files to it
+git commit -m "Add my exported LPC objects"  # Here's a commit message
+git remote add origin git@github.com:saraht45/lots-of-lpc-objects.git  # This should match the repo name earlier
+```
+
+After you've created the repo that way, you can use "git add" then "git commit" then "git push" to make later changes to the same repo:
+
+```
+cd /my/directory/of/objects
+git add .  # Tell Git you'd like to add all the changed files
+git commit -m "Updates to my LPC objects"
+git push   # This will upload everything to GitHub
+```
