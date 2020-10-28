@@ -150,7 +150,26 @@ Have an old SkotOS game you'd like to get LPC objects from? The Vault tool would
 
 To install the vault tool, you'll need to copy it into place and compile it from the wiztool interface. That means you need a developer account, and to telnet in on the developer telnet port.
 
-Once you do, you'll need to copy two directories into place from [ChatTheatre/SkotOS](https://github.com/ChatTheatre/SkotOS) - [skoot/usr/System/sys/tool](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/sys/tool) and [skoot/usr/System/lib/tool](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/lib/tool). If you copy those five files into place in the same two directories and compile the tool from the wiztool interface ("cd /usr/System/sys/tool", "compile vault.c"), it should start working.
+Once you do, you'll need to copy some files into place from [ChatTheatre/SkotOS](https://github.com/ChatTheatre/SkotOS):
+
+* [skoot/usr/System/sys/tool](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/sys/tool)
+* [skoot/usr/System/lib/tool](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/lib/tool)
+* [skoot/usr/System/sys/tlsd.c](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/usr/System/sys/tlsd.c)
+
+You should also make the skoot/data/vault directory, initially empty.
+
+Copy those files into place. Then compile the tool from the wiztool interface:
+
+```
+> cd /usr/System/sys/
+/usr/System/sys
+> compile tlsd.c
+$0 = </usr/System/sys/tlsd>
+> compile tool/vault.c
+$1 = </usr/System/sys/tool/vault>
+```
+
+Now, with luck, you can export LPC objects as normal with the vault tool.
 
 ## LPC Object Export to Git
 
