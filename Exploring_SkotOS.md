@@ -18,7 +18,9 @@ And if you learn DGD from some less complex setting like [eOS](https://github.co
 
 Once you've logged in, you have the ability to execute small snippets of code with the "code" command. For instance, if you type `"/usr/System/initd"->shutdown()` then you can shut down SkotOS.
 
-You can use the "compile" command to recompile objects. If you've changed the code, that won't just automatically change the behaviour of the game. You have to compile the program. If you "compile /usr/System/initd", for instance, that will update the code to initd to match the most recent code in the .c file.
+You can use the "compile" command to recompile objects. If you've changed the code, that won't just automatically change the behaviour of the game. You have to compile the program. If you "compile /usr/System/initd.c", for instance, that will update the code to initd to match the most recent code in the .c file.
+
+You can also recompile all users of a library with the "upgrade" command. If you "upgrade /lib/string.c" it will recompile /lib/string and update all users of it.
 
 ## Changing Local Passwords
 
@@ -180,3 +182,30 @@ git add .  # Tell Git you'd like to add all the changed files
 git commit -m "Updates to my LPC objects"
 git push   # This will upload everything to GitHub
 ```
+
+## Bootstrapping an Old Game Statedump
+
+It's possible that at some point you'll get a statedump of an old Skotos (or other DGD) game. This poses the question, "what if the game is mostly secured from the outside, but I control the interpreter, the statedump and the file system?" In theory this means that you have utter control. In practice, it may be challenging to log in as administrator and look around. Here are some hints.
+
+DGD Statedump files are neither compressed nor encrypted. This means you can see and change raw strings pretty easily.
+
+SkotOS's devuserd uses a very simple user_to_hash object where each dev user's name is mapped to the hexadecimal version of the md5 hash of their username plus their password. Here's how that looks when written in SkotOS-flavoured LPC such as Merry:
+
+    user_to_hash["user7"] = to_hex(hash_md5("user7" + "the_password"));
+
+If you have access to a local-to-you SkotOS server you can write an object which inherits from /lib/string, calculates that value and sends it to you or writes it to a file. Then you can put it into the right place in the statedump.
+
+How do you "put it into the right place?" If you calculate the hash, it will be the same length as every other md5 hash. That means that if you can find a user/password pair with privilege (for old SkotOS games that might be: dworkin, christophera) then you can calculate a new hash for that name with a trivial password. Then you can search through the statedump and replace one with the other.
+
+How do you search through the statedump and replace one with another? A good text editor can do it. So can your general-purpose language of choice. I use Ruby, myself. Here's one way to do that (substitute your own large hash values):
+
+    Noahs-MBP-2:3000 noah$ irb
+    2.7.0 :001 > dump_contents = File.read("skotos.database"); nil
+     => nil
+    2.7.0 :002 > dc = dump_contents.gsub("first_large_hash", "second_large_hash"); nil
+     => nil
+    2.7.0 :003 > File.open("skotos_mod.database", "wb") { |f| f.write(dump_contents) }
+
+The big challenge is that a statedump is a large binary file, so some editors will choke and die. That's why I use Ruby, and you might do something similar in another language. Make sure after patching that your new statedump is byte-for-byte the exact same size as the old one.
+
+Note that if you have a privileged account from that game, none of this is needed. Once you have that, you can use the "set_password" trick to add a new developer account from your first privileged account.
