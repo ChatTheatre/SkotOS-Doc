@@ -46,6 +46,22 @@ Using the "compile" command will let you update LPC files dynamically. To update
 
 Note: as of early Oct 2020, the TreeOfWoe builder interface doesn't work by clicking on it in the browser. There may be an alternative way to use it, but I haven't found it (yet?)
 
+## Finding Images and Other Files
+
+There's a great Unix command called "Find" that I love. You can easily locate files if you know the extension, including image files. To find a particular filename pattern under the current directory:
+
+~~~
+find . -name "*.xml"
+~~~
+
+Image files are a bit more subtle - you'd like to be able to find everything called "foo.gif" and "FOO.JPEG" and so on. So you'd like to match against upper- and lowercase both, and you'd like to match a variety of different things, not just one.
+
+Here's a find incantation that will do that:
+
+~~~
+find . -iname "*.gif" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png"
+~~~
+
 ## Dumping LPC Objects on The Gables
 
 The live version of The Gables uses slightly different code and data than the checked-in GitHub version. It's essentially the original live source of this information, but needs objects to be appropriately "scrubbed" of things like user data before they can join the public source code.
