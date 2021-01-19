@@ -2,34 +2,71 @@
 
 When developing SkotOS and SkotOS-based apps/games on a Linode server, there are particular operations you'll want to accomplish. You may also want to know just how the server was installed.
 
-NOTE: for now thin-auth integration with UserDB is NOT fully working. This means you may need to use devuserd authentication (e.g. user "builder" below) rather than creating a user through the login web UI and thin-auth.
-
-NOTE: all of the ":10080" URLs need to get remapped to something better. Working on it.
+NOTE: eventually all of the ":10080" URLs need to get remapped to something better. Working on it.
 
 ## Installation
 
 For Linode, you can use the Linode Stackscript found in SkotOS/dev_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
 
-You can use the very smallest "Nanode" size for early development, but you'll want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances.
+You can use the 2GB next-to-smallest Linode size for early development, but you'll want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances. I see MariaDB die from low memory on Nanode-sized instances even with minimal load, so I do not recommend them.
 
-You'll need to allocate two DNS names - one for the "client" (the actual DGD game and Orchil) and one for "login" (thin-auth.)
+You'll need to allocate two DNS names - one for the "client" (the actual DGD game and Orchil) and one for "login" (thin-auth.) I recommend doing this as you create the Linode, if possible. DNS propagation can be annoying, so don't create it with a different IP address earlier. And some processes like to make sure their allocated DNS name works, so it's not a good idea to just not create them.
 
-The "deploy user" passwork will be used for the "skotos" deployment user. It will also be the DevUserD password for a staff/wizard DGD user called "builder", and for the DGD "admin" user, and for your MariaDB "userdb" user for thin-auth. All of these things can be changed, but they default to the password you chose.
+### The Boot Process
 
-Once you've installed, you should check to make sure everything is up and running. If your "FQDN Client" name were "skotos-client.mydomain.com" and your "FQDN login" name were "skotos-login.mydomain.com", you would check the following URLs:
+When you first start your Linode, it will be setting up all kinds of infrastructure from web servers to websocket tunnels to DGD itself. This takes time.
 
-* https://skotos-login.mydomain.com/ - this should show a "log in or create a character" UI
+The output of the Linode setup script will be in \~root/standup.log.
 
-Also these: (NOT HTTPS, ONLY HTTP FOR NOW)
+After that, the DGD game server will take some time, around ten minutes, to boot up. You can find its logfile in /var/log/dgd_server.out. There will be a "boot complete" message when it's done. Any port-10080 URL is going to be unstable or not available until DGD is booted and ready.
 
-* http://skotos-client.mydomain.com/gables/gables.htm&charName=ignored - game client
+Here's what the successful end of that output looks like in /var/log/dgd_server.out:
+
+~~~
+Jan 19 11:44:55 ** debug:Socials:Verbs:T:tip :: set_disabled(1)
+Jan 19 11:44:58 ** debug:Socials:Verbs:W:warp :: set_disabled(1)
+Jan 19 11:45:03 ** debug:Ignoring attempt to set combatnode name of /usr/TextIF/obj/combatnode#7943 to NONAME
+Jan 19 11:45:05 ** debug:Ignoring attempt to set combatnode name of /usr/TextIF/obj/combatnode to NONAME
+Jan 19 11:45:21 ** Finished
+Jan 19 11:45:21 ** info: -- /usr/SMTP/initd...
+Jan 19 11:45:21 ** info: -- /usr/UserDB/initd...
+Jan 19 11:45:21 ** debug:Booting UserDB...
+Jan 19 11:45:21 ** info: -- ~UserDB/sys/userd...
+Jan 19 11:45:21 ** info: -- ~UserDB/obj/bill...
+Jan 19 11:45:21 ** info: -- ~UserDB/sys/ctld...
+Jan 19 11:45:21 ** info: -- ~UserDB/sys/authd...
+Jan 19 11:45:21 ** info: -- ~UserDB/sys/broadcast...
+Jan 19 11:45:21 ** info: -- /usr/Gables/initd...
+Jan 19 11:45:21 ** info:Booting Gables...
+Jan 19 11:45:21 ** info:Boot completed.
+~~~
+
+DGD will also periodically save its state to /var/skotos/skotos.database. When it does that, here's the end of the relevant log message:
+
+~~~
+Jan 19 11:46:40 ** info: -- ~UserDB/sys/userd...
+Jan 19 11:46:40 ** info: -- ~UserDB/obj/bill...
+Jan 19 11:46:40 ** info: -- ~UserDB/sys/ctld...
+Jan 19 11:46:40 ** info: -- ~UserDB/sys/authd...
+Jan 19 11:46:40 ** info: -- ~UserDB/sys/broadcast...
+Jan 19 11:46:40 ** info: -- /usr/Gables/initd...
+Jan 19 11:46:40 ** info:Prepared for statedump.
+Jan 19 11:46:40 ** info:Global state save complete.
+~~~
+
+### Accounts, Passwords and URLs
+
+The "deploy user" password will be used for the "skotos" deployment user &mdash; that is, on your Linode there will be a Unix user called "skotos" with that password. The same password will also be the DevUserD password for a staff/wizard DGD user called "skott", and for the DGD "admin" user, and for your MariaDB "userdb" user for thin-auth. All of these things can be changed, but they default to the password you chose. The passwords don't all have to stay the same, but they are by default.
+
+If you go to your FQDN login URL, you should see a login interface. The username "skott" with your deployment password should get you in as an admin user with a fake email address. If you click "Play Game" it should take you to the game interface. There is also a "Tree of WOE" URL for a builder interface.
+
+(NOTE 19th Jan 2021: the click-through isn't currently working. Working on it.)
+
+Some relevant URLs:
+
 * http://skotos-client.mydomain.com/gables/TreeOfWoe.html&charName=ignored - builder interface
 * http://skotos-client.mydomain.com:10080/SAM/Prop/Theatre:Web:Theatre/Index - body creation
 * http://skotos-client.mydomain.com:10080 - list of theatres, links broken
-
-Note that you can't (quite) log into the game client yet. You'll need to create an account and a body. And the "FQDN login" (skotos-login) URL won't work until DGD has finished starting up and thin-auth can talk to it. This will normally take 5-10 minutes for the first boot, and less than one minute for subsequent boots from a statedump file (skotos.database). You can open the DGD server logfile (/var/log/dgd_server.out) and watch for an "info:Boot completed." message if you're impatient.
-
-(NOTE: I'm trying to get thin-auth to work for creating an account here, but it's not fully working yet.)
 
 ### Important Security Warning: devuserd Auth and Plaintext Password
 
@@ -39,17 +76,21 @@ You'll really want to fix this. Once you have successfully dumped the DGD state 
 
 However, patching it into that source file is how it gets ***into*** skotos.database in the first place.
 
-### Patching
+Later you can create DGD admin characters from your first admin character, using the "code" command.
 
-During install, some parts of DGD will be auto-patched.
+## Email and Setting Up Accounts
 
-A user named "builder" will be added with the same password you chose for the "skotos" Unix account. This is in devuserd.c - see the important security warning above about this!
+By default, your Linode isn't allowed to send email. You'll need to file a customer service ticket with Linode if you want that to work. Here's how you can set up accounts without email:
 
-An "instance" file will be created under skoot/usr/System/data/instance to set up access to your SkotOS UserDB, and to let DGD know the DNS name for the game. This file should stay the same. If you blow away these changes then your DGD server will stop using thin-auth and you'll have to log in via devuserd.c. See [Authentication](/Authentication.md) for details of SkotOS's various authentication systems.
+The account creation process will mostly work, though it might say the email failed. But the account will be created correctly otherwise.
+
+There is an account-approval page that will let your admin account approve new accounts without them having to click on the email successfully. It's at /support-mail.php from your Login URL.
+
+If you want to do it automatically, there is a table called "email_ping" in database userdb. To verify an email, you can also just delete its row from email_ping and it will count as verified.
 
 ## Building
 
-Want to log in as an all-powerful developer? Type "telnet localhost 10098" from inside the Linode VM. Your default initial username is "builder" and the password is the one you entered for the StackScript.
+Want to log in as an all-powerful developer? Type "telnet localhost 10098" from inside the Linode VM. Your default initial username is "skott" and the password is the one you entered for the StackScript.
 
 ## Debugging
 
