@@ -54,13 +54,23 @@ Jan 19 11:46:40 ** info:Prepared for statedump.
 Jan 19 11:46:40 ** info:Global state save complete.
 ~~~
 
+### DNS in the Boot Process
+
+Here's a bit of a sticking point: you can't assign the IP address to a DNS name until Linode allocates you an instance. But you're going to need to give it a DNS name, because certbot (the HTTPS name certificate setup) requires that.
+
+So how do you do it?
+
+The easy way is to create your Linode instance and then immediately add two DNS entries for the two FQDNs (Fully Qualified Domain Names) you gave them. If you ssh into the instance to watch its setup, you should do it by numeric IP address, not by name &mdash; sometimes if you query a name and find out it doesn't exist, that fact gets cached in intermediate DNS servers. You don't want that.
+
+You also don't want to create the DNS entries with a different IP address and then change it. That can take hours to propagate, which you ***really*** don't want.
+
+Instead, add the two new DNS entries as quickly as you reasonably can after asking Linode to create the new host instance. By the end of the boot process, when Certbot generates a new HTTPS certificate, the names will exist and it should work just fine.
+
 ### Accounts, Passwords and URLs
 
 The "deploy user" password will be used for the "skotos" deployment user &mdash; that is, on your Linode there will be a Unix user called "skotos" with that password. The same password will also be the DevUserD password for a staff/wizard DGD user called "skott", and for the DGD "admin" user, and for your MariaDB "userdb" user for thin-auth. All of these things can be changed, but they default to the password you chose. The passwords don't all have to stay the same, but they are by default.
 
 If you go to your FQDN login URL, you should see a login interface. The username "skott" with your deployment password should get you in as an admin user with a fake email address. If you click "Play Game" it should take you to the game interface. There is also a "Tree of WOE" URL for a builder interface.
-
-(NOTE 19th Jan 2021: the click-through isn't currently working. Working on it.)
 
 Some relevant URLs:
 
@@ -70,13 +80,15 @@ Some relevant URLs:
 
 ### Important Security Warning: devuserd Auth and Plaintext Password
 
-*YOUR USER PASSWORD WILL EXIST IN PLAINTEXT INSIDE YOUR DGD DIRECTORY AFTER INSTALLATION!*
+***YOUR USER PASSWORD WILL EXIST IN PLAINTEXT INSIDE YOUR DGD DIRECTORY AFTER INSTALLATION!***
 
-You'll really want to fix this. Once you have successfully dumped the DGD state and the file /var/skotos/skotos.database exists, you can "git checkout" the file /var/skotos/skoot/usr/System/sys/devuserd.c to remove the password again. The password will successfully exist inside skotos.database and will no longer be required in a DGD source file.
+(Fixing is as simple as logging in and typing "cd /var/skotos; git checkout skoot/usr/System/sys/devuserd.c".)
+
+You'll really want to fix this. Once you have successfully dumped the DGD state and the file /var/skotos/skotos.database exists, you can "git checkout" the file /var/skotos/skoot/usr/System/sys/devuserd.c to remove the password again. The password will successfully exist inside DGD's memory and inside skotos.database. Then it will no longer be required in the DGD source file.
 
 However, patching it into that source file is how it gets ***into*** skotos.database in the first place.
 
-Later you can create DGD admin characters from your first admin character, using the "code" command.
+Later you can create DGD admin characters from your first admin character, using the "code" command. So they'll never need to have passwords in a source file. It's only that first character where we use that hack.
 
 ## Email and Setting Up Accounts
 
@@ -88,9 +100,18 @@ There is an account-approval page that will let your admin account approve new a
 
 If you want to do it automatically, there is a table called "email_ping" in database userdb. To verify an email, you can also just delete its row from email_ping and it will count as verified.
 
+## Adding a Dev User
+
+The "skott" account is okay, but you'll want others over time &mdash; especially if there are other developers or staff members. Here are the steps to adding new users:
+
+* Have them create a new account through the normal login URL
+* In "mysql -u root" you can set their account_type to "developer"
+* In the Tree of WOE, add their name to the System:Developers list
+* Log into the telnet port (10098) as an admin and set their telnet-port password: `code "~System/sys/devuserd"->set_developer("name")` and then `code "~System/sys/devuserd"->set_password("name", "pass")`
+
 ## Building
 
-Want to log in as an all-powerful developer? Type "telnet localhost 10098" from inside the Linode VM. Your default initial username is "skott" and the password is the one you entered for the StackScript.
+Want to log in as an all-powerful developer? Type "telnet localhost 10098" from inside the Linode VM. Your default initial account has username "skott" and the password is the one you entered for the StackScript.
 
 ## Debugging
 
