@@ -13,6 +13,10 @@ Using SkotOS
 * [Staff_Plus_Commands](./Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
 
+Developing SkotOS
+
+* [Linode Development Workflow](./developing/LinodeWorkflow.md)
+
 ## Copyright & Status
 
 Unless otherwise noted, the contents of this repository as declared public domain using the Creative Commons "No Rights Reserved" [CC0 Declaration](https://creativecommons.org/share-your-work/public-domain/cc0/).
