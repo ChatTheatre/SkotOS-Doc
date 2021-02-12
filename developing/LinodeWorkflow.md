@@ -1,26 +1,48 @@
-# Linode Development Workflow
+# Linode Installation and Debugging
 
 When developing SkotOS and SkotOS-based apps/games on a Linode server, there are particular operations you'll want to accomplish. You may also want to know just how the server was installed.
 
-NOTE: eventually all of the ":10080" URLs need to get remapped to something better. Working on it.
+NOTE: these notes currently assume the RWOT-related changes from mid-February of 2021 have been merged.
 
-## Installation
+## Installation - "Plain" SkotOS
 
-For Linode, you can use the Linode Stackscript found in SkotOS/dev_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
+For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/dev_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
 
 You can use the 2GB next-to-smallest Linode size for early development, but you'll want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances. I see MariaDB die from low memory on Nanode-sized instances even with minimal load, so I do not recommend them.
 
-You'll need to allocate two DNS names - one for the "client" (the actual DGD game and Orchil) and one for "login" (thin-auth.) I recommend doing this as you create the Linode, if possible. DNS propagation can be annoying, so don't create it with a different IP address earlier. And some processes like to make sure their allocated DNS name works, so it's not a good idea to just not create them.
+You'll need to allocate two DNS names - one for the "client" (the actual DGD game and Orchil) and one for "login" (thin-auth.) I recommend doing this as you create the Linode, if possible. DNS propagation can be annoying, so don't create it with a different IP address earlier. If this isn't done correctly then LetsEncrypt Certbot will have trouble creating security certificates for you, which can mean HTTPS doesn't work. That's a serious problem &mdash; a lot of basic operations require HTTPS.
 
-### The Boot Process
+Once your Stackscript has run successfully you can go to the "login" hostname you set up. There should be an administrative user named "skott" with the password you gave when setting up your Linode. You should also be able to SSH in as root or "skotos" to that hostname with any SSH key or password you set up. Note that the SkotOS password (also used for the database and a few other things) need not be the same as any root password you gave Linode.
+
+## Installation - SkotOS-Based Apps with a DGD Manifest
+
+Newer-style SkotOS apps use SkotOS in modular pieces and replace them as desired via [DGD manifest files](https://github.com/ChatTheatre/dgd-tools/). In those cases, there's an app Git repo separate from the base SkotOS repo. We'll use RWOT as an example since it's the only one that currently exists as of Feb 2021.
+
+Such an app will normally have its own Stackscript, which may download and run the normal SkotOS stackscript. RWOT's is called "rwot_stackscript.sh", for instance.
+
+You'll still need at least a 2GB Linode, sometimes larger, for SkotOS-derived applications, especially if they use thin-auth for authentication.
+
+You'll need to allocate at least two DNS names, as above. RWOT requires three names (rwot.domain, rwot-login.domain, meet.domain). And in general, applications that use a local installation of Jitsi will need a domain for it.
+
+The Linode script needs to install everything required, so it will install the DGD tools and dgd-manifest as part of that.
+
+Once your Stackscript has run successfully you can go to the "login" hostname you set up. There should be an administrative user named "skott" with the password you gave when setting up your Linode. You should also be able to SSH in as root or "skotos" to that hostname with any SSH key or password you set up. Note that the SkotOS password (also used for the database and a few other things) need not be the same as any root password you gave Linode.
+
+## Debugging
+
+You can see quite a few of the logfiles in realtime if you run /var/skotos/dev_scripts/stackscript/show_all_logs.sh. This shows the DGD logfile, websocket tunnel logs and auth server logs.
+
+For more granularity about what goes where, keep reading.
+
+### Monitoring the Boot Process
 
 When you first start your Linode, it will be setting up all kinds of infrastructure from web servers to websocket tunnels to DGD itself. This takes time.
 
-The output of the Linode setup script will be in \~root/standup.log.
+The output of the Linode setup script will be in \~root/standup.log. A Manifest-based app like RWOT may also have an additional log (RWOT's: rwot_standup.log) also found in \~root.
 
-After that, the DGD game server will take some time, around ten minutes, to boot up. You can find its logfile in /var/log/dgd_server.out. There will be a "boot complete" message when it's done. Any port-10080 URL is going to be unstable or not available until DGD is booted and ready.
+After that, the DGD game server will take some time, around ten minutes, to boot up. You can find its logfile in /var/log/dgd/server.out. There will be a "boot complete" message when it's done. Any URL served by DGD (anything after you hit "play") is going to be unstable or not available until DGD is booted and ready.
 
-Here's what the successful end of that output looks like in /var/log/dgd_server.out:
+Here's what the successful end of that output looks like in /var/log/dgd/server.out:
 
 ~~~
 Jan 19 11:44:55 ** debug:Socials:Verbs:T:tip :: set_disabled(1)
@@ -72,17 +94,13 @@ The "deploy user" password will be used for the "skotos" deployment user &mdash;
 
 If you go to your FQDN login URL, you should see a login interface. The username "skott" with your deployment password should get you in as an admin user with a fake email address. If you click "Play Game" it should take you to the game interface. There is also a "Tree of WOE" URL for a builder interface.
 
-Some relevant URLs:
-
-* http://skotos-client.mydomain.com/gables/TreeOfWoe.html&charName=ignored - builder interface
-* http://skotos-client.mydomain.com:10080/SAM/Prop/Theatre:Web:Theatre/Index - body creation
-* http://skotos-client.mydomain.com:10080 - list of theatres, links broken
+After you log in as Skott, if you hit "play" it should take you to a character creation interface. Note that after creating your character you may need to go back to the login URL and go through again if you're not using a manifest-based app &mdash; there's some difficulty with https and SkotOS right now which can cause bad redirects.
 
 ### Important Security Warning: devuserd Auth and Plaintext Password
 
 ***YOUR USER PASSWORD WILL EXIST IN PLAINTEXT INSIDE YOUR DGD DIRECTORY AFTER INSTALLATION!***
 
-(Fixing is as simple as logging in and typing "cd /var/skotos; git checkout skoot/usr/System/sys/devuserd.c".)
+(Fixing is as simple as logging in and typing "cd /var/skotos; git checkout skoot/usr/System/sys/devuserd.c". But if you fix it and then delete your DGD statedump file, you may have trouble logging into the telnet port afterward.)
 
 You'll really want to fix this. Once you have successfully dumped the DGD state and the file /var/skotos/skotos.database exists, you can "git checkout" the file /var/skotos/skoot/usr/System/sys/devuserd.c to remove the password again. The password will successfully exist inside DGD's memory and inside skotos.database. Then it will no longer be required in the DGD source file.
 
@@ -98,14 +116,14 @@ The account creation process will mostly work, though it might say the email fai
 
 There is an account-approval page that will let your admin account approve new accounts without them having to click on the email successfully. It's at /support-mail.php from your Login URL.
 
-If you want to do it automatically, there is a table called "email_ping" in database userdb. To verify an email, you can also just delete its row from email_ping and it will count as verified.
+If you want to do it automatically, there is a table called "email_ping" in database userdb. To verify an email, you can delete its row from email_ping (perhaps with a cron job?) and it will count as verified.
 
 ## Adding a Dev User
 
 The "skott" account is okay, but you'll want others over time &mdash; especially if there are other developers or staff members. Here are the steps to adding new users:
 
 * Have them create a new account through the normal login URL
-* In "mysql -u root" you can set their account_type to "developer"
+* In thin-auth, you can set their account_type to "developer"
 * In the Tree of WOE, add their name to the System:Developers list
 * Log into the telnet port (10098) as an admin and set their telnet-port password: `code "~System/sys/devuserd"->set_developer("name")` and then `code "~System/sys/devuserd"->set_password("name", "pass")`
 
@@ -113,7 +131,9 @@ The "skott" account is okay, but you'll want others over time &mdash; especially
 
 Want to log in as an all-powerful developer? Type "telnet localhost 10098" from inside the Linode VM. Your default initial account has username "skott" and the password is the one you entered for the StackScript.
 
-## Debugging
+Inside the game, you can type "+obname trousers" or similar to look at items. The links afterwards can be used to view and edit the item in a pop-up mini-tree-of-WOE interface.
+
+You can also use the Tree of WOE interface for a top-down view of all the WOE objects in the system.
 
 ### Updating Source Files
 
@@ -121,15 +141,16 @@ Let's say you've made a change to a DGD source file. Good! Now, how do you make 
 
 If it's one source file, log in to the telnet port (telnet localhost 10098) with an admin user (e.g. "builder", with the password you originally configured.) Then cd into the appropriate subdirectory of "skoot" and compile the file. If the file is called foo.c, you'd type "compile foo.c". That will replace the old "foo" object with the one you just modified if all goes well.
 
+If it's a library file (it will have /lib in the path) then you'll need to "upgrade foo.c" instead, which will recompile all objects using that library.
+
 Now the next time the statedump happens, the new skotos.database will also have your modified version. If you restore from an older statedump, though, you can lose your changes.
 
 ### Logfiles
 
-The DGD server logs both standard output and standard error to '/var/log/dgd_server.out'. The DGD server can be configured to log all HTTP accesses but it's slow, and the logfile has to be under /var/skotos/skoot, which you usually don't want.
+The DGD server logs both standard output and standard error to '/var/log/dgd/server.out'. The DGD server can be configured to log all HTTP accesses but it's slow, and the logfile has to be under /var/skotos/skoot (or /var/rwot/.root), which you usually don't want.
 
-Thin-auth logs to /var/log/apache2/user-access.log and /var/log/apache2-user-error.log. The "undefined index" notices are normal and not a sign of misconfiguration. The checks for wp-login.php and installer.php are malevolent spambots trying to hack your site, but the files they're looking for don't exist &mdash; so no harm done.
+Thin-auth logs to /var/log/apache2/user-access.log and /var/log/apache2-user-error.log in Apache-based configs. It logs to /var/log/nginx/access.log and /var/log/nginx/error.log in NGinX-based configs. The "undefined index" notices are normal and not a sign of misconfiguration. The checks for wp-login.php and installer.php are malevolent spambots trying to hack your site, but the files they're looking for don't exist &mdash; so no harm done.
 
-The Apache portion of the client site logs to /var/log/apache2/client-error.log and client-access.log. The NGinX portion of it logs to /var/log/nginx/error.log and access.log.
+The Apache PHP portion of the client site logs to /var/log/apache2/client-error.log and client-access.log. The NGinX portion of it logs to /var/log/nginx/error.log and access.log.
 
-The socket relays log to files in /var/log/tunnel.
-
+The websocket-to-tcp tunnels log to files in /var/log/tunnel.
