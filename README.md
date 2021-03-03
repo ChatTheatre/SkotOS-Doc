@@ -4,6 +4,7 @@ Documentation for using the SkotOS library for Chat Theatres &amp; Stages
 * [Setting up SkotOS](./setup.md)
 * [Exploring SkotOS](./Exploring_SkotOS.md)
 * [SkotOS Architecture](./architecture.md)
+* [SkotOS WOE Objects and Workflow](./woe_workflow.md)
 
 Using SkotOS
 
