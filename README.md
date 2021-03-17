@@ -8,8 +8,9 @@ SkotOS runs primarily in a dynamic game-development language called [DGD](http:/
 
 * [Setting up to build on SkotOS (local)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
 * [Exploring SkotOS](./Exploring_SkotOS.md)
-* [SkotOS Architecture](./architecture.md)
 * [SkotOS WOE Objects and Workflow](./woe_workflow.md)
+* [SkotOS Architecture](./architecture.md)
+* [SkotOS Builder Docs](./from_builders/)
 
 Using SkotOS
 
