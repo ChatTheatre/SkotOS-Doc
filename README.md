@@ -1,7 +1,12 @@
 # SkotOS-Doc
-Documentation for using the SkotOS library for Chat Theatres &amp; Stages
 
-* [Setting up SkotOS](./setup.md)
+SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [The Eternal City](https://www.eternalcitygame.com/), [https://allegoryofempires.com/](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
+
+But if you want to ***build*** a SkotOS-based game, this is a good place to start.
+
+SkotOS runs primarily in a dynamic game-development language called [DGD](http://www.dworkin.nl/dgd/). There are also miscellaneous scripts and tools in other languages, such as the Node.js-based websocket relay.
+
+* [Setting up to build on SkotOS (local)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
 * [Exploring SkotOS](./Exploring_SkotOS.md)
 * [SkotOS Architecture](./architecture.md)
 * [SkotOS WOE Objects and Workflow](./woe_workflow.md)
@@ -13,10 +18,6 @@ Using SkotOS
 * [SkotOS Wiztool](./SkotOS_Wiztool.md)
 * [Staff_Plus_Commands](./Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
-
-Developing SkotOS
-
-* [Linode Development Workflow](./developing/LinodeWorkflow.md)
 
 ## Copyright & Status
 
