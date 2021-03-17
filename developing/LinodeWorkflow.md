@@ -2,11 +2,9 @@
 
 When developing SkotOS and SkotOS-based apps/games on a Linode server, there are particular operations you'll want to accomplish. You may also want to know just how the server was installed.
 
-NOTE: these notes currently assume the RWOT-related changes from mid-February of 2021 have been merged.
-
 ## Installation - "Plain" SkotOS
 
-For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/dev_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
+For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/dev_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it. This will give you a runnable-but-not-running DGD server, so you may prefer to use something like [The Gables](https://github.com/ChatTheatre/gables_game) for a complete batteries-included setup.
 
 You can use the 2GB next-to-smallest Linode size for early development, but you'll want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances. I see MariaDB die from low memory on Nanode-sized instances even with minimal load, so I do not recommend them.
 

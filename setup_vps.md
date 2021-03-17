@@ -3,7 +3,13 @@ title: Setting up SkotOS on a VPS Server
 layout: default
 ---
 
-NOTE: THESE DIRECTIONS ARE INCOMPLETE. For now, SkotOS isn't ready for a full deployment.
+This document is about how to set up a server with SkotOS for development. You may also want to look at these pages:
+
+* [Workflow with a SkotOS VPS Server](./developing/LinodeWorkflow.md)
+* [SkotOS for local development](./setup.md)
+* [Exploring SkotOS](./Exploring_SkotOS.md)
+
+## Hosting and Referral Codes
 
 For best reliability and stability, set your SkotOS instance up on a virtual private server (VPS). 
 
@@ -12,91 +18,62 @@ Linode has proven to be a very stable locale for SkotOS games with high uptime, 
 > Linode Referral Code: https://www.linode.com/?r=3c7fa15a78407c9a3d4aefb027539db2557b3765
 > Digital Ocean: http://www.digitalocean.com/?refcode=a6060686b88a
 
-## Create Your Machine
+## SkotOS from a StackScript
 
-SkotOS games have relatively low requirements and can be run on low-end VPSes. At Linode, the Linode 2048 is suggested, which has 30 GB of storage and 1 CPU core — though you could probably get started on the Linode 1024, which has just 20 GB of storage. 
+"Plain" SkotOS comes with a [basic StackScript](https://github.com/ChatTheatre/SkotOS/blob/master/deploy_scripts/stackscript/linode_stackscript.sh) to install its requirements. However, that StackScript does *not* set up a functioning game server. Instead, a SkotOS app like [The Gables](https://github.com/ChatTheatre/gables_game) provides [a StackScript](https://github.com/ChatTheatre/gables_game/blob/master/app_stackscript.sh) which calls to the basic SkotOS StackScript.
 
-If you've got a decent, modern CPU, then the storage will be the biggest requirement. It will slowly grow with time and usage, but most modern VPSes will let you easily upgrade the time comes.
+So you'll want to choose a SkotOS-based game, not "just plain" SkotOS for this install. We'll write here as if you're installing The Gables. Please see the README for your chosen game for any unusual details.
 
-All of Skotos' SkotOS games run on either Debian 7.5 or Debian 8.0. Debian is generally suggested as a known stable platform, though other versions of Linux will probably work just as well.
+## Create Your VM
 
-## Installing SkotOS
+Copy your chosen stackscript, such as [the one for The Gables](https://github.com/ChatTheatre/gables_game/blob/master/app_stackscript.sh), into a StackScript in your Linode account.
 
-SkotOS can be installed from this Github repository. For these instructions we'll assume you're cloning it from a Git repository so that you can easily update it later.
+(NOTE: non-Linode installs aren't supported or documented, but shouldn't be too hard - the StackScript is basically just a shellscript that expects to be run as root with some environment variables already set.)
 
-You'll need a user who can install SkotOS and run it.
+You'll want to use a Debian Buster image and a Linode 2048 or larger. The SkotOS production deployment relies on MariaDB, which doesn't run happily on any instance smaller than that. It's highly recommended to set a Linode SSH key for root login rather than a password.
 
-With that user, clone the directories:
+## DNS and the StackScript
 
-* `git clone git@github.com:ChatTheatre/SkotOS.git /var/skotos/SkotOS`
-* `git clone git@github.com:dworkin/dgd.git /var/skotos/dgd`
+The current StackScripts will set up HTTPS for any production mode. That's good! But it means you need to set up DNS in a great big hurry. That's annoying.
 
-### Optional Configuration
+Specifically:
 
-There are two major config files: `/var/skotoslib/SkotOS/skotos.dgd` contains a variety of information on variable sizes and ports, while `/var/skotoslib/SkotOS/skoot/usr/System/data/instance` contains connectivity data.
+***When you create your Linode, you should hit 'create', then copy the IP address, then IMMEDIATELY set up your DNS entries.***
 
-You may wish to:
+Then you probably want to "ssh root@" for that (numeric) IP address.
 
-1. Change the "\*" addresses at the top of `skotos.dgd` to your IP address.
-2. Change the `hostname` in `instance` to your actual Internet hostname.
+***THINGS TO BE CAREFUL ABOUT:***
 
-### Optionally Change the Portbase
+* When you ssh as root, use the numeric IP, not the name. DNS propagation is weird and annoying and you should let the servers figure it out a bit *before* you ask for a name. If you try to SSH to the name before it exists, something may cache it as "nope, doesn't exist" either on your own personal machine or on other caching DNS servers in between.
+* Do not edit an existing DNS entry. Make a whole new one. Old stale DNS entries are awful and you want to avoid them.
+* Making new DNS entries gets annoying fast, of course. I like to use a subdomain (e.g. gables.testing-47.mydomain.com) so you can change just the subdomain name when making changes to the StackScript. This is mostly only important for debugging the StackScript, but you may need to do that at some point.
+* If something goes wrong you can re-run the StackScript on the same machine. Be sure to set the correct environment variables.
 
-By default, SkotOS should respond to ports 80 and 443. But it also listens on a variety of ports in the 10,000 range to implement its own internal structure. If you want to change the internal port locations, you can do so by editing both `skotos.dgd` and `instance`. Be sure to change the `portbase` in `instance` to another number in the form `X000`, then change all of the ports in both files from `10YYY` to `XYYY`. For example, if you choose your `portbase` to be 8000, your `telnet_port` would be 8098 and your first `binary_port` would be 8099.
+## As the StackScript Runs
 
-You probably don't want to adjust the ports unless you plan to run multiple instances of SkotOS on the same machine. But, if you do want to, this is simple: just be sure that each SkotOS game is (1) installed in a different directory; (2) has a different hostname; (3) has a different IP address; and (4) listens to a different range of ports. 
+You can ssh into your VM as the StackScript is running. There will be files in root's home directory with names like "standup.log" and (for The Gables) game_standup.log. These are the console and/or error output from the StackScript running. You can use a file viewer like "less" to look at them and/or use "tail -f" to monitor them constantly as they're added to.
 
-## Adjust Your Network
+The StackScripts are normally configured to stop as soon as a command fails. You can sometimes correct the problem and re-run.
 
-You will also need to make a few changes to your local network setup to accomodate the SkotOS instance.
+## After the StackScript
 
-### Open Your Firewall
+Your StackScript has a "login" hostname, possibly called $FQDN_LOGIN and possibly called something like "gables-login" under your specified domain. Whatever that login name is, point your browser at it. You should see a nice interface with options like logging in and creating an account.
 
-Be sure to adjust your Firewall so that it accepts connections on all the machines. The following iptables rules should make everything accessible:
+Until you've asked Linode to let you send email from your host, email will be blocked. So if you try to create an account you should get an error message about how the account was created but no email could be sent, so it can't verify you.
 
-```
--A INPUT -p tcp --dport    80 -j ACCEPT
--A INPUT -p tcp --dport   443 -j ACCEPT
--A INPUT -p tcp --dport   843 -j ACCEPT
--A INPUT -p tcp --dport  10080 -j ACCEPT
--A INPUT -p tcp --dport  10090 -j ACCEPT
--A INPUT -p udp --dport  10023 -j ACCEPT
-```
+However, there is an admin account called "skott" with the password you set when creating the Linode. You can use the Support pages to verify emails for accounts, at least until you have Linode unblock sending email from your new VM.
 
-You may or may not decide to keep these open:
-```
--A INPUT -p tcp --dport  10098 -j ACCEPT
--A INPUT -p tcp --dport  10099 -j ACCEPT
-```
-These are administrative/wiztool ports, and we suggest restricting them to access only on the local machine, in which case you should not put them in.
+The Skott account can be used to log in and look around - it also has admin privileges in your new SkotOS game server. But you'll need to be able to create more accounts later for builders and users.
 
-Be sure to rerun your firewall rules afterward, usually with a command like the following:
+## Workflow
 
-```
-$ /sbin/iptables-restore < /etc/your-firewall-rules
-```
+You've probably been doing [local development](./setup.md) already so you know the basics.
 
-## Build DGD
+Make sure to read up on [VPS workflow](./developing/LinodeWorkflow.md) and [using DGD Manifests](./developing/ManifestsAndLinode.md).
 
-SkotOS needs a modified build of DGD.
+The hardest part to get a feel for is the way a DGD server has files on disk that it loads from, objects in memory and the statedump file. By reading the various "workflow" documents you can learn how to handle this unfamiliar-to-most-people programming model.
 
-[Here are build instructions](./building_dgd_for_skotos.md). You may have already made the modifications in a repo of your own, or you may need to do it in-place.
-
-## Run DGD from Cron
-
-You will probably want to set your game to restart at machine start-up by putting something like this in your crontab:
-
-```
-@reboot /var/skotos/dgd/bin/dgd /var/skotos/SkotOS/skotos.dgd /var/skotos/SkotOS/skotos.database >> /var/skotos/dgd_console_log.txt
-```
-
-You are successfully restoring from the snapshot if you see this in DGD's console log:
-
-```
-Apr 27 16:25:23 ** info:Reboot completed.
-```
-
-## Great Ideas that Aren't Described Here Yet
+## Great Ideas that Aren't Described Here - and the StackScript Doesn't Do
 
 * Logfile consolidation and rotation
 * Regular backups of /var/skotos/SkotOS/skotos.database
