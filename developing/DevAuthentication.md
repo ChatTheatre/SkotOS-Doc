@@ -1,26 +1,6 @@
 # SkotOS UserAPI, UserDB, DevUserD and Authentication
 
-SkotOS is an old codebase, rich in alternatives and duplication. Common activities have been done in more than one way over the years, and authentication is no exception.
-
-Note: sections marked with "Pending Removal: UserAPI Rework" are intended to be removed in March 2021, if all goes well.
-
-There are two major forms of authentication used by SkotOS. One is used in development locally, while the other is primarily for production-style deployment on a VM.
-
-There are also several parts to each, and several older methods of authentication that are no longer used.
-
-## DevUserD - the Low-Level Interface and the Crufty Development-Only Option (Pending Removal: UserAPI Rework)
-
-DevUserD is used for the wiztool login, for low-level access for DGD developers. It also ***can*** be used in local development for all authentication, even though it's insecure and finicky. But it doesn't need a separate UserDB server. (NOTE: ***as of March 2021, using only DevUserD may be going away***. I'm trying to get rid of it in favour of a dev-mode auth server.)
-
-To use DevUserD as a primary auth method, you'll need to somehow bootstrap your first user into devuserd.c. This will be done automatically by the Mac Setup or Linode deployment methods. If you roll your own, you'll need to do it for yourself. See [Setup](../setup.md) and the deployment scripts for Mac and Linode.
-
-You'll also want to make sure you do ***not*** have "standalone" in your instance file. And don't include a "skoot/usr/System/data/userdb" file - you have no UserDB. See "UserAPI Modes" for details.
-
-When using DevUserD, DGD does a trivial little md5 hash of your username and password to check if it's correct. MD5 is an old algorithm and this method is quite insecure by now.
-
-When people tell you to use a "code" incantation in the wiztool containing "set_password", this is the method they're setting the password for.
-
-Historically DevUserD has been used for developer login so that login is still possible even if the auth server fails and can't be restarted - having a simple local auth mechanism is a sort of failsafe even if the external auth server goes down. It's clear why that was once desirable, but at this point it seems likely to have outlived its usefulness: a weird, janky DGD-based method that few people clearly understand is *not* usually going to be more reliable than an external dependency at this point...
+SkotOS is an old codebase, rich in alternatives and duplication. Common activities have been done in more than one way over the years, and authentication is no exception. However, a rework in March of 2021 significantly reduced the authentication methods for ChatTheatre/SkotOS. Older methods are documented below, but labelled as removed. If you're working on other SkotOS codebases you're likely to encounter these other authentication methods which are no longer included in ChatTheatre's SkotOS code.
 
 ## Thin-Auth - the Production Authentication Server
 
@@ -76,18 +56,6 @@ The Debug() and XDebug() log statements will only show up in the log if the debu
 
 The basic logging statements don't seem to reliably happen on reconnect. Not sure why.
 
-## UserAPI Modes (Pending Removal: UserAPI Rework)
-
-The SkotOS authentication system has three modes you can configure it in - see skoot/usr/UserAPI/lib/authapi and/or search all of skoot for LOCAL_USERDB for how that's implemented.
-
-These are the three modes:
-
-* LOCAL_USERDB: this is the normal production mode, where an AuthD and CtlD server are used. To use it, add a skoot/usr/System/data/userdb file to tell SkotOS where to find the AuthD and CtlD server.
-
-* LOCAL_THEATRE: this is the DevUserD-only mode described above where no AuthD or CtlD are used. To configure this mode, do not add a userdb file and make sure skoot/usr/System/data/instance contains the word "standalone" on a line by itself.
-
-* LOCAL_LOCAL: I have never gotten this mode working, nor have I spoken with anybody who has claimed to do so. It is a local standalone mode of some description, but it's not clear the code still works. To use this mode, do not add a userdb file and do not include the word "standalone" in your instance file.
-
 ## The AuthD and CtlD Servers
 
 Originally there was a component inside SkotOS itself called the UserDB. A SkotOS server (appears to have) contained its own user information. That doesn't make it easy to make a single SkotOS.net account and log into all the games, though. Some vestiges of local information, such as the UDat structures, still persist from this time.
@@ -138,7 +106,33 @@ As a result, thin-auth expects a small shim server to make connections to its so
 
 One consequence of this is that the "userdb" file, used to configure SkotOS for an external UserDB, no longer contains useful information. DGD won't be making an external connection to the hostname and port number contained in that file &mdash; instead, it will wait for userdb-authctl to make an incoming connection to it. So the file only (until the UserAPI rework) indicates that such an incoming connection is expected. After the UserAPI rework, such an incoming connection will ***always*** be expected and the userdb file is no longer useful or significant &mdash; it may be removed entirely.
 
-## Staff "Jonkichi" Server Auth (Pending Removal: UserAPI Rework)
+## Removed: DevUserD - the Low-Level Interface and the Crufty Development-Only Option
+
+DevUserD was used for the wiztool login, for low-level access for DGD developers. It also could be used in local development for all authentication, even though it was insecure and finicky. But it didn't need a separate UserDB server.
+
+To use DevUserD as a primary auth method, you'll need to somehow bootstrap your first user into devuserd.c. You can find old code to do this in the Git history of mac_setup.sh and the Linode stackscript. If you roll your own, you'll need to do it for yourself.
+
+To use DevUserD, you'll also want to make sure you do ***not*** have "standalone" in your instance file. And don't include a "skoot/usr/System/data/userdb" file - you have no UserDB. See "UserAPI Modes" for details.
+
+When using DevUserD, DGD does a trivial little md5 hash of your username and password to check if it's correct. MD5 is an old algorithm and this method is quite insecure by now.
+
+When people tell you to use a "code" incantation in the wiztool containing "set_password", this is the method they're setting the password for. That method no longer does anything in ChatTheatre SkotOS, which uses normal user passwords for developers too.
+
+Historically DevUserD has been used for developer login so that login is still possible even if the auth server fails and can't be restarted - having a simple local auth mechanism is a sort of failsafe even if the external auth server goes down. It's clear why that was once desirable, but at this point it has outlived its usefulness: a weird, janky DGD-based method that few people clearly understand is *not* usually going to be more reliable than an external dependency at this point...
+
+## Removed: UserAPI Modes
+
+The SkotOS authentication system had three modes you could configure it in - in the Git history before March of 2021, see skoot/usr/UserAPI/lib/authapi and/or search all of skoot for LOCAL_USERDB for how that's implemented.
+
+These are the three modes:
+
+* LOCAL_USERDB: this is the normal production mode, where an AuthD and CtlD server are used. To use it, add a skoot/usr/System/data/userdb file to tell SkotOS where to find the AuthD and CtlD server.
+
+* LOCAL_THEATRE: this is the DevUserD-only mode described above where no AuthD or CtlD are used. To configure this mode, do not add a userdb file and make sure skoot/usr/System/data/instance contains the word "standalone" on a line by itself.
+
+* LOCAL_LOCAL: I have never gotten this mode working, nor have I spoken with anybody who has claimed to do so. It is a local standalone mode of some description, but it's not clear the code still works. To use this mode, do not add a userdb file and do not include the word "standalone" in your instance file.
+
+## Removed: Staff "Jonkichi" Server Auth
 
 There was an alternate auth system written in Merry, with a lower-level DGD wrapper around it (/usr/Jonkichi/initd.c) which was used for some staff/developer authentication, and in a standalone auth mode that seems to have been nonfunctional as of late 2019.
 
@@ -146,6 +140,8 @@ This used md5 hashing and local WOE storage of user information.
 
 The Jonkichi object is still used for a number of APIs and for general Merry implementations of commands and APIs. But we're attempting to remove the auth API in favour of current non-DGD methods that can use more secure hashing.
 
-## Second Internal Auth Server (Pending Removal: UserAPI Rework)
+## Removed: Second Internal Auth Server
 
 In addition to the (very old) embedded UserDB authentication, there was a much smaller Auth DGD object in /usr/System/sys/authd.c, which seemed to be used only by a "populate" script in Zell's home directory.
+
+This was a tiny self-contained auth object in the style of DevUserD, but less developed.
