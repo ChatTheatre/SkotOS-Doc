@@ -28,4 +28,4 @@ If you update a WOE object, you may want to make the same change via the Tree of
 
 If you update a file that is reloaded every time such as the Orchil HTTP client, you may want to copy it into the generated ".root" directory.
 
-Version 0.1.7 and higher of dgd-manifest have a "dgd-manifest update" command to re-copy files from the app root into the generated root. This will overwrite any changes in the generated root, which may be good or bad depending on your workflow.
+Version 0.1.7 and higher of dgd-manifest have a "dgd-manifest update" command to re-copy files from the app root into the generated root. This will overwrite any changes to files in the generated root, but it won't delete other files that have been added.

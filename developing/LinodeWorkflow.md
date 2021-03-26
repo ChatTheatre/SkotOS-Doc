@@ -4,11 +4,11 @@ When developing SkotOS and SkotOS-based apps/games on a Linode server, there are
 
 ## Installation - "Plain" SkotOS
 
-For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/deploy_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
+For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/deploy_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it. This will give you a runnable-but-not-running DGD server, so you may prefer to use something like [The Gables](https://github.com/ChatTheatre/gables_game) for a more complete batteries-included setup.
 
-You can use the 2GB next-to-smallest Linode size for early development, but you'll want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances. I see MariaDB die from low memory on Nanode-sized instances even with minimal load, so I do not recommend them.
+You can use the 2GB next-to-smallest Linode size for early development, but you may want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances. I see MariaDB die from low memory on Nanode-sized instances even with minimal load, so I do not recommend them.
 
-You'll need to allocate two DNS names - one for the "client" (the actual DGD game and Orchil) and one for "login" (thin-auth.) I recommend doing this as you create the Linode, if possible. DNS propagation can be annoying, so don't create it with a different IP address earlier. If this isn't done correctly then LetsEncrypt Certbot will have trouble creating security certificates for you, which can mean HTTPS doesn't work. That's a serious problem &mdash; a lot of basic operations require HTTPS.
+You'll need to allocate three DNS names - one for the "client" (the actual DGD game and Orchil) and one for "login" (thin-auth) and one for Jitsi, usually called "meet". I recommend doing this as you create the Linode, if possible. DNS propagation can be annoying, so don't create it with a different IP address earlier. If this isn't done correctly then LetsEncrypt Certbot will have trouble creating security certificates for you, which can mean HTTPS doesn't work. That's a serious problem &mdash; a lot of basic operations require HTTPS.
 
 Once your Stackscript has run successfully you can go to the "login" hostname you set up. There should be an administrative user named "skott" with the password you gave when setting up your Linode. You should also be able to SSH in as root or "skotos" to that hostname with any SSH key or password you set up. Note that the SkotOS password (also used for the database and a few other things) need not be the same as any root password you gave Linode.
 
