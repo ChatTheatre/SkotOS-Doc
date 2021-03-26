@@ -39,11 +39,9 @@ One advantage of skotos.dgd is that it can show you all the ports you have open.
 
 If you've used DGD in other situations, you're probably used to there being "a telnet port and a binary port." The telnet port is usually more convenient, and respects terminal niceties like not showing your password when you type it and colour-able output.
 
-In SkotOS, those are ports portbase + 98 (telnet) and portbase + 99 (binary). They work as you're used to in DGD and only allow DGD-style developer users to log in. If you have a UserDB attached, normal UserDB accounts cannot log in through those ports.
+In SkotOS, those are ports portbase + 98 (telnet) and portbase + 99 (binary). They used to have their own user management, but as of March 2021 they should allow login for (only) accounts with the correct access flag via the normal UserDB mechanism (thin-auth in production.)
 
-Neither can your admin user, if you have one.
-
-These ports' connections and users are managed by skoot/usr/System/sys/devuserd.c regardless of your [Local Mode](Local_Mode.md) settings.
+Admin is prevented from logging in via the binary port - it's the only account allowed to login via telnet port, and it can *only* log in via telnet port.
 
 ## TextIF Port
 
@@ -53,9 +51,13 @@ Port pb+443 speaks Alice, and is where the web client normally talks to.
 
 The TextIF port is managed by various programs under skoot/usr/TextIF.
 
+When using Orchil, there's a gateway from websockets to the Alice TextIF port.
+
 ## Webport
 
 This is described as being for HTTP and remote players. pb + 80.
+
+When DGD is serving random web pages, this is the port it usually does that on.
 
 ## Woeport
 
@@ -65,4 +67,6 @@ DGD's port pb+90 is the Woe port, used for this purpose.
 
 ## UserDB - AuthD and CtlD
 
-This seems to allow the DGD server to act as a UserDB. It seems that the old UserDB, replaced by [thin-auth](https://github.com/ChatTheatre/thin-auth), may have been the same codebase as SkotOS? I believe this is now disused.
+DGD expects exactly one incoming connection per port, one each for AuthD (pb + 70) and CtlD (pb + 71).
+
+The UserAPI interface makes requests on those incoming connections to (it hopes) an external UserDB like thin-auth or wafer.

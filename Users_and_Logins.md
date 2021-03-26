@@ -2,20 +2,16 @@
 title: Users and Logins
 ---
 
-SkotOS has many different layers of users and logins, just as it has [many layers]() more generally. And how they work is affected by whether you're working in [local mode](Local_Mode.md)...
+SkotOS handles most user management via [thin-auth](https://github.com/ChatTheatre/thin-auth).
 
-## DevUserD and the Lowest-Level Users
+You can get a full breakdown of the authentication layers, past and present, [here](developing/DevAuthentication.md).
 
-If you've used [DGD](https://ChatTheatre.github.io/lpc-doc) or [eOS](https://ChatTheatre.github.io/eOS-Doc), you're familiar with a low-level, fairly simple system of users, probably involving registering a UserD &mdash; that is, a user-managing object, referred to as a User Daemon.
+## Thin-Auth Users
 
-[SkotOS has one of those](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/System/sys/devuserd.c), but it's normally only used if you're logging in on the lowest-level, most raw interfaces, such as the [Telnet Port or Binary Port](Skotos_Ports.md) (portbase + 98 and portbase + 99, respectively.)
+A thin-auth user can be created as "staff" or "developer". That makes some difference, but the most powerful access is set per-game.
 
-## UserDB and Regular Users
+In your instance file, there's a setting called "access". The value of that setting (e.g. "gables", "jonkichi", "lovecraft") is the name of the game-specific staff setting for each SkotOS game. More specifically, if you set an access flag in SkotOS with that same name ("gables" if the instance file has "gables", etc.) then that user will get wiztool access on that game.
 
-Depending on your [Local Mode](Local_Mode.md) settings, most users would ordinarily log in at a different level than your Dev users. In production mode they are completely separate.
+So the same user can have an account on a single thin-auth instance, but multiple games can use that thin-auth instance and give that user differing levels of access. This was useful for Skotos-the-company's setup with multiple games, but may be more than you need for a single-thin-auth, single-game setup.
 
-## Other Ports and How DGD Handles Users
-
-DGD allows a different object to be assigned management for each port. Some objects, like SkotOS's HTTPD, will further delegate some of that management. As a result, a "user" as referred to in DGD's code may be quite different from what you or I would call a user when we talk to each other.
-
-But keep in mind that authentication and input handling are very different on SkotOS's [various other ports](SkotOS_ports.md).
+The reason you care is this: when you make a new developer user, be sure to give them the correct access flag or they won't be able to do some kinds of building in your game.

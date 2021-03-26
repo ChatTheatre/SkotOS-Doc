@@ -22,16 +22,6 @@ You can use the "compile" command to recompile objects. If you've changed the co
 
 You can also recompile all users of a library with the "upgrade" command. If you "upgrade /lib/string.c" it will recompile /lib/string and update all users of it.
 
-## Changing Local Passwords
-
-The default local setup uses a single authentication method, which is called DevUserD. A full, production SkotOS game has DevUserD for its most privileged developers but users a UserDB (such as thin-auth) for everything else. For local development you don't want to have to manage one of those.
-
-To change local passwords or developer passwords, log in as a developer on the developer telnet port (10098 by default.) The use this command:
-
-    code "/usr/System/sys/devuserd"->set_password("username", "password")
-
-This can create a new user if "username" isn't already a developer. It can also change the password of an existing user. It's not a great idea to leave extremely-privileged accounts on the highly-insecure default passwords.
-
 ## Updating Code and Statedumps
 
 If you restore from a statedump (the skotos.database file), then the code and data comes from that statedump file. If you haven't recompiled your initd after your last changes then it's still not recompiled. Whatever set of users are in devuserd, they're still the same ones after you restore.
@@ -243,4 +233,4 @@ How do you search through the statedump and replace one with another? A good tex
 
 The big challenge is that a statedump is a large binary file, so some editors will choke and die. That's why I use Ruby, and you might do something similar in another language. Make sure after patching that your new statedump is byte-for-byte the exact same size as the old one.
 
-Note that if you have a privileged account from that game, none of this is needed. Once you have that, you can use the "set_password" trick to add a new developer account from your first privileged account.
+Note that if you have a privileged account from that game, none of this is needed. Once you have that, you can use the "set_password" trick to add a new developer account from your first privileged account. Note: current SkotOS doesn't require set_password &mdash; this is specifically needed for older games that have a completely separate set of wiztool-level users not managed by thin-auth.

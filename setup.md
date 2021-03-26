@@ -26,9 +26,9 @@ If you haven't already added your SSH key to GitHub, you'll need to do that. Pop
 
 ## Are You On a Mac?
 
-The SkotOS repo has a setup script called dev_scripts/mac_setup.sh in the repo. Once you clone it, you can run that script to automatically clone the other repos you need next to your SkotOS repo, to build DGD with the right options and to otherwise get you set up.
+The SkotOS repo has a setup script called deploy_scripts/mac_setup/mac_setup.sh in the repo. Once you clone it, you can run that script to automatically clone the other repos you need next to your SkotOS repo, to build DGD with the right options and to otherwise get you set up.
 
-The rest of this page is the manual equivalent of doing the same.
+The rest of this page is the manual equivalent of doing the same. The setup script will always be at least as up-to-date as this page, and usually more up-to-date.
 
 Note that the setup script will liberally install things it needs like Homebrew, Node.js and potentially things like NGinX. If you don't want that software installed, you shouldn't run the script.
 
@@ -61,7 +61,7 @@ cd ${SRCDIR}
 git clone git@github.com:ChatTheatre/SkotOS.git
 cd SkotOS
 git clone git@github.com:ChatTheatre/dgd.git
-git clone git@github.com:ChatTheatre/orchil.git
+git clone git@github.com:ChatTheatre/wafer.git
 git clone git@github.com:ChatTheatre/websocket-to-tcp-tunnel.git
 ```
 
@@ -138,138 +138,21 @@ Leave this running. As soon as this process dies (for instance if you hit Ctrl-C
 
 You'll also need to run an NGinX relay to serve your web files and handle your websockets.
 
-### The Web Client Code
-
-You already checked out orchil, above. We'll be using it. First pop over into that directory and we'll make a profiles.js to use...
-
-```
-cd orchil
-vi profiles.js
-```
-
-Now here's what should be in it:
-
-```
-"use strict";
-// orchil/profiles.js
-var profiles = {
-        "portal_gables":{
-                "method":   "websocket",
-                "protocol": "ws",
-                "server":   "localhost", //"chat.gables.chattheatre.com",
-                "port":      10800,
-                "woe_port":  10802,
-                "path":     "/gables",
-                "extra":    "",
-                "reports":   false,
-                "chars":    true,
-        }
-};
-```
-
-### NGinX on a Mac
-
-Homebrew, by default, will put your NGinX setup in /usr/local/etc/nginx/.
-
-You'll need to create a new file in /usr/local/etc/nginx/servers/skotos_nginx.conf:
-
-```
-# skotos_dev_nginx.conf
-
-# Websocket-based client connection for incoming port 10800, via relay at 10801 to TextIF at 10443
-map $http_upgrade $connection_upgrade {
-    default upgrade;
-        '' close;
-        }
-
-upstream gables {
-    server 127.0.0.1:10801;
-}
-
-server {
-    listen *:10800;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    location /gables {
-      proxy_pass http://gables;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_http_version 1.1;
-      proxy_set_header Upgrade $http_upgrade;
-      proxy_set_header Connection $connection_upgrade;
-    }
-}
-
-server {
-    listen 10900 default;
-
-    root /Users/noah/localsrc/dgd/orchil/;   # Or your own file location
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
-
-You can test your configuration to make sure it's okay:
-
-```
-nginx -t
-```
-
-Now start NGinX:
-
-```
-sudo nginx
-```
-
-Now you should be able to connect. Point your web browser at "http://localhost:10900/gables/gables.htm". You'll be prompted in your browser for a user, a password and a character name. You don't have any of those, so you'll get a bad hash (that is, wrong password) and you'll be disconnected.
-
 ## The Authentication Server
 
-It's possible to set up thin-auth to handle authentication. Realistically, it may be easier to remove than set up... It's heavily hardcoded to run at a specific location on the drive, and seems ***very*** specific to SkotOS' needs.
+Current SkotOS sets up Wafer, an extremely simple and limited authentication server.
 
-Standalone mode seems not to work at all. Local non-standalone seems to work, though!
+Wafer doesn't actually check passwords - it pretends any password is fine. It also doesn't track a lot of normal SkotOS stuff (time played, story points, payments and subscriptions.) See the Linode instructions and/or setup scripts to see how to use thin-auth, an actual authentication server.
+
+Have a look at wafer-users.json. You can copy a user entry here (or rename bobo) to give yourself new users for logging in. If you delete the file it will be re-created with just admin and bobo.
 
 ## How Do I Log In? (Dev/Admin Edition)
 
-SkotOS has a non-standalone mode (a.k.a. LOCAL_LOCAL) which permits developer users to log in directly using the developer credentials. Of course, it has no way that I've found to add these users from outside the running server if you don't already have any of them.
-
-Open up SkotOS/skoot/usr/System/sys/devuserd.c. You're looking for a function called create(). Here's the end of it:
-
-```
-   /* become managers for kernel functionality */
-   USERD->set_telnet_manager(0, this_object());
-   USERD->set_binary_manager(0, this_object());
-
-   user_to_wiztool = ([ ]);
-
-   user_to_hash = ([ ]);
-
-   set_object_name("System:Developers");
-}
-```
-
-We're going to add a couple of lines:
-
-```
-   /* become managers for kernel functionality */
-   USERD->set_telnet_manager(0, this_object());
-   USERD->set_binary_manager(0, this_object());
-
-   user_to_wiztool = ([ ]);
-
-   user_to_hash = ([ ]);
-   user_to_hash["admin"] = to_hex(hash_md5("admin" + "adminpwd"));  /* ADD THIS LINE */
-   user_to_hash["admin"] = to_hex(hash_md5("bobo" + "bobopwd"));  /* ADD THIS LINE */
-
-   set_object_name("System:Developers");
-}
-```
-
-"Admin" is a highly-privileged dev user. And you can pick its password, which above is "adminpassword". The other use can be called anything you want -- I picked "bobo" above, but it doesn't matter.
-
-(You're going to have to restart and do the long reboot again, I'm afraid. If you restart from a statedump then the InitD doesn't get created again. So this only works if you're cold-booting, no skotos.database on the command line.)
+If you're a DGD user or doing [deep SkotOS exploration](./Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
 
 Start DGD, and you now have the ability to log in as bobo (but not admin) on the telnet port. Go ahead and telnet in:
+
+(Note: because of how Wafer works, literally any password will get you in. For this reason, you really do NOT want to expose dev-mode DGD to the internet at large &mdash; the default setup is as bad as a NoSQL server like MongoDB. The Linode setup is much more secure.)
 
 ```
 telnet localhost 10098
@@ -307,24 +190,14 @@ See [Exploring SkotOS](Exploring_SkotOS.md) for more details on things you can d
 
 ## How Do I Log In? (Dev/Web Edition.)
 
-Or you can point your browser at localhost:10900/gables/gables.htm, as you did above. You're going to need to enter a (useless, ignored) username, password and character name... And then you'll get an actual development-user login. You can give the name "admin" and the password you chose ("adminpassword" if you just copied the line in.)
+Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](./woe_workflow.md)).
 
 And now you have a working account on your running server.
 
-Of course, it's asking you to choose a body and you don't have one yet...
+Go ahead and create a body, which will be chosen automatically on later logins.
 
-## How Do I Log In? (Web Edition)
-
-There's a nice login page available: http://localhost:10080/SAM/Prop/Theatre:Web:Theatre/Index
-
-As long as you're in LOCAL_LOCAL mode, as described above, you should be able to log in with your dev credentials for this login as well!
-
-And that will take you to a Theatre area where you can create a character! When you hit the "play" link, after you have a character, it will take you to the web login above.
-
-You'll have to enter your username and password on the web console. But once you do, you should see rooms and things. Commands should work. You're in something that bears a more-than-passing resemblance... to a game.
+While you can only log in with users you've created in Wafer, literally any password will work. That's one of many reasons we don't use Wafer in production.
 
 ## But How Do I Make Objects?
 
-There's an excellent builder interface... that doesn't work yet. It's called the Tree of Woe. Future project: get it working.
-
-I see circumstancial evidence that the old Java client, called Zealotry, might work. But I haven't been able to verify that.
+Log into the Tree of WOE and look around. You can create and edit [in-game objects](./woe_workflow.md) here.

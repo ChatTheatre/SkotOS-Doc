@@ -161,17 +161,14 @@ There's a LOT of stuff under `/var/skotos/XX00`. The best way to search for some
 
 Each of the games has a "wiztool" port at XX98, which can be used to access a few low-level functions. You should *almost never* use this functionality, and you should be aware that you have the opportunity to totally cock up the game from here.
 
-Access to the port is a two-step process.
-
-1. Add the user to "System:Developers" in the Tree of WOE
-2. Have someone with current admin-port permissions log in to the admin port and run `"code "~System/sys/devuserd"->set_password("name", "pass")`, where the `name` is their account name and the `pass` is a special password for admin port access.
+For wiztool access, make sure your user has the correct access flag (e.g. "gables") set up in thin-auth.
 
 Afterward, you can login with:
 `telnet game-URL XX98`, for example `telnet game.lovecraftcountry.com 3098`.
 
 **Don't do this unless you have a specific need and know what you're doing.**
 
-### Recompliling Code
+### Recompiling Code
 
 If you ever need to make a change to the DGD/LPC code, this is how you do it! YOu edit the file, and then you log in to the admin port and run `compile /path/name/under/skoot`
 

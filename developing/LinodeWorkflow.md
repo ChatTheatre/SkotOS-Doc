@@ -2,11 +2,9 @@
 
 When developing SkotOS and SkotOS-based apps/games on a Linode server, there are particular operations you'll want to accomplish. You may also want to know just how the server was installed.
 
-NOTE: these notes currently assume the RWOT-related changes from mid-February of 2021 have been merged.
-
 ## Installation - "Plain" SkotOS
 
-For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/dev_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
+For basic SkotOS Linode, you can use the Linode Stackscript found in SkotOS/deploy_scripts/linode_stackscript.sh. Copy it into a StackScript in your account, then launch a new Linode based on it.
 
 You can use the 2GB next-to-smallest Linode size for early development, but you'll want a size bigger before long &mdash; or even larger, depending on your number of users or workload. DGD isn't all that memory- or CPU-hungry, but these are very small instances. I see MariaDB die from low memory on Nanode-sized instances even with minimal load, so I do not recommend them.
 
@@ -30,7 +28,7 @@ Once your Stackscript has run successfully you can go to the "login" hostname yo
 
 ## Debugging
 
-You can see quite a few of the logfiles in realtime if you run /var/skotos/dev_scripts/stackscript/show_all_logs.sh. This shows the DGD logfile, websocket tunnel logs and auth server logs.
+You can see quite a few of the logfiles in realtime if you run /var/skotos/deploy_scripts/stackscript/show_all_logs.sh. This shows the DGD logfile, websocket tunnel logs and auth server logs.
 
 For more granularity about what goes where, keep reading.
 
@@ -96,18 +94,6 @@ If you go to your FQDN login URL, you should see a login interface. The username
 
 After you log in as Skott, if you hit "play" it should take you to a character creation interface. Note that after creating your character you may need to go back to the login URL and go through again if you're not using a manifest-based app &mdash; there's some difficulty with https and SkotOS right now which can cause bad redirects.
 
-### Important Security Warning: devuserd Auth and Plaintext Password
-
-***YOUR USER PASSWORD WILL EXIST IN PLAINTEXT INSIDE YOUR DGD DIRECTORY AFTER INSTALLATION!***
-
-(Fixing is as simple as logging in and typing "cd /var/skotos; git checkout skoot/usr/System/sys/devuserd.c". But if you fix it and then delete your DGD statedump file, you may have trouble logging into the telnet port afterward.)
-
-You'll really want to fix this. Once you have successfully dumped the DGD state and the file /var/skotos/skotos.database exists, you can "git checkout" the file /var/skotos/skoot/usr/System/sys/devuserd.c to remove the password again. The password will successfully exist inside DGD's memory and inside skotos.database. Then it will no longer be required in the DGD source file.
-
-However, patching it into that source file is how it gets ***into*** skotos.database in the first place.
-
-Later you can create DGD admin characters from your first admin character, using the "code" command. So they'll never need to have passwords in a source file. It's only that first character where we use that hack.
-
 ## Email and Setting Up Accounts
 
 By default, your Linode isn't allowed to send email. You'll need to file a customer service ticket with Linode if you want that to work. Here's how you can set up accounts without email:
@@ -123,9 +109,7 @@ If you want to do it automatically, there is a table called "email_ping" in data
 The "skott" account is okay, but you'll want others over time &mdash; especially if there are other developers or staff members. Here are the steps to adding new users:
 
 * Have them create a new account through the normal login URL
-* In thin-auth, you can set their account_type to "developer"
-* In the Tree of WOE, add their name to the System:Developers list
-* Log into the telnet port (10098) as an admin and set their telnet-port password: `code "~System/sys/devuserd"->set_developer("name")` and then `code "~System/sys/devuserd"->set_password("name", "pass")`
+* In thin-auth, you can set their account_type to "developer" - also add the appropriate access flag (usually "gables")
 
 ## Building
 
