@@ -4,15 +4,32 @@ SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If yo
 
 But if you want to ***build*** a SkotOS-based game, this is a good place to start.
 
-SkotOS runs primarily in a dynamic game-development language called [DGD](http://www.dworkin.nl/dgd/). There are also miscellaneous scripts and tools in other languages, such as the Node.js-based websocket relay.
+SkotOS runs primarily in a dynamic game-development language called [DGD](http://www.dworkin.nl/dgd/). There are also miscellaneous scripts and tools in other languages including Node.js and PHP &mdash but the game is mostly in DGD, while other tools are in appropriate other languages.
 
-* [Setting up to build on SkotOS (local)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
-* [Exploring SkotOS](./Exploring_SkotOS.md)
-* [SkotOS WOE Objects and Workflow](./woe_workflow.md)
+SkotOS is a game-building library, not a game. [The Gables](https://github.com/ChatTheatre/gables_game) is an example (tiny) game built on SkotOS. It's a great place to start from as you use this documentation.
+
+## Looking Around?
+
+What's a SkotOS game like? Why would you want to build or run one? [Why would a ***text game*** be worth running for twenty years?](Basics/Why_Text.md)
+
+* [Logging into The Gables](Basics/Prod_Gables.md) - a basic SkotOS game you don't need to run for yourself
+* [Basic SkotOS commands](Basics/Commands.md)
+
+## Ready to Build?
+
+Here's a variety of developer documentation to show you the architecture, setup and concepts behind a SkotOS game. It's aimed at showing you the ropes as you build your game initially. You're also going to need to dive into the code
+
+* [Setting up to build on SkotOS (local Mac)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
 * [SkotOS Architecture](./architecture.md)
-* [SkotOS Builder Docs](./from_builders/)
+* [SkotOS WOE Objects and Workflow](./woe_workflow.md)
+* [Exploring SkotOS](./Exploring_SkotOS.md)
+* [SkotOS Builder Docs](./from_builders/) &mdash; including MERRY and SAM docs
 
-Using SkotOS
+## Maintaining a SkotOS Game?
+
+Most of this is documentation from commercial SkotOS games, including the ones still running. If this is written as though you have a staff and various levels of people working on the game... That's why.
+
+For the same reason, this can show you what a successful game could expand to if all goes well. MUDs have historically needed a bit more hierarchy and management than you'd expect because they're normally run by volunteers, not by a small number of paid, dedicated employees. That means it's important to give out privileges carefully, and to know who does what.
 
 * [Maintenance](./Maintenance.md)
 * [Authentication](./Authentication.md)
