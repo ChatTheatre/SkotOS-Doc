@@ -18,11 +18,11 @@ For SkotOS-based games you should check their README to see how to install them.
 
 ## Local Setup (Plain SkotOS, Mac-Only)
 
-From your SkotOS install you can install "just plain SkotOS" by running deploy_scripts/mac_setup/mac_setup.sh.
+From your SkotOS install you can install "just plain SkotOS" by running deploy_scripts/mac_setup/mac_setup.sh. But the intention is that you should switch to a SkotOS-based game like [The Gables](https://github.com/ChatTheatre/gables_game) as soon as you reasonably can.
 
-On a Mac, the setup script will mostly install its own required software. You can also read through the script and do it for yourself if you'd like.
+The rest of this page is the manual equivalent of the script. The setup script will always be at least as up-to-date as this page, and usually more up-to-date.
 
-There's a requirement you'll need to do for yourself (see below) but most developers have already done it.
+There's a requirement you'll need to do for yourself (see SSH keys below) but most developers have already done it.
 
 ### Requirement for Local Setup: SSH Key Registered With GitHub
 
@@ -43,19 +43,17 @@ If you have no SSH key registered with GitHub, the setup script is going to fail
 
 Once you have SkotOS installed and running, what's next? The Mac setup script should start a DGD server and websocket relays so that you can play. It should show a terminal window with DGD's logfile. And after a lengthy first compile, it should open a browser window so you can create a character and play.
 
-(Default username: bobo, default password: bobopwd; these are not secure, obviously, and you shouldn't open your DGD ports to the Internet.)
+You should be able to click the "Play" link to create a character and play, or the "Tree of WOE" link to go to an object building interface.
 
-How does this work? I'll cover the very basics here and you can find far more documentation throughout this web site.
+### Local Workflow: The Game
 
-### Local Workflow: Looking Around
-
-In that browser window you can create a body, hit "Play," give your name and password and body selection and look around. Type "exits" to see how you can leave a particular room. You can "go north", abbreviated to just "north", to move around. If you see a locked door, you can "+unlock front door" or similar - the "plus" in front of the command is because it's an out-of-character command and those command names start with punctuation. In this case it's a builder command to unlock the door even though you don't have the key.
+Once you're into the game, you can use text commands. Type "exits" to see how you can leave a particular room. You can "go north", abbreviated to just "north", to move around. If you see a locked door, you can "+unlock front door" or similar - the "plus" in front of the command is because it's an out-of-character command and those command names start with punctuation. In this case it's a builder command to unlock the door even though you don't have the key.
 
 ### Local Workflow: Messing with Objects
 
-The most common changes you'll want to make are to [WOE Objects](./woe_workflow.md), via an editing interface called the Tree of WOE (by default: http://localhost:10080/gables/TreeOfWoe.html). Look under "Theatre:Theatres", for instance, and you'll find some top-level setup for whatever game you're currently looking at.
+The most common changes you'll want to make are to [WOE Objects](./woe_workflow.md), via an editing interface called the Tree of WOE. Look under "Theatre:Theatres", for instance, and you'll find some top-level setup for whatever game you're currently looking at.
 
-WOE objects update immediately. As soon as you edit them in the Tree of WOE they change in the game.
+WOE objects update immediately. As soon as you edit them in the Tree of WOE they change in the game. You don't have to reload them from source files - and editing in the Tree of WOE won't change source files.
 
 ### Local Workflow: Low-Level Development, The Wiztool and Updating Objects
 
@@ -64,6 +62,7 @@ Underneath the browser interface and gameplay commands are some lower-level inte
 This is called the ["wiztool"](./SkotOS_Wiztool.md) interface for weird historical reasons, both for SkotOS and for DGD in general.
 
 If you change a .c or .h file inside SkotOS then you'll need to update it by this interface (or delete skotos.database and do a full restart.)
+
 
 ### Local Workflow: WOE, the Statedump and Updates
 
@@ -112,6 +111,10 @@ cd ${SRCDIR}
 git clone git@github.com:ChatTheatre/SkotOS.git
 cd SkotOS
 git clone git@github.com:ChatTheatre/dgd.git
+<<<<<<< HEAD
+git clone git@github.com:ChatTheatre/wafer.git
+=======
+>>>>>>> master
 git clone git@github.com:ChatTheatre/websocket-to-tcp-tunnel.git
 ```
 
@@ -188,47 +191,21 @@ Leave this running. As soon as this process dies (for instance if you hit Ctrl-C
 
 You'll also need to run an NGinX relay to serve your web files and handle your websockets.
 
+## The Authentication Server
+
+Current SkotOS sets up Wafer, an extremely simple and limited authentication server.
+
+Wafer doesn't actually check passwords - it pretends any password is fine. It also doesn't track a lot of normal SkotOS stuff (time played, story points, payments and subscriptions.) See the Linode instructions and/or setup scripts to see how to use thin-auth, an actual authentication server.
+
+Have a look at wafer-users.json. You can copy a user entry here (or rename bobo) to give yourself new users for logging in. If you delete the file it will be re-created with just admin and bobo.
+
 ## How Do I Log In? (Dev/Admin Edition)
 
-SkotOS has a non-standalone mode (a.k.a. LOCAL_LOCAL) which permits developer users to log in directly using the developer credentials. Of course, it has no way that I've found to add these users from outside the running server if you don't already have any of them.
-
-Open up SkotOS/skoot/usr/System/sys/devuserd.c. You're looking for a function called create(). Here's the end of it:
-
-```
-   /* become managers for kernel functionality */
-   USERD->set_telnet_manager(0, this_object());
-   USERD->set_binary_manager(0, this_object());
-
-   user_to_wiztool = ([ ]);
-
-   user_to_hash = ([ ]);
-
-   set_object_name("System:Developers");
-}
-```
-
-We're going to add a couple of lines:
-
-```
-   /* become managers for kernel functionality */
-   USERD->set_telnet_manager(0, this_object());
-   USERD->set_binary_manager(0, this_object());
-
-   user_to_wiztool = ([ ]);
-
-   user_to_hash = ([ ]);
-   user_to_hash["admin"] = to_hex(hash_md5("admin" + "adminpwd"));  /* ADD THIS LINE */
-   user_to_hash["admin"] = to_hex(hash_md5("bobo" + "bobopwd"));  /* ADD THIS LINE */
-
-   set_object_name("System:Developers");
-}
-```
-
-"Admin" is a highly-privileged dev user. And you can pick its password, which above is "adminpassword". The other use can be called anything you want -- I picked "bobo" above, but it doesn't matter.
-
-(You're going to have to restart and do the long reboot again, I'm afraid. If you restart from a statedump then the InitD doesn't get created again. So this only works if you're cold-booting, no skotos.database on the command line.)
+If you're a DGD user or doing [deep SkotOS exploration](./Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
 
 Start DGD, and you now have the ability to log in as bobo (but not admin) on the telnet port. Go ahead and telnet in:
+
+(Note: because of how Wafer works, literally any password will get you in. For this reason, you really do NOT want to expose dev-mode DGD to the internet at large &mdash; the default setup is as bad as a NoSQL server like MongoDB. The Linode setup is much more secure.)
 
 ```
 telnet localhost 10098
@@ -263,3 +240,13 @@ $0 = 10
 Note that this is raw DGD code, not anything sandboxed like Merry. You can do some real damage here if you feel like. This is also how you rebuild programs (objects) after you change their code, and a way you can add other development users or change your password if you're so inclined.
 
 See [Exploring SkotOS](Exploring_SkotOS.md) for more details on things you can do from here.
+
+## How Do I Log In? (Dev/Web Edition.)
+
+Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](./woe_workflow.md)).
+
+And now you have a working account on your running server.
+
+Go ahead and create a body, which will be chosen automatically on later logins.
+
+While you can only log in with users you've created in Wafer, literally any password will work. That's one of many reasons we don't use Wafer in production.

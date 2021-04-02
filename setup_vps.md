@@ -30,7 +30,23 @@ Copy your chosen stackscript, such as [the one for The Gables](https://github.co
 
 (NOTE: non-Linode installs aren't supported or documented, but shouldn't be too hard - the StackScript is basically just a shellscript that expects to be run as root with some environment variables already set.)
 
-You'll want to use a Debian Buster image and a Linode 2048 or larger. The SkotOS production deployment relies on MariaDB, which doesn't run happily on any instance smaller than that. It's highly recommended to set a Linode SSH key for root login rather than a password.
+You'll want to use a Debian 10 (Buster) image and a Linode 2048 or larger. The SkotOS production deployment relies on MariaDB, which doesn't run happily on any instance smaller than that. It's highly recommended to set a Linode SSH key for root login rather than a password.
+
+## Installing SkotOS
+
+You'll want to start from a SkotOS game, which installs based on the SkotOS repo. The simplest is [The Gables](https://github.com/ChatTheatre/gables_game), though you could use another if you have one in mind.
+
+You can find [the Linode stackscript](https://github.com/ChatTheatre/gables_game/blob/master/app_stackscript.sh) in the game repo. Copy it into a new StackScript in your Linode account. You'll need to set up a subdomain for your game with three hostnames (see below.)
+
+Create a new Linode, of at least "Linode 2048" size, from that StackScript based on Debian 10 (Buster.) After hitting "create" you should copy the new IP address and create three new hostnames on the subdomain:
+
+* gables.&lt;subdomain&gt;
+* gables-login.&lt;subdomain&gt;
+* meet.&lt;subdomain&gt;
+
+Now you can ssh in as root using the SSH key you set up in Linode and run "tail -f game_standup.log". With luck everything will finish correctly without error. If it does, it will create an empty file in the root directory called game_stackscript_finished_successfully.txt.
+
+Just because everything has installed successfully doesn't mean that DGD is finished booting. It's going to take 5-10 minutes to compile everything when you first start it up (or any time you delete its statedump and restart), and it will give errors in the mean time. You can watch the file /var/log/dgd/server.out to see its progress.
 
 ## DNS and the StackScript
 
@@ -78,4 +94,3 @@ The hardest part to get a feel for is the way a DGD server has files on disk tha
 * Logfile consolidation and rotation
 * Regular backups of /var/skotos/SkotOS/skotos.database
 * Make the DUMP_INTERVAL in usr/System/initd.c something reasonable like 7200 again
-* Thin-auth

@@ -15,7 +15,7 @@ To use Thin-Auth, you'll normally need at least these components:
 
 ### thin-auth
 
-While the [GitHub Readme](https://github.com/ChatTheatre/thin-auth) is pretty good, [you can also see a Linode Stackscript that configures thin-auth](https://github.com/ChatTheatre/SkotOS/blob/master/dev_scripts/stackscript/linode_stackscript.sh) if you like.
+While the [GitHub Readme](https://github.com/ChatTheatre/thin-auth) is pretty good, [you can also see a Linode Stackscript that configures thin-auth](https://github.com/ChatTheatre/SkotOS/blob/master/deploy_scripts/stackscript/linode_stackscript.sh) if you like.
 
 Thin-auth is a fairly ordinary PHP application running on top MariaDB. Most of its configuration difficulty is because it has a lot of moving pieces and/or because it wants specific things (like files) to be in specific places.
 
