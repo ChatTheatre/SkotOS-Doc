@@ -36,8 +36,8 @@ This can show you what a successful game could expand to if all goes well. MUDs 
 
 * [Maintenance](./Maintenance.md)
 * [Authentication](./Authentication.md)
-* [SkotOS Wiztool](./SkotOS_Wiztool.md)
-* [Staff_Plus_Commands](./Staff_Plus_Commands.md)
+* [SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
+* [Staff_Plus_Commands](Story_Builder/Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
 
 ## Copyright & Status

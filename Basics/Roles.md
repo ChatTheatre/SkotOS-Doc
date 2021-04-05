@@ -52,7 +52,7 @@ An "administrator" was often a catch-all category in older MUDs which meant staf
 
 Anybody in this category can use all the commands mentioned earlier, and the Story Builder tools for editing WOE objects.
 
-In addition, they can use [the SkotOS Wiztool](../SkotOS_Wiztool.md). There are internal permissions at the DGD level of SkotOS, which are complicated. But mostly SkotOS doesn't try to micromanage who gets what DGD permissions. Mostly a user has Wiztool access or they don't.
+In addition, they can use [the SkotOS Wiztool](../Developer/SkotOS_Wiztool.md). There are internal permissions at the DGD level of SkotOS, which are complicated. But mostly SkotOS doesn't try to micromanage who gets what DGD permissions. Mostly a user has Wiztool access or they don't.
 
 ## Unix/MacOS Permissions
 

@@ -1,6 +1,6 @@
 # Commands for Developers
 
-Are you a software developer and you're looking for more details? There are several different ways commands are implemented. For the high-level overview, you can also [read the basic description of commands](../Basic/Commands.md).
+Are you a software developer and you're looking for more details? There are several different ways commands are implemented. For the high-level overview, you can also [read the basic description of commands](../Basics/Commands.md).
 
 A bit of vocabulary:
 

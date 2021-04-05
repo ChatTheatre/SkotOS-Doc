@@ -59,7 +59,7 @@ WOE objects update immediately. As soon as you edit them in the Tree of WOE they
 
 Underneath the browser interface and gameplay commands are some lower-level interfaces. You can "telnet localhost 10098" and log in with the "bobo" account and you'll get to a cryptic, difficult, "you can do anything that's possible but nothing is easy"-type interface. Type "cd /" and "ls" to verify to yourself that commands exist, and then "quit" to get out of there.
 
-This is called the ["wiztool"](./SkotOS_Wiztool.md) interface for weird historical reasons, both for SkotOS and for DGD in general.
+This is called the ["wiztool"](Developer/SkotOS_Wiztool.md) interface for weird historical reasons, both for SkotOS and for DGD in general.
 
 If you change a .c or .h file inside SkotOS then you'll need to update it by this interface (or delete skotos.database and do a full restart.)
 
@@ -122,7 +122,7 @@ git clone git@github.com:ChatTheatre/websocket-to-tcp-tunnel.git
 
 SkotOS needs a modified build of DGD. It uses more sectors (memory and disk space) than unmodified DGD will accept. We would also like to support more than 255 simultaneous users, which also requires modification. DGD has compile options to fix this, but you'll need to use them. Similarly, DGD only allows outgoing network connections if they have been requested during compilation.
 
-[Here's more about that](./building_dgd_for_skotos.md).
+[Here's more about that](Developer/building_dgd_for_skotos.md).
 
 ### Doing it Manually: Running Locally
 
