@@ -6,7 +6,7 @@ layout: default
 When you first get started, you'll want to set up a SkotOS server locally on your Mac computer, and/or possibly on a networked server.
 
 * [Installing SkotOS on a Production VPS Server](setup_vps.md)
-* [Linode Development Workflow](./developing/LinodeWorkflow.md)
+* [Linode Development Workflow](./Developer/LinodeWorkflow.md)
 
 See also: [Exploring SkotOS](./Exploring_SkotOS.md)
 

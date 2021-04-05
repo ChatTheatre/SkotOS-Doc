@@ -83,4 +83,4 @@ Storyguides get commands with a ! in front ("guide commands.") Storyhosts, "hono
 
 ## Commands for Developers
 
-You can [also read about how commands are implemented in SkotOS](../developing/CommandsForDevelopers.md). As befits a text game of long standing, it's a complicated system that has tried a lot of different approaches.
+You can [also read about how commands are implemented in SkotOS](../Developer/CommandsForDevelopers.md). As befits a text game of long standing, it's a complicated system that has tried a lot of different approaches.

@@ -4,7 +4,7 @@ title: Users and Logins
 
 SkotOS handles most user management via [thin-auth](https://github.com/ChatTheatre/thin-auth).
 
-You can get a full breakdown of the authentication layers, past and present, [here](developing/DevAuthentication.md).
+You can get a full breakdown of the authentication layers, past and present, [here](Developer/DevAuthentication.md).
 
 ## Thin-Auth Users
 

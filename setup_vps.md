@@ -5,7 +5,7 @@ layout: default
 
 This document is about how to set up a server with SkotOS for development. You may also want to look at these pages:
 
-* [Workflow with a SkotOS VPS Server](./developing/LinodeWorkflow.md)
+* [Workflow with a SkotOS VPS Server](./Developer/LinodeWorkflow.md)
 * [SkotOS for local development](./setup.md)
 * [Exploring SkotOS](./Exploring_SkotOS.md)
 
@@ -85,7 +85,7 @@ The Skott account can be used to log in and look around - it also has admin priv
 
 You've probably been doing [local development](./setup.md) already so you know the basics.
 
-Make sure to read up on [VPS workflow](./developing/LinodeWorkflow.md) and [using DGD Manifests](./developing/ManifestsAndLinode.md).
+Make sure to read up on [VPS workflow](./Developer/LinodeWorkflow.md) and [using DGD Manifests](./Developer/ManifestsAndLinode.md).
 
 The hardest part to get a feel for is the way a DGD server has files on disk that it loads from, objects in memory and the statedump file. By reading the various "workflow" documents you can learn how to handle this unfamiliar-to-most-people programming model.
 
