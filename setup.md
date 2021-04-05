@@ -6,9 +6,9 @@ layout: default
 When you first get started, you'll want to set up a SkotOS server locally on your Mac computer, and/or possibly on a networked server.
 
 * [Installing SkotOS on a Production VPS Server](setup_vps.md)
-* [Linode Development Workflow](./Developer/LinodeWorkflow.md)
+* [Linode Development Workflow](Developer/LinodeWorkflow.md)
 
-See also: [Exploring SkotOS](./Exploring_SkotOS.md)
+See also: [Exploring SkotOS](Developer/Exploring_SkotOS.md)
 
 ## Plain SkotOS vs SkotOS Games
 
@@ -76,7 +76,7 @@ To save them out to files you log into the wiztool interface and type:
 
 WOE objects are loaded from the skoot/data/vault directory for plain SkotOS, or from data/vault under your root directory (whatever it's called) for different SkotOS-based games. They're saved back to the same place. Long-term you probably want to keep that under a Git repository so you can dump and update the WOE objects regularly. You don't want to lose your changes!
 
-You can learn more about all this in [Exploring SkotOS](./Exploring_SkotOS.md).
+You can learn more about all this in [Exploring SkotOS](Developer/Exploring_SkotOS.md).
 
 ## Installing Manually
 
@@ -201,7 +201,7 @@ Have a look at wafer-users.json. You can copy a user entry here (or rename bobo)
 
 ## How Do I Log In? (Dev/Admin Edition)
 
-If you're a DGD user or doing [deep SkotOS exploration](./Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
+If you're a DGD user or doing [deep SkotOS exploration](Developer/Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
 
 Start DGD, and you now have the ability to log in as bobo (but not admin) on the telnet port. Go ahead and telnet in:
 
@@ -239,7 +239,7 @@ $0 = 10
 
 Note that this is raw DGD code, not anything sandboxed like Merry. You can do some real damage here if you feel like. This is also how you rebuild programs (objects) after you change their code, and a way you can add other development users or change your password if you're so inclined.
 
-See [Exploring SkotOS](Exploring_SkotOS.md) for more details on things you can do from here.
+See [Exploring SkotOS](Developer/Exploring_SkotOS.md) for more details on things you can do from here.
 
 ## How Do I Log In? (Dev/Web Edition.)
 
