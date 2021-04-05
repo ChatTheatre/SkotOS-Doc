@@ -34,7 +34,7 @@ Story Guides are a step above that. They have a class of verbs that start with !
 
 A Story Host or Story Builder can create or edit [in-game objects](../woe_workflow.md) and commands, making them significantly more capable than Story Guides.
 
-This means they need more tools - not only commands that start with a +, but also the Tree of WOE, an editing interface to change and create in-game objects. SkotOS builds game content mostly in [SAM and MERRY](../from_builders/LanguageExplanation.md), in-game dynamic languages.
+This means they need more tools - not only commands that start with a +, but also the Tree of WOE, an editing interface to change and create in-game objects. SkotOS builds game content mostly in [SAM and MERRY](../Story_Builder/LanguageExplanation.md), in-game dynamic languages.
 
 There's a lot of [documentation for Story Builders](../Story_Builder/) that will be important if you take this role.
 
