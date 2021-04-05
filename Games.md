@@ -6,17 +6,18 @@ Some of them have left fragments of code scattered about, while others have not.
 
 ## Current SkotOS Games
 
-* [Castle Marrach](https://www.marrach.com/)
-* [The Eternal City](https://www.eternalcitygame.com/) - was this one based on SkotOS
-* [Allegory of Empires](https://allegoryofempires.com/)
+* [Castle Marrach](https://www.marrach.com/) - CM is, and basically always has been, the largest SkotOS-based game
+* [The Eternal City](https://www.eternalcitygame.com/) - was this one based on SkotOS?
+* [Allegory of Empires](https://allegoryofempires.com/) - a rebuild of Ironclaw Online due to loss of the IP license
 * [Multiverse; Revelations](https://home.multirev.net/)
 
 [The Gables](https://gables.chattheatre.com) is more of a stage than a game, but it's SkotOS-based and live.
 
 ## Inoperative Games
 
+* [Lovecraft](http://www.lovecraftcountry.com/comic/) [Country](https://www.skotos.net/about/pr/06292005.html), which included "Arkham By Night" and a smaller stage called The Oasis; this clearly had a usable beta release and a lot of usable code; it went through multiple dev teams and was, for awhile, the #2 largest SkotOS game.
 * [Grendel's Revenge](https://www.skotos.net/about/pr/06122002.html)
-* [Ironclaw Online,](https://www.skotos.net/about/pr/Nov28_2000.html)
+* [Ironclaw Online,](https://www.skotos.net/about/pr/Nov28_2000.html) - this was based on the [Ironclaw anthropomorphic RPG](https://www.drivethrurpg.com/browse/pub/793/Sanguine-Productions/subcategory/3844_26150/Ironclaw)
 * [The Lazarus](https://www.lazarus-project.net/) [Project](https://www.skotos.net/about/pr/01032007a.html)
 * [Galactic Emperor: Succession](http://www.skotos.net/games/succession.html) - is this the same game as Hegemony? Or a smaller stage of it?
 
@@ -34,7 +35,6 @@ There have been [various small stages](https://www.skotos.net/articles/TTnT_47.s
 
 Other fragmentary, unfinished or not-well-documented parts include:
 
-* [Lovecraft](http://www.lovecraftcountry.com/comic/) [Country](https://www.skotos.net/about/pr/06292005.html), which included "Arkham By Night" and a smaller stage called The Oasis; this clearly had a usable beta release and a lot of usable code
 * The Skoot On Inn was a small test stage that seems to have existed in several revisions, and seems also to have been called The Tavern and possibly The Hearth
 * Headquarters isn't a separate game, but a staff-only area that exists inside several games
 * The Mansion, a.k.a. The Gables has existed in several revisions, including the currently-live one
