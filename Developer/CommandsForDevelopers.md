@@ -21,7 +21,7 @@ Note that commands can be, and often are, embedded at any of these levels.
 
 ## Deep Down in DGD
 
-A few commands are implemented all the way down in the wire protocol. For instance, [that's how deep the understanding that "n" means "go north" is](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/obj/user.c#L793). You can change them, but only down in the deepest layers of the game, far below the [WOE objects](../woe_workflow.md). Similarly, the idea that punctuation commands are only available to specific types of users? [It's that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L165).
+A few commands are implemented all the way down in the wire protocol. For instance, [that's how deep the understanding that "n" means "go north" is](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/obj/user.c#L793). You can change them, but only down in the deepest layers of the game, far below the [WOE objects](../Story_Builder/woe_workflow.md). Similarly, the idea that punctuation commands are only available to specific types of users? [It's that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L165).
 
 There are also a few random @-verbs like "@profile", "@help", "@tip" and "@page" that are [randomly buried that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L262). But most verbs are implemented in [MERRY, a SkotOS built-in game language](../Story_Builder/LanguageExplanation.md) which is a sub-dialect of DGD's LPC language.
 

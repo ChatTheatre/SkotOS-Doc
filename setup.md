@@ -51,7 +51,7 @@ Once you're into the game, you can use text commands. Type "exits" to see how yo
 
 ### Local Workflow: Messing with Objects
 
-The most common changes you'll want to make are to [WOE Objects](./woe_workflow.md), via an editing interface called the Tree of WOE. Look under "Theatre:Theatres", for instance, and you'll find some top-level setup for whatever game you're currently looking at.
+The most common changes you'll want to make are to [WOE Objects](Story_Builder/woe_workflow.md), via an editing interface called the Tree of WOE. Look under "Theatre:Theatres", for instance, and you'll find some top-level setup for whatever game you're currently looking at.
 
 WOE objects update immediately. As soon as you edit them in the Tree of WOE they change in the game. You don't have to reload them from source files - and editing in the Tree of WOE won't change source files.
 
@@ -243,7 +243,7 @@ See [Exploring SkotOS](Developer/Exploring_SkotOS.md) for more details on things
 
 ## How Do I Log In? (Dev/Web Edition.)
 
-Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](./woe_workflow.md)).
+Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](Story_Builder/woe_workflow.md)).
 
 And now you have a working account on your running server.
 

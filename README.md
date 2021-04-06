@@ -22,7 +22,7 @@ Here's a variety of developer documentation to show you the architecture, setup 
 
 * [Setting up to build on SkotOS (local Mac)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
 * [SkotOS Architecture](./architecture.md)
-* [SkotOS WOE Objects and Workflow](./woe_workflow.md)
+* [SkotOS WOE Objects and Workflow](Story_Builder/woe_workflow.md)
 * [Exploring SkotOS](./Developer/Exploring_SkotOS.md)
 * [SkotOS Builder Docs](./Story_Builder/) &mdash; including MERRY and SAM docs
 
