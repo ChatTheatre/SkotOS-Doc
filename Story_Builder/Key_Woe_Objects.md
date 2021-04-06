@@ -1,8 +1,5 @@
 # Key Woe Objects
 
-[![hackmd-github-sync-badge](https://hackmd.io/0__e-1maSYuHiJdJ0drVig/badge)](https://hackmd.io/0__e-1maSYuHiJdJ0drVig)
-
-
 # Base:Thing
 
 This is a special "clonable" root object for SkotOS. 
@@ -264,4 +261,4 @@ A shared folder that holds useful functions. It is assigned to the ***general***
     * A script that takes an account type and udat and returns the number of character slots the account is allowed to have.
 * **merry:lib:mothballandsortroster**
     * A support script for **merry:act-post:login%account_check**. Takes an account's roster and turns it into a sorted list (active vs frozen characters).
-    
+
