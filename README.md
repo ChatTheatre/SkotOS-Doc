@@ -1,6 +1,6 @@
-# SkotOS-Doc
+# SkotOS Documentation
 
-SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [The Eternal City](https://www.eternalcitygame.com/), [https://allegoryofempires.com/](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
+SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [The Eternal City](https://www.eternalcitygame.com/), [Allegory of Empires](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
 
 But if you want to ***build*** a SkotOS-based game, this is a good place to start.
 
