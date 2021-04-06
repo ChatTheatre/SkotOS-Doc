@@ -54,7 +54,7 @@ One oddity of a persistent server is that it may not be possible to add a persis
 
 ## Saving and Loading WOE Objects
 
-One way to save and load WOE objects is the Vault Tool. You can read about using it to save whole namespaces of WOE objects, or load them, or delete them [in the article on Exploring SkotOS](Developer/Exploring_SkotOS.md#dumping-lpc-objects-on-the-gables).
+One way to save and load WOE objects is the Vault Tool. You can read about using it to save whole namespaces of WOE objects, or load them, or delete them [in the article on Exploring SkotOS](../Developer/Exploring_SkotOS.md#dumping-lpc-objects-on-the-gables).
 
 The vault tool gives a straightforward way to turn WOE objects into directories of files, and to load directories of files back into memory as WOE objects.
 
