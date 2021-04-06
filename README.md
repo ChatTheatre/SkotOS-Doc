@@ -21,7 +21,7 @@ What's a SkotOS game like? Why would you want to build or run one? [Why would a 
 Here's a variety of developer documentation to show you the architecture, setup and concepts behind a SkotOS game. It's aimed at showing you the ropes as you build your game initially. You're also going to need to dive into the code.
 
 * [Setting up to build on SkotOS (local Mac)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
-* [SkotOS Architecture](./architecture.md)
+* [SkotOS Architecture Quick Overview](./architecture.md)
 * [SkotOS WOE Objects and Workflow](Story_Builder/woe_workflow.md)
 * [Exploring SkotOS](./Developer/Exploring_SkotOS.md)
 * [SkotOS Builder Docs](./Story_Builder/) &mdash; including MERRY and SAM docs
