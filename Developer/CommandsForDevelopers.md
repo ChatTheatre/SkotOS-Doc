@@ -1,12 +1,12 @@
 # Commands for Developers
 
-Are you a software developer and you're looking for more details? There are several different ways commands are implemented. For the high-level overview, you can also [read the basic description of commands](../Basic/Commands.md).
+Are you a software developer and you're looking for more details? There are several different ways commands are implemented. For the high-level overview, you can also [read the basic description of commands](../Basics/Commands.md).
 
 A bit of vocabulary:
 
 * TextIF is the name of the overall system of in-game commands
 * ALICE is the name of the over-the-wire protocol that it speaks on the socket
-* Neoct is the [MERRY](../from_builders/LanguageExplanation.md)-based system of SkotOS verbs
+* Neoct is the [MERRY](../Story_Builder/LanguageExplanation.md)-based system of SkotOS verbs
 * MerAcHa is the system that allows MERRY verbs to get registered to handle actions; it works with Neoct verbs
 
 Highly relevant files include:
@@ -21,9 +21,9 @@ Note that commands can be, and often are, embedded at any of these levels.
 
 ## Deep Down in DGD
 
-A few commands are implemented all the way down in the wire protocol. For instance, [that's how deep the understanding that "n" means "go north" is](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/obj/user.c#L793). You can change them, but only down in the deepest layers of the game, far below the [WOE objects](../woe_workflow.md). Similarly, the idea that punctuation commands are only available to specific types of users? [It's that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L165).
+A few commands are implemented all the way down in the wire protocol. For instance, [that's how deep the understanding that "n" means "go north" is](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/obj/user.c#L793). You can change them, but only down in the deepest layers of the game, far below the [WOE objects](../Story_Builder/woe_workflow.md). Similarly, the idea that punctuation commands are only available to specific types of users? [It's that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L165).
 
-There are also a few random @-verbs like "@profile", "@help", "@tip" and "@page" that are [randomly buried that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L262). But most verbs are implemented in [MERRY, a SkotOS built-in game language](../from_builders/LanguageExplanation.md) which is a sub-dialect of DGD's LPC language.
+There are also a few random @-verbs like "@profile", "@help", "@tip" and "@page" that are [randomly buried that deep](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L262). But most verbs are implemented in [MERRY, a SkotOS built-in game language](../Story_Builder/LanguageExplanation.md) which is a sub-dialect of DGD's LPC language.
 
 There are some random TextIF [built-in verbs](https://github.com/ChatTheatre/SkotOS/blob/master/skoot/usr/TextIF/main.c#L327) that look still usable... But also like they're long-obsolete and there are better ways to do those things now. If it's still possible to use them at all, it may be time to change that.
 

@@ -10,7 +10,7 @@ This guide can help.
 
 ## Local Setup
 
-If you've [set up your SkotOS for local development](setup.md), the most important debugging tool is an admin/dev-type account, such as the "admin" and "bobo" accounts in the default local setup. Note that you're sometimes prevented from logging in as "admin", probably because it's a root-type ultra-privileged account. So you're going to need a non-admin dev account for a lot of this.
+If you've [set up your SkotOS for local development](../setup.md), the most important debugging tool is an admin/dev-type account, such as the "admin" and "bobo" accounts in the default local setup. Note that you're sometimes prevented from logging in as "admin", probably because it's a root-type ultra-privileged account. So you're going to need a non-admin dev account for a lot of this.
 
 You can log into the [telnet and binary ports](SkotOS_Ports.md) as an admin user with almost no other setup. You don't need a body, a production account or all sorts of other things. On the less-fortunate side, you don't ***have*** a body necessarily and you can't easily see what normal users of SkotOS are doing. This is a sort of back-door login for playing with DGD code at the lowest level.
 

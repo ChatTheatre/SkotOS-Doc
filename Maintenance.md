@@ -1,8 +1,5 @@
 # SkotOS Maintenance
 
-[![hackmd-github-sync-badge](https://hackmd.io/ZsI7LFU4QOCFRYZFXN3JTQ/badge)](https://hackmd.io/ZsI7LFU4QOCFRYZFXN3JTQ)
-
-
 This document describes the normal care and maintenance of a SkotOS instance
 
 ![](SkotOS-Ecosystem-Diagram.png)

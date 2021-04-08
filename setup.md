@@ -6,9 +6,9 @@ layout: default
 When you first get started, you'll want to set up a SkotOS server locally on your Mac computer, and/or possibly on a networked server.
 
 * [Installing SkotOS on a Production VPS Server](setup_vps.md)
-* [Linode Development Workflow](./developing/LinodeWorkflow.md)
+* [Linode Development Workflow](Developer/LinodeWorkflow.md)
 
-See also: [Exploring SkotOS](./Exploring_SkotOS.md)
+See also: [Exploring SkotOS](Developer/Exploring_SkotOS.md)
 
 ## Plain SkotOS vs SkotOS Games
 
@@ -51,7 +51,7 @@ Once you're into the game, you can use text commands. Type "exits" to see how yo
 
 ### Local Workflow: Messing with Objects
 
-The most common changes you'll want to make are to [WOE Objects](./woe_workflow.md), via an editing interface called the Tree of WOE. Look under "Theatre:Theatres", for instance, and you'll find some top-level setup for whatever game you're currently looking at.
+The most common changes you'll want to make are to [WOE Objects](Story_Builder/woe_workflow.md), via an editing interface called the Tree of WOE. Look under "Theatre:Theatres", for instance, and you'll find some top-level setup for whatever game you're currently looking at.
 
 WOE objects update immediately. As soon as you edit them in the Tree of WOE they change in the game. You don't have to reload them from source files - and editing in the Tree of WOE won't change source files.
 
@@ -59,7 +59,7 @@ WOE objects update immediately. As soon as you edit them in the Tree of WOE they
 
 Underneath the browser interface and gameplay commands are some lower-level interfaces. You can "telnet localhost 10098" and log in with the "bobo" account and you'll get to a cryptic, difficult, "you can do anything that's possible but nothing is easy"-type interface. Type "cd /" and "ls" to verify to yourself that commands exist, and then "quit" to get out of there.
 
-This is called the ["wiztool"](./SkotOS_Wiztool.md) interface for weird historical reasons, both for SkotOS and for DGD in general.
+This is called the ["wiztool"](Developer/SkotOS_Wiztool.md) interface for weird historical reasons, both for SkotOS and for DGD in general.
 
 If you change a .c or .h file inside SkotOS then you'll need to update it by this interface (or delete skotos.database and do a full restart.)
 
@@ -76,7 +76,7 @@ To save them out to files you log into the wiztool interface and type:
 
 WOE objects are loaded from the skoot/data/vault directory for plain SkotOS, or from data/vault under your root directory (whatever it's called) for different SkotOS-based games. They're saved back to the same place. Long-term you probably want to keep that under a Git repository so you can dump and update the WOE objects regularly. You don't want to lose your changes!
 
-You can learn more about all this in [Exploring SkotOS](./Exploring_SkotOS.md).
+You can learn more about all this in [Exploring SkotOS](Developer/Exploring_SkotOS.md).
 
 ## Installing Manually
 
@@ -122,7 +122,7 @@ git clone git@github.com:ChatTheatre/websocket-to-tcp-tunnel.git
 
 SkotOS needs a modified build of DGD. It uses more sectors (memory and disk space) than unmodified DGD will accept. We would also like to support more than 255 simultaneous users, which also requires modification. DGD has compile options to fix this, but you'll need to use them. Similarly, DGD only allows outgoing network connections if they have been requested during compilation.
 
-[Here's more about that](./building_dgd_for_skotos.md).
+[Here's more about that](Developer/building_dgd_for_skotos.md).
 
 ### Doing it Manually: Running Locally
 
@@ -201,7 +201,7 @@ Have a look at wafer-users.json. You can copy a user entry here (or rename bobo)
 
 ## How Do I Log In? (Dev/Admin Edition)
 
-If you're a DGD user or doing [deep SkotOS exploration](./Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
+If you're a DGD user or doing [deep SkotOS exploration](Developer/Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
 
 Start DGD, and you now have the ability to log in as bobo (but not admin) on the telnet port. Go ahead and telnet in:
 
@@ -239,11 +239,11 @@ $0 = 10
 
 Note that this is raw DGD code, not anything sandboxed like Merry. You can do some real damage here if you feel like. This is also how you rebuild programs (objects) after you change their code, and a way you can add other development users or change your password if you're so inclined.
 
-See [Exploring SkotOS](Exploring_SkotOS.md) for more details on things you can do from here.
+See [Exploring SkotOS](Developer/Exploring_SkotOS.md) for more details on things you can do from here.
 
 ## How Do I Log In? (Dev/Web Edition.)
 
-Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](./woe_workflow.md)).
+Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](Story_Builder/woe_workflow.md)).
 
 And now you have a working account on your running server.
 

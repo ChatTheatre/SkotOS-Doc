@@ -1,6 +1,6 @@
-# SkotOS-Doc
+# SkotOS Documentation
 
-SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [The Eternal City](https://www.eternalcitygame.com/), [https://allegoryofempires.com/](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
+SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [The Eternal City](https://www.eternalcitygame.com/), [Allegory of Empires](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
 
 But if you want to ***build*** a SkotOS-based game, this is a good place to start.
 
@@ -14,27 +14,30 @@ What's a SkotOS game like? Why would you want to build or run one? [Why would a 
 
 * [Logging into The Gables](Basics/Prod_Gables.md) - a basic SkotOS game you don't need to run for yourself
 * [Basic SkotOS commands](Basics/Commands.md)
+* [What's a Story Builder? (SkotOS roles)](Basics/Roles.md)
 
 ## Ready to Build?
 
-Here's a variety of developer documentation to show you the architecture, setup and concepts behind a SkotOS game. It's aimed at showing you the ropes as you build your game initially. You're also going to need to dive into the code
+Here's a variety of developer documentation to show you the architecture, setup and concepts behind a SkotOS game. It's aimed at showing you the ropes as you build your game initially. You're also going to need to dive into the code.
 
 * [Setting up to build on SkotOS (local Mac)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
-* [SkotOS Architecture](./architecture.md)
-* [SkotOS WOE Objects and Workflow](./woe_workflow.md)
-* [Exploring SkotOS](./Exploring_SkotOS.md)
-* [SkotOS Builder Docs](./from_builders/) &mdash; including MERRY and SAM docs
+* [SkotOS Architecture Quick Overview](./architecture.md)
+* [SkotOS WOE Objects and Workflow](Story_Builder/woe_workflow.md)
+* [Exploring SkotOS](./Developer/Exploring_SkotOS.md)
+* [SkotOS Builder Docs](./Story_Builder/) &mdash; including MERRY and SAM docs
 
 ## Maintaining a SkotOS Game?
 
-Most of this is documentation from commercial SkotOS games, including the ones still running. If this is written as though you have a staff and various levels of people working on the game... That's why.
+This is a grag-bag of documentation from commercial SkotOS games, including the ones still running.
 
-For the same reason, this can show you what a successful game could expand to if all goes well. MUDs have historically needed a bit more hierarchy and management than you'd expect because they're normally run by volunteers, not by a small number of paid, dedicated employees. That means it's important to give out privileges carefully, and to know who does what.
+It could use a proper reorganisation.
+
+This can show you what a successful game could expand to if all goes well. MUDs have historically needed a bit more [hierarchy and management](Basics/Roles.md) than you'd expect because they're normally run by volunteers, not by a small number of paid, dedicated employees. That means it's important to give out privileges carefully, and to know who does what.
 
 * [Maintenance](./Maintenance.md)
 * [Authentication](./Authentication.md)
-* [SkotOS Wiztool](./SkotOS_Wiztool.md)
-* [Staff_Plus_Commands](./Staff_Plus_Commands.md)
+* [SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
+* [Staff_Plus_Commands](Story_Builder/Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
 
 ## Copyright & Status
