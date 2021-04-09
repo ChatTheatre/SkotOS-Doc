@@ -28,6 +28,8 @@ Before we had any other repos that used SkotOS, SkotOS got a lot of cleanup work
 
 But SkotOS was still basically SkotOS-plus-The-Gables, you could set it up without another "game" repo, nearly all the old WOE stuff was still sitting around, etc. You can configure it and set it up, but it's not the easiest experience. If you asked your Operations Department at your job to deploy this for you they would rate it as "pretty darn annoying" but not "completely unreasonable."
 
+To get back to this, you should "git checkout skotos_single_repo".
+
 Note: you may want to check out the repo on a Linux machine, not a Mac, because some of the directories have names that differ only in uppercase/lowercaseness, so some filenames and WOE names don't quite work... Of course, there are other errors like that (the spawn Data object!) where somebody clearly mangled it before that, too. Oopsie!
 
 ## The SkotOS Classic Experience: The Really Quite Especially Hard Way
