@@ -40,6 +40,16 @@ This can show you what a successful game could expand to if all goes well. MUDs 
 * [Staff_Plus_Commands](Story_Builder/Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
 
+## SkotOS Classic
+
+Maybe you're here because you want a clean, powerful text-game environment with reasonable setup and near-unlimited flexibility.
+
+Maybe you're here because you heard about a twenty-year-old mass of glorious untamed built-by-volunteers digital wilderness and ruins, on top of a frankly bizarre dynamic language that few people ever braved.
+
+Those goals aren't very compatible.
+
+The first description is SkotOS's goal in the 2020s and beyond: powerful, clean, not too hard to set up, highly capable. The second description is [SkotOS Classic: a glorious wilderness of really amazing stuff built by volunteers, in all sorts of states of repair](./SkotOS_Classic.md). Through the magic of Git, we can retain that beautiful wilderness for you to explore, even as we build a well-manicured amusement park out of its best parts.
+
 ## Copyright & Status
 
 Unless otherwise noted, the contents of this repository as declared public domain using the Creative Commons "No Rights Reserved" [CC0 Declaration](https://creativecommons.org/share-your-work/public-domain/cc0/).
