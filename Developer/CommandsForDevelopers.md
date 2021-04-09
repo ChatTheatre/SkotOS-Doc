@@ -60,3 +60,11 @@ For example, [here's a verb to fill a container](https://github.com/ChatTheatre/
 MERRY-based verbs seem to hide in a lot of different places in the Tree of WOE and are often specific to individual SkotOS games. [Here is a variety of social and non-social verbs](https://github.com/ChatTheatre/SkotOS/tree/master/skoot/data/vault/S7-Neoct) broken down into a typical-ish set of directories.
 
 If you're trying to hunt down all the Neoct verbs, you can search for /usr/SkotOS/obj/meracha - these verbs are clones of that object, which is how they get registered to be used by actual users typing into a TextIF socket. MerAcHa is short for "MERRY Action Handler."
+
+## Experimental Commands
+
+A nice thing about MerAcHa is that commands can be put in whatever directory you like. An ugly thing about MerAcHa is that commands can be put in whatever directory you like...
+
+A common way to keep people from stumbling across experimental commands while a Story Builder was working on them was to prefix with a "z" - the +zwoe command could be an unfinished modification to +woe, for instance, or +zpawn could be an unfinished modification to +spawn.
+
+To put it another way: if a command has a weird name, especially starting with z, keep in mind that it may not work, and may never have worked. It may be one-off or half-done or experimental.

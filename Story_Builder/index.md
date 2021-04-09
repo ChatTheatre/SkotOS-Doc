@@ -14,13 +14,14 @@ Note: this is going to want rewriting into a unified tutorial, updated for the l
 
 ## In-Game Systems
 
-* WOE objects: [Overview](./woe_workflow.md) [Key WOE Objects](./Key_Woe_Objects.md)
+* WOE objects: [Overview](./woe_workflow.md) [Some Important WOE Objects](./Key_Woe_Objects.md)
 * [Consent System](./ConsentSystem.md)
 * Description System: [Quick Summary](./DescriptionSystemQuickSummary.md) or [In-Depth Details](./DescriptionSystem.md)
 * Detail System: [QuickSummary](./DetailSystemQuickSummary.md) or [In-Depth Details](./DetailSystem.md)
 * [The Movement System](./MovementSystem.md)
 * [The Proximity System](./ProximitySystem.md)
 * [Staff +Commands](./Staff_Plus_Commands.md)
+* [The Sync System](./SyncSystem.md)
 
 ## SAM and MERRY
 

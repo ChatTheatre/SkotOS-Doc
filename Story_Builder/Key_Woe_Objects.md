@@ -1,4 +1,4 @@
-# Key Woe Objects
+# Some Important WOE Objects
 
 # Base:Thing
 
@@ -166,7 +166,7 @@ This object contains all the start story support code and start story settings. 
   * The title that appears at the top of the browser while going through the start story.
 * **export:theatre:id="Gables"**
   * Used to correctly assign a chatter to the appropriate **Chatter:\*** folder during character creation.
-* **export:setting:virtualhome"=<Mansion:rooms:Limo>
+* **export:setting:virtualhome"=<Mansion:rooms:Limo>**
     * New characters will be assigned the appointed virtualroom.
 
 #### Scripts
