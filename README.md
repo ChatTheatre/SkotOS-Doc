@@ -40,6 +40,19 @@ This can show you what a successful game could expand to if all goes well. MUDs 
 * [Staff_Plus_Commands](Story_Builder/Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
 
+## Writing DGD-Side Code?
+
+Documentation at this level is harder to find. There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/lpc-doc/) site which can help. There's also a bit of SkotOS-specific documentation here:
+
+* [Commands for Developers](Developer/CommandsForDevelopers.md)
+* [Authentication for Developers](Developer/DevAuthentication.md)
+* [Exploring SkotOS](Developer/Exploring_SkotOS.md)
+* [Linode Workflow](Developer/Linode_Workflow.md)
+* [Manifests and Linode](Developer/ManifestsAndLinode.md)
+* [SkotOS Port Numbers](Developer/SkotOS_Ports.md)
+* [the SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
+* [the SkotOS Instance File](Developer/instance_file.md)
+
 ## Copyright & Status
 
 Unless otherwise noted, the contents of this repository as declared public domain using the Creative Commons "No Rights Reserved" [CC0 Declaration](https://creativecommons.org/share-your-work/public-domain/cc0/).
