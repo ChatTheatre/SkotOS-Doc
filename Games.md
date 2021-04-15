@@ -7,11 +7,14 @@ Some of them have left fragments of code scattered about, while others have not.
 ## Current SkotOS Games
 
 * [Castle Marrach](https://www.marrach.com/) - CM is, and basically always has been, the largest SkotOS-based game
-* [The Eternal City](https://www.eternalcitygame.com/) - was this one based on SkotOS?
 * [Allegory of Empires](https://allegoryofempires.com/) - a rebuild of Ironclaw Online due to loss of the IP license
 * [Multiverse; Revelations](https://home.multirev.net/)
 
 [The Gables](https://gables.chattheatre.com) is more of a stage than a game, but it's SkotOS-based and live.
+
+## Skotos Tech, but not SkotOS Codebase, Games
+
+* [The Eternal City](https://www.eternalcitygame.com/) - still operating!
 
 ## Inoperative Games
 
