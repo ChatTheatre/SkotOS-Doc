@@ -1,12 +1,14 @@
 # SkotOS Documentation
 
-SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [The Eternal City](https://www.eternalcitygame.com/), [Allegory of Empires](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
+SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [Allegory of Empires](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
 
 But if you want to ***build*** a SkotOS-based game, this is a good place to start.
 
 SkotOS runs primarily in a dynamic game-development language called [DGD](http://www.dworkin.nl/dgd/). There are also miscellaneous scripts and tools in other languages including Node.js and PHP &mdash but the game is mostly in DGD, while other tools are in appropriate other languages.
 
 SkotOS is a game-building library, not a game. [The Gables](https://github.com/ChatTheatre/gables_game) is an example (tiny) game built on SkotOS. It's a great place to start from as you use this documentation.
+
+([The Eternal City](https://www.eternalcitygame.com/) was a Skotos Tech game, and is still running and you can play it. But it wasn't built on this engine. [Lots of other games](./Games.md) were.)
 
 ## Looking Around?
 
@@ -40,16 +42,6 @@ This can show you what a successful game could expand to if all goes well. MUDs 
 * [Staff_Plus_Commands](Story_Builder/Staff_Plus_Commands.md)
 * [StoryBuilder Documentation](./Story_Builder/)
 
-## SkotOS Classic
-
-Maybe you're here because you want a clean, powerful text-game environment with reasonable setup and near-unlimited flexibility.
-
-Maybe you're here because you heard about a twenty-year-old mass of glorious untamed built-by-volunteers digital wilderness and ruins, on top of a frankly bizarre dynamic language that few people ever braved.
-
-Those goals aren't very compatible.
-
-The first description is SkotOS's goal in the 2020s and beyond: powerful, clean, not too hard to set up, highly capable. The second description is [SkotOS Classic: a glorious wilderness of really amazing stuff built by volunteers, in all sorts of states of repair](./SkotOS_Classic.md). Through the magic of Git, we can retain that beautiful wilderness for you to explore, even as we build a well-manicured amusement park out of its best parts.
-
 ## Writing DGD-Side Code?
 
 Documentation at this level is harder to find. There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/lpc-doc/) site which can help. There's also a bit of SkotOS-specific documentation here:
@@ -62,6 +54,14 @@ Documentation at this level is harder to find. There's a [ChatTheatre DGD and LP
 * [SkotOS Port Numbers](Developer/SkotOS_Ports.md)
 * [the SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
 * [the SkotOS Instance File](Developer/instance_file.md)
+
+## SkotOS Classic
+
+A few folks may be here, not to build a game, but because you heard about a twenty-year-old mass of glorious untamed built-by-volunteers digital wilderness and ruins, on top of a frankly bizarre dynamic language that few people ever braved.
+
+That description is [SkotOS Classic: a glorious wilderness of really amazing stuff built by volunteers, in all sorts of states of repair](./SkotOS_Classic.md). Through the magic of Git, we can retain that beautiful wilderness for you to explore, even as we build a well-manicured amusement park out of its best parts.
+
+Note that a lot of older SkotOS code, including both SkotOS Classic and SkotOS games that weren't part of that release, are being moved into other [ChatTheatre](https://github.com/ChatTheatre) repositories. Not everything wants or needs to be part of the core game-building library that everybody uses for every game.
 
 ## Copyright & Status
 

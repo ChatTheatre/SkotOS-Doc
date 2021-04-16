@@ -38,6 +38,8 @@ This means they need more tools - not only commands that start with a +, but als
 
 There's a lot of [documentation for Story Builders](../Story_Builder/) that will be important if you take this role.
 
+I can't tell if StoryCoders are advanced StoryBuilders, doing underlying Merry work for game subsystems, or if they're more like developers.
+
 (Note: there may be a technical distinction between Story Builders and Story Hosts, but so far I'm not finding it.)
 
 ## Staff, Developers, Administrators

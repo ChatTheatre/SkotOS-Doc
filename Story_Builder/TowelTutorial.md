@@ -6,11 +6,11 @@ This tutorial is for the StoryBuilder who desires to dive deep in the crafting o
 
 Our assumption is that a StoryBuider using this tutorial understands basic staff `+` commands such as `+spawn`, `+traits`, etc. and has used Shared Objects in a ChatTheatre before. If not, we suggest that the StoryBuilder first do [Tutorial: Object Traits & Properties].
 
-In [Part 1] of this tutorial, we will do this by starting with an old object, a "Generic towel", and turn it into a new [Traits] object with an alterable [SAM] tag based prime [Description], convert it to Shared using the [Sharify] tool, proof it with the [Proof] tool, and ultimately learn how to [Share] it between ChatTheatres and Narrative Prose Games that use the Shared SkotOS ChatTheatre Library.
+In [Part 1] of this tutorial, we will do this by starting with an old object, a "Generic towel", and turn it into a new [Traits] object with an alterable [SAM] tag based prime [Description](./DescriptionSystem.md), convert it to Shared using the [Sharify] tool, proof it with the [Proof] tool, and ultimately learn how to [Share] it between ChatTheatres and Narrative Prose Games that use the Shared SkotOS ChatTheatre Library.
 
 Part 1 of tutorial should be relatively easy for any person that wants to be a StoryBuilder for ChatTheatre's in the 2020s.
 
-[Part 2] of this tutorial is for intermediat StoryBuilders, and share some optional ideas on how to add additional details (using the [Detail System], how to facilitate creation of [Morph] child objects, variants objects using [Clones], and how to convert old legacy [Bilbo] objects that need to be deprecated.
+[Part 2] of this tutorial is for intermediat StoryBuilders, and share some optional ideas on how to add additional details (using the [Detail System](./DetailSystem.md), how to facilitate creation of [Morph] child objects, variants objects using [Clones], and how to convert old legacy [Bilbo] objects that need to be deprecated.
 
 [Part 3] of this tutorial is for advanced StoryBuilders, or people want to become eventually StoryCoders. It will introduction some easy features you can add to the towel using simple [Merry] scripts, how to create additional [Ur] object heirarchy, and finally, how to create a [Local] towel with custom features unique to your game and not shared with others, but allows you to leverage updates from other games to your shared objects.
 

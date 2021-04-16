@@ -91,3 +91,11 @@ What if it's not that simple? What if things have changed in more than one place
 In [DGD Tools,](https://github.com/ChatTheatre/dgd-tools) there is a skotos-xml-diff utility that will diff two XML objects, or two directories full of XML objects, while ignoring most trivial differences (e.g. comments on the revision history, comments on the time and server the file was generated, whitespace differences.)
 
 If you want to search through ***just*** the interesting differences, you can "skotos-xml-diff vault1 vault2" and get a full diff between them. You can also use --ignore-whitespace or --merry-only to see only certain kinds of diffs. You can use --ignore-types to give a list of XML node types ***not*** to include in the output.
+
+## WOE Objects in DGD's LPC
+
+Note: this section is primarily for developers.
+
+Nearly any LPC object (that is: any object that inherits from /usr/System/lib/sys_auto, which happens automatically) can expose itself as a WOE object. In order to do so, it should call set_object_name(), usually in its create() function.
+
+When set_object_name is called, it registers the object by its new WOE name with the IDD (/usr/System/sys/idd), which now knows that that WOE name corresponds to that DGD object.
