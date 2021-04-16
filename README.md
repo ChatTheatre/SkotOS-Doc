@@ -50,6 +50,19 @@ Those goals aren't very compatible.
 
 The first description is SkotOS's goal in the 2020s and beyond: powerful, clean, not too hard to set up, highly capable. The second description is [SkotOS Classic: a glorious wilderness of really amazing stuff built by volunteers, in all sorts of states of repair](./SkotOS_Classic.md). Through the magic of Git, we can retain that beautiful wilderness for you to explore, even as we build a well-manicured amusement park out of its best parts.
 
+## Writing DGD-Side Code?
+
+Documentation at this level is harder to find. There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/lpc-doc/) site which can help. There's also a bit of SkotOS-specific documentation here:
+
+* [Commands for Developers](Developer/CommandsForDevelopers.md)
+* [Authentication for Developers](Developer/DevAuthentication.md)
+* [Exploring SkotOS](Developer/Exploring_SkotOS.md)
+* [Linode Workflow](Developer/Linode_Workflow.md)
+* [Manifests and Linode](Developer/ManifestsAndLinode.md)
+* [SkotOS Port Numbers](Developer/SkotOS_Ports.md)
+* [the SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
+* [the SkotOS Instance File](Developer/instance_file.md)
+
 ## Copyright & Status
 
 Unless otherwise noted, the contents of this repository as declared public domain using the Creative Commons "No Rights Reserved" [CC0 Declaration](https://creativecommons.org/share-your-work/public-domain/cc0/).
