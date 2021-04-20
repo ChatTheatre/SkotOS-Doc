@@ -1,3 +1,6 @@
+---
+sort: 5
+---
 # SkotOS Story Building
 
 Story Builders create in-game objects and systems. In the [heirarchy of SkotOS roles](../Basics/Roles.md), they're far more technical than players, but weild less power than low-level developers. There's a ***lot*** of room within the Story Builder role to create whole new game systems, verbs, and even some amount of the game's "physics."

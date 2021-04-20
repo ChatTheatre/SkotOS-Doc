@@ -1,3 +1,6 @@
+---
+sort: 8
+---
 # Maintaining a SkotOS Game
 
 This is documentation for administrators and maintainers &mdash; people who have to keep the game running day-to-day.

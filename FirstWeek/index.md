@@ -1,3 +1,6 @@
+---
+sort: 1
+---
 # Your First Week of SkotOS
 
 Say you want to build a new game with SkotOS. What will you do first? How do you get started?
@@ -11,7 +14,6 @@ This includes your literal first week, but also how you keep getting better, dig
 ## Before You Set Up Anything
 
 Before you set up your own SkotOS game, you'll probably want to play one online. There are several choices. The [basic SkotOS commands](Basics/Commands.md) may help you with this.
-
 
 [Castle Marrach](http://www.skotos.net/games/marrach) is the biggest and oldest of the SkotOS games. Active players are generally online and would love to help you learn the ropes and settle in. Alternately you could play on [Allegory of Empires](https://allegoryofempires.com/) or [Multiverse; Revelations](https://home.multirev.net/).
 

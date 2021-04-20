@@ -1,5 +1,5 @@
 ---
-title: Setting Up SkotOS
+title: Setting Up SkotOS Locally
 layout: default
 ---
 
@@ -12,17 +12,73 @@ See also: [Exploring SkotOS](Developer/Exploring_SkotOS.md)
 
 ## Plain SkotOS vs SkotOS Games
 
-For both local and server versions, you can install "just plain SkotOS" (the game library) or "a game that uses SkotOS" (one of the games that uses SkotOS libraries.) Normally you want something using SkotOS, such as [The Gables](https://github.com/ChatTheatre/gables_game).
+SkotOS is a game library, not a game. So you'll want to install something that uses SkotOS, not "just SkotOS." The obvious choice is [The Gables](https://github.com/ChatTheatre/gables_game).
 
-For SkotOS-based games you should check their README to see how to install them. There should normally be a local install script based on SkotOS's mac_setup.sh, and also a Linode-or-similar script to set up a VPS server.
+For other SkotOS-based games you should check their README to see how to install them. There should normally be a local install script based on SkotOS's mac_setup.sh, and also a Linode-or-similar script to set up a VPS server.
 
-## Local Setup (Plain SkotOS, Mac-Only)
+Most SkotOS-based games will have a deploy_scripts subdirectory with a mac_setup.sh script and a Linode stackscript - and possibly others.
 
-From your SkotOS install you can install "just plain SkotOS" by running deploy_scripts/mac_setup/mac_setup.sh. But the intention is that you should switch to a SkotOS-based game like [The Gables](https://github.com/ChatTheatre/gables_game) as soon as you reasonably can.
+For The Gables, the Linode script is called gables_stackscript.sh.
 
-The rest of this page is the manual equivalent of the script. The setup script will always be at least as up-to-date as this page, and usually more up-to-date.
+## How Do I Log In? (Dev/Web Edition.)
 
-There's a requirement you'll need to do for yourself (see SSH keys below) but most developers have already done it.
+Once you've run the appropriate dev scripts, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](Story_Builder/woe_workflow.md)).
+
+Click the "Play" link.
+
+Go ahead and create a body, which will be chosen automatically on later logins.
+
+By default, Wafer will let you use literally any account name and assume it's a staff/developer account. That's one of many reasons we don't use Wafer in production. For production, you should use the [VPS Setup](./setup_vps.md) documentation rather than the local-dev documentation. It installs a much more reasonable authentication server.
+
+## How Do I Log In? (Dev/Admin Edition)
+
+If you're a DGD user or doing [deep SkotOS exploration](Developer/Exploring_SkotOS.md), you're probably interested in logging in via [the Wiztool](Developer/SkotOS_Wiztool.md).
+
+Start DGD, and you now have the ability to log in as bobo (but not admin) on the telnet port. Go ahead and telnet in:
+
+(Note: because of how Wafer works, literally any password will get you in. For this reason, you really do NOT want to expose dev-mode DGD to the internet at large &mdash; the default setup is as bad as a NoSQL server like MongoDB. The Linode setup is much more secure.)
+
+```
+telnet localhost 10098
+Noahs-MBP-2:SkotOS noah$ telnet localhost 10098
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+Welcome to SkotOS.
+
+What is your name: bobo
+Password:
+> ls
+/usr/bobo: No such file or directory.
+> cd ..
+ls
+/usr
+> CSD/         Generic/     SID/         Socials/     Tool/        admin/
+DTD/         HTTP/        SMTP/        System/      UserAPI/     nino/
+DevSys/      Jonkichi/    SkootOnInn/  TextIF/      UserDB/      zell/
+Game/        SAM/         SkotOS/      Theatre/     XML/
+>
+```
+
+Bobo can do a number of things, including evaluating bits of code:
+
+```
+> code 7 + 3
+$0 = 10
+```
+
+Note that this is raw DGD code, not anything sandboxed like Merry. You can do some real damage here if you feel like. This is also how you rebuild programs (objects) after you change their code, and a way you can add other development users or change your password if you're so inclined.
+
+See [Exploring SkotOS](Developer/Exploring_SkotOS.md) for more details on things you can do from here.
+
+## Setup Notes
+
+SkotOS contains a "just plain SkotOS" install script. But then there's no game. However, SkotOS-based apps use that to set up SkotOS dependencies and then run their own games on top.
+
+The rest of this page is about what's in that script. The setup script will always be at least as up-to-date as this page, and usually more up-to-date.
+
+There's a requirement you'll need to do for yourself (see SSH keys below) but most developers have already done it and the setup script will check it for you.
 
 ### Requirement for Local Setup: SSH Key Registered With GitHub
 
@@ -193,60 +249,8 @@ You'll also need to run an NGinX relay to serve your web files and handle your w
 
 ## The Authentication Server
 
-Current SkotOS sets up Wafer, an extremely simple and limited authentication server.
+Current local-dev SkotOS sets up Wafer, an extremely simple and limited authentication server.
 
 Wafer doesn't actually check passwords - it pretends any password is fine. It also doesn't track a lot of normal SkotOS stuff (time played, story points, payments and subscriptions.) See the Linode instructions and/or setup scripts to see how to use thin-auth, an actual authentication server.
 
 Have a look at wafer-users.json. You can copy a user entry here (or rename bobo) to give yourself new users for logging in. If you delete the file it will be re-created with just admin and bobo.
-
-## How Do I Log In? (Dev/Admin Edition)
-
-If you're a DGD user or doing [deep SkotOS exploration](Developer/Exploring_SkotOS.md), you're probably interested in logging in via the Wiztool.
-
-Start DGD, and you now have the ability to log in as bobo (but not admin) on the telnet port. Go ahead and telnet in:
-
-(Note: because of how Wafer works, literally any password will get you in. For this reason, you really do NOT want to expose dev-mode DGD to the internet at large &mdash; the default setup is as bad as a NoSQL server like MongoDB. The Linode setup is much more secure.)
-
-```
-telnet localhost 10098
-Noahs-MBP-2:SkotOS noah$ telnet localhost 10098
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-
-Welcome to SkotOS.
-
-What is your name: bobo
-Password:
-> ls
-/usr/bobo: No such file or directory.
-> cd ..
-ls
-/usr
-> CSD/         Generic/     SID/         Socials/     Tool/        admin/
-DTD/         HTTP/        SMTP/        System/      UserAPI/     nino/
-DevSys/      Jonkichi/    SkootOnInn/  TextIF/      UserDB/      zell/
-Game/        SAM/         SkotOS/      Theatre/     XML/
->
-```
-
-Bobo can do a number of things, including evaluating bits of code:
-
-```
-> code 7 + 3
-$0 = 10
-```
-
-Note that this is raw DGD code, not anything sandboxed like Merry. You can do some real damage here if you feel like. This is also how you rebuild programs (objects) after you change their code, and a way you can add other development users or change your password if you're so inclined.
-
-See [Exploring SkotOS](Developer/Exploring_SkotOS.md) for more details on things you can do from here.
-
-## How Do I Log In? (Dev/Web Edition.)
-
-Once SkotOS is up and running and so is Wafer, go to http://localhost:2072. You should see a very simple interface including a "Play" link and a "Tree of WOE" link. The "Tree of WOE" is a builder interface to create and edit in-game objects (see [WOE objects](Story_Builder/woe_workflow.md)).
-
-And now you have a working account on your running server.
-
-Go ahead and create a body, which will be chosen automatically on later logins.
-
-While you can only log in with users you've created in Wafer, literally any password will work. That's one of many reasons we don't use Wafer in production.

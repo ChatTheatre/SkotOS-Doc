@@ -1,3 +1,6 @@
+---
+sort: 10
+---
 # Developing in DGD for SkotOS
 
 SkotOS exists in various layers. You have the operating system, the host computer (or virtual personal server, or...), the operating system and the interpeter (DGD) underneath SkotOS. You have the network, web browsers and so on that run on the user's side. You have high-level StoryBuilder layers like MERRY and SAM for coding the story.
