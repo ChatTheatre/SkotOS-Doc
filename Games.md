@@ -19,7 +19,7 @@ Some of them have left fragments of code scattered about, while others have not.
 ## Inoperative Games
 
 * [Lovecraft](http://www.lovecraftcountry.com/comic/) [Country](https://www.skotos.net/about/pr/06292005.html), which included "Arkham By Night" and a smaller stage called The Oasis; this clearly had a usable beta release and a lot of usable code; it went through multiple dev teams and was, for awhile, the #2 largest SkotOS game.
-* [Grendel's Revenge](https://www.skotos.net/about/pr/06122002.html)
+* [Grendel's Revenge](https://www.skotos.net/about/pr/06122002.html) - I don't think this one was SkotOS-based, though it was published by Skotos Tech
 * [Ironclaw Online,](https://www.skotos.net/about/pr/Nov28_2000.html) - this was based on the [Ironclaw anthropomorphic RPG](https://www.drivethrurpg.com/browse/pub/793/Sanguine-Productions/subcategory/3844_26150/Ironclaw)
 * [The Lazarus](https://www.lazarus-project.net/) [Project](https://www.skotos.net/about/pr/01032007a.html)
 * [Galactic Emperor: Succession](http://www.skotos.net/games/succession.html) - is this the same game as Hegemony? Or a smaller stage of it?
@@ -41,7 +41,7 @@ Other fragmentary, unfinished or not-well-documented parts include:
 * The Skoot On Inn was a small test stage that seems to have existed in several revisions, and seems also to have been called The Tavern and possibly The Hearth
 * Headquarters isn't a separate game, but a staff-only area that exists inside several games
 * The Mansion, a.k.a. The Gables has existed in several revisions, including the currently-live one
-* Regency - an unfinished(?) game involving Regency castles which produced a lot of in-game objects
+* Regency - an unfinished(?) game involving Regency castles which produced a lot of in-game objects; Regency was a rebuild of Ironclaw Online without the Ironclaw license
 * Orphan Crown - this exists in in-game fragments ([mentioned here](https://www.skotos.net/articles/TTnT_/TTnT_139.phtml.html))
 * Pendragon Online - this exists in in-game fragments ([mentioned here](https://www.skotos.net/articles/TTnT_/TTnT_139.phtml.html))
 * The Devil's Cay - Laurel Stuart wrote a [series of articles](http://www.skotos.net/articles/trenches.shtml.html) about building it
@@ -50,5 +50,5 @@ Other fragmentary, unfinished or not-well-documented parts include:
 * Arcana - Gareth Michael Skarka was attempting to build a horror game and [wrote about it](http://www.skotos.net/articles/SIGNALS.shtml.html)
 * Glory of the Nile - was to be a SkotOS Theatre; [(articles)](http://www.skotos.net/articles/playing.shtml.html)
 * S7 - not a game but a library from the "Skotos Seven" series of game projects
-* The Bane - ["In The Bane you might be a Sun Worshipper with uncertain loyalties..."](https://www.skotos.net/storyplayers/introX.html) - The Bane was one of the earliest SkotOS game attempts
+* The Bane - ["In The Bane you might be a Sun Worshipper with uncertain loyalties..."](https://www.skotos.net/storyplayers/introX.html) - The Bane was one of the earliest SkotOS game attempts and still exists in in-game fragments, often combat-related
 * The Welcome Room / The Link Zone - this was an out-of-character chat area, still to be found in some in-game fragments

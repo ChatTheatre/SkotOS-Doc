@@ -2,28 +2,27 @@
 
 # About Wiztool
 
-Each of the games has a "wiztool" port at XX98 (e.g. 6098 for The Gables), which can be used to access a number of functions that sit between the [Layers](./Layers.md) of DGD's Kernel Library functionality, and the underlying SkotOS LPC code that runs the ChatTheatre.
+Each of the games has a "wiztool" port at XX98 (e.g. 10098 for your default setup), which can be used to access a number of functions that sit between the [Layers](../Maintainer/Layers.md) of DGD's Kernel Library functionality, and the underlying SkotOS LPC code that runs the ChatTheatre.
 
-You should rarely, if almost never need to use this functionality, and you should be aware that you have the opportunity to unretrievably destroy the ChatTheatre. (The Gables VPS instance is backed up every evening at 11:05pm PDT, so some can restore back to that point, but all work by staff and all player changes can be lost.)
+You should rarely need to use this functionality as a maintainer, and you should be aware that you have the opportunity to do basically permanent damage to your server (depending on when/how you do backups, etc.)
 
 ## Setting up access to the Wiztool
 
-Before you can be given access to the Wiztool, you'll need to make sure that your staff ChatTheatre user account is marked as "Developer", and you will need to add that account name to the "System:Developers" list in the Tree of WOE. You probably can do this yourself as you should already have staff permissions.
+For your account to be able to access the wiztool, you'll need to make sure your account is marked "developer" or "staff". That's a type of user you can choose in thin-auth, and Wafer (the local-only auth server) will choose staff automatically unless you tell it not to.
 
-The important thing is to make sure the user has the correct "access" flag in thin-auth, matching the "access" value in the game's instance file. By default this is probably "gables".
-
-For information on how an existing StoryHost can set up access for your account to access the Wiztool, see [Setting Up a SkotOS Host](setup.md).
+You'll also need the correct "access" flag, which is "gables" by default. Again, Wafer will do this for you and you'll need to add it in thin-auth for a VPS-hosted game.
 
 ## Accessing the Wiztool
 
-Don't do this unless you have a specific need and know what you're doing!
+From the same machine (your local server, or the VPS server) you can telnet to port 10098 (with the [default portbase](./SkotOS_Ports.md)). By default the local config will allow you to give any account name and password successfully. By default your VPS installation will allow the "skott" account with the master password you configured in the StackScript. If you change your thin-auth password that will be reflected for the telnet port as well.
 
-From an IP address that that has authorized access, you `ssh <shellaccount>@<game.theatre.domain.ext`., or in the case of gables `ssh <shellaccount>@game.gables.chattheatre.com`.
+So:
 
-Once you are logged in to the server, all the SkotOS files are located at `/var/skotos/XX00/skoot/` (e.g. for the Gables `cd /var/skotos/6000/skoot`). Files modified here will not actually make changes in the ChatTheatre itselft — you'll need to execute them from the SkotOS Wiztool.
+    telnet localhost 10098
 
-For wiztool access you `telnet game-URL XX98`, for example `telnet game.gables.chattheatre.com 10098`.
+Or:
 
+    telnet gables.my-subdomain.com 10098
 
 ## Wiztool Commands
 
@@ -73,30 +72,20 @@ See also:    clear, clone, compile, history
 ```
 
 
-## Recompliling Code
+## Recompiling Code
 
-If you ever need to make a change to the DGD/LPC code, this is how you do it! YOu edit the file, and then you log in to the admin port and run compile /path/name/under/skoot
+If you make a local change to your DGD code, by editing it or with "git pull", you'll need to recompile the files individually.
 
-> compile "/usr/Theatre/sys/portal"
-Don't do this unless you really know what you're doing!
+To compile a concrete (non-library) DGD object, you'll cd into its directory and use the compile command. So to compile skoot/some/path/obj/here.c, you'd type:
 
-Adding SP Permissions
+    cd /some/path/obj
+    compile here.c
 
-You can also run specific DGD/LPC code from the admin port by indicating a file name and a function.
-
-A few specific functions:
-
-#### Set Wiztool account password (obsolete as of March 2021)
-
-You can set a wiztool account password with
-```
->"code "~System/sys/devuserd"->set_password("name", "pass")
-```
-where the name is their account name and the pass their unique password for the wiztool admin port.
-
-As of March 2021, this still works but does nothing. The binary-port password should now be set via thin-auth.
+For a library you'll instead need to "upgrade" it, which will recompile all objects that depend on it.
 
 #### Storypoints Grant Access
+
+(Note: this is for SkotOS games that use StoryPoints.)
 
 This will allow you to grant story-point-granting permissions to certain staff accounts:
 
@@ -104,7 +93,7 @@ This allows you to list current SP granters:
 
 > code "/usr/TextIF/sys/storypoints"->query_accounts() 
 $171 = ({ "alice", "bob" })
-You can add people by referencing that return ($171):
+You can add people by referencing that return value ($171):
 
 > code "/usr/TextIF/sys/storypoints"->set_accounts($171 + ({ "charlie" }))
 $172 = nil

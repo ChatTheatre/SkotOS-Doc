@@ -187,7 +187,7 @@ Base:Covered   [   value='thigh-right'   ] V E X
 Base:Covered   [   value='thigh-left'   ] V E X
 ```
 
-These seem reasonable, but newer "Chatter" bodies may have more parts that get covered with clothing — we'll consider adding more coverage later. [[**ROO CAN YOU ADVISE ON THIS?]]
+These seem reasonable, but newer "Chatter" bodies may have more parts that get covered with clothing — we'll consider adding more coverage later. [[**ROO CAN YOU ADVISE ON THIS?**]]
 
 ## Cleaning up your Generic Object
 
@@ -343,7 +343,7 @@ Now you'll see that there is an errant "an a white towel" in the brief. What wen
 
 Basically in both of these cases the `+sharify` tool was trying to puzzle out how to add traits to your towel by substituting SAM tags appopriately. In this case it tried to put `<describe-prop what="trait:color"/>` in all places where white is used, the function of which adds the correct article "a" or "an" to the trait adjective. However, in many cases this is not correct, and in the `brief` is often one of them.
 
-Instead, go back to [karmode] (or `+tool woe karmode %Shared:clothing:ageless:accessories:tutorial-towel-daris`) and change it use the simplest SAM tag `$(this.trait:color)` instead, and click submit.
+Instead, go back to [karmode]() (or `+tool woe karmode %Shared:clothing:ageless:accessories:tutorial-towel-daris`) and change it use the simplest SAM tag `$(this.trait:color)` instead, and click submit.
 
 Now look and examine again:
 
@@ -412,7 +412,7 @@ Again, the brief, look at examine all do the right thing. Your Towel object now 
 
 You can skip this section and go to the next if you like, but here are some details of what `+Sharify` did to your Generic object to make it Shared.
 
-Let's look at it in Woe `+obname my towel` and [V] (or `+tool woe view %Shared:clothing:ageless:accessories:tutorial-towel-daris`):
+Let's look at it in Woe `+obname my towel` and \[V\] (or `+tool woe view %Shared:clothing:ageless:accessories:tutorial-towel-daris`):
 
 The `+sharify` tool attempted to substitute what it recognized as possible trait adjectives in your object's Details to use SAM tag based traits. As we saw above, it isn't perfect.
 
