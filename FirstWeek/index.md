@@ -1,5 +1,5 @@
 ---
-sort: 1
+sort: 2
 ---
 # Your First Week of SkotOS
 
