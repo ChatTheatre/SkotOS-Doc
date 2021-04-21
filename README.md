@@ -54,6 +54,7 @@ There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/
 * [Exploring SkotOS](Developer/Exploring_SkotOS.md)
 * [Linode Workflow](Developer/Linode_Workflow.md)
 * [Manifests and Linode](Developer/ManifestsAndLinode.md)
+* [Unit Tests and Continuous Integration](Developer/UnitTests.md)
 
 * [... the Developer docs index ...](Developer/index.md)
 
