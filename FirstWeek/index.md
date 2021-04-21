@@ -45,3 +45,8 @@ If you're using Linode, you can copy-and-paste that script into a new StackScrip
 
 We have [documentation on how to do that setup](../setup_vps.md) if you'd like more details.
 
+## Changing Locations
+
+The first and simplest way to change things is with the Tree of WOE. It's your basic tool for adding and changing [WOE objects](../Story_Builder/woe_workflow.md).
+
+So [let's go through how to do that](woe_editing_example.md).

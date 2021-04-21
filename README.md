@@ -32,6 +32,8 @@ These will show you the architecture, systems and concepts behind a SkotOS game 
 * [Exploring SkotOS](./Developer/Exploring_SkotOS.md)
 * [SkotOS Builder Docs](./Story_Builder/index.md) &mdash; including MERRY and SAM docs
 
+Also, check out the sidebar on the left. Sometimes it's easier to scroll through lots of topics than to drill down into sub-categories.
+
 ## Maintaining a SkotOS Game
 
 We also keep [documentation about maintaining your SkotOS game](./Maintainer/) once you've set it up.
