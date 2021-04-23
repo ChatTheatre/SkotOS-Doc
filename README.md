@@ -1,4 +1,4 @@
-# SkotOS Documentation
+# SkotOS - Build Your Own Virtual Theatre
 
 SkotOS, from ChatTheatre, is a suite of tools for making text-based games. If you want to ***play*** a SkotOS-based game, you can make an account on [Castle Marrach](https://www.marrach.com/), [Allegory of Empires](https://allegoryofempires.com/) and/or [Multiverse; Revelations](https://home.multirev.net/).
 
@@ -10,50 +10,53 @@ SkotOS is a game-building library, not a game. [The Gables](https://github.com/C
 
 ([The Eternal City](https://www.eternalcitygame.com/) was a Skotos Tech game, and is still running and you can play it. But it wasn't built on this engine. [Lots of other games](./Games.md) were.)
 
-## Looking Around?
+## Thinking About Starting?
 
 What's a SkotOS game like? Why would you want to build or run one? [Why would a ***text game*** be worth running for twenty years?](Basics/Why_Text.md)
 
-* [Logging into The Gables](Basics/Prod_Gables.md) - a basic SkotOS game you don't need to run for yourself
-* [Basic SkotOS commands](Basics/Commands.md)
-* [What's a Story Builder? (SkotOS roles)](Basics/Roles.md)
+Once you've pondered those questions, you might want to create an account on [Castle Marrach](https://www.marrach.com/) to see a working SkotOS game in action. Or you might want to [log into The Gables](Basics/Prod_Gables.md) and see what's in a SkotOS mini-stage, and roughly what you'd get right out of the box.
+
+And what if you decide to build a SkotOS-based game.
+
+[What would your first week of building a SkotOS game be like?](FirstWeek/index.md)
 
 ## Ready to Build?
 
-Here's a variety of developer documentation to show you the architecture, setup and concepts behind a SkotOS game. It's aimed at showing you the ropes as you build your game initially. You're also going to need to dive into the code.
+Don't skip that [First Week](FirstWeek/index.md) section. But after that, you'll want [more StoryBuilder docs](Story_Builder/index.md) on ***so many*** topics...
+
+These will show you the architecture, systems and concepts behind a SkotOS game in more detail.
 
 * [Setting up to build on SkotOS (local Mac)](./setup.md) [(on Linode/VPS)](./setup_vps.md)
 * [SkotOS Architecture Quick Overview](./architecture.md)
 * [SkotOS WOE Objects and Workflow](Story_Builder/woe_workflow.md)
 * [Exploring SkotOS](./Developer/Exploring_SkotOS.md)
-* [SkotOS Builder Docs](./Story_Builder/) &mdash; including MERRY and SAM docs
+* [SkotOS Builder Docs](./Story_Builder/index.md) &mdash; including MERRY and SAM docs
 
-## Maintaining a SkotOS Game?
+Also, check out the sidebar on the left. Sometimes it's easier to scroll through lots of topics than to drill down into sub-categories.
 
-This is a grag-bag of documentation from commercial SkotOS games, including the ones still running.
+## Maintaining a SkotOS Game
 
-It could use a proper reorganisation.
+We also keep [documentation about maintaining your SkotOS game](./Maintainer/) once you've set it up.
 
-This can show you what a successful game could expand to if all goes well. MUDs have historically needed a bit more [hierarchy and management](Basics/Roles.md) than you'd expect because they're normally run by volunteers, not by a small number of paid, dedicated employees. That means it's important to give out privileges carefully, and to know who does what.
-
-* [Maintenance](./Maintenance.md)
-* [Authentication](./Authentication.md)
+* [Maintenance](Maintainer/Maintenance.md)
+* [Authentication](Maintainer/Authentication.md)
 * [SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
 * [Staff_Plus_Commands](Story_Builder/Staff_Plus_Commands.md)
-* [StoryBuilder Documentation](./Story_Builder/)
 
 ## Writing DGD-Side Code?
 
-Documentation at this level is harder to find. There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/lpc-doc/) site which can help. There's also a bit of SkotOS-specific documentation here:
+Documentation at this level has a more do-it-yourself feel. DGD's LPC is a programming language, and a lot of DGD problems are programming problems.
+
+There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/lpc-doc/) site which can help. There's also a bit of [SkotOS-specific DGD documentation](Developer/index.md) on this site, including:
 
 * [Commands for Developers](Developer/CommandsForDevelopers.md)
 * [Authentication for Developers](Developer/DevAuthentication.md)
 * [Exploring SkotOS](Developer/Exploring_SkotOS.md)
 * [Linode Workflow](Developer/Linode_Workflow.md)
 * [Manifests and Linode](Developer/ManifestsAndLinode.md)
-* [SkotOS Port Numbers](Developer/SkotOS_Ports.md)
-* [the SkotOS Wiztool](Developer/SkotOS_Wiztool.md)
-* [the SkotOS Instance File](Developer/instance_file.md)
+* [Unit Tests and Continuous Integration](Developer/UnitTests.md)
+
+* [... the Developer docs index ...](Developer/index.md)
 
 ## SkotOS Classic
 

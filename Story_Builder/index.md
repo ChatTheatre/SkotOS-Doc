@@ -1,13 +1,17 @@
+---
+sort: 5
+---
 # SkotOS Story Building
 
 Story Builders create in-game objects and systems. In the [heirarchy of SkotOS roles](../Basics/Roles.md), they're far more technical than players, but weild less power than low-level developers. There's a ***lot*** of room within the Story Builder role to create whole new game systems, verbs, and even some amount of the game's "physics."
 
 The systems below are often written by Story Builders, and everything here is at least used by Story Builders. A Developer should know about this world, even Developers who focus more on the lowest levels.
 
-## An Outside-to-Inside Intro
+## Tutorials and Starters
 
-Note: this is going to want rewriting into a unified tutorial, updated for the latest ChatTheatre SkotOS. In the mean time, here are some interesting lessons to get started... which may not all work perfectly any more.
+The hardest part of a new system is often just... starting. Getting in and getting a feel for it. How can you do that with SkotOS? Here are some starting points.
 
+* [Your First Week with SkotOS](../FirstWeek/)
 * [Learning the Ropes](./Learning-the-Ropes.md)
 * [Merry Lesson One](./MerryLesson1.md)
 * [Traits Tuturial](./TraitsTutorial.md)

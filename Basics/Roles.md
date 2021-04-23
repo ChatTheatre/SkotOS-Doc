@@ -1,6 +1,4 @@
-# What's a StoryBuilder?
-
-(And what are these other SkotOS roles?)
+# What's a StoryBuilder? (SkotOS Roles)
 
 SkotOS is descended of old-style text MUDs. And like them, it has a bit of confusion about exactly who is allowed to do what. When you have volunteers writing code and doing staff-style maintenance for your game, and your game is also sort of a world, things can get a bit muddled.
 
