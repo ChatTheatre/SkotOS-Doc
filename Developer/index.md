@@ -17,7 +17,6 @@ But SkotOS is basically a large, long-lived application written in DGD. Like mos
 * [Authentication for Developers](./DevAuthentication.md)
 * [Exploring SkotOS](./Exploring_SkotOS.md)
 * [Linode Workflow](./Linode_Workflow.md)
-* [Manifests and Linode](./ManifestsAndLinode.md)
 * [SkotOS Port Numbers](./SkotOS_Ports.md)
 * [the SkotOS Wiztool](./SkotOS_Wiztool.md)
 * [the SkotOS Instance File](./instance_file.md)
