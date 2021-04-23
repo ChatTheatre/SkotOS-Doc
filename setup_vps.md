@@ -63,6 +63,37 @@ Then you probably want to "ssh root@" for that (numeric) IP address.
 * Making new DNS entries gets annoying fast, of course. I like to use a subdomain (e.g. gables.testing-47.mydomain.com) so you can change just the subdomain name when making changes to the StackScript. This is mostly only important for debugging the StackScript, but you may need to do that at some point.
 * If something goes wrong you can re-run the StackScript on the same machine. Be sure to set the correct environment variables.
 
+## Occasional DNS Errors
+
+Certbot is used to create SSL certificates, so that you can run a web server that uses HTTPS. The whole point of certificates is that they verify the particular domain they're for.
+
+That means that Certbot needs the DNS name you gave to work. And DNS is a horrible protocol where things go wrong at random, often badly wrong.
+
+Sometimes, even if you set up DNS ***right after*** you create the Linode, the DNS name won't be available when Certbot tries to use it.
+
+This is what that looks like in the Standup logfile:
+
+~~~
+++ certbot --non-interactive --nginx --agree-tos certonly -m webmaster@rwot.testing-1.madrubyscience.com -d rwot-login.testing-1.madrubyscience.com
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator nginx, Installer nginx
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for rwot-login.testing-1.madrubyscience.com
+Waiting for verification...
+Cleaning up challenges
+Failed authorization procedure. rwot-login.testing-1.madrubyscience.com (http-01): urn:ietf:params:acme:error:dns :: No valid IP addresses found for rwot-login.testing-1.madrubyscience.com
+IMPORTANT NOTES:
+ - The following errors were reported by the server:
+
+   Domain: rwot-login.testing-1.madrubyscience.com
+   Type:   None
+   Detail: No valid IP addresses found for
+   rwot-login.testing-1.madrubyscience.com
+~~~
+
+If it happens, you'll need to either run the stackscript again or just destroy the node and recreate it. The "run the stackscript again" solution is a bit faster (see below.)
+
 ## As the StackScript Runs
 
 You can ssh into your VM as the StackScript is running. There will be files in root's home directory with names like "standup.log" and (for The Gables) game_standup.log. These are the console and/or error output from the StackScript running. You can use a file viewer like "less" to look at them and/or use "tail -f" to monitor them constantly as they're added to.
@@ -115,7 +146,7 @@ See [VPS workflow](./Developer/LinodeWorkflow.md) for full details.
 
 It can also be useful to [run your app locally](./setup.md) to get a feel for how everything work.
 
-## Updating the Stackscript
+## Updating and Re-Running the Stackscript
 
 The Stackscript tries to be re-runnable where possible. So in many cases if you're changing it you can just re-run it on the same instance with the appropriate environment variables set.
 
@@ -124,6 +155,22 @@ Note that re-running your Stackscript will probably delete some or all changes y
 In some cases you may need to create a new Linode VM or reset an old one to a previous state and re-run.
 
 The existing DNS entries will normally work fine unless you create a new Linode. Re-running certbot won't cause DNS problems.
+
+Here's what my "run the stackscript" scripts tend to look like:
+
+~~~
+#!/bin/bash
+
+# run_my_stackscript.sh
+
+SUBDOMAIN=testing-1.madrubyscience.com USERPASSWORD=MyUtterlySecurePassword123 GAME_GIT_URL=https://github.com/ChatTheatre/gables_game GAME_GIT_BRANCH=master SKOTOS_STACKSCRIPT_URL=https://raw.githubusercontent.com/ChatTheatre/SkotOS/master/deploy_scripts/stackscript/linode_stackscript.sh . ./gables_stackscript.sh
+~~~
+
+You can run them like that. You can also export an environment variable called SKIP_INNER to ***not*** run the full SkotOS-install stackscript, if it's already succeeded once. Something like this:
+
+~~~
+SKIP_INNER=true ./run_my_stackscript.sh
+~~~
 
 ## Great Ideas that the StackScript Doesn't Do
 
