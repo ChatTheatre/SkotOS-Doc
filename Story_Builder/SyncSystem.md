@@ -45,3 +45,7 @@ It also looks like the sync_fix script on the same object was run just *after* t
 This Sync system should be our blueprint for dealing with the file system. The Vaulttool is really useful for developers, but it doesn't hook in at the Story Builder level, and long-term that's who needs to handle these things.
 
 It's not clear how much of the code can be directly reused.
+
+## Notes from the Past
+
+Old Sync system docs: http://skotos-wiki.marrach.com/twiki/bin/view/Builders/SyncSystemTwo
