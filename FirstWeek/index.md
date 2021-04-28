@@ -50,3 +50,9 @@ We have [documentation on how to do that setup](../setup_vps.md) if you'd like m
 The first and simplest way to change things in your game is with the Tree of WOE. It's your basic tool for adding and changing [WOE objects](../Story_Builder/woe_workflow.md).
 
 So [let's go through how to do that](changing_locations_example.md).
+
+## Better Objects: Making a Wearable Towel
+
+SkotOS has some systems to check your objects and make sure you've done what you need to. This is called "proofing." Let's go through [an example of using +proof for proofing and make an item of clothing](./TowelTutorial.md).
+
+(The example is a towel, though you could make a different piece of clothing if you like.)

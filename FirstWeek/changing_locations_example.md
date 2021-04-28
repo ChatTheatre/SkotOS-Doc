@@ -41,3 +41,5 @@ Not every property makes sense for every object. For instance, that Base:Bulk en
 ## Persistent? Only Sort Of
 
 Of course, if you delete skotos.database and do a full cold boot you'll ***lose*** those changes. We'll talk about how to fix that later. For right now, just know: there's an extra step if you want to export your changes to XML and share them with other people, or persist them through a reboot with no statedump.
+
+But if you make sure to use statedump files, you'll keep this kind of changes, and all your other changes. Only some changes are designed to be sync'd, exchanged and copied around. But the statedump keeps all changes at every level, from Merry and WOE to the lowest-level DGD-language changes to data structures and memory.

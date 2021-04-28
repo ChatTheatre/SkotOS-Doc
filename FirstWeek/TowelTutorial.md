@@ -2,21 +2,17 @@
 
 ## Who, What & How
 
-This tutorial is for the StoryBuilder who desires to dive deep in the crafting of Shared Objects that meet the standards of SkotOS ChatTheatre Library and The Gables circa 2020.
+We'll start with an old object, a "Generic towel", and turn it into a new [Traits] object with an alterable [SAM] tag based prime [Description](../StoryBuilder/DescriptionSystem.md), convert it to Shared using the [Sharify] tool, proof it with the [Proof] tool, and ultimately learn how to [Share] it between ChatTheatres and Narrative Prose Games that use the Shared SkotOS ChatTheatre Library.
 
-Our assumption is that a StoryBuider using this tutorial understands basic staff `+` commands such as `+spawn`, `+traits`, etc. and has used Shared Objects in a ChatTheatre before. If not, we suggest that the StoryBuilder first do [Tutorial: Object Traits & Properties].
+[Part One](#PartOne) of tutorial should be relatively easy for any person that wants to be a StoryBuilder for ChatTheatre's in the 2020s.
 
-In [Part 1] of this tutorial, we will do this by starting with an old object, a "Generic towel", and turn it into a new [Traits] object with an alterable [SAM] tag based prime [Description](./DescriptionSystem.md), convert it to Shared using the [Sharify] tool, proof it with the [Proof] tool, and ultimately learn how to [Share] it between ChatTheatres and Narrative Prose Games that use the Shared SkotOS ChatTheatre Library.
+[Part Two](#PartTwo) of this tutorial is for intermediate StoryBuilders, and share some optional ideas on how to add additional details (using the [Detail System](../Story_Builder/DetailSystem.md), how to facilitate creation of [Morph] child objects, variants objects using [Clones], and how to convert old legacy [Bilbo] objects that need to be deprecated.
 
-Part 1 of tutorial should be relatively easy for any person that wants to be a StoryBuilder for ChatTheatre's in the 2020s.
-
-[Part 2] of this tutorial is for intermediat StoryBuilders, and share some optional ideas on how to add additional details (using the [Detail System](./DetailSystem.md), how to facilitate creation of [Morph] child objects, variants objects using [Clones], and how to convert old legacy [Bilbo] objects that need to be deprecated.
-
-[Part 3] of this tutorial is for advanced StoryBuilders, or people want to become eventually StoryCoders. It will introduction some easy features you can add to the towel using simple [Merry] scripts, how to create additional [Ur] object heirarchy, and finally, how to create a [Local] towel with custom features unique to your game and not shared with others, but allows you to leverage updates from other games to your shared objects.
+[Part Three](#PartThree) of this tutorial is for advanced StoryBuilders, or people want to become eventually StoryCoders. It will introduction some easy features you can add to the towel using simple [Merry](../StoryBuilder/MerrySystem.md) scripts, how to create additional [Ur](../Story_Builder/ThingsAndUrThings.md) object heirarchy, and finally, how to create a [Local](../Story_Builder/SyncSystem.md) towel with custom features unique to your game and not shared with others, but allows you to leverage updates from other games to your shared objects.
 
 This tutorial will not teach a StoryBuilder how to integrate the object into local game systems such as [Crafting], however, the goal is that an Shared object properly crafted can easily be adapted to local game requirements.
 
-## Part 1
+## Part One
 
 ### Cloning a Generic Object
 
@@ -519,35 +515,35 @@ Once you have signed off after testing all of these `+proof` questions, added yo
 ### Woe Notes
 ### Complete +Proof
 
-## Worn Descriptions
+### Worn Descriptions
 
-## Morphs & Clones
+### Morphs & Clones
 
-## What else needs proofing? +shared
+### What else needs proofing? +shared
 
-# Part 2
+## Part 2
 
 
-## Adding additional traits: trait:symbol
+### Adding additional traits: trait:symbol
 
-## Adding additional Descriptions: Embroidery 
+### Adding additional Descriptions: Embroidery 
 
-## Traits for non-Prime Descriptions: trait:embroidery:threadcolor
+### Traits for non-Prime Descriptions: trait:embroidery:threadcolor
 
-## Adding other useful SAM tags
+### Adding other useful SAM tags
 
-## Self-referencing SAM tags to save effort.
+### Self-referencing SAM tags to save effort.
 
-## Adding additonal Ur:Heirarchy
+### Adding additonal Ur:Heirarchy
 
-## Adding simple Merry into SAM tags
+### Adding simple Merry into SAM tags
 
-## Adding simple Merry reactions to signals
+### Adding simple Merry reactions to signals
 
-# Part 3
+## Part 3
 
-## Calling a existing Merry script in a script container
+### Calling a existing Merry script in a script container
 
-## Writing a less simple Merry script
+### Writing a less simple Merry script
 
-## Using Ur:Heirarchy for unshared local game Merry functionality
+### Using Ur:Heirarchy for unshared local game Merry functionality
