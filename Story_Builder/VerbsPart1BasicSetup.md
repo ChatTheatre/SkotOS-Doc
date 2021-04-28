@@ -1,4 +1,4 @@
-# Verbs
+# Verbs Part 1: Basic Setup
 
 Verbs are the commands that make our chatters do something. Most verb objects are stored in the Socials:Verbs:* directory in the Tree of Woe. The +verb command will allow you to see if a verb already exists and how it is set up. 
 
