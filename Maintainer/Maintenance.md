@@ -1,5 +1,7 @@
 # SkotOS Maintenance
 
+Caution: some of this is specific to older SkotOS games and hasn't been updated.
+
 This document describes the normal care and maintenance of a SkotOS instance
 
 ![](SkotOS-Ecosystem-Diagram.png)

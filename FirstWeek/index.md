@@ -23,7 +23,7 @@ Once you have a feel for what SkotOS ***is***, you can create your own little mi
 
 ## Setting Up SkotOS For Yourself
 
-Do you use a Mac? If so, good news - you can fork [The Gables GitHub repo](https://github.com/ChatTheatre/gables_game), then clone it and run gables_game/deploy_scripts/mac_setup.sh to get a local copy running on your Mac. You can log in with (by default) literally any account/password combination and it will assume you're not only legit, you deserve full admin right to the game server. Don't expose The Gables in this mode to the Internet, in case you were wondering.
+Do you use a Mac? If so, good news - you can fork [The Gables GitHub repo](https://github.com/ChatTheatre/gables_game), then clone it and run gables_game/deploy_scripts/mac/setup.sh to get a local copy running on your Mac. You can log in with (by default) literally any account/password combination and it will assume you're not only legit, you deserve full admin right to the game server. Don't expose The Gables in this mode to the Internet, in case you were wondering.
 
 For more details, we have a [pretty extensive setup page](../setup.md) with the details. Or you can read the Mac setup script, for full details in Bash-script form.
 

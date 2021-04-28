@@ -14,9 +14,9 @@ See also: [Exploring SkotOS](Developer/Exploring_SkotOS.md)
 
 SkotOS is a game library, not a game. So you'll want to install something that uses SkotOS, not "just SkotOS." The obvious choice is [The Gables](https://github.com/ChatTheatre/gables_game).
 
-For other SkotOS-based games you should check their README to see how to install them. There should normally be a local install script based on SkotOS's mac_setup.sh, and also a Linode-or-similar script to set up a VPS server.
+For other SkotOS-based games you should check their README to see how to install them. There should normally be a local install script based on SkotOS's Mac setup script, and also a Linode-or-similar script to set up a VPS server.
 
-Most SkotOS-based games will have a deploy_scripts subdirectory with a mac_setup.sh script and a Linode stackscript - and possibly others.
+Most SkotOS-based games will have a deploy_scripts subdirectory with a mac/setup.sh script and a Linode stackscript - and possibly others.
 
 For The Gables, the Linode script is called gables_stackscript.sh.
 
