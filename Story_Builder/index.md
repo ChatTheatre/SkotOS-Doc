@@ -26,6 +26,7 @@ The hardest part of a new system is often just... starting. Getting in and getti
 * [The Movement System](./MovementSystem.md)
 * [The Proximity System](./ProximitySystem.md)
 * [Staff +Commands](./Staff_Plus_Commands.md)
+* [Shared Objects and the Proof System](./SharedObjectsAndProofSystem.md)
 * [The Sync System](./SyncSystem.md)
 
 ## SAM and MERRY
