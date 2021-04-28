@@ -90,3 +90,5 @@ Once all the basic information is added, you can begin adding roles by clicking 
 
 Once that roles are added, the verb is complete. Just make sure to thoroughly test it to ensure it behaves as intended.
 
+One final note that this process is not just limited to Socials. Follow these same steps to create @commands and +commands.
+
