@@ -19,12 +19,14 @@ The hardest part of a new system is often just... starting. Getting in and getti
 ## In-Game Systems
 
 * WOE objects: [Overview](./woe_workflow.md) [Some Important WOE Objects](./Key_Woe_Objects.md)
+* [Things, /base/obj/thing and UrThings](./ThingsAndUrThings.md)
 * [Consent System](./ConsentSystem.md)
 * Description System: [Quick Summary](./DescriptionSystemQuickSummary.md) or [In-Depth Details](./DescriptionSystem.md)
 * Detail System: [QuickSummary](./DetailSystemQuickSummary.md) or [In-Depth Details](./DetailSystem.md)
 * [The Movement System](./MovementSystem.md)
 * [The Proximity System](./ProximitySystem.md)
 * [Staff +Commands](./Staff_Plus_Commands.md)
+* [Shared Objects and the Proof System](./SharedObjectsAndProofSystem.md)
 * [The Sync System](./SyncSystem.md)
 
 ## SAM and MERRY

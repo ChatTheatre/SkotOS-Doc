@@ -2,35 +2,55 @@
 
 SkotOS has a few different types of objects. This document will discuss your workflow around one specific type, which are called WOE objects.
 
-WOE objects are, very roughly, "in-game objects that are kept in server memory." While this page has a lot of caveats, exceptions and general nit-picking, the basic concept of a WOE object is just that. Is there an anvil on the floor in a room? It's a WOE object. The room? Also a WOE object. Your body? WOE object.
+WOE objects are mostly in-game object types that are kept in server memory. While this page has a lot of caveats, exceptions and general nit-picking, the basic concept of a WOE object is just that. Is there an anvil on the floor in the room? That anvil has a WOE object. The room? Also a WOE object. Your body? WOE object.
+
+My phrasing may seem a bit odd there. Object "types?" The anvil "has" a WOE object? Yup. The anvil will have a WOE object, called something like "SomeGame:objects:anvil". And if the game has four anvils in various places, they may all have the same WOE object. See "WOE and Spawns" later for more details.
 
 ## SkotOS Object Types and WOE
 
-SkotOS has a few different places it puts code and data structures. Let's talk about what WOE objects are, specifically.
+SkotOS has a few different places it puts code and data structures. Let's talk about some kinds of objects:
 
 * Files - some things in SkotOS are just files, like in non-SkotOS apps. While WOE objects can interact with files and can be dumped to XML, a "live" WOE object is in memory in the DGD server.
 * Source code - the .c and .h files are source code in the DGD language. Compiled DGD objects are often "off-stage" - they exist but you can't necessarily see them or directly interact with them. A compiled source object can choose to be a WOE object, but many (most?) of them aren't.
 * In-game objects - all in-game objects like rooms, player bodies or props are WOE objects, though not all WOE objects are visible in-game objects.
 
+A WOE object is an object with a WOE name. That's what makes it a WOE object. If the DGD objects made of .c files register a WOE name (and they can) then they show up as WOE objects.
+
 WOE objects live in a WOE namespace. For instance, your top-level Theatre object might be named Theatre:Theatres:Tavern. Or the basic tall male body might be named Mansion:MaleTall1, as it is for The Gables. The parts before the colon are often directories when saving WOE objects on disk, and are categories visible on the left side of the Tree of WOE UI &mdash; see below.
 
 ## WOE and Ur-Objects
 
-WOE Objects have the possibility of inheriting from an "Ur" object. Wikipedia says of the word "UR": *Ur-, a German prefix meaning "primeval" (seldom also "primitive") or even simply "original"; in a relative majority of cases it takes on the sense of "most ancient" (referring to sth. as a 'source' - the initial root, the starting point - of a development); Compare with Old English: or-deal, or-lay, or-iginal; in modern English often replaced by 'proto-'; Sometimes in combinations of two or more of these meanings.*
+WOE Objects have the possibility of inheriting from an ["Ur" object](./ThingsAndUrThings.md). Wikipedia says of the word "UR": *Ur-, a German prefix meaning "primeval" (seldom also "primitive") or even simply "original"; in a relative majority of cases it takes on the sense of "most ancient" (referring to sth. as a 'source' - the initial root, the starting point - of a development); Compare with Old English: or-deal, or-lay, or-iginal; in modern English often replaced by 'proto-'; Sometimes in combinations of two or more of these meanings.*
 
 An "Ur" object is like a parent object. It is especially similar to a JavaScript parent object since JS uses [prototypal inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain), like SkotOS does.
 
 Basically, you can have a beer, which can be an instance of the "Ur-beer," the parent object. The Ur-beer isn't usually sitting around in the world. That's good, because if you drank it then it would empty all the other beers in the world! They inherit their "full" state from the Ur-beer. An object you see in the world can often be an *instance* of a parent object, and any object can inherit its properties (data) from an Ur-object.
 
+([More details here.](./ThingsAndUrThings.md))
+
 ## Seeing and Editing WOE Objects
 
-The easiest way to see (nearly) all the WOE objects is the Tree of WOE. If you have a developer or staff account on a production SkotOS login server (a.k.a. thin-auth), it will have a Tree of WOE link. You may also have a Tree of WOE link on your local development machine, though sometimes the link is broken. The link you want for local dev will look something like "http://localhost:10080/gables/TreeOfWoe.html".
+The easiest way to see all the WOE objects is the Tree of WOE. If you have a developer or staff account on a production SkotOS login server (a.k.a. thin-auth), it will have a Tree of WOE link. You may also have a Tree of WOE link on your local development machine, though sometimes the link is broken. The link you want for local dev will look something like "http://localhost:10080/gables/TreeOfWoe.html".
 
 The Tree of WOE lets you look through the hierarchical table of all the WOE objects on the left, and when you click on one of them you can view and edit it on the larger right pane.
 
-Properties will have letters in brackets after their name for things like [V]iew, [E]dit and [X]delete.
+Properties will have letters in brackets after their name for things like [V]iew, [E]dit, see [X]ML and [D]elete.
+
+A DGD sort of object made from a .c file may have nothing to edit. It may have no properties you can change through the Tree of WOE - though sometimes it does.
 
 <img src="TreeOfWOEScreen.png" alt="The Tree of WOE browser interface" />
+
+## WOE and Spawns
+
+If an object's *type* lives in WOE, does the object *itself* live in WOE? **Sometimes**.
+
+A Spawn of object A is just a new object with object A as its ur-object. Usually you call it a Spawn if it's going to be a thing in the game, and especially if there will be more than one of them. You might have MyGame:objects:clothing:StoneCravat which is a WOE ur-object, and then have forty of them currently in various places in your game.
+
+Each of those forty StoneCravats has the same UrObject, which has a WOE name and is therefore a WOE object. But the individual objects probably do *not* have a WOE name.
+
+It's possible to have a single object which exists in the game once, has a WOE name, and can be directly interacted with. Rooms usually work like this, for instance, and pieces of scenery. But if there are going to be several of a given object in the game, there is normally a single Ur-object in WOE and a lot of anonymous spawns in-game.
+
+Here's a slightly odd thing: there's a DGD object type called /base/obj/thing which can be either a WOE object or an anonymous spawn. In fact, the same exact /base/obj/thing can go back and forth from one to the other if you edit it in the Tree of WOE. An anonymous spawn, if you see a name for it, will normally have a name like /base/obj/thing#3714. That's actually its DGD name showing through - usually it doesn't have a WOE name. So technically it's not a WOE object - it's a spawn of a WOE object.
 
 ## WOE Objects in XML Form
 
@@ -99,3 +119,5 @@ Note: this section is primarily for developers.
 Nearly any LPC object (that is: any object that inherits from /usr/System/lib/sys_auto, which happens automatically) can expose itself as a WOE object. In order to do so, it should call set_object_name(), usually in its create() function.
 
 When set_object_name is called, it registers the object by its new WOE name with the IDD (/usr/System/sys/idd), which now knows that that WOE name corresponds to that DGD object.
+
+See [WOE for Developers](../Developer/WOEForDevelopers.md) for more information.
