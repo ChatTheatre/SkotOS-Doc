@@ -58,3 +58,11 @@ What if the object you want to change isn't inside DGD? That happens sometimes.
 Luckily, DGD Manifest creates some symlinks that can help you. Under gables_game, after you've run "dgd-manifest install" (or update), there will be a .repos directory containing symlinks to the various named goods that you depend on - bundled and unbundled both.
 
 You can use those symlinks to refer to your dependencies even if their Git information changes. For an example, search gables_game/deploy_scripts/mac/start_server.sh for ".repos". You'll see that it sets a SKOTOS_DIR from that symlink, and then uses the SKOTOS_DIR to find its deploy scripts.
+
+## Help, It's Not Working!
+
+There are a few reasons this might not work, and most of them are simple.
+
+* Did you create and push a commit in your SkotOS directory? You have to push the commit.
+* Did you run "dgd-manifest update" in your game directory ***after that***? Otherwise it can't pull the commit.
+* Are you using the old version of the object from the statedump? You may need to recompile, reload a WOE object or reboot cold.
