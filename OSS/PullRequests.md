@@ -10,7 +10,7 @@ If you're sure you're in the right repo, or if you've already done the work for 
 
 The ChatTheatre team should get back to you promptly, within a few days, about your issue or Pull Request. That's not necessarily for a final resolution - just a quick comment or answer of some kind. Some issues are addressed rapidly ("this belongs in the Orchil repo, we would welcome a Javascript-based fix") while others may take a long time ("that feature is on our roadmap, but not very soon.")
 
-If a PR looks basically good then the ChatTheatre team should get around to reviewing and merging it for you. It's strongly preferred to let somebody else look over your change before it gets merged, even if you have permission to merge it. SkotOS staff: please let people know via a GitHub comment or Signal conversation that you are self-merging and why (e.g. "this is just a documentation change and it's holding up another PR.")
+If a PR looks basically good then the ChatTheatre team should get around to reviewing and merging it for you. It's strongly preferred to let somebody else look over your change before it gets merged, even if you have permission to merge it. SkotOS staff: please let people know via a GitHub comment or Signal conversation that you are self-merging and why (e.g. "this is just a documentation change and it's holding up another PR.") Self-merging is okay for docs or other non-code, but please try to get review for code whenever possible.
 
 If your change gets comments, please address them when you can - that may mean changing your PR, or it may mean arguing your case ("actually I think this *is* the right way to do it because...")
 
