@@ -57,13 +57,14 @@ There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/
 
 * [... the Developer docs index ...](Developer/index.md)
 
-## Submitting Code Back?
+## Submitting Code Back? Or Modifying SkotOS?
 
 It's likely that as you work with SkotOS, you'll notice bugs. ChatTheatre has been fixing the code for some time, but it's a huge project. And there are always, always more useful features to add, more libraries to write, etc.
 
 What if you want to submit your code back to SkotOS so that everybody can use it?
 
 * [Making Pull Requests](OSS/PullRequests.md)
+* [Using a Modified SkotOS](OSS/ModifiedSkotOS.md)
 
 ## SkotOS Classic
 
