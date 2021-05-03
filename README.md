@@ -58,6 +58,14 @@ There's a [ChatTheatre DGD and LPC documentation](https://chattheatre.github.io/
 
 * [... the Developer docs index ...](Developer/index.md)
 
+## Submitting Code Back?
+
+It's likely that as you work with SkotOS, you'll notice bugs. ChatTheatre has been fixing the code for some time, but it's a huge project. And there are always, always more useful features to add, more libraries to write, etc.
+
+What if you want to submit your code back to SkotOS so that everybody can use it?
+
+* [Making Pull Requests](OSS/PullRequests.md)
+
 ## SkotOS Classic
 
 A few folks may be here, not to build a game, but because you heard about a twenty-year-old mass of glorious untamed built-by-volunteers digital wilderness and ruins, on top of a frankly bizarre dynamic language that few people ever braved.
