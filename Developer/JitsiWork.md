@@ -2,13 +2,21 @@
 
 Jitsi is a recent addition to SkotOS, and quite heavy on the operational requirements. Here, you can find some notes on working with it.
 
-## Jitsi's Security Model
+## A Tiny Jitsi History
 
 Jitsi is based on XMPP (a.k.a. Jabber), an old AOL-era instant message protocol. XMPP is used to exchange information to set up WebRTC (that's the audio and/or video chat) with one XMPP connection corresponding to one WebRTC connection, mostly. Jitsi has built a chatroom service (JiCoFo), a service for three-plus-person chat (Jitsi Videobridge) and a number of other components, some of which are meant for old-style video phones and we don't use them (e.g. JiGaSi.)
 
-In Jitsi, a room only exists if somebody is in it. No participants? No room. That was standard for chat protocols of its era. Jitsi has two primary security models: everybody gets full rights, or some people get full rights and there are optional guests.
+Jitsi was originally built as a SIP-based telephony service, and WebRTC was added later as the standard emerged. It's built by what was originally the company Blue Jimp, which was purchased by Atlassian and later purchased by 8x8. Blue Jimp and the core Jitsi team still seems to exist as an entity, based on online dev support and checkins.
 
-If everybody gets full rights, that means anybody can kick anybody else out of a room. That's no good for us. So we have to use that second model.
+## Jitsi's Security Model
+
+In Jitsi, a room only exists if somebody is in it. No participants? No room. That was standard for chat protocols of the XMPP era. Jitsi has two primary security models: everybody gets full rights, or some people get full rights and there are optional guests.
+
+If everybody gets full rights, that means anybody can kick anybody else out of a room. That's how we're initially building. But it means our participants can, if they know a little Jitsi and Javascript, do things they aren't supposed to. So in the long term, we have to use that second model.
+
+In the short term, we punted on that and used the "everybody gets full rights" model. We [tried quite hard](https://github.com/WebOfTrustInfo/prototype_vRWOT/issues/5) to make the other model work. You can see a lot of it in the commit history of SkotOS/deploy_scripts/stackscript/linode_stackscript.sh, for instance. And in the attempted work in [the ill-fated SkotOS-jitsi-admin repo](https://github.com/ChatTheatre/SkotOS-jitsi-admin).
+
+## What Would a Better Model Look Like?
 
 It's *possible* to give everybody an account dynamically (e.g. with JWT) but you still don't get any real granularity about what they can do: they get full moderator rights or basically no rights. So that's not much of an improvement.
 
@@ -18,9 +26,19 @@ Since in Jitsi rooms only exist if people are in them, and only moderators count
 
 So: we need a SkotOS admin-type account to be logged into any rooms we want to exist. And they need to be logged in all the time. If they ever log out, the room disappears. No pressure.
 
-The simplest Jitsi security method that meets that need is "internal_hashed", which in this case means "there are a small number of manually-created accounts and everybody else is a guest." In our case, that's *one* manually-created account.
+The simplest Jitsi security method that meets that need is "internal_hashed", which in this case means "there are a small number of manually-created accounts and everybody else is a guest." In the case of this proposed model, there would be *one* manually-created account.
 
-Let's refer to that Jitsi account as "skotosadmin" and the program that stays constantly connected as SkotOS Jitsi Admin.
+Let's refer to that Jitsi account as "skotosadmin" and the program that stays constantly connected as SkotOS-jitsi-admin.
+
+SkotOS-jitsi-admin attempted to connect as skotosadmin to a number of dynamically-created Jitsi rooms. It was based on [jxs](https://github.com/jitsi/jxs), a headless load-test program that did a similar thing with only anonymous guest accounts. Unfortunately, directly connecting and logging into xmpp with normal credentials... just didn't seem to work. After taking [a number of packet dumps from websocket connections with the web UI client](https://github.com/ChatTheatre/SkotOS-jitsi-admin/tree/master/packet_captures), it became clear that Jitsi was using a weird XMPP domain (easy to fix) and a fairly bizarre setup where it connected anonymously, and also with the skotosadmin account, and set up a session ID with skotosadmin to log in via the anonymous connection. However, trying to do what the skotosadmin websocket connection was doing... simply failed.
+
+## Headless Jitsi: No Joy
+
+The basic difficulty is that we wanted a nonhuman user, not running a browser, to hold Jitsi rooms open. Since Jitsi rooms only exist if at least on XMPP connection is attached to them, it seemed the obvious way. We're far from the first people to want this, though I can't find evidence that anybody is successfully doing what we want...
+
+We [tried a number of approaches](https://github.com/WebOfTrustInfo/prototype_vRWOT/issues/5), including modifying jxs as described above, and a [Puppeteer-based approach](https://gist.github.com/saghul/179feba3df9f12ddf316decd0181b03e) that failed because running a headless Chrome is fairly memory-intensive... And the Jitsi API used in the browser seems to only be willing to log into a single chatroom at once, so to run ten chatrooms we'd need ten copies of headless Chrome. That's completely unreasonable.
+
+It seems like the jxs-based approach *should* work. But for some reason, the xmpp client didn't seem to be doing the right thing. Perhaps it would have been possible to go to an even lower level than jxs and rebuild the key exchange (SASL SCRAM-SHA-1). Or perhaps there was some simple way to make the xmpp client do the right thing that I couldn't figure out. The obvious things all failed, even after fixing those bugs that I could identify after reading all the websocket exchanges [in captures of web-client logins](https://github.com/ChatTheatre/SkotOS-jitsi-admin/tree/master/packet_captures).
 
 ## Debian versus Docker
 
@@ -33,27 +51,6 @@ It's possible to install Jitsi from Debian packages instead of using Docker-Comp
 It's also easier to reliably get the exact same result with Docker than Debian - Debian allows (and encourages!) re-pushing the exact same package version number with new bugfixes, for instance. That's not good if you want to be able to repeatedly install the exact same thing and have it work.
 
 I'm aware that Docker makes it harder to reach in and inspect Jitsi internals. My experience was that that was the lesser of the two evils.
-
-## Trying to Control Jitsi Headless: Puppeteer Isn't Great
-
-Jitsi doesn't make it easy to control it headlessly. But that's exactly what we want to do with the SkotOS Jitsi Admin described above.
-
-It's possible to use Puppeteer (headless Chrome) to keep a connection open. Two problems with that:
-
-* Headless Chrome uses a lot of resources. It's simulating a full browser, Javascript and all.
-* The normal in-browser Javascript Jitsi API can only connect to one chatroom at a time.
-
-Between those, it means you'd be using a *ton* of memory to hold many rooms open. It would be really, really inefficient.
-
-## Trying to Control Jitsi Headless: JXS
-
-There's a load-tester that the Jitsi devs wrote to connect headless from a Node.js program. It's called JXS. JXS, on paper, looks *perfect*. It holds multiple connections open. It's designed to not take too many resources. It operates in XMPP but doesn't need WebRTC (or a browser) to be active.
-
-The only difficulty is that it doesn't do much. And it can't use the Javascript API. And it basically exchanges raw, low-level chunks of XML directly on websockets. Well, and that it uses a weird Webpacker-based syntax to make all that happen, but that bit's not too hard to fix.
-
-But that means if you want to add functionality that JXS doesn't currently have (as I write this: logging in with a password, for instance) then you're going to need some raw XML dumps to put into our JXS-like program.
-
-So how do we get raw XML dumps?
 
 ## Dumping Network Connections: Google Chrome's Developer Tools
 
