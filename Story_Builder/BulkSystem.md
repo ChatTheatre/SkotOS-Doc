@@ -279,9 +279,6 @@ with gold. Thus a kettle strong enough of being a \"kettle of full
 gold\" would have a max weight of roughly .26 x 1000kg (the mass of
 water) x 19.3 (the density of gold) = 5018 kg.
 
-Some commonly Max Weight values are listed at [Max Weight
-Values](./BulkSystem#_MaxWeightValues_Max_Weight_Valu ).
-
 ### Derived Attributes
 
 The following attributes have values that are calculated based on the
