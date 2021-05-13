@@ -69,6 +69,4 @@ can also be very useful.
 All of the items on the list were referenced to measured examples ... no
 guesses involved for the volumes or container weights. "Maximum weight"
 of course is a guess for each of them except the ocean cargo container
-and the 55 gallon drum. %META:TOPICMOVED{by="ChristopherAllen"
-date="1048801995" from="Builders.CapacityValues"
-to="Builders.ContainerValues"}%
+and the 55 gallon drum.
