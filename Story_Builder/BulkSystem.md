@@ -132,7 +132,7 @@ Unit: kilograms \[kg\]
 **A wooden staff would have a mass of 1 kg.**
 
 Some example mass values are listed at [Mass
-Values](http://troll.skotos.net/twiki/bin/view/Builders/BulkSystem#Mass_Values).
+Values](./BulkSystem#Mass_Values).
 There are also some useful unit conversion tools at [www.allmeasures.com
 mass
 converter](http://www.allmeasures.com/conversion.asp?mass_weight=on&Submit=Converter)
@@ -163,7 +163,7 @@ The densities of some common materials are:
 **The wooden staff has a density of 0.7.**
 
 Some common Density values are listed at [Density
-Values](http://troll.skotos.net/twiki/bin/view/Builders/BulkSystem#_DensityValues_Density_Values_).
+Values](./BulkSystem#_DensityValues_Density_Values_).
 
 A commonly used alternative to density is *specific gravity*, the
 dimensionless ratio of an object\'s density to that of water. Thanks to
@@ -225,7 +225,7 @@ calculations, guesses or real examples would be required for other types
 of objects.
 
 Some common Capacity values are listed at
-[ContainerValues](http://troll.skotos.net/twiki/bin/view/Builders/BulkSystem#_CapacityValues_Capacity_Values_).
+[ContainerValues](./BulkSystem#_CapacityValues_Capacity_Values_).
 There are also some useful unit conversion tools at [www.allmeasures.com
 volume
 converter](http://www.allmeasures.com/conversion.asp?volume=on&Submit=Converter).
@@ -280,7 +280,7 @@ gold\" would have a max weight of roughly .26 x 1000kg (the mass of
 water) x 19.3 (the density of gold) = 5018 kg.
 
 Some commonly Max Weight values are listed at [Max Weight
-Values](http://troll.skotos.net/twiki/bin/view/Builders/BulkSystem#_MaxWeightValues_Max_Weight_Valu ).
+Values](./BulkSystem#_MaxWeightValues_Max_Weight_Valu ).
 
 ### Derived Attributes
 
@@ -512,7 +512,7 @@ item by 15 grams, or .015kg (about 1/2 ounce) per usage. This means that
 it takes about 66 bites or 66 sips to consume a 1kg food item.
 
 The SAM tag
-[\<eaten\>](http://troll.skotos.net/twiki/bin/view/Builders/SamSystem#_lt_eaten_gt_)
+[\<eaten\>](./SamSystem#_lt_eaten_gt_)
 is placed in the look and examine of food objects to show if the item
 has been partially consumed. In addition, a property `trait.eaten` is
 set in foods and drinks once one bite has been taken. Combined, this
@@ -673,7 +673,7 @@ users using SAM or even inline Merry.
 ### Simple Brick
 
 A very simple object \--
-[Examples:complete:bulk:brick](http://skotos-seven.skotos.net:6080/Dev/View.sam?obj=Examples%3Acomplete%3Abulk%3Abrick).
+Examples:complete:bulk:brick.
 
 As you can see in KarMode, this object only has one detail with a single
 name, two adjectives, and a look description:
@@ -765,7 +765,7 @@ ur-parent.
 ### Oil Drum
 
 A basic container is the standard 55g oil drum \--
-[Examples:complete:bulk:drum-oil-standard](http://skotos-seven.skotos.net:6080/Dev/View.sam?obj=Examples%3Acomplete%3Abulk%3Adrum-oil-standard).
+Examples:complete:bulk:drum-oil-standard.
 
 As you can see in KarMode, this object only has one detail with a single
 name, two adjectives, and a look description:
@@ -789,10 +789,10 @@ Converting the pounds to kilograms at [www.allmeasures.com mass
 converter](http://www.allmeasures.com/conversion.asp?mass_weight=on&Submit=Converter)
 gives the mass of the oil drum as 31.8kg. The drum is made of steel, and
 looking that up at [Density
-Values](http://troll.skotos.net/twiki/bin/view/Builders/BulkSystem#_DensityValues_Density_Values_)
+Values](./BulkSystem#_DensityValues_Density_Values_)
 gives us the density of 8. Using Pi\*r\^2 on the inside dimensions, this
 means that it contains 12924.5 cubic inches, converted at
-[ContainerValues](http://troll.skotos.net/twiki/bin/view/Builders/BulkSystem#_CapacityValues_Capacity_Values_)
+[ContainerValues](./BulkSystem#_CapacityValues_Capacity_Values_)
 results in .212 kg. The last value is MaxWeight, which we have to guess
 at. An oil drum cointaining only water would weight 211kg plus the
 31.8kg of the drum itself. Presuming that an oil drum can hold something
