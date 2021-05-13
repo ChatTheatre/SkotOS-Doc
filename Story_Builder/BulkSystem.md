@@ -1,6 +1,6 @@
 # The Bulk System - A Technical Summary
 
-(See also DevDocs4CreatingContainers, OldThoughtsOnBulk)
+(See also DevDocs4CreatingContainers)
 
 
 ## Models of a Physical World
@@ -71,7 +71,7 @@ to seat two ogres, four humans, or six dwarves.
 through small holes. A rope could be fed through a small hole into a
 large cave. Sadly an elephant would not fit through the same hole.
 
-[QuickSummaryBulkSystem]
+[QuickSummaryBulkSystem](./QuickSummaryBulkSystem.md)
 
 ## Detail of the Skotos Bulk System
 
