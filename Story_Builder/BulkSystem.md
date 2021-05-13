@@ -71,7 +71,7 @@ to seat two ogres, four humans, or six dwarves.
 through small holes. A rope could be fed through a small hole into a
 large cave. Sadly an elephant would not fit through the same hole.
 
-[QuickSummaryBulkSystem](./QuickSummaryBulkSystem.md)
+[QuickSummaryBulkSystem](./QuickSummaryBulkSystem.html)
 
 ## Detail of the Skotos Bulk System
 
@@ -132,7 +132,7 @@ Unit: kilograms \[kg\]
 **A wooden staff would have a mass of 1 kg.**
 
 Some example mass values are listed at [Mass
-Values](./MassVaues.md).
+Values](./MassVaues.html).
 There are also some useful unit conversion tools at [www.allmeasures.com
 mass
 converter](http://www.allmeasures.com/conversion.asp?mass_weight=on&Submit=Converter)
@@ -163,7 +163,7 @@ The densities of some common materials are:
 **The wooden staff has a density of 0.7.**
 
 Some common Density values are listed at [Density
-Values](./DensityValues.md).
+Values](./DensityValues.html).
 
 A commonly used alternative to density is *specific gravity*, the
 dimensionless ratio of an object\'s density to that of water. Thanks to
@@ -225,7 +225,7 @@ calculations, guesses or real examples would be required for other types
 of objects.
 
 Some common Capacity values are listed at
-[Capacity Values](./ContainerValues.md).
+[Capacity Values](./ContainerValues.html).
 There are also some useful unit conversion tools at [www.allmeasures.com
 volume
 converter](http://www.allmeasures.com/conversion.asp?volume=on&Submit=Converter).
@@ -255,10 +255,17 @@ Note that this value includes the mass of the container itself, so your
 max weight must be larger than the mass of the container and the
 heaviest object you expect it to contain.
 
-\* 1 kg = \* 1000 grams = \* \~2.2 pounds = \* \~35 ounces \* 1 kg = \*
-mass of 1 liter of water = \* \~2.2 pints of water \* \~weight of a 5cm
-(\~1 inch) cube of steel \* .025 kg = \* 2.5 grams \* weight of a silver
-dime
+* 1 kg = 
+    * 1000 grams = 
+    * \~2.2 pounds = 
+    * \~35 ounces 
+* 1 kg = 
+    * mass of 1 liter of water = 
+    * \~2.2 pints of water 
+    * \~weight of a 5cm (\~1 inch) cube of steel 
+* .025 kg = 
+    * 2.5 grams 
+    * weight of a silver dime
 
 > *The huge iron kettle could hold a great deal of weight, approximately
 > 5000 kg.*
@@ -786,10 +793,10 @@ Converting the pounds to kilograms at [www.allmeasures.com mass
 converter](http://www.allmeasures.com/conversion.asp?mass_weight=on&Submit=Converter)
 gives the mass of the oil drum as 31.8kg. The drum is made of steel, and
 looking that up at [Density
-Values](./DensityValues.md)
+Values](./DensityValues.html)
 gives us the density of 8. Using Pi\*r\^2 on the inside dimensions, this
 means that it contains 12924.5 cubic inches, converted at
-[Container Values](./ContainerValues.md)
+[Container Values](./ContainerValues.html)
 results in .212 kg. The last value is MaxWeight, which we have to guess
 at. An oil drum cointaining only water would weight 211kg plus the
 31.8kg of the drum itself. Presuming that an oil drum can hold something
@@ -1261,11 +1268,11 @@ object?
 
 ## Appendices
 
-[MassValues](./MassValues.md)
+[MassValues](./MassValues.html)
 
-[Density Values](./DensityValues.md)
+[Density Values](./DensityValues.html)
 
-[Container Values](./ContainerValues.md)
+[Container Values](./ContainerValues.html)
 
 ### Immobile with Integration
 
