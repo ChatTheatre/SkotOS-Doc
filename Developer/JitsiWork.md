@@ -1,6 +1,8 @@
-# Working on Jitsi
+# Developing with Jitsi
 
 Jitsi is a recent addition to SkotOS, and quite heavy on the operational requirements. Here, you can find some notes on working with it.
+
+Note that this is about writing new Jitsi capabilities and problems we've had when doing so: you can also read about [how Jitsi currently works with SkotOS](./JitsiIntegration.md).
 
 ## A Tiny Jitsi History
 
@@ -10,15 +12,15 @@ Jitsi was originally built as a SIP-based telephony service, and WebRTC was adde
 
 ## Jitsi's Security Model
 
-In Jitsi, a room only exists if somebody is in it. No participants? No room. That was standard for chat protocols of the XMPP era. Jitsi has two primary security models: everybody gets full rights, or some people get full rights and there are optional guests.
+In Jitsi, a [room only exists if somebody is in it](https://jitsi.org/security/). No participants? No room. That was standard for chat protocols of the XMPP era. Jitsi has two primary security models: everybody gets full rights ("unsecured"), or some people (["Hosts"](https://community.jitsi.org/t/permissions-of-users-and-admins/33086)) get moderator rights and there are optional non-moderator guests.
 
-If everybody gets full rights, that means anybody can kick anybody else out of a room. That's how we're initially building. But it means our participants can, if they know a little Jitsi and Javascript, do things they aren't supposed to. So in the long term, we have to use that second model.
+If everybody gets full rights ("unsecured"), that means anybody can kick anybody else out of a room. But it also means anybody can create a room, and you don't need a privileged moderator to be in every room. That's how we're initially building. But it means our participants can, if they know a little Jitsi and Javascript, do things they aren't supposed to &mdash; e.g. mute everybody, kick other guests, or set a password on the room so nobody can get in until they leave. So in the long term, we have to switch to the Host model rather than unsecured.
 
-In the short term, we punted on that and used the "everybody gets full rights" model. We [tried quite hard](https://github.com/WebOfTrustInfo/prototype_vRWOT/issues/5) to make the other model work. You can see a lot of it in the commit history of SkotOS/deploy_scripts/stackscript/linode_stackscript.sh, for instance. And in the attempted work in [the ill-fated SkotOS-jitsi-admin repo](https://github.com/ChatTheatre/SkotOS-jitsi-admin).
+In the short term, we punted on that and used the "unsecured" model. We [tried quite hard](https://github.com/WebOfTrustInfo/prototype_vRWOT/issues/5) to make the Host model work. You can see a lot of it in the commit history of SkotOS/deploy_scripts/stackscript/linode_stackscript.sh, for instance. And in the attempted work in [the currently unused SkotOS-jitsi-admin repo](https://github.com/ChatTheatre/SkotOS-jitsi-admin).
 
 ## What Would a Better Model Look Like?
 
-It's *possible* to give everybody an account dynamically (e.g. with JWT) but you still don't get any real granularity about what they can do: they get full moderator rights or basically no rights. So that's not much of an improvement.
+It's *possible* to give everybody an account dynamically (e.g. with JWT) but you still don't get any real granularity about what they can do: they get full moderator rights or only guest rights. So that's not much of an improvement.
 
 Which leaves us with the last model: some people can have full rights, but anybody who *cannot* kick out or mute other participants needs to be a guest (or similar no-moderator-rights entity.)
 
