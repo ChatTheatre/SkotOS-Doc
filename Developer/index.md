@@ -13,6 +13,7 @@ But SkotOS is basically a large, long-lived application written in DGD. Like mos
 
 ## Some Pages for Developers
 
+* [WOE For Developers](./WOEForDevelopers.md)
 * [Commands for Developers](./CommandsForDevelopers.md)
 * [Authentication for Developers](./DevAuthentication.md)
 * [Exploring SkotOS](./Exploring_SkotOS.md)
