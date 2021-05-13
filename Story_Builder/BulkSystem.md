@@ -132,7 +132,7 @@ Unit: kilograms \[kg\]
 **A wooden staff would have a mass of 1 kg.**
 
 Some example mass values are listed at [Mass
-Values](./BulkSystem#Mass_Values).
+Values](./MassVaues.md).
 There are also some useful unit conversion tools at [www.allmeasures.com
 mass
 converter](http://www.allmeasures.com/conversion.asp?mass_weight=on&Submit=Converter)
@@ -163,7 +163,7 @@ The densities of some common materials are:
 **The wooden staff has a density of 0.7.**
 
 Some common Density values are listed at [Density
-Values](./BulkSystem#_DensityValues_Density_Values_).
+Values](./DensityValues.md).
 
 A commonly used alternative to density is *specific gravity*, the
 dimensionless ratio of an object\'s density to that of water. Thanks to
@@ -225,7 +225,7 @@ calculations, guesses or real examples would be required for other types
 of objects.
 
 Some common Capacity values are listed at
-[ContainerValues](./BulkSystem#_CapacityValues_Capacity_Values_).
+[Capacity Values](./ContainerValues.md).
 There are also some useful unit conversion tools at [www.allmeasures.com
 volume
 converter](http://www.allmeasures.com/conversion.asp?volume=on&Submit=Converter).
@@ -789,10 +789,10 @@ Converting the pounds to kilograms at [www.allmeasures.com mass
 converter](http://www.allmeasures.com/conversion.asp?mass_weight=on&Submit=Converter)
 gives the mass of the oil drum as 31.8kg. The drum is made of steel, and
 looking that up at [Density
-Values](./BulkSystem#_DensityValues_Density_Values_)
+Values](./DensityValues.md)
 gives us the density of 8. Using Pi\*r\^2 on the inside dimensions, this
 means that it contains 12924.5 cubic inches, converted at
-[ContainerValues](./BulkSystem#_CapacityValues_Capacity_Values_)
+[Container Values](./ContainerValues.md)
 results in .212 kg. The last value is MaxWeight, which we have to guess
 at. An oil drum cointaining only water would weight 211kg plus the
 31.8kg of the drum itself. Presuming that an oil drum can hold something
@@ -1264,14 +1264,9 @@ object?
 
 ## Appendices
 
-\<table border=1 cellpadding=10 bgcolor=\#eeffff\>\<tr\>\<td\>
-[MassValues]{.twiki-macro .INCLUDE}\</td\>\</tr\>\</table\>
-
-\<table border=1 cellpadding=10 bgcolor=\#eeffff\>\<tr\>\<td\>
-[DensityValues]{.twiki-macro .INCLUDE}\</td\>\</tr\>\</table\>
-
-\<table border=1 cellpadding=10 bgcolor=\#eeffff\>\<tr\>\<td\>
-[ContainerValues]{.twiki-macro .INCLUDE}\</td\>\</tr\>\</table\>
+[MassValues](./MassValues.md)
+[Density Values](./DensityValues.md)
+[Container Values](./ContainerValues.md)
 
 ### Immobile with Integration
 
