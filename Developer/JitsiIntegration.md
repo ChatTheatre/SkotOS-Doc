@@ -18,6 +18,20 @@ There's a client_control action that can be used to send a SKOOT code. You can s
 
 This will only work if the user is using a sufficiently-recent version of Orchil on a Jitsi-enabled SkotOS game. But it's normally harmless to send these codes when they're unsupported.
 
+## MERRY Actual Instructions
+
+Do you not use Merry that often? I'm a bit new to it too. Log into the game and there's a command-line tool that will let you evaluate little snippets of Merry code. It can be finicky, but it'll do this quite nicely.
+
+~~~
++tool merry eval Act($actor, "client_control", $id: 82, $val: "DoesntReadExampleText"), 0
+~~~
+
+That will send message 82 ("change my Jitsi nickname") to the supplied value ("DoesntReadExampleText"). You can see the result of this in the Javascript console for your game client.
+
+Note that if you send a CHAT_SET_MUTED (81) message, you won't be able to unmute yourself with the buttons. You'll have to send another server message to unmute.
+
+(The comma-zero at the end may look a bit odd. And it is. Due to how +tool merry eval works, you have to use an expression that returns a value. So when calling a function like Act that does not, we add a return value afterward. You don't need it when evaluating anything that returns a value, or when writing Merry in other cases. Basically, "+tool merry eval" is odd and this is one case where you notice that.)
+
 ## SkotOS-to-Browser Integration
 
 We extend the long-time SkotOS model of Alice commands ("SKOOT" commands, see skoot/include/client.h) to include some Jitsi-specific messages. A specific Jitsi user can only be in a single chatroom at one time, and we can control a few other Jitsi-specific things about them:
