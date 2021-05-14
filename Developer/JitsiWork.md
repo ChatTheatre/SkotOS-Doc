@@ -42,6 +42,18 @@ We [tried a number of approaches](https://github.com/WebOfTrustInfo/prototype_vR
 
 It seems like the jxs-based approach *should* work. But for some reason, the xmpp client didn't seem to be doing the right thing. Perhaps it would have been possible to go to an even lower level than jxs and rebuild the key exchange (SASL SCRAM-SHA-1). Or perhaps there was some simple way to make the xmpp client do the right thing that I couldn't figure out. The obvious things all failed, even after fixing those bugs that I could identify after reading all the websocket exchanges [in captures of web-client logins](https://github.com/ChatTheatre/SkotOS-jitsi-admin/tree/master/packet_captures).
 
+## Headless Jitsi: Future Possibilities
+
+Jitsi seems fragile when you use it in unexpected ways. That makes it hard to predict what will work. It's not ***impossible*** that the jxs method would have worked with a little more cajoling, although it seems difficult. Are there any other possiblities?
+
+Definitely.
+
+For instance, jitsi-meet (the JS application) is built on top of lib-jitsi-meet, which is a nominally-headless Jitsi library, designed for creating your own Jitsi UI in Javascript (does anybody do that?)
+
+It's clear that Jitsi-meet always keeps a maximum of one conference room open. It's not clear if that limitation is built into lib-jitsi-meet. And it looks like it *might* be possible to use lib-jitsi-meet headless, and it would definitely be possible to do it in Puppeteer.
+
+The flip side of this is that lib-jitsi-meet is around 45,000 lines of Javascript. And Jitsi-meet, the normal app built on it, is around 150,000 lines. So exploring this could take a lot of time, work and code.
+
 ## Debian versus Docker
 
 It's possible to install Jitsi from Debian packages instead of using Docker-Compose. As a rule, don't.
