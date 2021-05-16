@@ -1214,18 +1214,7 @@ for the first occurence of the value . |
 | **Syntax:**  | mixed ParseXML(string XML) |
 | **Return value(s):**  | mixed |
 | **Description:**  | ParseXML() is used to convert an XML string to the appropriate value (a SAM-string, for instance). <br/> the Bilbo $sam(), ParseXML() used with UnSAM() constitute Merry's portal to the XML/SAM engine. It's not going to be used as much as Bilbo's is, because SAM has few abilities that Merry does not have natively. To emulate $sam(foo), use UnSAM(ParseXML("foo")).<br/> real use of UnSAM() is to handle binary SAM data stored in e.g. descriptions. If you have a room with a description containing oneof's, for example, and you want to create a text representation of this, you'd want to do something like, <br/> = UnSAM(Get(this, "details:default:description:examine")); |
-| **Example(s):**  |  Merry code:   ParseXML( "{sam-style\|one\|of}" )<br />
-Merry result: X[S] {sam-style\|one\|of}<br />
-<br />
-Merry code:   ParseXML( "<describe what=\"$actor\"/>" )<br />
-Merry result: X[S] <describe what="$(actor)"/><br />
-<br />
-Merry code:   UnSAM( ParseXML( "<describe what=\"$actor\"/>" )<br />
-Merry result: "StoryCoder Kalle"<br />
-<br />
-Merry code:   ParseXML( "You are <describe what=\"$actor\"/>, the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of\|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}!" )<br />
-Merry result: X[S] You are <describe what="$(actor)"/>, the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of\|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}!<br />
-|
+| **Example(s):**  |  Merry code:   ParseXML( "{sam-style\|one\|of}" )<br /> Merry result: X[S] {sam-style\|one\|of}<br /><br />Merry code:   ParseXML( "<describe what=\"$actor\"/>" )<br />Merry result: X[S] <describe what="$(actor)"/><br /><br />Merry code:   UnSAM( ParseXML( "<describe what=\"$actor\"/>" )<br />Merry result: "StoryCoder Kalle"<br /><br />Merry code:   ParseXML( "You are <describe what=\"$actor\"/>, the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of\|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}!" )<br />Merry result: X[S] You are <describe what="$(actor)"/>, the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of\|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}!<br /> |
 | **See also:**  | [UnSAM](#unsam) |
 
 ### Popup
@@ -1800,7 +1789,7 @@ Merry result: X[S] You are <describe what="$(actor)"/>, the {heroic\|fantastic\|
 | **Syntax:**  | string UnSAM(mixed SAM) |
 | **Return value(s):**  | string |
 | **Description:**  | UnSAM() is used to convert a SAM-string into a regular string. <br/> the Bilbo $sam(), ParseXML() used with UnSAM() constitute Merry's portal to the XML/SAM engine. It's not going to be used as much as Bilbo's is, because SAM has few abilities that Merry does not have natively. To emulate $sam(foo), use UnSAM(ParseXML("foo")).<br/> real use of UnSAM() is to handle binary SAM data stored in e.g. descriptions. If you have a room with a description containing oneof's, for example, and you want to create a text representation of this, you'd want to do something like, <br/> = UnSAM(Get(this, "details:default:description:examine")); |
-| **Example(s):**  | Merry code: ParseXML( "{sam-style|one|of}" ) <br /></br/>Merry result: X[S] {sam-style\|one\|of} <br />Merry code: ParseXML( "" ) <br />Merry result: X[S] <br />Merry code: UnSAM( ParseXML( "" ) <br />Merry result: "StoryCoder Kalle" <br />Merry code: ParseXML( "You are , the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}!" ) Merry result: X[S] You are , the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}! |
+| **Example(s):**  | Merry code: ParseXML( "{sam-style\|one\|of}" ) <br /></br/>Merry result: X[S] {sam-style\|one\|of} <br />Merry code: ParseXML( "" ) <br />Merry result: X[S] <br />Merry code: UnSAM( ParseXML( "" ) <br />Merry result: "StoryCoder Kalle" <br />Merry code: ParseXML( "You are , the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}!" ) Merry result: X[S] You are , the {heroic\|fantastic\|extraordinary\|hulkhoganish\|awesome\|illiterate\|analphabetic\|dyslectic} {thief\|villain\|joe\|wizard\|viking\|lord\|knight\|master} {of|from} {Sweden\|Norway\|York\|Denmark\|London\|Scandinavia}! |
 | **See also:**  | [ParseXML](#parsexml) |
 
 ### upper\_case
