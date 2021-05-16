@@ -14,7 +14,7 @@ client.*
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | **Function:**  | $delay |
 | **Syntax:**  | $delay(mixed wait, mixed return[, string id]) |
-| **Description:**  | $delay() is used to prematurely exit a script, and return to it a set amount of seconds later (wait, 1st argument), specified as a floating value (up to 60.0) or an integer value (no limit).<br/>Not only does the script exit, though, but if the script was called from another script, that script is returned the return value (return, 2nd argument). <br/> the script is an act/react/witness script, the first time a non-FALSE value is returned, the action will go through, as pointed out in the example(s) section below.<br/>Only the first argument is required, second is optional, third is automatic. <br/> second value defaults to FALSE, the third value becomes a four-digit unique character identifier for the switch. Make careful note that no two $delay() statements in a single script may contain two identical identifiers. The script will fail to compile with a "duplicate case labels in switch" error. Remove the third argument from the copied $delay() statements and another identifier will be generated.<br/>Note: only $variables and constants are maintained after a $delay() returns control to a script. The following script would fail,<br/>string s; <br/> = "Hello world!"; /* s == "Hello world!" */ |$delay( 1, FALSE ); /* s is reset */ <br/>( $actor, s ); /* s is nil */<br/>- because the variable s is nil after the $delay() call. <br/> by storing the necessary variables in some appropriate object, or use $variables. |
+| **Description:**  | $delay() is used to prematurely exit a script, and return to it a set amount of seconds later (wait, 1st argument), specified as a floating value (up to 60.0) or an integer value (no limit).<br/>Not only does the script exit, though, but if the script was called from another script, that script is returned the return value (return, 2nd argument). <br/> the script is an act/react/witness script, the first time a non-FALSE value is returned, the action will go through, as pointed out in the example(s) section below.<br/>Only the first argument is required, second is optional, third is automatic. <br/> second value defaults to FALSE, the third value becomes a four-digit unique character identifier for the switch. Make careful note that no two $delay() statements in a single script may contain two identical identifiers. The script will fail to compile with a "duplicate case labels in switch" error. Remove the third argument from the copied $delay() statements and another identifier will be generated.<br/>Note: only $variables and constants are maintained after a $delay() returns control to a script. The following script would fail,<br/>string s; <br/> = "Hello world!"; /* s == "Hello world!" */ $delay( 1, FALSE ); /* s is reset */ <br/>( $actor, s ); /* s is nil */<br/>- because the variable s is nil after the $delay() call. <br/> by storing the necessary variables in some appropriate object, or use $variables. |
 | **Example(s):**  | Example act:smile in the actor:<br/>  EmitTo( $actor, "You won't smile ever, cause we return FALSE below." );<br />  $delay( 1, FALSE );<br /><br />  Example act:smile in the actor:<br />  EmitTo( $actor, "You will smile after seeing this message, because we return TRUE below." );<br />  $delay( 1, TRUE );
 
 ##  A
@@ -457,10 +457,10 @@ client.*
 
 |                      |                                                                                                                                                                               |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Function:**        | dump\_value                                                                                                                                                                   |
-| **Syntax:**          | string dump\_value(mixed value)                                                                                                                                               |
-| **Return value(s):** | string                                                                                                                                                                        |
-| **Description:**     | Convert any property into a string value.                                                                                                                                     |
+| **Function:**        | dump\_value |
+| **Syntax:**          | string dump\_value(mixed value) |
+| **Return value(s):** | string |
+| **Description:**     | Convert any property into a string value. |
 | **Example(s):**      | Merry code: dump\_value( $actor ) <br />Merry result: "" <br />Merry code: dump\_value( args ) <br />Merry result: "(\[ \\"actor\\":, \\"body\\":, \\"here\\":, \\"looker\\":, \\"this\\": \])" |
 | **See also:**        | [ascii\_to\_mixed](#ascii_to_mixed) and [mixed\_to\_ascii](#mixed_to_ascii)       |                                                                                            |
 
@@ -876,12 +876,10 @@ client.*
 |                      |                                                                                                                                         |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | **Function:**  | index |
-| **Syntax:**  | The index value in
-for the first occurence of the value . index(mixed val, array a) |
-| **Return value(s):**  | The index value in
-for the first occurence of the value . |
+| **Syntax:**  | int index(mixed val, array a) |
+| **Return value(s):**  | int |
 | **Description:**  | The index() function is used to retrieve the index position in an array of the first occurence of a value. <br/>() will return the integer index position, or -1 if the value is not found anywhere in the array. |
-| **Example(s):**  | Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("Bob", $array))); Return value: 3 <br />Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("George", $array))); Return value: -1 |
+| **Example(s):**  | Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("Bob", $array))); Return value: 3 <br />Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, (index("George", $array))); Return value: -1 |
 | **See also:**  | [member](#member) |
 
 ### Int
