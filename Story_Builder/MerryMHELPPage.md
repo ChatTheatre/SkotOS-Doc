@@ -12,8 +12,8 @@ client.*
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -73,8 +73,8 @@ Solve by storing the necessary variables in some appropriate object, or use $var
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -153,8 +153,8 @@ Solve by storing the necessary variables in some appropriate object, or use $var
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -178,7 +178,7 @@ Take note, however, that if any two values in an array are identical (which is v
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: arr_to_set( ({ "Kalle", "Anders", "Erik", "Maria" }) ) <br />Merry result: ([ "Anders":1, "Erik":1, "Kalle":1, "Maria":1 ]) <br />Merry code: map_indices( arr_to_set( ({ "Kalle", "Anders", "Erik", "Maria" }) )) <br />Merry result: ({ "Anders", "Erik", "Kalle", "Maria" })</td>
+<td data-valign="top"Merry code: arr_to_set( ({ "Kalle", "Anders", "Erik", "Maria" }) ) <br />Merry result: ([ "Anders":1, "Erik":1, "Kalle":1, "Maria":1 ]) <br />Merry code: map_indices( arr_to_set( ({ "Kalle", "Anders", "Erik", "Maria" }) )) <br />Merry result: ({ "Anders", "Erik", "Kalle", "Maria" })</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -223,8 +223,8 @@ Take note, however, that if any two values in an array are identical (which is v
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -246,7 +246,7 @@ Take note, however, that if any two values in an array are identical (which is v
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: atan(0.0) <br />Merry result: 0.0 <br />Merry code: atan(0.5) <br />Merry result: 0.46364761 <br />Merry code: atan(1.0) <br />Merry result: 0.78539816</td>
+<td data-valign="top"Merry code: atan(0.0) <br />Merry result: 0.0 <br />Merry code: atan(0.5) <br />Merry result: 0.46364761 <br />Merry code: atan(1.0) <br />Merry result: 0.78539816</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -259,8 +259,8 @@ Take note, however, that if any two values in an array are identical (which is v
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -282,7 +282,7 @@ Take note, however, that if any two values in an array are identical (which is v
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: atan2(0.0, 0.0) <br />Merry result: 0.0 <br />Merry code: atan2(1.0, 0.0) <br />Merry result: 1.5707963 <br />Merry code: atan2(0.0,1.0) <br />Merry result: 0.0 <br />Merry code: atan2(1.0,1.0) <br />Merry result: 0.78539816</td>
+<td data-valign="top"Merry code: atan2(0.0, 0.0) <br />Merry result: 0.0 <br />Merry code: atan2(1.0, 0.0) <br />Merry result: 1.5707963 <br />Merry code: atan2(0.0,1.0) <br />Merry result: 0.0 <br />Merry code: atan2(1.0,1.0) <br />Merry result: 0.78539816</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -344,8 +344,8 @@ Take note, however, that if any two values in an array are identical (which is v
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -375,8 +375,8 @@ In LPC, obj-&gt;func(arg1, arg2, argn) can be used as a shorthand for call_other
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -405,8 +405,8 @@ The returned value is the callout handle, an integer &gt; 0 which must be used i
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -430,7 +430,7 @@ The last element of the returned array is the trace of the current function.<br 
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: call_trace() <br />Merry result: ({ ({ "/kernel/obj/binary#10769", "/kernel/obj/binary", "receive_message", 85, 1 }), ({ "/kernel/obj/binary#10769", "/kernel/lib/connection", "receive_message", 233, 0 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "receive_message", 371, 1 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "receive_line", 720, 0 }), ({ "/usr/TextIF/obj/user#10798", "/kernel/lib/auto", "call_limited", 719, 0 }), ({ "/usr/TextIF/obj/user#10798", "/kernel/lib/auto", "_F_call_limited", 698, 0 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "parse_command", 812, 1 }), ({ "/usr/TextIF/main", "/usr/TextIF/main", "command", 230, 1 }), ({ "/usr/Tool/sys/tool", "/usr/Tool/sys/tool", "cmd_DEV_tool", 117, 1 }), ({ "/usr/Tool/sys/merry", "/usr/Tool/lib/merry", "cmd_merry_eval", 133, 1 }), ({ "/usr/Tool/sys/merry", "/usr/Tool/lib/merry", "run_merry_code", 45, 0 }), ({ "/usr/SkotOS/data/merry#-1", "/usr/SkotOS/data/merry", "evaluate", 223, 1, ({ , nil, nil, ([ "actor":, "body":, "here":, "looker": ]), nil }) }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/usr/SkotOS/lib/merrynode", "evaluate", 56, 1, , nil, nil, @14, nil, nil }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "merry", 6, 1, nil, nil, "virgin" }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/kernel/lib/auto", "call_trace", 524, 0 }) })</td>
+<td data-valign="top"Merry code: call_trace() <br />Merry result: ({ ({ "/kernel/obj/binary#10769", "/kernel/obj/binary", "receive_message", 85, 1 }), ({ "/kernel/obj/binary#10769", "/kernel/lib/connection", "receive_message", 233, 0 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "receive_message", 371, 1 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "receive_line", 720, 0 }), ({ "/usr/TextIF/obj/user#10798", "/kernel/lib/auto", "call_limited", 719, 0 }), ({ "/usr/TextIF/obj/user#10798", "/kernel/lib/auto", "_F_call_limited", 698, 0 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "parse_command", 812, 1 }), ({ "/usr/TextIF/main", "/usr/TextIF/main", "command", 230, 1 }), ({ "/usr/Tool/sys/tool", "/usr/Tool/sys/tool", "cmd_DEV_tool", 117, 1 }), ({ "/usr/Tool/sys/merry", "/usr/Tool/lib/merry", "cmd_merry_eval", 133, 1 }), ({ "/usr/Tool/sys/merry", "/usr/Tool/lib/merry", "run_merry_code", 45, 0 }), ({ "/usr/SkotOS/data/merry#-1", "/usr/SkotOS/data/merry", "evaluate", 223, 1, ({ , nil, nil, ([ "actor":, "body":, "here":, "looker": ]), nil }) }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/usr/SkotOS/lib/merrynode", "evaluate", 56, 1, , nil, nil, @14, nil, nil }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "merry", 6, 1, nil, nil, "virgin" }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/kernel/lib/auto", "call_trace", 524, 0 }) })</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -465,8 +465,8 @@ The last element of the returned array is the trace of the current function.<br 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -498,8 +498,8 @@ Note: catch() is not a real kfun. catch(a, b) will evaluate the expression (a, b
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -521,7 +521,7 @@ Note: catch() is not a real kfun. catch(a, b) will evaluate the expression (a, b
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: ceil(14.1) <br />Merry result: 15.0</td>
+<td data-valign="top"Merry code: ceil(14.1) <br />Merry result: 15.0</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -583,8 +583,8 @@ Note: catch() is not a real kfun. catch(a, b) will evaluate the expression (a, b
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -606,7 +606,7 @@ That is, if str contains sub.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: contains( "foobar", "ob" ) <br />Merry result: TRUE</td>
+<td data-valign="top"Merry code: contains( "foobar", "ob" ) <br />Merry result: TRUE</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -629,8 +629,8 @@ That is, if str contains sub.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -652,7 +652,7 @@ That is, if str contains sub.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: cos(0.0) <br />Merry result: 1.0 <br />Merry code: cos(0.5) <br />Merry result: 0.87758256 <br />Merry code: cos(1.0) <br />Merry result: 0.54030231</td>
+<td data-valign="top"Merry code: cos(0.0) <br />Merry result: 1.0 <br />Merry code: cos(0.5) <br />Merry result: 0.87758256 <br />Merry code: cos(1.0) <br />Merry result: 0.54030231</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -665,8 +665,8 @@ That is, if str contains sub.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -688,7 +688,7 @@ That is, if str contains sub.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: cosh(0.0) <br />Merry result: 1.0 <br />Merry code: cosh(0.5) <br />Merry result: 1.127626 <br />Merry code: cosh(1.0) <br />Merry result: 1.5430806</td>
+<td data-valign="top"Merry code: cosh(0.0) <br />Merry result: 1.0 <br />Merry code: cosh(0.5) <br />Merry result: 1.127626 <br />Merry code: cosh(1.0) <br />Merry result: 1.5430806</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -701,8 +701,8 @@ That is, if str contains sub.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -724,7 +724,7 @@ That is, if str contains sub.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: crypt("test") <br />Merry result: "MKfcAguU0/rhs" <br />Merry code: crypt("test", "te") <br />Merry result: "teH0wLIpW0gyQ"</td>
+<td data-valign="top"Merry code: crypt("test") <br />Merry result: "MKfcAguU0/rhs" <br />Merry code: crypt("test", "te") <br />Merry result: "teH0wLIpW0gyQ"</td>
 </tr>
 </tbody>
 </table>
@@ -733,8 +733,8 @@ That is, if str contains sub.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -756,7 +756,7 @@ That is, if str contains sub.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: ctime(0) <br />Merry result: "Wed Dec 31 19:00:00 1969" <br />Merry code: ctime(time()) <br />Merry result: "Fri Apr 4 19:38:09 2003"</td>
+<td data-valign="top"Merry code: ctime(0) <br />Merry result: "Wed Dec 31 19:00:00 1969" <br />Merry code: ctime(time()) <br />Merry result: "Fri Apr 4 19:38:09 2003"</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -814,8 +814,8 @@ That is, if str contains sub.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -888,8 +888,8 @@ STYLE_IGNORE_VISIBILITY /* ignores luminosity from the actors p.o.v. */</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -946,8 +946,8 @@ For a merryized version of +spawn, check out Spawn().</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -979,8 +979,8 @@ Note that error() and Error() -- with only error() documented here -- do the exa
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1020,8 +1020,8 @@ It is also very important to keep track of the identifier string it returns, as 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1043,7 +1043,7 @@ It is also very important to keep track of the identifier string it returns, as 
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: exp(0.0) <br />Merry result: 1.0 <br />Merry code: exp(0.5) <br />Merry result: 1.6487213 <br />Merry code: exp(1.0) <br />Merry result: 2.7182818</td>
+<td data-valign="top"Merry code: exp(0.0) <br />Merry result: 1.0 <br />Merry code: exp(0.5) <br />Merry result: 1.6487213 <br />Merry code: exp(1.0) <br />Merry result: 2.7182818</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1056,8 +1056,8 @@ It is also very important to keep track of the identifier string it returns, as 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1080,7 +1080,7 @@ The separators that str starts and ends with, if any, are not taken into account
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: explode("This is a test"," ") <br />Merry result: ({ "This", "is", "a", "test" })</td>
+<td data-valign="top"Merry code: explode("This is a test"," ") <br />Merry result: ({ "This", "is", "a", "test" })</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1094,8 +1094,8 @@ The separators that str starts and ends with, if any, are not taken into account
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1117,7 +1117,7 @@ The separators that str starts and ends with, if any, are not taken into account
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: fabs(-14.9) <br />Merry result: 14.9</td>
+<td data-valign="top"Merry code: fabs(-14.9) <br />Merry result: 14.9</td>
 </tr>
 </tbody>
 </table>
@@ -1126,8 +1126,8 @@ The separators that str starts and ends with, if any, are not taken into account
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1149,7 +1149,7 @@ The separators that str starts and ends with, if any, are not taken into account
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: find_object("/base/obj/thing#4803") <br />Merry result:</td>
+<td data-valign="top"Merry code: find_object("/base/obj/thing#4803") <br />Merry result:</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1162,8 +1162,8 @@ The separators that str starts and ends with, if any, are not taken into account
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1186,7 +1186,7 @@ As objects may have references for Merry scripts (aka "inherits"), the actual lo
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: FindMerry( $actor, "react-post", "hit-dob" ) <br />Merry result:</td>
+<td data-valign="top"Merry code: FindMerry( $actor, "react-post", "hit-dob" ) <br />Merry result:</td>
 </tr>
 </tbody>
 </table>
@@ -1222,8 +1222,8 @@ As objects may have references for Merry scripts (aka "inherits"), the actual lo
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1245,7 +1245,7 @@ As objects may have references for Merry scripts (aka "inherits"), the actual lo
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: floor(14.9) <br />Merry result: 14.0</td>
+<td data-valign="top"Merry code: floor(14.9) <br />Merry result: 14.0</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1258,8 +1258,8 @@ As objects may have references for Merry scripts (aka "inherits"), the actual lo
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1297,8 +1297,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1322,7 +1322,7 @@ f is less than the absolute value of y.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: fmod(25.0,5.0) <br />Merry result: 0.0 <br />Merry code: fmod(25.0,6.0) <br />Merry result: 1.0</td>
+<td data-valign="top"Merry code: fmod(25.0,5.0) <br />Merry result: 0.0 <br />Merry code: fmod(25.0,6.0) <br />Merry result: 1.0</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1341,8 +1341,8 @@ f is less than the absolute value of y.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1392,8 +1392,8 @@ They are traditional and frequently occuring in almost all programming languages
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1416,7 +1416,7 @@ They are traditional and frequently occuring in almost all programming languages
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: frexp(1.0) <br />Merry result: ({ 0.5, 1 }) <br />Merry code: frexp(1.1) <br />Merry result: ({ 0.55, 1 }) <br />Merry code: frexp(1.5) <br />Merry result: ({ 0.75, 1 }) <br />Merry code: frexp(2.0) <br />Merry result: ({ 0.5, 2 }) <br />Merry code: frexp(5.0) <br />Merry result: ({ 0.625, 3 }) <br />Merry code: frexp(10.0) <br />Merry result: ({ 0.625, 4 }) <br />Merry code: frexp(100.0) <br />Merry result: ({ 0.78125, 7 })</td>
+<td data-valign="top"Merry code: frexp(1.0) <br />Merry result: ({ 0.5, 1 }) <br />Merry code: frexp(1.1) <br />Merry result: ({ 0.55, 1 }) <br />Merry code: frexp(1.5) <br />Merry result: ({ 0.75, 1 }) <br />Merry code: frexp(2.0) <br />Merry result: ({ 0.5, 2 }) <br />Merry code: frexp(5.0) <br />Merry result: ({ 0.625, 3 }) <br />Merry code: frexp(10.0) <br />Merry result: ({ 0.625, 4 }) <br />Merry code: frexp(100.0) <br />Merry result: ({ 0.78125, 7 })</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1440,8 +1440,8 @@ They are traditional and frequently occuring in almost all programming languages
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1575,8 +1575,8 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1612,8 +1612,8 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1639,7 +1639,7 @@ CRC-16 is considered suitable for strings of up to a total of 4096 characters.<b
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: hash_crc16("text") <br />Merry result: 49980</td>
+<td data-valign="top"Merry code: hash_crc16("text") <br />Merry result: 49980</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1652,8 +1652,8 @@ CRC-16 is considered suitable for strings of up to a total of 4096 characters.<b
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1711,8 +1711,8 @@ CRC-16 is considered suitable for strings of up to a total of 4096 characters.<b
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1745,8 +1745,8 @@ Take note, however, that things such as AND, OR, etc. are not exclusively used i
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1768,7 +1768,7 @@ Take note, however, that things such as AND, OR, etc. are not exclusively used i
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: implode(({ "This", "is", "a", "test" }), " ") <br />Merry result: "This is a test"</td>
+<td data-valign="top"Merry code: implode(({ "This", "is", "a", "test" }), " ") <br />Merry result: "This is a test"</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1787,8 +1787,8 @@ Take note, however, that things such as AND, OR, etc. are not exclusively used i
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1812,7 +1812,7 @@ index() will return the integer index position, or -1 if the value is not found 
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("Bob", $array))); Return value: 3 <br />Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("George", $array))); Return value: -1</td>
+<td data-valign="top"Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("Bob", $array))); Return value: 3 <br />Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("George", $array))); Return value: -1</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1825,8 +1825,8 @@ index() will return the integer index position, or -1 if the value is not found 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1876,8 +1876,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1899,7 +1899,7 @@ Note that this does not work with all properties.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: ldexp(4.0, 0) <br />Merry result: 4.0 <br />Merry code: ldexp(4.0, 1) <br />Merry result: 8.0 <br />Merry code: ldexp(4.0, 2) <br />Merry result: 16.0 <br />Merry code: ldexp(4.0, 3) <br />Merry result: 32.0</td>
+<td data-valign="top"Merry code: ldexp(4.0, 0) <br />Merry result: 4.0 <br />Merry code: ldexp(4.0, 1) <br />Merry result: 8.0 <br />Merry code: ldexp(4.0, 2) <br />Merry result: 16.0 <br />Merry code: ldexp(4.0, 3) <br />Merry result: 32.0</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1912,8 +1912,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1935,7 +1935,7 @@ Note that this does not work with all properties.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: log(0.5) <br />Merry result: -0.69314718 <br />Merry code: log(1.0) <br />Merry result: 0.0 <br />Merry code: log(2.0) <br />Merry result: 0.69314718</td>
+<td data-valign="top"Merry code: log(0.5) <br />Merry result: -0.69314718 <br />Merry code: log(1.0) <br />Merry result: 0.0 <br />Merry code: log(2.0) <br />Merry result: 0.69314718</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -1948,8 +1948,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1971,7 +1971,7 @@ Note that this does not work with all properties.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: log10(0.5) <br />Merry result: -0.30103 <br />Merry code: log10(1.0) <br />Merry result: 0.0 <br />Merry code: log10(2.0) <br />Merry result: 0.30103</td>
+<td data-valign="top"Merry code: log10(0.5) <br />Merry result: -0.30103 <br />Merry code: log10(1.0) <br />Merry result: 0.0 <br />Merry code: log10(2.0) <br />Merry result: 0.30103</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2007,8 +2007,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2030,7 +2030,7 @@ Note that this does not work with all properties.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: map_indices(([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers", ])) <br />Merry result: ({ "Friday", "Monday", "Thursday", "Tuesday", "Wednesday" })</td>
+<td data-valign="top"Merry code: map_indices(([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers", ])) <br />Merry result: ({ "Friday", "Monday", "Thursday", "Tuesday", "Wednesday" })</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2086,8 +2086,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2125,8 +2125,8 @@ if( member( val, a )) {<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2144,7 +2144,7 @@ if( member( val, a )) {<br />
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: millitime() <br />Merry result: ({ 1049514170, 0.983 })</td>
+<td data-valign="top"Merry code: millitime() <br />Merry result: ({ 1049514170, 0.983 })</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2157,8 +2157,8 @@ if( member( val, a )) {<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2190,8 +2190,8 @@ For examples and further information, read the 'dump_value' reference.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2213,7 +2213,7 @@ For examples and further information, read the 'dump_value' reference.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: modf(0.0) <br />Merry result: ({ 0.0, 0.0 }) <br />Merry code: modf(0.5) <br />Merry result: ({ 0.5, 0.0 }) <br />Merry code: modf(1.0) <br />Merry result: ({ 0.0, 1.0 }) <br />Merry code: modf(2.0) <br />Merry result: ({ 0.0, 2.0 })</td>
+<td data-valign="top"Merry code: modf(0.0) <br />Merry result: ({ 0.0, 0.0 }) <br />Merry code: modf(0.5) <br />Merry result: ({ 0.5, 0.0 }) <br />Merry code: modf(1.0) <br />Merry result: ({ 0.0, 1.0 }) <br />Merry code: modf(2.0) <br />Merry result: ({ 0.0, 2.0 })</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2260,8 +2260,8 @@ For examples and further information, read the 'dump_value' reference.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2284,7 +2284,7 @@ Hence, you must do 'if( NRefsEqual( NRef1, NRef2 ))' instead.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: NRefsEqual( NewNRef( $actor, "nose" ), NewNRef( $actor, "nose" )) <br />Merry result: 1 <br />Merry code: NRefsEqual( NewNRef( $actor, "default" ), $actor )) <br />Merry result: 1 <br />Merry code: NRefsEqual( $actor, $actor ) <br />Merry result: 1 <br />Merry code: NRefsEqual( $actor, NewNRef( $actor, "ear" )) <br />Merry result: 0</td>
+<td data-valign="top"Merry code: NRefsEqual( NewNRef( $actor, "nose" ), NewNRef( $actor, "nose" )) <br />Merry result: 1 <br />Merry code: NRefsEqual( NewNRef( $actor, "default" ), $actor )) <br />Merry result: 1 <br />Merry code: NRefsEqual( $actor, $actor ) <br />Merry result: 1 <br />Merry code: NRefsEqual( $actor, NewNRef( $actor, "ear" )) <br />Merry result: 0</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2308,8 +2308,8 @@ Hence, you must do 'if( NRefsEqual( NRef1, NRef2 ))' instead.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2332,7 +2332,7 @@ number_digit( 53 ) equals 5, the numeric value.</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: number_digit( 1 ) <br />Merry result: 0 <br />Merry code: number_digit( 50 ) <br />Merry result: 2 <br />Merry code: number_digit( 51 ) <br />Merry result: 3 <br />Merry code: number_digit( 52 ) <br />Merry result: 4 <br />Merry code: number_digit( 57 ) <br />Merry result: 9 <br />Merry code: number_digit( 58 ) <br />Merry result: 0 <br />Merry code: number_digit( '5' ) <br />Merry result: 5 <br />Merry code: number_digit( '9' ) <br />Merry result: 9</td>
+<td data-valign="top"Merry code: number_digit( 1 ) <br />Merry result: 0 <br />Merry code: number_digit( 50 ) <br />Merry result: 2 <br />Merry code: number_digit( 51 ) <br />Merry result: 3 <br />Merry code: number_digit( 52 ) <br />Merry result: 4 <br />Merry code: number_digit( 57 ) <br />Merry result: 9 <br />Merry code: number_digit( 58 ) <br />Merry result: 0 <br />Merry code: number_digit( '5' ) <br />Merry result: 5 <br />Merry code: number_digit( '9' ) <br />Merry result: 9</td>
 </tr>
 </tbody>
 </table>
@@ -2342,8 +2342,8 @@ number_digit( 53 ) equals 5, the numeric value.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2367,7 +2367,7 @@ If the object is static, i.e. the name of the object is predetermined and won't 
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: Obj( "Generic:UrMale" ) <br />Merry result: <br />Merry code: Obj( "Something:nonexistent" ) <br />Merry result: nil</td>
+<td data-valign="top"Merry code: Obj( "Generic:UrMale" ) <br />Merry result: <br />Merry code: Obj( "Something:nonexistent" ) <br />Merry result: nil</td>
 </tr>
 </tbody>
 </table>
@@ -2376,8 +2376,8 @@ If the object is static, i.e. the name of the object is predetermined and won't 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2399,7 +2399,7 @@ If the object is static, i.e. the name of the object is predetermined and won't 
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: object_name($actor) Runtime error: object_name() is replaced by name() and ur_name() <br />Merry code: name($actor) <br />Merry result: "Chatters:LC:ch:allen-christopher" <br />Merry code: ur_name($actor) <br />Merry result: "/base/obj/thing#4803"</td>
+<td data-valign="top"Merry code: object_name($actor) Runtime error: object_name() is replaced by name() and ur_name() <br />Merry code: name($actor) <br />Merry result: "Chatters:LC:ch:allen-christopher" <br />Merry code: ur_name($actor) <br />Merry result: "/base/obj/thing#4803"</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2462,8 +2462,8 @@ If the object is static, i.e. the name of the object is predetermined and won't 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2504,8 +2504,8 @@ A fellow named Steve Foley has graciously put together a tutorial on parse_strin
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2530,7 +2530,7 @@ str = UnSAM(Get(this, "details:default:description:examine"));</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: ParseXML( "{sam-style|one|of}" ) <br />Merry result: X[S] {sam-style|one|of} <br />Merry code: ParseXML( "" ) <br />Merry result: X[S] <br />Merry code: UnSAM( ParseXML( "" ) <br />Merry result: "StoryCoder Kalle" <br />Merry code: ParseXML( "You are , the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!" ) <br />Merry result: X[S] You are , the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!</td>
+<td data-valign="top"Merry code: ParseXML( "{sam-style|one|of}" ) <br />Merry result: X[S] {sam-style|one|of} <br />Merry code: ParseXML( "" ) <br />Merry result: X[S] <br />Merry code: UnSAM( ParseXML( "" ) <br />Merry result: "StoryCoder Kalle" <br />Merry code: ParseXML( "You are , the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!" ) <br />Merry result: X[S] You are , the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2543,8 +2543,8 @@ str = UnSAM(Get(this, "details:default:description:examine"));</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2626,8 +2626,8 @@ Things get -really- exciting when you begin to use the zform and zact SAM tags, 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2649,7 +2649,7 @@ Things get -really- exciting when you begin to use the zform and zact SAM tags, 
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: pow(10.0, 3.0) <br />Merry result: 1000.0</td>
+<td data-valign="top"Merry code: pow(10.0, 3.0) <br />Merry result: 1000.0</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2672,8 +2672,8 @@ Things get -really- exciting when you begin to use the zform and zact SAM tags, 
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2695,7 +2695,7 @@ There are known issues with mappings that contain non-alphanumeric characters, t
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: prefixed_map( ([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers" ]), "Monday" ) <br />Merry result: ([ "Monday":"Meatloaf" ]) <br />Merry code: prefixed_map( ([ "ape" : "monkey", "adam" : "pig", "bertram" : "prince" ]), "a" ) <br />Merry result: ([ "adam":"pig", "ape":"monkey" ])</td>
+<td data-valign="top"Merry code: prefixed_map( ([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers" ]), "Monday" ) <br />Merry result: ([ "Monday":"Meatloaf" ]) <br />Merry code: prefixed_map( ([ "ape" : "monkey", "adam" : "pig", "bertram" : "prince" ]), "a" ) <br />Merry result: ([ "adam":"pig", "ape":"monkey" ])</td>
 </tr>
 </tbody>
 </table>
@@ -2704,8 +2704,8 @@ There are known issues with mappings that contain non-alphanumeric characters, t
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2728,7 +2728,7 @@ If the object is destructed, or the number of steps is larger than the number of
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: previous_object() <br />Merry result:</td>
+<td data-valign="top"Merry code: previous_object() <br />Merry result:</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2741,8 +2741,8 @@ If the object is destructed, or the number of steps is larger than the number of
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2764,7 +2764,7 @@ If the object is destructed, or the number of steps is larger than the number of
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: previous_program() <br />Merry result: "/usr/SkotOS/lib/merrynode"</td>
+<td data-valign="top"Merry code: previous_program() <br />Merry result: "/usr/SkotOS/lib/merrynode"</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -2789,8 +2789,8 @@ If the object is destructed, or the number of steps is larger than the number of
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2812,7 +2812,7 @@ If the object is destructed, or the number of steps is larger than the number of
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: query_editor($actor) <br />Merry result: nil</td>
+<td data-valign="top"Merry code: query_editor($actor) <br />Merry result: nil</td>
 </tr>
 </tbody>
 </table>
@@ -2821,8 +2821,8 @@ If the object is destructed, or the number of steps is larger than the number of
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2863,8 +2863,8 @@ If the object is destructed, or the number of steps is larger than the number of
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2927,8 +2927,8 @@ If modifier is less than 1, 0 is returned.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2981,8 +2981,8 @@ If modifier is less than 1, 0 is returned.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3004,7 +3004,7 @@ Note that if a mapping contains several identical values, such as ([ "foo" : "ba
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: reverse_mapping( ([ "foo" : "bar", "name" : "kalle" ]) ) <br />Merry result: ([ "bar":"foo", "kalle":"name" ])</td>
+<td data-valign="top"Merry code: reverse_mapping( ([ "foo" : "bar", "name" : "kalle" ]) ) <br />Merry result: ([ "bar":"foo", "kalle":"name" ])</td>
 </tr>
 </tbody>
 </table>
@@ -3025,8 +3025,8 @@ Note that if a mapping contains several identical values, such as ([ "foo" : "ba
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3053,8 +3053,8 @@ Note that if a mapping contains several identical values, such as ([ "foo" : "ba
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3143,8 +3143,8 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3166,7 +3166,7 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: sin(0.0) <br />Merry result: 0.0 <br />Merry code: sin(0.5) <br />Merry result: 0.47942554 <br />Merry code: sin(1.0) <br />Merry result: 0.84147098</td>
+<td data-valign="top"Merry code: sin(0.0) <br />Merry result: 0.0 <br />Merry code: sin(0.5) <br />Merry result: 0.47942554 <br />Merry code: sin(1.0) <br />Merry result: 0.84147098</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -3179,8 +3179,8 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3202,7 +3202,7 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: sinh(0.0) <br />Merry result: 0.0 <br />Merry code: sinh(0.5) <br />Merry result: 0.52109531 <br />Merry code: sinh(1.0) <br />Merry result: 1.1752012</td>
+<td data-valign="top"Merry code: sinh(0.0) <br />Merry result: 0.0 <br />Merry code: sinh(0.5) <br />Merry result: 0.52109531 <br />Merry code: sinh(1.0) <br />Merry result: 1.1752012</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -3226,8 +3226,8 @@ The shorter version only works if y is an absolute string value ("abc" is absolu
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3274,8 +3274,8 @@ Know what you're doing.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3345,8 +3345,8 @@ Social( $actor, "smile", "happily", "Hi Charles!" ); -&gt; You happily smile, "H
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3368,7 +3368,7 @@ Social( $actor, "smile", "happily", "Hi Charles!" ); -&gt; You happily smile, "H
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: sqrt(2.0) <br />Merry result: 1.4142136</td>
+<td data-valign="top"Merry code: sqrt(2.0) <br />Merry result: 1.4142136</td>
 </tr>
 </tbody>
 </table>
@@ -3377,8 +3377,8 @@ Social( $actor, "smile", "happily", "Hi Charles!" ); -&gt; You happily smile, "H
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3417,8 +3417,8 @@ Other characters must be matched exactly. %*s, %*d, %*f and %*c can be used to m
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3440,7 +3440,7 @@ Other characters must be matched exactly. %*s, %*d, %*f and %*c can be used to m
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: status() <br />Merry result: ({ "DGD 1.2.55p2s", 997809254, 1046300140, 51470076, 1048576, 112323, 1024, 0, 0, 25037884, 24893744, 124032000, 118680792, 262144, 11447, 10000, 15, 41, 400, 40, 1048576, 8192, 243, 499975398, ({ }), "198.232.133.147" })</td>
+<td data-valign="top"Merry code: status() <br />Merry result: ({ "DGD 1.2.55p2s", 997809254, 1046300140, 51470076, 1048576, 112323, 1024, 0, 0, 25037884, 24893744, 124032000, 118680792, 262144, 11447, 10000, 15, 41, 400, 40, 1048576, 8192, 243, 499975398, ({ }), "198.232.133.147" })</td>
 </tr>
 </tbody>
 </table>
@@ -3449,8 +3449,8 @@ Other characters must be matched exactly. %*s, %*d, %*f and %*c can be used to m
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3485,8 +3485,8 @@ It takes the identifier string returned by the Every() function as single argume
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3584,8 +3584,8 @@ Note that this does not work with all properties.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3654,8 +3654,8 @@ If $a is 3, the output will be "Three." only.</td>
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3680,7 +3680,7 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: tan(0.0) <br />Merry result: 0.0 <br />Merry code: tan(0.5) <br />Merry result: 0.54630249 <br />Merry code: tan(1.5) <br />Merry result: 14.10142</td>
+<td data-valign="top"Merry code: tan(0.0) <br />Merry result: 0.0 <br />Merry code: tan(0.5) <br />Merry result: 0.54630249 <br />Merry code: tan(1.5) <br />Merry result: 14.10142</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -3693,8 +3693,8 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3716,7 +3716,7 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: tanh(0.0) <br />Merry result: 0.0 <br />Merry code: tanh(0.5) <br />Merry result: 0.46211716 <br />Merry code: tanh(1.5) <br />Merry result: 0.90514825</td>
+<td data-valign="top"Merry code: tanh(0.0) <br />Merry result: 0.0 <br />Merry code: tanh(0.5) <br />Merry result: 0.46211716 <br />Merry code: tanh(1.5) <br />Merry result: 0.90514825</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -3739,8 +3739,8 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3758,7 +3758,7 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: time() <br />Merry result: 1049521697</td>
+<td data-valign="top"Merry code: time() <br />Merry result: 1049521697</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>See also:</strong></td>
@@ -3781,8 +3781,8 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3814,8 +3814,8 @@ For values close to a multiple of PI/2, the result may be inaccurate.<br />
 
 <table data-border="0" data-cellpadding="5" data-cellspacing="0">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -3840,7 +3840,7 @@ str = UnSAM(Get(this, "details:default:description:examine"));</td>
 </tr>
 <tr class="odd">
 <td data-valign="top"><strong>Example(s):</strong></td>
-<td data-valign="top"><br />Merry code: UnSAM( ParseXML( "{sam-style|one|of}" )) <br />Merry result: "sam-style" or: "one" or: "of" <br />Merry code: UnSAM( ParseXML( "" )) <br />Merry result: "StoryCoder Kalle" <br />Merry code: UnSAM( ParseXML( "You are , the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!" ) Example result: "You are StoryCoder Kalle, the fanatic lord from Scandinavia!"</td>
+<td data-valign="top"Merry code: UnSAM( ParseXML( "{sam-style|one|of}" )) <br />Merry result: "sam-style" or: "one" or: "of" <br />Merry code: UnSAM( ParseXML( "" )) <br />Merry result: "StoryCoder Kalle" <br />Merry code: UnSAM( ParseXML( "You are , the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!" ) Example result: "You are StoryCoder Kalle, the fanatic lord from Scandinavia!"</td>
 </tr>
 <tr class="even">
 <td data-valign="top"><strong>See also:</strong></td>
