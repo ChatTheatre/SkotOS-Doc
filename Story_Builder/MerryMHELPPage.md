@@ -1,60 +1,62 @@
-<center><h1>Merry +MHELP reference
-page</h1></center>
+&lt;center&gt;&lt;h1&gt;Merry +MHELP reference
+page&lt;/h1&gt;&lt;/center&gt;
 
 *This page was automatically created using the +mhelp tool. If anything
 in this document is in error, do not edit the document directly --
 instead, use +mhelp to modify the topic in question, from within the
 client. Also note, if you are on the Skotos Seven server, that changes
-you make will currently be lost unless you inform <a
-href="[mailto:kalle@mortalis.skotos.net](mailto:kalle@mortalis.skotos.net)">Kalle</a>
+you make will currently be lost unless you inform &lt;a
+href="[mailto:kalle@mortalis.skotos.net](mailto:kalle@mortalis.skotos.net)"&gt;Kalle&lt;/a&gt;
 about the changes you've made, so that the master copy may be updated
 accordingly.*
 
-<hr noshade="1"></hr>
+**Table of contents** <span class="twiki-macro TOC"></span>
+
+&lt;hr noshade="1"&gt;&lt;/hr&gt;
 
 ## $
 
 ### $delay
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>$delay</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret"></font> <font
-class="fun">$delay(</font><font class="args">mixed wait,
-mixed return\[, string id\]</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;$delay&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;$delay(&lt;/font&gt;&lt;font class="args"&gt;mixed wait,
+mixed return\[, string id\]&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> $delay() is used to prematurely exit a script, and
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; $delay() is used to prematurely exit a script, and
 return to it a set amount of seconds later (wait, 1st argument),
 specified as a floating value (up to 60.0) or an integer value (no
-limit). <br/> <br/>Not only does the script exit, though,
+limit). &lt;br/&gt; &lt;br/&gt;Not only does the script exit, though,
 but if the script was called from another script, that script is
-returned the return value (return, 2nd argument). <br/>If the
+returned the return value (return, 2nd argument). &lt;br/&gt;If the
 script is an act/react/witness script, the first time a non-FALSE value
 is returned, the action will go through, as pointed out in the
-example(s) section below. <br/> <br/>Only the first argument
-is required, second is optional, third is automatic. <br/>The
+example(s) section below. &lt;br/&gt; &lt;br/&gt;Only the first argument
+is required, second is optional, third is automatic. &lt;br/&gt;The
 second value defaults to FALSE, the third value becomes a four-digit
 unique character identifier for the switch. Make careful note that no
 two $delay() statements in a single script may contain two identical
 identifiers. The script will fail to compile with a "duplicate case
 labels in switch" error. Remove the third argument from the copied
 $delay() statements and another identifier will be generated.
-<br/>
+&lt;br/&gt;
 
-<br/>Note: only $variables and constants are maintained after a
+&lt;br/&gt;Note: only $variables and constants are maintained after a
 $delay() returns control to a script. The following script would fail,
-<br/> <br/>string s; <br/>s = "Hello world"; /* s ==
-"Hello world" **/ <br/>$delay( 1, FALSE ); /** s is reset **/
-<br/>EmitTo( $actor, s ); /** s is nil */ <br/>
-<br/>- because the variable s is nil after the $delay() call.
-<br/>Solve by storing the necessary variables in some appropriate
-object, or use $variables. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;br/&gt; &lt;br/&gt;string s; &lt;br/&gt;s = "Hello world"; /\* s ==
+"Hello world" **/ &lt;br/&gt;$delay( 1, FALSE ); /** s is reset **/
+&lt;br/&gt;EmitTo( $actor, s ); /** s is nil \*/ &lt;br/&gt;
+&lt;br/&gt;- because the variable s is nil after the $delay() call.
+&lt;br/&gt;Solve by storing the necessary variables in some appropriate
+object, or use $variables. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Example act:smile in the actor:
     ----------------------------
@@ -68,29 +70,29 @@ valign="top"> **Example(s):** </td> <td valign="top">
     $delay( 1, TRUE );
     ----------------------------
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ## A
 
 ### acos
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>acos</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">acos(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;acos&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;acos(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> float </td> </tr>
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: acos(0.0)
     Merry result: 1.5707963
@@ -101,155 +103,155 @@ valign="top">
     Merry code: acos( 1.0 )
     Merry result: 0.0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#asin">asin</a> and <a
-href="#atan">atan</a> </td> </tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#asin"&gt;asin&lt;/a&gt; and &lt;a
+href="\#atan"&gt;atan&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### Act
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Act</td> </tr> <tr> <td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Act&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Syntax:**
 
-</td> <td> <font class="ret">void</font>
-<font class="fun">Act(</font><font class="args">object
-ob, string action, special arguments</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> void
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;void&lt;/font&gt;
+&lt;font class="fun"&gt;Act(&lt;/font&gt;&lt;font class="args"&gt;object
+ob, string action, special arguments&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; void
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Another extremely
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Another extremely
 powerful function, this is how Merry commands some object to perform an
 action, optionally specified by an array of arguments. The argument
 $silent can be sent as TRUE in order to suppress all output for
-(presumably) all signals. <br/> </td> </tr> <tr>
-<td valign="top"> **Example(s):** </td>
+(presumably) all signals. &lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Act( $actor, "drop", $what: sword_objects, $into: container_object );
 
     (see TWiki page on signals for more verbose information on what exactly you can do with what)
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#Social">Social</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#Social"&gt;Social&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### allocate
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>allocate</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;allocate&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">mixed *</font>
-<font class="fun">allocate(</font><font
-class="args">int size</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> mixed *
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;mixed \*&lt;/font&gt;
+&lt;font class="fun"&gt;allocate(&lt;/font&gt;&lt;font
+class="args"&gt;int size&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; mixed \*
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Allocate an array
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Allocate an array
 with size number of elements. All elements are initialized to zero. The
-new array is returned. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+new array is returned. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: allocate(5)
     Merry result: ({ nil, nil, nil, nil, nil })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#sizeof">sizeof</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#sizeof"&gt;sizeof&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### allocate_float
+### allocate\_float
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>allocate_float</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;allocate\_float&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">float *</font> <font
-class="fun">allocate_float(</font><font class="args">int
-size</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float * </td>
+&lt;td&gt; &lt;font class="ret"&gt;float \*&lt;/font&gt; &lt;font
+class="fun"&gt;allocate\_float(&lt;/font&gt;&lt;font class="args"&gt;int
+size&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float \* &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Allocate an array with size
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Allocate an array with size
 elements. All elements are initialized to 0.0. The new array is
-returned. </td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+returned. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: allocate_float(5)
     Merry result: ({ 0.0, 0.0, 0.0, 0.0, 0.0 })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#allocate">allocate</a>, <a
-href="#allocate_int">allocate_int</a> and <a
-href="#sizeof">sizeof</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#allocate"&gt;allocate&lt;/a&gt;, &lt;a
+href="\#allocate\_int"&gt;allocate\_int&lt;/a&gt; and &lt;a
+href="\#sizeof"&gt;sizeof&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### allocate_int
+### allocate\_int
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>allocate_int</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;allocate\_int&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int *</font> <font
-class="fun">allocate_int(</font><font class="args">int
-size</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int \*&lt;/font&gt; &lt;font
+class="fun"&gt;allocate\_int(&lt;/font&gt;&lt;font class="args"&gt;int
+size&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int * </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Allocate an array with size elements. All elements are
-initialized to 0. The new array is returned. </td> </tr>
-<tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; int \* &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Allocate an array with size elements. All elements are
+initialized to 0. The new array is returned. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: allocate_int(5)
     Merry result: ({ 0, 0, 0, 0, 0 })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#allocate">allocate</a>, <a
-href="#allocate_float">allocate_float</a> and <a
-href="#sizeof">sizeof</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#allocate"&gt;allocate&lt;/a&gt;, &lt;a
+href="\#allocate\_float"&gt;allocate\_float&lt;/a&gt; and &lt;a
+href="\#sizeof"&gt;sizeof&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Arr
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Arr</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Arr&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed *</font> <font
-class="fun">Arr(</font><font class="args">mixed
-v</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed \*&lt;/font&gt; &lt;font
+class="fun"&gt;Arr(&lt;/font&gt;&lt;font class="args"&gt;mixed
+v&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> mixed * </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return <v> in the form of an array. If <v>
-is an array already, <v> will be returned in its present state,
-otherwise ({ <v> }) is returned.
+&lt;/td&gt; &lt;td valign="top"&gt; mixed \* &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return &lt;v&gt; in the form of an array. If &lt;v&gt;
+is an array already, &lt;v&gt; will be returned in its present state,
+otherwise ({ &lt;v&gt; }) is returned.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: Arr( "Hello" )
     Merry result: ({ "Hello" })
@@ -257,76 +259,76 @@ otherwise ({ <v> }) is returned.
     Merry code: Arr( ({ "Hello" }) )
     Merry result: ({ "Hello" })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a href="#Str">Str</a>,
-<a href="#Int">Int</a>, <a
-href="#Flt">Flt</a>,
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#Str"&gt;Str&lt;/a&gt;,
+&lt;a href="\#Int"&gt;Int&lt;/a&gt;, &lt;a
+href="\#Flt"&gt;Flt&lt;/a&gt;,
 
-<a href="#Num">Num</a> and <a
-href="#Map">Map</a> </td> </tr> </table>
+&lt;a href="\#Num"&gt;Num&lt;/a&gt; and &lt;a
+href="\#Map"&gt;Map&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### arr_to_set
+### arr\_to\_set
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>arr_to_set</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;arr\_to\_set&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">mapping</font> <font
-class="fun">arr_to_set(</font><font class="args">array
-a</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> mapping </td>
+&lt;td&gt; &lt;font class="ret"&gt;mapping&lt;/font&gt; &lt;font
+class="fun"&gt;arr\_to\_set(&lt;/font&gt;&lt;font class="args"&gt;array
+a&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; mapping &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Use arr_to_set to convert an array
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Use arr\_to\_set to convert an array
 value to a mapping where each unique property in the array is an indice
-(key) in the resulting mapping.<br/>As mappings are automatically
-represented in alphabetical order, arr_to_set may for instance be used
-to sort an array of strings.<br/>As you see in the second example,
-applying map_indices to the result of an arr_to_set-call will result
-in an identical, but sorted, array.<br/>Take note, however, that
+(key) in the resulting mapping.&lt;br/&gt;As mappings are automatically
+represented in alphabetical order, arr\_to\_set may for instance be used
+to sort an array of strings.&lt;br/&gt;As you see in the second example,
+applying map\_indices to the result of an arr\_to\_set-call will result
+in an identical, but sorted, array.&lt;br/&gt;Take note, however, that
 if any two values in an array are identical (which is valid for an
 array), these two values will be merged into a single value by
-arr_to_set, as indices must be unique. </td> </tr>
-<tr> <td valign="top"> **Example(s):**
+arr\_to\_set, as indices must be unique. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: arr_to_set( ({ "Kalle", "Anders", "Erik", "Maria" }) )
     Merry result: ([ "Anders":1, "Erik":1, "Kalle":1, "Maria":1 ])
     Merry code: map_indices( arr_to_set( ({ "Kalle", "Anders", "Erik", "Maria" }) ))
     Merry result: ({ "Anders", "Erik", "Kalle", "Maria" })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#map_values">map_values</a>, <a
-href="#map_indices">map_indices</a> and <a
-href="#reverse_mapping">reverse_mapping</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#map\_values"&gt;map\_values&lt;/a&gt;, &lt;a
+href="\#map\_indices"&gt;map\_indices&lt;/a&gt; and &lt;a
+href="\#reverse\_mapping"&gt;reverse\_mapping&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### ascii_to_mixed
+### ascii\_to\_mixed
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>ascii_to_mixed</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;ascii\_to\_mixed&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">ascii_to_mixed(</font><font
-class="args">string str</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;ascii\_to\_mixed(&lt;/font&gt;&lt;font
+class="args"&gt;string str&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> mixed </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Convert an ascii value into the appropriate property
-type. </td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Convert an ascii value into the appropriate property
+type. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: ascii_to_mixed( "15" )
     Merry result: 15
@@ -337,32 +339,32 @@ type. </td> </tr> <tr> <td valign="top">
     Merry code: ascii_to_mixed( "<Marrach:players:K:kalle>" )
     Merry result: <Marrach:players:K:kalle>
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#mixed_to_ascii">mixed_to_ascii</a> and <a
-href="#dump_value">dump_value</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#mixed\_to\_ascii"&gt;mixed\_to\_ascii&lt;/a&gt; and &lt;a
+href="\#dump\_value"&gt;dump\_value&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### ascii_typeof
+### ascii\_typeof
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>ascii_typeof</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;ascii\_typeof&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">ascii_typeof(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;ascii\_typeof(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return a string representation of the property type of
-value. </td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return a string representation of the property type of
+value. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     ascii_typeof( nil ) == "nil"
     ascii_typeof( 123 ) == "int"
@@ -372,29 +374,29 @@ value. </td> </tr> <tr> <td valign="top">
     ascii_typeof( ({ "a", "b", "c" }) ) == "array"
     ascii_typeof( ([ "foo" : "bar" ]) ) == "mapping"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#typeof">typeof</a> </td> </tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#typeof"&gt;typeof&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### asin
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>asin</td> </tr> <tr> <td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;asin&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Syntax:**
 
-</td> <td> <font class="ret">float</font>
-<font class="fun">asin(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;float&lt;/font&gt;
+&lt;font class="fun"&gt;asin(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: asin(0.0)
     Merry result: 0.0
@@ -405,31 +407,31 @@ valign="top">
     Merry code: asin(1.0)
     Merry result: 1.5707963
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#acos">acos</a> and <a
-href="#atan">atan</a> </td> </tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#acos"&gt;acos&lt;/a&gt; and &lt;a
+href="\#atan"&gt;atan&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### atan
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>atan</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">float</font> <font
-class="fun">atan(</font><font class="args">float
-x</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;atan&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;atan(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return the arc tangent of the argument.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Return the arc tangent of the argument.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: atan(0.0)
     Merry result: 0.0
@@ -440,32 +442,32 @@ Return the arc tangent of the argument.<br/> </td>
     Merry code: atan(1.0)
     Merry result: 0.78539816
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#acos">acos</a>, <a href="#asin">asin</a>
-and <a href="#atan2">atan2</a> </td> </tr>
-</table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#acos"&gt;acos&lt;/a&gt;, &lt;a href="\#asin"&gt;asin&lt;/a&gt;
+and &lt;a href="\#atan2"&gt;atan2&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### atan2
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>atan2</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">atan2(</font><font class="args">float y,
-float x</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;atan2&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;atan2(&lt;/font&gt;&lt;font class="args"&gt;float y,
+float x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return the arc tangent of y/x, using the signs of the arguments to
-determine the quadrant of the result.<br/> </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+determine the quadrant of the result.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: atan2(0.0, 0.0)
     Merry result: 0.0
@@ -479,69 +481,69 @@ valign="top">
     Merry code: atan2(1.0,1.0)
     Merry result: 0.78539816
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#atan">atan</a> </td> </tr> </table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#atan"&gt;atan&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## B
 
-### base64_decode
+### base64\_decode
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>base64_decode</td> </tr>
+&lt;/td&gt; &lt;td&gt;base64\_decode&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### Bilbo
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>Bilbo</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">Bilbo(</font><font class="args">object ob,
+&lt;/td&gt; &lt;td&gt;Bilbo&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;Bilbo(&lt;/font&gt;&lt;font class="args"&gt;object ob,
 string signaltype, string signalname, special
-arguments</font><font class="fun">)</font> </td>
+arguments&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Merry can call Bilbo directly -- but as Merry at this
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Merry can call Bilbo directly -- but as Merry at this
 point has exceeded bilbo in all/any aspect, it is recommended that you
 use this function scarcely; preferably never.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Bilbo( $actor, "react", "smile" ); /* will execute bilbo:react:smile found in $actor */
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### break_paragraph
+### break\_paragraph
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>break_paragraph</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;break\_paragraph&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">string</font> <font
-class="fun">break_paragraph(</font><font
-class="args">string head, string str, int len</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string </td> </tr>
+&lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;break\_paragraph(&lt;/font&gt;&lt;font
+class="args"&gt;string head, string str, int len&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> For a fixed-size font, break str into lines each no
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; For a fixed-size font, break str into lines each no
 longer than len characters, and start all of it with the string head.
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: break_paragraph( "You say: ", "sputnik was a  satellite", 20 )
     Merry result: "You say: sputnik was\n           a satellite\n"
@@ -550,32 +552,32 @@ longer than len characters, and start all of it with the string head.
     a satellite
     (note that "a satellite" is directly below "sputnik was" if pre-formated)
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ## C
 
-### calculate_stamp
+### calculate\_stamp
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>calculate_stamp</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;calculate\_stamp&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">int</font> <font
-class="fun">calculate_stamp(</font><font
-class="args">int year, int month, int day</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;calculate\_stamp(&lt;/font&gt;&lt;font
+class="args"&gt;int year, int month, int day&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Create a UNIX timestamp pointing to
-midnight, year <year>, day <day> of month <month>.
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Create a UNIX timestamp pointing to
+midnight, year &lt;year&gt;, day &lt;day&gt; of month &lt;month&gt;.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: calculate_stamp( 1980, 9, 24 )
     Merry result: 338616000
@@ -583,43 +585,43 @@ midnight, year <year>, day <day> of month <month>.
     Merry code: ctime( 338616000 ) + ", Kalle was born."
     Merry result: "Wed Sep 24 00:00:00 1980, Kalle was born."
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#time">time</a>, <a
-href="#ctime">ctime</a>,
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;,
 
-<a href="#short_time">short_time</a>, <a
-href="#smalltime">smalltime</a>,
+&lt;a href="\#short\_time"&gt;short\_time&lt;/a&gt;, &lt;a
+href="\#smalltime"&gt;smalltime&lt;/a&gt;,
 
-<a href="#get_day">get_day</a>, <a
-href="#get_month">get_month</a>,
+&lt;a href="\#get\_day"&gt;get\_day&lt;/a&gt;, &lt;a
+href="\#get\_month"&gt;get\_month&lt;/a&gt;,
 
-<a href="#get_year">get_year</a>, <a
-href="#get_hour">get_hour</a>,
+&lt;a href="\#get\_year"&gt;get\_year&lt;/a&gt;, &lt;a
+href="\#get\_hour"&gt;get\_hour&lt;/a&gt;,
 
-<a href="#get_minute">get_minute</a> and <a
-href="#get_second">get_second</a>
+&lt;a href="\#get\_minute"&gt;get\_minute&lt;/a&gt; and &lt;a
+href="\#get\_second"&gt;get\_second&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Call
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Call</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Call&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">Call(</font><font class="args">object ob,
-string script, special arguments</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;Call(&lt;/font&gt;&lt;font class="args"&gt;object ob,
+string script, special arguments&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> mixed </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry's means of calling other Merry functions. If the script argument is e.g. 'checktimer', the property search will be for merry:lib:checktimer; there is no way to avoid the 'lib' portion. All functions that are callable in Merry must exist in the 'lib' namespace. This makes sense, as you will see in time.
 
@@ -633,145 +635,145 @@ valign="top">
     Call(this, "inflict", $damage: 100);
     $damage will still be 50.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#call_other">call_other</a>,
-<a href="#call_out">call_out</a> and <a
-href="#call_trace">call_trace</a> </td> </tr>
-</table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#call\_other"&gt;call\_other&lt;/a&gt;,
+&lt;a href="\#call\_out"&gt;call\_out&lt;/a&gt; and &lt;a
+href="\#call\_trace"&gt;call\_trace&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### call_other
+### call\_other
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>call_other</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;call\_other&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">varargs mixed</font> <font
-class="fun">call_other(</font><font class="args">mixed
-obj, string function, mixed args...</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> varargs mixed </td>
+&lt;td&gt; &lt;font class="ret"&gt;varargs mixed&lt;/font&gt; &lt;font
+class="fun"&gt;call\_other(&lt;/font&gt;&lt;font class="args"&gt;mixed
+obj, string function, mixed args...&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; varargs mixed &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Call a function in an object. The
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Call a function in an object. The
 first argument must be either an object or a string. If it is a string,
-call_object() will be called in the driver object to get the
-corresponding object.<br/>Only non-private functions can be called
-with call_other(). If the function is static, the object in which the
+call\_object() will be called in the driver object to get the
+corresponding object.&lt;br/&gt;Only non-private functions can be called
+with call\_other(). If the function is static, the object in which the
 function is called must be the same as the object from which the
-function is called, or the call will fail.<br/>Any additional
-arguments to call_other() will be passed on to the called
-function.<br/>In LPC, obj->func(arg1, arg2, argn) can be used
-as a shorthand for call_other(obj, "func", arg1, arg2,
-argn).<br/> </td> </tr>
+function is called, or the call will fail.&lt;br/&gt;Any additional
+arguments to call\_other() will be passed on to the called
+function.&lt;br/&gt;In LPC, obj-&gt;func(arg1, arg2, argn) can be used
+as a shorthand for call\_other(obj, "func", arg1, arg2,
+argn).&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### call_out
+### call\_out
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>call_out</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;call\_out&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">varargs int</font>
-<font class="fun">call_out(</font><font
-class="args">string function, int delay, mixed
-args...</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> varargs int
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;varargs int&lt;/font&gt;
+&lt;font class="fun"&gt;call\_out(&lt;/font&gt;&lt;font
+class="args"&gt;string function, int delay, mixed
+args...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; varargs int
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Call a function in
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Call a function in
 the current object with a delay. The function to be called must not be
-private. The delay is specified in seconds.<br/>The minimum delay
+private. The delay is specified in seconds.&lt;br/&gt;The minimum delay
 is 1 second; if the given delay is less, it is changed into 1
-second.<br/>The returned value is the callout handle, an integer
-> 0 which must be used if the callout is to be removed.<br/>
-</td> </tr>
+second.&lt;br/&gt;The returned value is the callout handle, an integer
+&gt; 0 which must be used if the callout is to be removed.&lt;br/&gt;
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### call_trace
+### call\_trace
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>call_trace</td> </tr> <tr> <td
-valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;call\_trace&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> mixed **
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return the function
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; mixed \*\*
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return the function
 call trace as an array. The elements are of the following
-format:<br/><br/>({ objname, progname, function, line,
-extern, arg1, ..., argn })<br/><br/>The line number is 0 if
-the function is in a compiled object.<br/>Extern is 1 if the
-function was called with call_other(), and 0 otherwise.<br/>The
+format:&lt;br/&gt;&lt;br/&gt;({ objname, progname, function, line,
+extern, arg1, ..., argn })&lt;br/&gt;&lt;br/&gt;The line number is 0 if
+the function is in a compiled object.&lt;br/&gt;Extern is 1 if the
+function was called with call\_other(), and 0 otherwise.&lt;br/&gt;The
 last element of the returned array is the trace of the current
-function.<br/>
+function.&lt;br/&gt;
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: call_trace()
     Merry result: ({ ({ "/kernel/obj/binary#10769", "/kernel/obj/binary", "receive_message", 85, 1 }), ({ "/kernel/obj/binary#10769", "/kernel/lib/connection", "receive_message", 233, 0 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "receive_message", 371, 1 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "receive_line", 720, 0 }), ({ "/usr/TextIF/obj/user#10798", "/kernel/lib/auto", "call_limited", 719, 0 }), ({ "/usr/TextIF/obj/user#10798", "/kernel/lib/auto", "_F_call_limited", 698, 0 }), ({ "/usr/TextIF/obj/user#10798", "/usr/TextIF/obj/user", "parse_command", 812, 1 }), ({ "/usr/TextIF/main", "/usr/TextIF/main", "command", 230, 1 }), ({ "/usr/Tool/sys/tool", "/usr/Tool/sys/tool", "cmd_DEV_tool", 117, 1 }), ({ "/usr/Tool/sys/merry", "/usr/Tool/lib/merry", "cmd_merry_eval", 133, 1 }), ({ "/usr/Tool/sys/merry", "/usr/Tool/lib/merry", "run_merry_code", 45, 0 }), ({ "/usr/SkotOS/data/merry#-1", "/usr/SkotOS/data/merry", "evaluate", 223, 1, ({ <Chatters:LC:ch:allen-christopher>, nil, nil, ([ "actor":<Chatters:LC:ch:allen-christopher>, "body":<Chatters:LC:ch:allen-christopher>, "here":<Examples:complete:desc:room-go-nowhere>, "looker":<Chatters:LC:ch:allen-christopher> ]), nil }) }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/usr/SkotOS/lib/merrynode", "evaluate", 56, 1, <Chatters:LC:ch:allen-christopher>, nil, nil, @14, nil, nil }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "merry", 6, 1, nil, nil, "virgin" }), ({ "/usr/SkotOS/merry/c8a82e895d135325ccf56f4106de1b80", "/kernel/lib/auto", "call_trace", 524, 0 }) })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#previous_object">previous_object</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#previous\_object"&gt;previous\_object&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### capitalize
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>capitalize</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">capitalize(</font><font class="args">string
-str</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;capitalize&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;capitalize(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Make sure the first letter of str is capitalized. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Make sure the first letter of str is capitalized. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     "zell" -> "Zell"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#lower_case">lower_case</a>, <a
-href="#upper_case">upper_case</a>, <a
-href="#decapitalize">decapitalize</a> and <a
-href="#proper">proper</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#lower\_case"&gt;lower\_case&lt;/a&gt;, &lt;a
+href="\#upper\_case"&gt;upper\_case&lt;/a&gt;, &lt;a
+href="\#decapitalize"&gt;decapitalize&lt;/a&gt; and &lt;a
+href="\#proper"&gt;proper&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### cardinal
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>cardinal</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">cardinal(</font><font class="args">string
-str</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;cardinal&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;cardinal(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Convert a string expression of a cardinal number into an integer value.
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: cardinal( "one" )
     Merry result: 1
@@ -785,89 +787,89 @@ Convert a string expression of a cardinal number into an integer value.
     Merry code: cardinal( "ninetynine" )
     Merry result: 99
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#ordinal">ordinal</a>, <a
-href="#desc_ordinal">desc_ordinal</a> and <a
-href="#desc_cardinal">desc_cardinal</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ordinal"&gt;ordinal&lt;/a&gt;, &lt;a
+href="\#desc\_ordinal"&gt;desc\_ordinal&lt;/a&gt; and &lt;a
+href="\#desc\_cardinal"&gt;desc\_cardinal&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### catch
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>catch</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">catch(</font><font
-class="args">expression</font><font
-class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;catch&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;catch(&lt;/font&gt;&lt;font
+class="args"&gt;expression&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Execute the code for until an error results, or until execution is
 complete. If an error resulted, catch() will return the error message as
-a string; otherwise, it will return 0.<br/>Note: catch() is not a
+a string; otherwise, it will return 0.&lt;br/&gt;Note: catch() is not a
 real kfun. catch(a, b) will evaluate the expression (a, b), rather than
-"call catch() with arguments a and b".<br/> </td>
-</tr>
+"call catch() with arguments a and b".&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#error">error</a> </td>
-</tr> </table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#error"&gt;error&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### ceil
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>ceil</td> </tr> <tr> <td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;ceil&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Syntax:**
 
-</td> <td> <font class="ret">float</font>
-<font class="fun">ceil(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;float&lt;/font&gt;
+&lt;font class="fun"&gt;ceil(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Round the argument
-towards positive infinity.<br/> </td> </tr> <tr>
-<td valign="top"> **Example(s):** </td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Round the argument
+towards positive infinity.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: ceil(14.1)
     Merry result: 15.0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#floor">floor</a> and <a
-href="#fmod">fmod</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#floor"&gt;floor&lt;/a&gt; and &lt;a
+href="\#fmod"&gt;fmod&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### char_to_string
+### char\_to\_string
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>char_to_string</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;char\_to\_string&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret"></font> <font
-class="fun">char_to_string(</font><font
-class="args">int ch</font><font
-class="fun">)</font> </td> </tr>
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;char\_to\_string(&lt;/font&gt;&lt;font
+class="args"&gt;int ch&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:**
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:**
 
-</td> <td valign="top"> Convert a numeric character code
-value into a string. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; Convert a numeric character code
+value into a string. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: char_to_string( 'A' )
     Merry result: "A"
@@ -875,198 +877,198 @@ valign="top"> **Example(s):** </td> <td valign="top">
     Merry code: char_to_string( 65 )
     Merry result: "A"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### clear_by_int
+### clear\_by\_int
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>clear_by_int</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;clear\_by\_int&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">void</font>
-<font class="fun">clear_by_int(</font><font
-class="args">mapping bigmap, int ix</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> void
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;void&lt;/font&gt;
+&lt;font class="fun"&gt;clear\_by\_int(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, int ix&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; void
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Clear the value in
-<bigmap> for the indice specified using integer identifier
-<ix>, effectively removing the map entry altogether. </td>
-</tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Clear the value in
+&lt;bigmap&gt; for the indice specified using integer identifier
+&lt;ix&gt;, effectively removing the map entry altogether. &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#get_by_int">get_by_int</a>,
-<a href="#set_by_int">set_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;,
+&lt;a href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#get_by_ob">get_by_ob</a>, <a
-href="#set_by_ob">set_by_ob</a>,
+&lt;a href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;, &lt;a
+href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;,
 
-<a href="#clear_by_ob">clear_by_ob</a>, <a
-href="#get_by_str">get_by_str</a>,
+&lt;a href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;, &lt;a
+href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;,
 
-<a href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### clear_by_ob
+### clear\_by\_ob
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>clear_by_ob</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;clear\_by\_ob&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">clear_by_ob(</font><font
-class="args">mapping bigmap, object ob</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;clear\_by\_ob(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, object ob&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Clear the value in <bigmap> for the indice
-specified using object identifier <ob>, effectively removing the
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Clear the value in &lt;bigmap&gt; for the indice
+specified using object identifier &lt;ob&gt;, effectively removing the
 map entry altogether.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#get_by_int">get_by_int</a>,
-<a href="#set_by_int">set_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;,
+&lt;a href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#clear_by_int">clear_by_int</a>, <a
-href="#get_by_ob">get_by_ob</a>,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;, &lt;a
+href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;,
 
-<a href="#set_by_ob">set_by_ob</a>, <a
-href="#clear_by_ob">clear_by_ob</a>,
+&lt;a href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;, &lt;a
+href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;,
 
-<a href="#get_by_str">get_by_str</a>, <a
-href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;, &lt;a
+href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### clear_by_str
+### clear\_by\_str
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>clear_by_str</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;clear\_by\_str&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">clear_by_str(</font><font
-class="args">mapping bigmap, string str</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;clear\_by\_str(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, string str&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Clear the value in <bigmap> for the indice
-specified using string identifier <str>, effectively removing the
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Clear the value in &lt;bigmap&gt; for the indice
+specified using string identifier &lt;str&gt;, effectively removing the
 map entry altogether.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#get_by_int">get_by_int</a>,
-<a href="#set_by_int">set_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;,
+&lt;a href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#clear_by_int">clear_by_int</a>, <a
-href="#get_by_ob">get_by_ob</a>,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;, &lt;a
+href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;,
 
-<a href="#set_by_ob">set_by_ob</a>, <a
-href="#clear_by_ob">clear_by_ob</a>,
+&lt;a href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;, &lt;a
+href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;,
 
-<a href="#get_by_str">get_by_str</a> and <a
-href="#set_by_str">set_by_str</a>
+&lt;a href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt; and &lt;a
+href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### comma
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>comma</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;comma&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">comma(</font><font class="args">int
-num</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;comma(&lt;/font&gt;&lt;font class="args"&gt;int
+num&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Make num readable by inserting a comma after every
-third digit. </td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Make num readable by inserting a comma after every
+third digit. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: comma( 1344266 )
     Merry result: "1,344,266"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### contains
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>contains</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">contains(</font><font class="args">string
-str, string sub</font><font class="fun">)</font>
-</td>
+&lt;/td&gt; &lt;td&gt;contains&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;contains(&lt;/font&gt;&lt;font class="args"&gt;string
+str, string sub&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> If sub is a sub-string of str, return TRUE, else
-FALSE.<br/>That is, if str contains sub.
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; If sub is a sub-string of str, return TRUE, else
+FALSE.&lt;br/&gt;That is, if str contains sub.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: contains( "foobar", "ob" )
     Merry result: TRUE
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#sscanf">sscanf</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#sscanf"&gt;sscanf&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### copy
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>copy</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">copy(</font><font class="args">mixed
-var</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;copy&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;copy(&lt;/font&gt;&lt;font class="args"&gt;mixed
+var&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> mixed </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
 The copy() function is useful when modifying for instance arrays and/or
 mappings, to avoid harming the original source. VAR = ARRAY does not
 instantly create a copy of ARRAY, which means there is a slight chance
 that modifying VAR will also modify ARRAY (the original source).
-</td>
+&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: copy( "abc" )
     Merry result: "abc
@@ -1075,27 +1077,27 @@ that modifying VAR will also modify ARRAY (the original source).
     Merry code: copy( $actor )
     Merry result: <Marrach:players:K:kalle>
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### cos
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>cos</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;cos&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">float</font> <font
-class="fun">cos(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float </td> </tr>
+&lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;cos(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the cosine of the argument.<br/>
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the cosine of the argument.&lt;br/&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: cos(0.0)
     Merry result: 1.0
@@ -1106,31 +1108,31 @@ valign="top"> Return the cosine of the argument.<br/>
     Merry code: cos(1.0)
     Merry result: 0.54030231
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a href="#sin">sin</a>
-and <a href="#kfun">kfun</a> </td> </tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#sin"&gt;sin&lt;/a&gt;
+and &lt;a href="\#kfun"&gt;kfun&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### cosh
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>cosh</td> </tr> <tr> <td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;cosh&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Syntax:**
 
-</td> <td> <font class="ret">float</font>
-<font class="fun">cosh(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;float&lt;/font&gt;
+&lt;font class="fun"&gt;cosh(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return the
-hyperbolic cosine of the argument.<br/> </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return the
+hyperbolic cosine of the argument.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: cosh(0.0)
     Merry result: 1.0
@@ -1141,37 +1143,37 @@ hyperbolic cosine of the argument.<br/> </td> </tr>
     Merry code: cosh(1.0)
     Merry result: 1.5430806
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#sinh">sinh</a> and <a
-href="#tanh">tanh</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#sinh"&gt;sinh&lt;/a&gt; and &lt;a
+href="\#tanh"&gt;tanh&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### crypt
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>crypt</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;crypt&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">varargs string</font> <font
-class="fun">crypt(</font><font class="args">string
-passwd, string salt</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top"> **Return
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;varargs string&lt;/font&gt; &lt;font
+class="fun"&gt;crypt(&lt;/font&gt;&lt;font class="args"&gt;string
+passwd, string salt&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
 value(s):**
 
-</td> <td valign="top"> varargs string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Encrypt a password, of which only
+&lt;/td&gt; &lt;td valign="top"&gt; varargs string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Encrypt a password, of which only
 the first 8 characters are significant. If the optional second argument
 is given, its first two characters are used to perturb the encryption
 algorithm additionally; without one, the encryption is perturbed
 randomly. The returned string is 13 characters long, the first two of
-which are equal to the used salt.<br/> </td> </tr>
-<tr> <td valign="top">
+which are equal to the used salt.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: crypt("test")
     Merry result: "MKfcAguU0/rhs"
@@ -1179,30 +1181,30 @@ which are equal to the used salt.<br/> </td> </tr>
     Merry code: crypt("test", "te")
     Merry result: "teH0wLIpW0gyQ"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### ctime
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
 
-<td valign="top"> **Function:** </td>
-<td>ctime</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">ctime(</font><font class="args">int
-clock</font><font class="fun">)</font>
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;ctime&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;ctime(&lt;/font&gt;&lt;font class="args"&gt;int
+clock&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Convert the specified time, which is an integer such as is returned by
 the kfun time(), into a string of the form "Tue Aug 3 14:40:18
-1993".<br/> </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+1993".&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: ctime(0)
     Merry result: "Wed Dec 31 19:00:00 1969"
@@ -1210,171 +1212,171 @@ valign="top"> **Example(s):** </td> <td valign="top">
     Merry code: ctime(time())
     Merry result: "Fri Apr  4 19:38:09 2003"
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#time">time</a>, <a
-href="#short_time">short_time</a> and <a
-href="#rfc_1123_date">rfc_1123_date</a> </td>
-</tr> </table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt; and &lt;a
+href="\#rfc\_1123\_date"&gt;rfc\_1123\_date&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ## D
 
 ### days
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>days</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">days(</font><font class="args">int
-n</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;days&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;days(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Generate a string value representation of the amount of days and hours
-since Jan 1st, 1970. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+since Jan 1st, 1970. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: days( time() )
     Merry result: "12203 d, 12 h"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#ctime">ctime</a>, <a
-href="#time">time</a>, <a
-href="#short_time">short_time</a>,
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#humanized_date">humanized_date</a>, <a
-href="#rfc_1123_date">rfc_1123_date</a> and <a
-href="#smalltime">smalltime</a> </td> </tr>
+&lt;a href="\#humanized\_date"&gt;humanized\_date&lt;/a&gt;, &lt;a
+href="\#rfc\_1123\_date"&gt;rfc\_1123\_date&lt;/a&gt; and &lt;a
+href="\#smalltime"&gt;smalltime&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### decapitalize
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>decapitalize</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;decapitalize&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">string</font>
-<font class="fun">decapitalize(</font><font
-class="args">string str</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt;
+&lt;font class="fun"&gt;decapitalize(&lt;/font&gt;&lt;font
+class="args"&gt;string str&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Make sure the first
-letter of str is lower case. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Make sure the first
+letter of str is lower case. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     "Chocolate" -> "chocolate"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#lower_case">lower_case</a>, <a
-href="#upper_case">upper_case</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#lower\_case"&gt;lower\_case&lt;/a&gt;, &lt;a
+href="\#upper\_case"&gt;upper\_case&lt;/a&gt;,
 
-<a href="#capitalize">capitalize</a> and <a
-href="#proper">proper</a>
+&lt;a href="\#capitalize"&gt;capitalize&lt;/a&gt; and &lt;a
+href="\#proper"&gt;proper&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### desc_cardinal
+### desc\_cardinal
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>desc_cardinal</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;desc\_cardinal&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">desc_cardinal(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;desc\_cardinal(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Describe the cardinal n in English. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Describe the cardinal n in English. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     123 -> "one hundred twenty-three"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#desc_ordinal">desc_ordinal</a> </td>
-</tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#desc\_ordinal"&gt;desc\_ordinal&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### desc_ordinal
+### desc\_ordinal
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>desc_ordinal</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;desc\_ordinal&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">string</font>
-<font class="fun">desc_ordinal(</font><font
-class="args">int n</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt;
+&lt;font class="fun"&gt;desc\_ordinal(&lt;/font&gt;&lt;font
+class="args"&gt;int n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Describe the
-ordinal n in English. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Describe the
+ordinal n in English. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     123 -> "one hundred twenty-third"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#desc_cardinal">desc_cardinal</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#desc\_cardinal"&gt;desc\_cardinal&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### Describe
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Describe</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Describe&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">string</font> <font
-class="fun">Describe(</font><font class="args">object
-o</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> string </td>
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;Describe(&lt;/font&gt;&lt;font class="args"&gt;object
+o&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Describe() is used to get string
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Describe() is used to get string
 descriptions of objects, like $actor, $target, etc. in a merry script.
-<br/>It can take multiple objects simultaneously as ({ object one,
-object two, ... }). <br/>It can take an optional second parameter
-which will describe o in objective form. <br/>If the second param
+&lt;br/&gt;It can take multiple objects simultaneously as ({ object one,
+object two, ... }). &lt;br/&gt;It can take an optional second parameter
+which will describe o in objective form. &lt;br/&gt;If the second param
 is nil and the third parameter is o, Describe() will describe in first
-person (you). <br/>If both the second and third parameters are o,
+person (you). &lt;br/&gt;If both the second and third parameters are o,
 Describe() will describe in possessive first person (yourself).
-<br/>The fourth parameter is a flag that can optionally be set to:
-<br/>STYLE_NONPOSS /* don't do the 'his frog' thing **/
-<br/>STYLE_DEFINITE /** the frog **/ <br/>STYLE_REL_LOC
-/** the frog in his bag **/ <br/>STYLE_FIRST_PERSON /** the frog
-in your bag */
+&lt;br/&gt;The fourth parameter is a flag that can optionally be set to:
+&lt;br/&gt;STYLE\_NONPOSS /\* don't do the 'his frog' thing **/
+&lt;br/&gt;STYLE\_DEFINITE /** the frog **/ &lt;br/&gt;STYLE\_REL\_LOC
+/** the frog in his bag **/ &lt;br/&gt;STYLE\_FIRST\_PERSON /** the frog
+in your bag \*/
 
-<br/>STYLE_REDUCE_CHUNK /* avoid look frogs -> four frogs
-**/ <br/>STYLE_PRONOUN /** allow i.e. 'yourself' vs 'you' **/
-<br/>STYLE_NOCLUSTER /** (undocumented) **/
-<br/>STYLE_NO_SHOW_INVIS /** don't show unseen objects **/
-<br/>STYLE_WEAK_LOOKER /** don't replace Zell with You **/
-<br/>STYLE_IGNORE_VISIBILITY /** ignores luminosity from the
-actors p.o.v. */ </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;br/&gt;STYLE\_REDUCE\_CHUNK /\* avoid look frogs -&gt; four frogs
+**/ &lt;br/&gt;STYLE\_PRONOUN /** allow i.e. 'yourself' vs 'you' **/
+&lt;br/&gt;STYLE\_NOCLUSTER /** (undocumented) **/
+&lt;br/&gt;STYLE\_NO\_SHOW\_INVIS /** don't show unseen objects **/
+&lt;br/&gt;STYLE\_WEAK\_LOOKER /** don't replace Zell with You **/
+&lt;br/&gt;STYLE\_IGNORE\_VISIBILITY /** ignores luminosity from the
+actors p.o.v. \*/ &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Examples using the first and second parameters:
     Describe( $actor ) -> "StoryCoder Kalle"
@@ -1382,44 +1384,44 @@ valign="top"> **Example(s):** </td> <td valign="top">
     Describe( $actor, nil, $actor ) -> "you"
     Describe( $actor, $actor, $actor ) -> "yourself"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### dgd_version
+### dgd\_version
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>dgd_version</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;dgd\_version&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> int </td> </tr>
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: dgd_version()
     Merry result: 12071
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### do
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>do</td> </tr>
+&lt;td&gt;do&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Do..while loops work exactly like while-loops except
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Do..while loops work exactly like while-loops except
 that the condition is checked AFTER the block is executed, rather than
 before. This means the block will be executed at least once regardless.
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Example #1:
     -----------
@@ -1463,30 +1465,30 @@ before. This means the block will be executed at least once regardless.
     i is 1
     Loop has ended with i at 1.
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a href="#for">for</a>
-and <a href="#while">while</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#for"&gt;for&lt;/a&gt;
+and &lt;a href="\#while"&gt;while&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### dump_value
+### dump\_value
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>dump_value</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;dump\_value&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">dump_value(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;dump\_value(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Convert any property into a string value. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Convert any property into a string value. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: dump_value( $actor )
     Merry result: "<Marrach:players:K:kalle>"
@@ -1494,154 +1496,154 @@ valign="top"> Convert any property into a string value. </td>
     Merry code: dump_value( args )
     Merry result: "([ \"actor\":<Marrach:players:K:kalle>, \"body\":<Marrach:players:K:kalle>, \"here\":<Marrach:Coders:kalle:rooms:home>, \"looker\":<Marrach:players:K:kalle>, \"this\":<Marrach:players:K:kalle> ])"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#ascii_to_mixed">ascii_to_mixed</a> and <a
-href="#mixed_to_ascii">mixed_to_ascii</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ascii\_to\_mixed"&gt;ascii\_to\_mixed&lt;/a&gt; and &lt;a
+href="\#mixed\_to\_ascii"&gt;mixed\_to\_ascii&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### Duplicate
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>Duplicate</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">object</font> <font
-class="fun">Duplicate(</font><font class="args">object
-ob</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;Duplicate&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;object&lt;/font&gt; &lt;font
+class="fun"&gt;Duplicate(&lt;/font&gt;&lt;font class="args"&gt;object
+ob&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> object </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; object &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 This function makes a copy of an existing object, just like the
-"Duplicate" button in WOE works.<br/>For a merryized version of
-+spawn, check out Spawn(). </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+"Duplicate" button in WOE works.&lt;br/&gt;For a merryized version of
++spawn, check out Spawn(). &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     $copy_of_Generic_drink_mug_coffee = Duplicate( ${Generic:drink:mug-coffee} );
     $copy_of_Generic_drink_mug_coffee."base:objectname" = "Marrach:Coders:kalle:my_own_coffee_object";
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#Spawn">Spawn</a> and <a
-href="#Slay">Slay</a> </td> </tr> </table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#Spawn"&gt;Spawn&lt;/a&gt; and &lt;a
+href="\#Slay"&gt;Slay&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## E
 
 ### EmitIn
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>EmitIn</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">EmitIn(</font><font class="args">object o,
-string s, object exclude_one, object exclode_another,
-...</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;EmitIn&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;EmitIn(&lt;/font&gt;&lt;font class="args"&gt;object o,
+string s, object exclude\_one, object exclode\_another,
+...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> void </td>
-</tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td>
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry command to emit a string of text into an environment, such as a room.
     Example:
     EmitIn( $actor."base:environment", "This goes to everyone in the same room as $actor." );
     EmitIn( $actor."base:environment", "This also goes to everyone in $actor's presence, except $actor himself.", $actor );
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#EmitTo">EmitTo</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#EmitTo"&gt;EmitTo&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### EmitTo
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>EmitTo</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;EmitTo&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">void</font>
-<font class="fun">EmitTo(</font><font
-class="args">object o, string s</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> void
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;void&lt;/font&gt;
+&lt;font class="fun"&gt;EmitTo(&lt;/font&gt;&lt;font
+class="args"&gt;object o, string s&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; void
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Merry command to
-emit a string of text to a single object. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Merry command to
+emit a string of text to a single object. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     EmitTo( $actor, "Tag! You're it!" );
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#EmitIn">EmitIn</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#EmitIn"&gt;EmitIn&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### error
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>error</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;error&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">void</font> <font
-class="fun">error(</font><font class="args">string
-errormessage</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> void </td>
+&lt;td&gt; &lt;font class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;error(&lt;/font&gt;&lt;font class="args"&gt;string
+errormessage&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Cause an error, which will stop
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Cause an error, which will stop
 execution. If the error is caught, execution will continue after the
-catch.<br/><br/>Note that error() and Error() -- with only
-error() documented here -- do the exact same thing. </td>
-</tr>
+catch.&lt;br/&gt;&lt;br/&gt;Note that error() and Error() -- with only
+error() documented here -- do the exact same thing. &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt;
 
-<td valign="top"> <a href="#catch">catch</a>
-</td> </tr> </table>
+&lt;td valign="top"&gt; &lt;a href="\#catch"&gt;catch&lt;/a&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Every
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Every</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Every&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">string</font> <font
-class="fun">Every(</font><font class="args">string
-script, int frequency</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;Every(&lt;/font&gt;&lt;font class="args"&gt;string
+script, int frequency&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> string
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Every() is used to
-create an infinitely looping process.<br/>It returns an identifier
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Every() is used to
+create an infinitely looping process.&lt;br/&gt;It returns an identifier
 string for the process it creates, and it takes two
-arguments,<br/>- the timer:-script to execute<br/>- the
-frequency in seconds<br/><br/>There is no need to do any
+arguments,&lt;br/&gt;- the timer:-script to execute&lt;br/&gt;- the
+frequency in seconds&lt;br/&gt;&lt;br/&gt;There is no need to do any
 loops on your own, like while( TRUE ){ ... }, when using Every(), but
 take note that the script is actually halted, and all variables it uses
-are reset each time it's called.<br/>It is also very important to
+are reset each time it's called.&lt;br/&gt;It is also very important to
 keep track of the identifier string it returns, as without it you cannot
 ever turn off the loop.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     [Also see C. Allen's example torch at: Examples:complete:light:torch]
 
@@ -1675,30 +1677,30 @@ ever turn off the loop.
     EmitTo( $actor, "Done!" );
     -------------------------------
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#Stop">Stop</a> </td> </tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#Stop"&gt;Stop&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### exp
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>exp</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">exp(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;exp&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;exp(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> float </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
-Return the exponential value of the given argument.<br/>
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
+Return the exponential value of the given argument.&lt;br/&gt;
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: exp(0.0)
     Merry result: 1.0
@@ -1709,255 +1711,255 @@ Return the exponential value of the given argument.<br/>
     Merry code: exp(1.0)
     Merry result: 2.7182818
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a href="#log">log</a>,
-<a href="#log10">log10</a> and <a
-href="#pow">pow</a> </td> </tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#log"&gt;log&lt;/a&gt;,
+&lt;a href="\#log10"&gt;log10&lt;/a&gt; and &lt;a
+href="\#pow"&gt;pow&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### explode
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>explode</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string *</font> <font
-class="fun">explode(</font><font class="args">string str,
-string separator</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;explode&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string \*&lt;/font&gt; &lt;font
+class="fun"&gt;explode(&lt;/font&gt;&lt;font class="args"&gt;string str,
+string separator&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string * </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string \* &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return an array of substrings of str, divided by the given
-separator.<br/>The separators that str starts and ends with, if
-any, are not taken into account.<br/> </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+separator.&lt;br/&gt;The separators that str starts and ends with, if
+any, are not taken into account.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: explode("This is a test"," ")
     Merry result: ({ "This", "is", "a", "test" })
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#implode">implode</a>, <a
-href="#sscanf">sscanf</a> and <a
-href="#parse_string">parse_string</a> </td>
-</tr> </table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#implode"&gt;implode&lt;/a&gt;, &lt;a
+href="\#sscanf"&gt;sscanf&lt;/a&gt; and &lt;a
+href="\#parse\_string"&gt;parse\_string&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ## F
 
 ### fabs
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>fabs</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;fabs&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">float</font> <font
-class="fun">fabs(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float </td> </tr>
+&lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;fabs(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the absolute value of the argument.<br/>
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the absolute value of the argument.&lt;br/&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: fabs(-14.9)
     Merry result: 14.9
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### find_object
+### find\_object
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>find_object</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;find\_object&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">object</font> <font
-class="fun">find_object(</font><font class="args">string
-obj</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;object&lt;/font&gt; &lt;font
+class="fun"&gt;find\_object(&lt;/font&gt;&lt;font class="args"&gt;string
+obj&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> object
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> The string argument
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; object
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; The string argument
 is resolved as a file path, and the object with the resulting name is
 searched for. Either the object, if found, or zero is
-returned.<br/> </td> </tr>
+returned.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: find_object("/base/obj/thing#4803")
     Merry result: <Chatters:LC:ch:allen-christopher>
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#object_name">object_name</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#object\_name"&gt;object\_name&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### FindMerry
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>FindMerry</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">object</font> <font
-class="fun">FindMerry(</font><font class="args">object
-src, string type, string name</font><font
-class="fun">)</font> </td> </tr>
+&lt;td&gt;FindMerry&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;object&lt;/font&gt; &lt;font
+class="fun"&gt;FindMerry(&lt;/font&gt;&lt;font class="args"&gt;object
+src, string type, string name&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> object </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; object &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
 FindMerry is used in cases where it is imperative to figure out 1)
 whether a particular Merry script is present in an object, and/or 2)
-where that Merry script is located. <br/>
+where that Merry script is located. &lt;br/&gt;
 
-<br/>As objects may have references for Merry scripts (aka
+&lt;br/&gt;As objects may have references for Merry scripts (aka
 "inherits"), the actual location of the script itself is at times not
-equal to the object nor either of its UrParents. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+equal to the object nor either of its UrParents. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: FindMerry( $actor, "react-post", "hit-dob" )
     Merry result: <MGeneric:UrHuman>
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### first_elements
+### first\_elements
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>first_elements</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;first\_elements&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">mixed *</font>
-<font class="fun">first_elements(</font><font
-class="args">mixed arr, int num</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> mixed *
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;mixed \*&lt;/font&gt;
+&lt;font class="fun"&gt;first\_elements(&lt;/font&gt;&lt;font
+class="args"&gt;mixed arr, int num&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; mixed \*
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Retrieve
-<num> number of elements from <arr>, starting at the
-beginning and moving toward the end resulting in the first <num>
-values of <arr>.
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Retrieve
+&lt;num&gt; number of elements from &lt;arr&gt;, starting at the
+beginning and moving toward the end resulting in the first &lt;num&gt;
+values of &lt;arr&gt;.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: first_elements( ({ "1", "2", "3", "4" }), 2 )
     Merry result: ({ "1", "2" })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#last_elements">last_elements</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#last\_elements"&gt;last\_elements&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### flatten
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>flatten</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">array</font> <font
-class="fun">flatten(</font><font class="args">mixed
-**value</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;flatten&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;array&lt;/font&gt; &lt;font
+class="fun"&gt;flatten(&lt;/font&gt;&lt;font class="args"&gt;mixed
+\*\*value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> array </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; array &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
 Convert a two-dimensional array -- e.g. ({ ({ 1 }) }) -- to a regular
-array through the use of the flatten() function. </td>
+array through the use of the flatten() function. &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: flatten( ({ ({ "A1", "B1", "C1" }), ({ "A2", "B2", "C2" }) }) )
     Merry result: ({ "A1", "B1", "C1", "A2", "B2", "C2" })
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### flatten_structmap
+### flatten\_structmap
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>flatten_structmap</td> </tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;flatten\_structmap&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### floor
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>floor</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;floor&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">float</font> <font
-class="fun">floor(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float </td> </tr>
+&lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;floor(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Round the argument towards negative
-infinity.<br/> </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Round the argument towards negative
+infinity.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: floor(14.9)
     Merry result: 14.0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ceil">ceil</a> and <a
-href="#fmod">fmod</a> </td> </tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ceil"&gt;ceil&lt;/a&gt; and &lt;a
+href="\#fmod"&gt;fmod&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### Flt
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Flt</td> </tr> <tr> <td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Flt&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Syntax:**
 
-</td> <td> <font class="ret">float</font>
-<font class="fun">Flt(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> float
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;float&lt;/font&gt;
+&lt;font class="fun"&gt;Flt(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; float
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Convert an
-appropriate value to a float.<br/>Note that this does not work
-with all properties.<br/>- Strings must begin with a numeric
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Convert an
+appropriate value to a float.&lt;br/&gt;Note that this does not work
+with all properties.&lt;br/&gt;- Strings must begin with a numeric
 character, and are truncated at the first non-numeric character (except
-points ('.')), including e.g. '+', '-', e.t.c.<br/>- All floats
-and integers are applicable.<br/>- No objects, arrays or mappings
-are applicable. </td> </tr> <tr> <td
-valign="top">
+points ('.')), including e.g. '+', '-', e.t.c.&lt;br/&gt;- All floats
+and integers are applicable.&lt;br/&gt;- No objects, arrays or mappings
+are applicable. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Flt( 3 ) -> 3.0
     Flt( 3+3 ) -> 6.0
@@ -1971,37 +1973,37 @@ valign="top">
     Flt( $actor."base:intrinsiccapacity" ) -> 10.0
     Flt( $actor."base:actualcapacity" ) -> 9.8574127
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a href="#Int">Int</a>,
-<a href="#Str">Str</a>, <a
-href="#dump_value">dump_value</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#Int"&gt;Int&lt;/a&gt;,
+&lt;a href="\#Str"&gt;Str&lt;/a&gt;, &lt;a
+href="\#dump\_value"&gt;dump\_value&lt;/a&gt;,
 
-<a href="#mixed_to_ascii">mixed_to_ascii</a> and <a
-href="#ascii_to_mixed">ascii_to_mixed</a>
+&lt;a href="\#mixed\_to\_ascii"&gt;mixed\_to\_ascii&lt;/a&gt; and &lt;a
+href="\#ascii\_to\_mixed"&gt;ascii\_to\_mixed&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### fmod
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>fmod</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;fmod&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">fmod(</font><font class="args">float x, float
-y</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;fmod(&lt;/font&gt;&lt;font class="args"&gt;float x, float
+y&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> float </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the value f, for which there exists an integer k
-such that<br/>k * y + f == x, f has the same sign of x, and the
-absolute value of<br/>f is less than the absolute value of
-y.<br/> </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the value f, for which there exists an integer k
+such that&lt;br/&gt;k \* y + f == x, f has the same sign of x, and the
+absolute value of&lt;br/&gt;f is less than the absolute value of
+y.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: fmod(25.0,5.0)
     Merry result: 0.0
@@ -2009,47 +2011,47 @@ valign="top">
     Merry code: fmod(25.0,6.0)
     Merry result: 1.0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#ceil">ceil</a> and <a
-href="#floor">floor</a> </td> </tr> </table>
+&lt;a href="\#ceil"&gt;ceil&lt;/a&gt; and &lt;a
+href="\#floor"&gt;floor&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### foo
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>foo</td> </tr>
+&lt;/td&gt; &lt;td&gt;foo&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### for
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>for</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret"></font> <font
-class="fun">for(</font><font class="args"><once>;
-<check>; <do></font><font
-class="fun">)</font> </td>
+&lt;/td&gt; &lt;td&gt;for&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;for(&lt;/font&gt;&lt;font class="args"&gt;&lt;once&gt;;
+&lt;check&gt;; &lt;do&gt;&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
 
-</tr>
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> for-loops are essentially a compression of the
-following:<br/>---<br/>/* for( <x>; <y>;
-<z> ){ <code> } */<br/><x>;<br/>while(
-<y>
-){<br/><code><br/><z>;<br/>}<br/>---<br/><br/>They
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; for-loops are essentially a compression of the
+following:&lt;br/&gt;---&lt;br/&gt;/\* for( &lt;x&gt;; &lt;y&gt;;
+&lt;z&gt; ){ &lt;code&gt; } \*/&lt;br/&gt;&lt;x&gt;;&lt;br/&gt;while(
+&lt;y&gt;
+){&lt;br/&gt;&lt;code&gt;&lt;br/&gt;&lt;z&gt;;&lt;br/&gt;}&lt;br/&gt;---&lt;br/&gt;&lt;br/&gt;They
 are traditional and frequently occuring in almost all programming
 languages. If the concept of for-loops still elude you, you may wish to
 look around on the internet for other, more verbose explanations.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Example #1:
     -----------
@@ -2098,59 +2100,59 @@ look around on the internet for other, more verbose explanations.
     yellow
     -------
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#while">while</a> and <a
-href="#do">do</a> </td> </tr> </table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#while"&gt;while&lt;/a&gt; and &lt;a
+href="\#do"&gt;do&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### format_float
+### format\_float
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>format_float</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">format_float(</font><font class="args">float
-f, int dec</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;format\_float&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;format\_float(&lt;/font&gt;&lt;font class="args"&gt;float
+f, int dec&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return f such that the result has dec decimal points. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Return f such that the result has dec decimal points. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: format_float( 0.3, 4 )
     Merry result: "0.3000"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### frexp
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>frexp</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;frexp&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">mixed *</font> <font
-class="fun">frexp(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> mixed * </td>
+&lt;td&gt; &lt;font class="ret"&gt;mixed \*&lt;/font&gt; &lt;font
+class="fun"&gt;frexp(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; mixed \* &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> The argument is split into a
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; The argument is split into a
 fraction f and an integer exponent n, such that either f == 0.0, or 0.5
-<= \| f \| < 1.0, and f * 2 ** n == x.<br/>({ f, n }) is
-returned. If x == 0.0, both f and n will be zero.<br/> </td>
-</tr> <tr> <td valign="top">
+&lt;= \| f \| &lt; 1.0, and f \* 2 \*\* n == x.&lt;br/&gt;({ f, n }) is
+returned. If x == 0.0, both f and n will be zero.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: frexp(1.0)
     Merry result: ({ 0.5, 1 })
@@ -2173,30 +2175,30 @@ returned. If x == 0.0, both f and n will be zero.<br/> </td>
     Merry code: frexp(100.0)
     Merry result: ({ 0.78125, 7 })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ldexp">ldexp</a> and <a
-href="#modf">modf</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ldexp"&gt;ldexp&lt;/a&gt; and &lt;a
+href="\#modf"&gt;modf&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### full_explode
+### full\_explode
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>full_explode</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;full\_explode&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string *</font> <font
-class="fun">full_explode(</font><font
-class="args">string str, string del</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string \*&lt;/font&gt; &lt;font
+class="fun"&gt;full\_explode(&lt;/font&gt;&lt;font
+class="args"&gt;string str, string del&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string * </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; string \* &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: full_explode( "|foo|", "|" )
     Merry result: ({ "", "foo", "" })
@@ -2206,37 +2208,37 @@ valign="top">
     Merry code: explode( "|foo|", "|" )
     Merry result: ({ "foo" })
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#explode">explode</a> and <a
-href="#implode">implode</a> </td> </tr>
-</table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#explode"&gt;explode&lt;/a&gt; and &lt;a
+href="\#implode"&gt;implode&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ## G
 
 ### Get
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Get</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">Get(</font><font class="args">object ob,
-string property</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Get&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;Get(&lt;/font&gt;&lt;font class="args"&gt;object ob,
+string property&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> mixed </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Get() is used to retrieve a property from an object. It has a built-in
-shorter syntax as well,<br/><br/>Get( x, "y" ) ->
-x."y"<br/><br/>The shorter version only works if y is an
+shorter syntax as well,&lt;br/&gt;&lt;br/&gt;Get( x, "y" ) -&gt;
+x."y"&lt;br/&gt;&lt;br/&gt;The shorter version only works if y is an
 absolute string value ("abc" is absolute, $property is not), otherwise
-the Get() function must be used. </td> </tr> <tr>
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+the Get() function must be used. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     $foo = Get( ob, "prop" ); /* Get the property "prop" from the object ob */
     $foo = Get( $actor, "prop" ); /* Get the property "prop" from the actor */
@@ -2251,391 +2253,391 @@ valign="top">
     Currently, x = Get( y, "z" ); can be shortened to x = y."z";
     But this only works if the property name argument (z) is absolute. That is, we cannot: x = y.$foo;
 
-</td>
+&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **See also:** </td>
-<td valign="top"> <a href="#Set">Set</a> </td>
-</tr> </table>
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt;
+&lt;td valign="top"&gt; &lt;a href="\#Set"&gt;Set&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
-### get_by_int
+### get\_by\_int
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>get_by_int</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">get_by_int(</font><font
-class="args">mapping bigmap, int ix</font><font
-class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_by\_int&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;get\_by\_int(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, int ix&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> mixed </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Get a value from a bigmap mapping from a bigmap indice specified using
-an integer identifier. </td> </tr>
+an integer identifier. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#set_by_int">set_by_int</a>,
-<a href="#clear_by_int">clear_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;,
 
-<a href="#get_by_ob">get_by_ob</a>, <a
-href="#set_by_ob">set_by_ob</a>,
+&lt;a href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;, &lt;a
+href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;,
 
-<a href="#clear_by_ob">clear_by_ob</a>, <a
-href="#get_by_str">get_by_str</a>,
+&lt;a href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;, &lt;a
+href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;,
 
-<a href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_by_ob
+### get\_by\_ob
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_by_ob</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_by\_ob&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">get_by_ob(</font><font class="args">mapping
-bigmap, object ob</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top"> **Return
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;get\_by\_ob(&lt;/font&gt;&lt;font class="args"&gt;mapping
+bigmap, object ob&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
 value(s):**
 
-</td> <td valign="top"> mixed </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Get a value from a bigmap mapping from a bigmap indice
-specified using an object identifier. </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Get a value from a bigmap mapping from a bigmap indice
+specified using an object identifier. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#get_by_int">get_by_int</a>, <a
-href="#set_by_int">set_by_int</a>,
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;, &lt;a
+href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#clear_by_int">clear_by_int</a>, <a
-href="#set_by_ob">set_by_ob</a>,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;, &lt;a
+href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;,
 
-<a href="#clear_by_ob">clear_by_ob</a>, <a
-href="#get_by_str">get_by_str</a>,
+&lt;a href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;, &lt;a
+href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;,
 
-<a href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_by_str
+### get\_by\_str
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_by_str</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_by\_str&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">get_by_str(</font><font
-class="args">mapping bigmap, string str</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;get\_by\_str(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, string str&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> mixed </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Get a value from a bigmap mapping from a bigmap indice
-specified using a string identifier. </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Get a value from a bigmap mapping from a bigmap indice
+specified using a string identifier. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#get_by_int">get_by_int</a>, <a
-href="#set_by_int">set_by_int</a>,
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;, &lt;a
+href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#clear_by_int">clear_by_int</a>, <a
-href="#get_by_ob">get_by_ob</a>,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;, &lt;a
+href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;,
 
-<a href="#set_by_ob">set_by_ob</a>, <a
-href="#clear_by_ob">clear_by_ob</a>,
+&lt;a href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;, &lt;a
+href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;,
 
-<a href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_day
+### get\_day
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_day</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_day&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">get_day(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;get\_day(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Derive the month day from the UNIX timestamp <n>
-and return this as an integer value. </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Derive the month day from the UNIX timestamp &lt;n&gt;
+and return this as an integer value. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: "Day of the month: " + get_day( time() )
     Merry result: "Day of the month: 12"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#time">time</a>, <a
-href="#ctime">ctime</a>, <a
-href="#short_time">short_time</a>,
+&lt;a href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#smalltime">smalltime</a>, <a
-href="#get_month">get_month</a>,
+&lt;a href="\#smalltime"&gt;smalltime&lt;/a&gt;, &lt;a
+href="\#get\_month"&gt;get\_month&lt;/a&gt;,
 
-<a href="#get_year">get_year</a>, <a
-href="#get_hour">get_hour</a>,
+&lt;a href="\#get\_year"&gt;get\_year&lt;/a&gt;, &lt;a
+href="\#get\_hour"&gt;get\_hour&lt;/a&gt;,
 
-<a href="#get_minute">get_minute</a>, <a
-href="#get_second">get_second</a> and <a
-href="#calculate_stamp">calculate_stamp</a>
+&lt;a href="\#get\_minute"&gt;get\_minute&lt;/a&gt;, &lt;a
+href="\#get\_second"&gt;get\_second&lt;/a&gt; and &lt;a
+href="\#calculate\_stamp"&gt;calculate\_stamp&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_hour
+### get\_hour
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_hour</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_hour&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">get_hour(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;get\_hour(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the hour as specified in the UNIX timestamp
-<n> as an integer value. </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the hour as specified in the UNIX timestamp
+&lt;n&gt; as an integer value. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: "Current hour: " + get_hour( time() )
     Merry result: "Current hour: 7"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#time">time</a>, <a
-href="#ctime">ctime</a>, <a
-href="#short_time">short_time</a>,
+&lt;a href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#smalltime">smalltime</a>, <a
-href="#get_day">get_day</a>,
+&lt;a href="\#smalltime"&gt;smalltime&lt;/a&gt;, &lt;a
+href="\#get\_day"&gt;get\_day&lt;/a&gt;,
 
-<a href="#get_month">get_month</a>, <a
-href="#get_year">get_year</a>,
+&lt;a href="\#get\_month"&gt;get\_month&lt;/a&gt;, &lt;a
+href="\#get\_year"&gt;get\_year&lt;/a&gt;,
 
-<a href="#get_minute">get_minute</a>, <a
-href="#get_second">get_second</a> and <a
-href="#calculate_stamp">calculate_stamp</a>
+&lt;a href="\#get\_minute"&gt;get\_minute&lt;/a&gt;, &lt;a
+href="\#get\_second"&gt;get\_second&lt;/a&gt; and &lt;a
+href="\#calculate\_stamp"&gt;calculate\_stamp&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_minute
+### get\_minute
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_minute</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_minute&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">get_minute(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;get\_minute(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the minutes passed since last new hour as
-specified in the UNIX timestamp <n> as an integer value.
-</td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the minutes passed since last new hour as
+specified in the UNIX timestamp &lt;n&gt; as an integer value.
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: "Minutes since last new hour: " + get_minute( time() )
     Merry result: "Minutes since last new hour: 40"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#time">time</a>, <a
-href="#ctime">ctime</a>, <a
-href="#short_time">short_time</a>,
+&lt;a href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#smalltime">smalltime</a>, <a
-href="#get_day">get_day</a>,
+&lt;a href="\#smalltime"&gt;smalltime&lt;/a&gt;, &lt;a
+href="\#get\_day"&gt;get\_day&lt;/a&gt;,
 
-<a href="#get_month">get_month</a>, <a
-href="#get_year">get_year</a>,
+&lt;a href="\#get\_month"&gt;get\_month&lt;/a&gt;, &lt;a
+href="\#get\_year"&gt;get\_year&lt;/a&gt;,
 
-<a href="#get_hour">get_hour</a>, <a
-href="#get_second">get_second</a> and <a
-href="#calculate_stamp">calculate_stamp</a>
+&lt;a href="\#get\_hour"&gt;get\_hour&lt;/a&gt;, &lt;a
+href="\#get\_second"&gt;get\_second&lt;/a&gt; and &lt;a
+href="\#calculate\_stamp"&gt;calculate\_stamp&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_month
+### get\_month
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_month</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_month&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">get_month(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;get\_month(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Derive the month of the year from the UNIX timestamp
-<n> and return this as an integer value. </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Derive the month of the year from the UNIX timestamp
+&lt;n&gt; and return this as an integer value. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: "Month of the year: " + get_month( time() )
     Merry result: "Month of the year: 5"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#time">time</a>, <a
-href="#ctime">ctime</a>, <a
-href="#short_time">short_time</a>,
+&lt;a href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#smalltime">smalltime</a>, <a
-href="#get_day">get_day</a>,
+&lt;a href="\#smalltime"&gt;smalltime&lt;/a&gt;, &lt;a
+href="\#get\_day"&gt;get\_day&lt;/a&gt;,
 
-<a href="#get_year">get_year</a>, <a
-href="#get_hour">get_hour</a>,
+&lt;a href="\#get\_year"&gt;get\_year&lt;/a&gt;, &lt;a
+href="\#get\_hour"&gt;get\_hour&lt;/a&gt;,
 
-<a href="#get_minute">get_minute</a>, <a
-href="#get_second">get_second</a> and <a
-href="#calculate_stamp">calculate_stamp</a>
+&lt;a href="\#get\_minute"&gt;get\_minute&lt;/a&gt;, &lt;a
+href="\#get\_second"&gt;get\_second&lt;/a&gt; and &lt;a
+href="\#calculate\_stamp"&gt;calculate\_stamp&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_second
+### get\_second
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_second</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_second&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">get_second(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;get\_second(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the seconds since last new minute as specified
-in the UNIX timestamp <n> as an integer value. </td>
-</tr>
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the seconds since last new minute as specified
+in the UNIX timestamp &lt;n&gt; as an integer value. &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: "Seconds since last new minute: " + get_second( time() )
     Merry result: "Seconds since last new minute: 33"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#time">time</a>, <a
-href="#ctime">ctime</a>, <a
-href="#short_time">short_time</a>,
+&lt;a href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#smalltime">smalltime</a>, <a
-href="#get_day">get_day</a>,
+&lt;a href="\#smalltime"&gt;smalltime&lt;/a&gt;, &lt;a
+href="\#get\_day"&gt;get\_day&lt;/a&gt;,
 
-<a href="#get_month">get_month</a>, <a
-href="#get_year">get_year</a>,
+&lt;a href="\#get\_month"&gt;get\_month&lt;/a&gt;, &lt;a
+href="\#get\_year"&gt;get\_year&lt;/a&gt;,
 
-<a href="#get_hour">get_hour</a>, <a
-href="#get_minute">get_minute</a> and <a
-href="#calculate_stamp">calculate_stamp</a>
+&lt;a href="\#get\_hour"&gt;get\_hour&lt;/a&gt;, &lt;a
+href="\#get\_minute"&gt;get\_minute&lt;/a&gt; and &lt;a
+href="\#calculate\_stamp"&gt;calculate\_stamp&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### get_year
+### get\_year
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>get_year</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;get\_year&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">get_year(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;get\_year(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the year as specified in the UNIX timestamp
-<n> as an integer value. </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the year as specified in the UNIX timestamp
+&lt;n&gt; as an integer value. &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: get_year( time() )
     Merry result: 2004
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#time">time</a>, <a
-href="#ctime">ctime</a>, <a
-href="#short_time">short_time</a>,
+&lt;a href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#smalltime">smalltime</a>, <a
-href="#get_day">get_day</a>,
+&lt;a href="\#smalltime"&gt;smalltime&lt;/a&gt;, &lt;a
+href="\#get\_day"&gt;get\_day&lt;/a&gt;,
 
-<a href="#get_month">get_month</a>, <a
-href="#get_hour">get_hour</a>,
+&lt;a href="\#get\_month"&gt;get\_month&lt;/a&gt;, &lt;a
+href="\#get\_hour"&gt;get\_hour&lt;/a&gt;,
 
-<a href="#get_minute">get_minute</a>, <a
-href="#get_second">get_second</a> and <a
-href="#calculate_stamp">calculate_stamp</a>
+&lt;a href="\#get\_minute"&gt;get\_minute&lt;/a&gt;, &lt;a
+href="\#get\_second"&gt;get\_second&lt;/a&gt; and &lt;a
+href="\#calculate\_stamp"&gt;calculate\_stamp&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### GetVar
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>GetVar</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;GetVar&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">GetVar(</font><font class="args">string
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;GetVar(&lt;/font&gt;&lt;font class="args"&gt;string
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> mixed </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> GetVar() is used to retrieve the value of a variable
+&lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; GetVar() is used to retrieve the value of a variable
 with a name reference, usually used when the variable's name itself is
-unresolved at compile time. <br/> </td> </tr>
-<tr> <td valign="top">
+unresolved at compile time. &lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     $name = "address";
     $address = "Skogsb. 27";
@@ -2644,68 +2646,68 @@ unresolved at compile time. <br/> </td> </tr>
      * emits "Skogsb. 27", found in $address, to $actor
      */
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#SetVar">SetVar</a>, <a href="#Set">Set</a>
-and <a href="#Get">Get</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#SetVar"&gt;SetVar&lt;/a&gt;, &lt;a href="\#Set"&gt;Set&lt;/a&gt;
+and &lt;a href="\#Get"&gt;Get&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## H
 
-### hash_crc16
+### hash\_crc16
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>hash_crc16</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;hash\_crc16&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">hash_crc16(</font><font class="args">string
-str, string extra...</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top"> **Return
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;hash\_crc16(&lt;/font&gt;&lt;font class="args"&gt;string
+str, string extra...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
 value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Compute the 16 bit Cyclic Redundancy Code of the
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Compute the 16 bit Cyclic Redundancy Code of the
 concatenation of all string arguments, with
-polynomial:<br/><br/>X^16 + X^12 + X^5 +
-1<br/><br/>CRC-16 is considered suitable for strings of up
-to a total of 4096 characters.<br/> </td> </tr>
+polynomial:&lt;br/&gt;&lt;br/&gt;X^16 + X^12 + X^5 +
+1&lt;br/&gt;&lt;br/&gt;CRC-16 is considered suitable for strings of up
+to a total of 4096 characters.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: hash_crc16("text")
     Merry result: 49980
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#hash_md5">hash_md5</a> </td> </tr>
-</table>
+&lt;a href="\#hash\_md5"&gt;hash\_md5&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### hash_md5
+### hash\_md5
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>hash_md5</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;hash\_md5&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">string</font> <font
-class="fun">hash_md5(</font><font class="args">string
-str, string extra...</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;hash\_md5(&lt;/font&gt;&lt;font class="args"&gt;string
+str, string extra...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> string
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Compute the 128 bit
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Compute the 128 bit
 MD5 message digest of the concatenation of all string arguments. The
-result is a string of 16 characters.<br/> </td> </tr>
+result is a string of 16 characters.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     (test cases as per http://www.ietf.org/rfc/rfc1321.txt )
 
@@ -2730,103 +2732,103 @@ valign="top">
     Merry code: to_hex(hash_md5("12345678901234567890123456789012345678901234567890123456789012345678901234567890"))
     Merry result: "57edf4a22be3c955ac49da2e2107b67a"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#hash_crc16">hash_crc16</a> </td>
-</tr> </table>
+&lt;a href="\#hash\_crc16"&gt;hash\_crc16&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
-### hex_digit
+### hex\_digit
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>hex_digit</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;hex\_digit&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">int</font> <font
-class="fun">hex_digit(</font><font class="args">int
-nibble</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;hex\_digit(&lt;/font&gt;&lt;font class="args"&gt;int
+nibble&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Return the hexadecimal character of
-nibble, smaller than 16. </td> </tr> <tr>
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Return the hexadecimal character of
+nibble, smaller than 16. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     11 -> 'b'
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#string_to_hex">string_to_hex</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#string\_to\_hex"&gt;string\_to\_hex&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### humanized_date
+### humanized\_date
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>humanized_date</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;humanized\_date&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">humanized_date(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;humanized\_date(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Extract a humanized date from a unix timestamp integer
-value, such as the one retrieved from time(). </td> </tr>
-<tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Extract a humanized date from a unix timestamp integer
+value, such as the one retrieved from time(). &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: humanized_date( time() )
     Merry result: "8:19 AM, May 31st, 2003"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ctime">ctime</a>, <a
-href="#time">time</a>, <a
-href="#short_time">short_time</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#rfc_1123_date">rfc_1123_date</a>, <a
-href="#days">days</a> and <a
-href="#smalltime">smalltime</a>
+&lt;a href="\#rfc\_1123\_date"&gt;rfc\_1123\_date&lt;/a&gt;, &lt;a
+href="\#days"&gt;days&lt;/a&gt; and &lt;a
+href="\#smalltime"&gt;smalltime&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## I
 
 ### if
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>if</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;if&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret"></font> <font
-class="fun">if(</font><font
-class="args"><condition></font><font
-class="fun">)</font> </td> </tr>
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;if(&lt;/font&gt;&lt;font
+class="args"&gt;&lt;condition&gt;&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td>
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt;
 
-<td valign="top"> Mastering if-statements is an absolute necessity
-for any programmer of almost any language.<br/>If-statements occur
+&lt;td valign="top"&gt; Mastering if-statements is an absolute necessity
+for any programmer of almost any language.&lt;br/&gt;If-statements occur
 regularly and are used to control and specify how a piece of code should
 react and handle various 'situations' (conditions) by scanning
 conditions and variables and acting based on the
-results.<br/>Below are a good amount of examples describing a good
+results.&lt;br/&gt;Below are a good amount of examples describing a good
 amount (but not all) of the various ways if-cases can be used in
-merry.<br/>Take note, however, that things such as AND, OR, etc.
+merry.&lt;br/&gt;Take note, however, that things such as AND, OR, etc.
 are not exclusively used in if-statements (hence, it's not at all a bad
-idea to learn them all as soon as you can). </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+idea to learn them all as soon as you can). &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Example #1: (simple if)
     -----------
@@ -2948,111 +2950,111 @@ valign="top">
     Array $snack is not empty. It has at LEAST one element.
     -------
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#switch">switch</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#switch"&gt;switch&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### implode
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>implode</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">implode(</font><font class="args">string
-*arr, string separator</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;implode&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;implode(&lt;/font&gt;&lt;font class="args"&gt;string
+\*arr, string separator&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return a string, consisting of all string elements of the array arr
-concatenated, separated by the string separator.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+concatenated, separated by the string separator.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: implode(({ "This", "is", "a", "test" }), " ")
     Merry result: "This is a test"
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#explode">explode</a>, <a
-href="#sscanf">sscanf</a> and <a
-href="#parse_string">parse_string</a> </td>
-</tr> </table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#explode"&gt;explode&lt;/a&gt;, &lt;a
+href="\#sscanf"&gt;sscanf&lt;/a&gt; and &lt;a
+href="\#parse\_string"&gt;parse\_string&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### In
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>In</td> </tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### index
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>index</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;index&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">The index value in <a> for the first
-occurence of the value <val>.</font> <font
-class="fun">index(</font><font class="args">mixed val,
-array a</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top">
+&lt;font class="ret"&gt;The index value in &lt;a&gt; for the first
+occurence of the value &lt;val&gt;.&lt;/font&gt; &lt;font
+class="fun"&gt;index(&lt;/font&gt;&lt;font class="args"&gt;mixed val,
+array a&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-The index value in <a> for the first occurence of the value
-<val>. </td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> The index()
+The index value in &lt;a&gt; for the first occurence of the value
+&lt;val&gt;. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; The index()
 function is used to retrieve the index position in an array of the first
-occurence of a value.<br/>index() will return the integer index
+occurence of a value.&lt;br/&gt;index() will return the integer index
 position, or -1 if the value is not found anywhere in the array.
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("Bob", $array)));
     Return value: 3
     Merry code: $array = ({ "Kalle", "Jess", "Jim", "Bob" }); EmitTo($actor, dump_value(index("George", $array)));
     Return value: -1
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#member">member</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#member"&gt;member&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Int
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Int</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Int&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">Int(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;Int(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Convert an appropriate value to an
-integer.<br/>Note that this does not work with all
-properties.<br/>- Strings must begin with a numeric character, and
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Convert an appropriate value to an
+integer.&lt;br/&gt;Note that this does not work with all
+properties.&lt;br/&gt;- Strings must begin with a numeric character, and
 are truncated at the first non-numeric character, including e.g. '+',
 '-', e.t.c. AND points ('.'), which are taken into account in
-Flt().<br/>- All floats and integers are applicable.<br/>-
-No objects, arrays or mappings are applicable. </td>
+Flt().&lt;br/&gt;- All floats and integers are applicable.&lt;br/&gt;-
+No objects, arrays or mappings are applicable. &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Int( 3.4 ) -> 3
     Int( 3.5 ) -> 4
@@ -3066,69 +3068,69 @@ No objects, arrays or mappings are applicable. </td>
     Int( "22 years old" ) -> 22
     Int( nil ) -> 0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt;
 
-<td valign="top"> <a href="#Flt">Flt</a>, <a
-href="#Str">Str</a>, <a
-href="#dump_value">dump_value</a>,
+&lt;td valign="top"&gt; &lt;a href="\#Flt"&gt;Flt&lt;/a&gt;, &lt;a
+href="\#Str"&gt;Str&lt;/a&gt;, &lt;a
+href="\#dump\_value"&gt;dump\_value&lt;/a&gt;,
 
-<a href="#mixed_to_ascii">mixed_to_ascii</a> and <a
-href="#ascii_to_mixed">ascii_to_mixed</a> </td>
-</tr> </table>
+&lt;a href="\#mixed\_to\_ascii"&gt;mixed\_to\_ascii&lt;/a&gt; and &lt;a
+href="\#ascii\_to\_mixed"&gt;ascii\_to\_mixed&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ## L
 
-### last_elements
+### last\_elements
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>last_elements</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;last\_elements&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">mixed *</font> <font
-class="fun">last_elements(</font><font
-class="args">mixed arr, int num</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> mixed * </td> </tr>
+&lt;font class="ret"&gt;mixed \*&lt;/font&gt; &lt;font
+class="fun"&gt;last\_elements(&lt;/font&gt;&lt;font
+class="args"&gt;mixed arr, int num&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; mixed \* &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Retrieve <num> number of elements from
-<arr>, starting at the end and moving toward the beginning
-resulting in the last <num> values of <arr>.
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Retrieve &lt;num&gt; number of elements from
+&lt;arr&gt;, starting at the end and moving toward the beginning
+resulting in the last &lt;num&gt; values of &lt;arr&gt;.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: last_elements( ({ "1", "2", "3", "4" }), 2 )
     Merry result: ({ "3", "4" })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#first_elements">first_elements</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#first\_elements"&gt;first\_elements&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### ldexp
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>ldexp</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">ldexp(</font><font class="args">float x, int
-n</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;ldexp&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;ldexp(&lt;/font&gt;&lt;font class="args"&gt;float x, int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> float </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
-Return the value x * 2 ** n.<br/>
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
+Return the value x \* 2 \*\* n.&lt;br/&gt;
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: ldexp(4.0, 0)
     Merry result: 4.0
@@ -3142,31 +3144,31 @@ Return the value x * 2 ** n.<br/>
     Merry code: ldexp(4.0, 3)
     Merry result: 32.0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#frexp">frexp</a> and <a
-href="#modf">modf</a> </td> </tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#frexp"&gt;frexp&lt;/a&gt; and &lt;a
+href="\#modf"&gt;modf&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### log
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>log</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">float</font> <font
-class="fun">log(</font><font class="args">float
-x</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;log&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;log(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return the natural logarithm of the argument.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Return the natural logarithm of the argument.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: log(0.5)
     Merry result: -0.69314718
@@ -3177,31 +3179,31 @@ Return the natural logarithm of the argument.<br/> </td>
     Merry code: log(2.0)
     Merry result: 0.69314718
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#exp">exp</a>, <a href="#log10">log10</a>
-and <a href="#pow">pow</a> </td> </tr>
-</table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#exp"&gt;exp&lt;/a&gt;, &lt;a href="\#log10"&gt;log10&lt;/a&gt;
+and &lt;a href="\#pow"&gt;pow&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### log10
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>log10</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">log10(</font><font class="args">float
-x</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;log10&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;log10(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return the logarithm of the argument to base 10.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Return the logarithm of the argument to base 10.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: log10(0.5)
     Merry result: -0.30103
@@ -3212,335 +3214,335 @@ Return the logarithm of the argument to base 10.<br/> </td>
     Merry code: log10(2.0)
     Merry result: 0.30103
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#exp">exp</a>, <a href="#log">log</a> and
-<a href="#pow">pow</a> </td> </tr>
-</table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#exp"&gt;exp&lt;/a&gt;, &lt;a href="\#log"&gt;log&lt;/a&gt; and
+&lt;a href="\#pow"&gt;pow&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### lower_case
+### lower\_case
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>lower_case</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">lower_case(</font><font class="args">string
-str</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;lower\_case&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;lower\_case(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Downcase each letter in str. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+Downcase each letter in str. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     "SkotOS" -> "skotos"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#upper_case">upper_case</a>, <a
-href="#capitalize">capitalize</a>,
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#upper\_case"&gt;upper\_case&lt;/a&gt;, &lt;a
+href="\#capitalize"&gt;capitalize&lt;/a&gt;,
 
-<a href="#decapitalize">decapitalize</a> and <a
-href="#proper">proper</a> </td> </tr>
-</table>
+&lt;a href="\#decapitalize"&gt;decapitalize&lt;/a&gt; and &lt;a
+href="\#proper"&gt;proper&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ## M
 
-### make_url
+### make\_url
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>make_url</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">make_url(</font><font class="args">string
-base, mapping args, varargs int secure</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;make\_url&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;make\_url(&lt;/font&gt;&lt;font class="args"&gt;string
+base, mapping args, varargs int secure&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-The make_url() function creates a string URL which includes page
-(<base>) and any amount of arguments (<args>). </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+The make\_url() function creates a string URL which includes page
+(&lt;base&gt;) and any amount of arguments (&lt;args&gt;). &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: make_url( "some_page", ([ "some property" : "some value", "other property" : "other value", "actor" : $actor, "year" : 2004 ]) )
     Merry result: "some_page?actor=Marrach%3Aplayers%3AK%3Akalle&other property=other+value&some property=some+value&year=2004"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#url_decode">url_decode</a>, <a
-href="#url_encode">url_encode</a> and <a
-href="#url_absolute">url_absolute</a> </td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#url\_decode"&gt;url\_decode&lt;/a&gt;, &lt;a
+href="\#url\_encode"&gt;url\_encode&lt;/a&gt; and &lt;a
+href="\#url\_absolute"&gt;url\_absolute&lt;/a&gt; &lt;/td&gt;
 
-</tr> </table>
+&lt;/tr&gt; &lt;/table&gt;
 
-### map_indices
+### map\_indices
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>map_indices</td> </tr> <tr> <td
-valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;map\_indices&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Syntax:** </td> <td> <font class="ret">mixed
-*</font> <font
-class="fun">map_indices(</font><font
-class="args">mapping map</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td>
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;mixed
+\*&lt;/font&gt; &lt;font
+class="fun"&gt;map\_indices(&lt;/font&gt;&lt;font
+class="args"&gt;mapping map&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt;
 
-<td valign="top"> mixed * </td> </tr> <tr>
-<td valign="top"> **Description:** </td> <td
-valign="top"> Return an array containing the indices of mapping
-map.<br/> </td> </tr> <tr> <td
-valign="top"> **Example(s):**
+&lt;td valign="top"&gt; mixed \* &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return an array containing the indices of mapping
+map.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: map_indices(([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers", ]))
     Merry result: ({ "Friday", "Monday", "Thursday", "Tuesday", "Wednesday" })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#map_values">map_values</a> </td> </tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#map\_values"&gt;map\_values&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### map_sizeof
+### map\_sizeof
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>map_sizeof</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;map\_sizeof&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">int</font> <font
-class="fun">map_sizeof(</font><font class="args">mapping
-map</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> int
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;map\_sizeof(&lt;/font&gt;&lt;font class="args"&gt;mapping
+map&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; int
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> map_sizeof() is
-used to determine the size of a mapping. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; map\_sizeof() is
+used to determine the size of a mapping. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: map_sizeof( ([ "foo" : "bar", "george" : "hamster" ]) )
     Merry result: 2
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#sizeof">sizeof</a> and <a
-href="#strlen">strlen</a> </td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#sizeof"&gt;sizeof&lt;/a&gt; and &lt;a
+href="\#strlen"&gt;strlen&lt;/a&gt; &lt;/td&gt;
 
-</tr> </table>
+&lt;/tr&gt; &lt;/table&gt;
 
-### map_values
+### map\_values
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>map_values</td> </tr> <tr> <td
-valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;map\_values&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Syntax:** </td> <td> <font class="ret">mixed
-*</font> <font
-class="fun">map_values(</font><font class="args">mapping
-map</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td>
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;mixed
+\*&lt;/font&gt; &lt;font
+class="fun"&gt;map\_values(&lt;/font&gt;&lt;font class="args"&gt;mapping
+map&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt;
 
-<td valign="top"> mixed * </td> </tr>
+&lt;td valign="top"&gt; mixed \* &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: map_values(([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers", ]))
     Merry result: ({ "Leftovers", "Meatloaf", "Fish", "Chicken", "Tater tots" })
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#map_indices">map_indices</a>
-</td> </tr> </table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#map\_indices"&gt;map\_indices&lt;/a&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Match
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>Match</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">NRef *</font> <font
-class="fun">Match(</font><font class="args">object ob,
-string name, varargs object looker, string adj...</font><font
-class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;Match&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;NRef \*&lt;/font&gt; &lt;font
+class="fun"&gt;Match(&lt;/font&gt;&lt;font class="args"&gt;object ob,
+string name, varargs object looker, string adj...&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> NRef * </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; NRef \* &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Match a name (name) and any amount of adjectives (adj...) with a
-source's inventory (ob). </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+source's inventory (ob). &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     $black_cats = Match($actor, "cat", $actor, "black");
     EmitTo($actor, 
       "The following black cats are in your inventory: " +
         Describe($black_cats));
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#MatchPlural">MatchPlural</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#MatchPlural"&gt;MatchPlural&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### MatchPlural
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>MatchPlural</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">NRef *</font> <font
-class="fun">MatchPlural(</font><font class="args">object
+&lt;td&gt;MatchPlural&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;NRef \*&lt;/font&gt; &lt;font
+class="fun"&gt;MatchPlural(&lt;/font&gt;&lt;font class="args"&gt;object
 ob, string pname, varargs object looker, string
-adj...</font><font class="fun">)</font> </td>
-</tr>
+adj...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> NRef * </td> </tr> <tr>
-<td valign="top"> **Description:** </td> <td
-valign="top"> Match a pname (plural name) and any amount of
-adjectives (adj...) with a source's inventory (ob). </td>
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; NRef \* &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Match a pname (plural name) and any amount of
+adjectives (adj...) with a source's inventory (ob). &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     $black_cats = MatchPlural( $actor, "cats", $actor, "black" );
     EmitTo($actor, 
       "The following black cats are in your inventory: " + 
       Describe($black_cats));
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt;
 
-<td valign="top"> <a href="#Match">Match</a>
-</td> </tr> </table>
+&lt;td valign="top"&gt; &lt;a href="\#Match"&gt;Match&lt;/a&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### member
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>member</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;member&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">int</font> <font
-class="fun">member(</font><font class="args">mixed m,
-array a</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;member(&lt;/font&gt;&lt;font class="args"&gt;mixed m,
+array a&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> To figure out whether an array
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; To figure out whether an array
 contains a certain value, you use member(). The
-following:<br/>for( i = 0; i < sizeof( a ); i++ )<br/>if(
-a\[i\] == val ) {<br/>/* found it!
-**/<br/>}<br/>Could instead be written as:<br/>if(
-member( val, a )) {<br/>/** found it! */<br/>}
+following:&lt;br/&gt;for( i = 0; i &lt; sizeof( a ); i++ )&lt;br/&gt;if(
+a\[i\] == val ) {&lt;br/&gt;/\* found it!
+**/&lt;br/&gt;}&lt;br/&gt;Could instead be written as:&lt;br/&gt;if(
+member( val, a )) {&lt;br/&gt;/** found it! \*/&lt;br/&gt;}
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry result: 1
     Merry code: member( "a", ({ "a", "b", "c" }) )
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### millitime
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>millitime</td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;millitime&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
-mixed * </td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return the current
+mixed \* &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return the current
 time as an array ({ time, fraction }), where time is an integer denoting
 the current time in seconds, and fraction is a float in range \[0.0 ..
-1.0>, denoting the fraction of the current second that has passed,
-with a resolution of 0.001.<br/> </td> </tr>
-<tr> <td valign="top"> **Example(s):**
+1.0&gt;, denoting the fraction of the current second that has passed,
+with a resolution of 0.001.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: millitime()
     Merry result: ({ 1049514170, 0.983 })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#time">time</a> and <a
-href="#ctime">ctime</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#time"&gt;time&lt;/a&gt; and &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### mixed_to_ascii
+### mixed\_to\_ascii
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>mixed_to_ascii</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;mixed\_to\_ascii&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">mixed_to_ascii(</font><font
-class="args">mixed value</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;mixed\_to\_ascii(&lt;/font&gt;&lt;font
+class="args"&gt;mixed value&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Convert any property to a string value.<br/>Note
-that this function is a clone of dump_value().<br/>For examples
-and further information, read the 'dump_value' reference. </td>
-</tr>
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Convert any property to a string value.&lt;br/&gt;Note
+that this function is a clone of dump\_value().&lt;br/&gt;For examples
+and further information, read the 'dump\_value' reference. &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a
-href="#ascii_to_mixed">ascii_to_mixed</a> and <a
-href="#dump_value">dump_value</a> </td> </tr>
-</table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a
+href="\#ascii\_to\_mixed"&gt;ascii\_to\_mixed&lt;/a&gt; and &lt;a
+href="\#dump\_value"&gt;dump\_value&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### modf
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>modf</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font class="ret">float
-*</font> <font class="fun">modf(</font><font
-class="args">float x</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;modf&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;float
+\*&lt;/font&gt; &lt;font class="fun"&gt;modf(&lt;/font&gt;&lt;font
+class="args"&gt;float x&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float * </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float \* &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Split the argument into a fraction f and an integer part n, such that \|
-f \| < 1.0, and f + n == x. ({ f, n }) is returned. Note that n is
+f \| &lt; 1.0, and f + n == x. ({ f, n }) is returned. Note that n is
 returned as a float, and may not be representable in type
-int.<br/> </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+int.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: modf(0.0)
     Merry result: ({ 0.0, 0.0 })
@@ -3554,126 +3556,126 @@ valign="top"> **Example(s):** </td> <td valign="top">
     Merry code: modf(2.0)
     Merry result: ({ 0.0, 2.0 })
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#frexp">frexp</a> and <a
-href="#ldexp">ldexp</a> </td> </tr> </table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#frexp"&gt;frexp&lt;/a&gt; and &lt;a
+href="\#ldexp"&gt;ldexp&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## N
 
 ### NewNRef
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>NewNRef</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">NRef</font> <font
-class="fun">NewNRef(</font><font class="args">object obj,
-string detail</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;NewNRef&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;NRef&lt;/font&gt; &lt;font
+class="fun"&gt;NewNRef(&lt;/font&gt;&lt;font class="args"&gt;object obj,
+string detail&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> NRef </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; NRef &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Create a new NRef for an object. </td> </tr> <tr>
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+Create a new NRef for an object. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: NewNRef( $actor, "nose" )
     Merry result: (43)O(/base/data/nref#-1, <Marrach:players:K:kalle>, "nose")
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#NRefOb">NRefOb</a> and <a
-href="#NRefDetail">NRefDetail</a> </td> </tr>
-</table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#NRefOb"&gt;NRefOb&lt;/a&gt; and &lt;a
+href="\#NRefDetail"&gt;NRefDetail&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### NRefDetail
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>NRefDetail</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">NRefDetail(</font><font class="args">NRef
-n</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;NRefDetail&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;NRefDetail(&lt;/font&gt;&lt;font class="args"&gt;NRef
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Find out the detail ID an NRef is referring to. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+Find out the detail ID an NRef is referring to. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry condition: Actor is smiling at someone's arm ($target). To figure out which part of 'someone' the actor is smiling at:
     Merry code: NRefDetail( $target )
     Merry result: "arm
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#NRefOb">NRefOb</a> and <a
-href="#NewNRef">NewNRef</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#NRefOb"&gt;NRefOb&lt;/a&gt; and &lt;a
+href="\#NewNRef"&gt;NewNRef&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### NRefOb
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>NRefOb</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">object</font> <font
-class="fun">NRefOb(</font><font class="args">NRef
-n</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;NRefOb&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;object&lt;/font&gt; &lt;font
+class="fun"&gt;NRefOb(&lt;/font&gt;&lt;font class="args"&gt;NRef
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> object </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; object &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Figure out which object an NRef is referring to. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+Figure out which object an NRef is referring to. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry condition: Actor is smiling at someone's arm ($target). To figure out who 'someone' is:
     Merry code: NRefOb( $target )
     Merry result: (object reference for 'someone')
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#NRefDetail">NRefDetail</a> and <a
-href="#NewNRef">NewNRef</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#NRefDetail"&gt;NRefDetail&lt;/a&gt; and &lt;a
+href="\#NewNRef"&gt;NewNRef&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### NRefsEqual
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>NRefsEqual</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">int</font> <font
-class="fun">NRefsEqual(</font><font class="args">NRef
-left, NRef right</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;NRefsEqual&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;NRefsEqual(&lt;/font&gt;&lt;font class="args"&gt;NRef
+left, NRef right&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-NRefsEqual is used to check whether two NRefs are equal.<br/>Note
+NRefsEqual is used to check whether two NRefs are equal.&lt;br/&gt;Note
 that 'if( NRef1 == NRef2 )' will always return FALSE,
-regardless.<br/>Hence, you must do 'if( NRefsEqual( NRef1, NRef2
-))' instead. </td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+regardless.&lt;br/&gt;Hence, you must do 'if( NRefsEqual( NRef1, NRef2
+))' instead. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: NRefsEqual( NewNRef( $actor, "nose" ), NewNRef( $actor, "nose" ))
     Merry result: 1
@@ -3684,33 +3686,33 @@ regardless.<br/>Hence, you must do 'if( NRefsEqual( NRef1, NRef2
     Merry code: NRefsEqual( $actor, NewNRef( $actor, "ear" ))
     Merry result: 0
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#NRefOb">NRefOb</a>, <a
-href="#NRefDetail">NRefDetail</a> and <a
-href="#NewNRef">NewNRef</a> </td> </tr>
-</table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#NRefOb"&gt;NRefOb&lt;/a&gt;, &lt;a
+href="\#NRefDetail"&gt;NRefDetail&lt;/a&gt; and &lt;a
+href="\#NewNRef"&gt;NewNRef&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### Num
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Num</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Num&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">mixed</font> <font
-class="fun">Num(</font><font class="args">mixed
-v</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> mixed </td> </tr>
+&lt;font class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;Num(&lt;/font&gt;&lt;font class="args"&gt;mixed
+v&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Turn a string value <v> into a float or integer
-value. The function will cause an error if <v> is not convertable.
-</td> </tr> <tr> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Turn a string value &lt;v&gt; into a float or integer
+value. The function will cause an error if &lt;v&gt; is not convertable.
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: Num( "4" )
     Merry result: 4
@@ -3718,38 +3720,38 @@ value. The function will cause an error if <v> is not convertable.
     Merry code: Num( "4.5" )
     Merry result: 4.5
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a href="#Str">Str</a>,
-<a href="#Int">Int</a>, <a
-href="#Flt">Flt</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#Str"&gt;Str&lt;/a&gt;,
+&lt;a href="\#Int"&gt;Int&lt;/a&gt;, &lt;a
+href="\#Flt"&gt;Flt&lt;/a&gt;,
 
-<a href="#Arr">Arr</a> and <a
-href="#Map">Map</a>
+&lt;a href="\#Arr"&gt;Arr&lt;/a&gt; and &lt;a
+href="\#Map"&gt;Map&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### number_digit
+### number\_digit
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>number_digit</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;number\_digit&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">number_digit(</font><font class="args">int
-hexvalue</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;number\_digit(&lt;/font&gt;&lt;font class="args"&gt;int
+hexvalue&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Convert any numeric value into a one-digit number,
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Convert any numeric value into a one-digit number,
 based on the character code position (ASCII, in this case), into the
-numeric value it represents. <br/>'5', the char, equals 53, the
-numeric value. <br/>number_digit( 53 ) equals 5, the numeric
-value. </td> </tr> <tr>
+numeric value it represents. &lt;br/&gt;'5', the char, equals 53, the
+numeric value. &lt;br/&gt;number\_digit( 53 ) equals 5, the numeric
+value. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: number_digit( 1 )
     Merry result: 0
@@ -3775,40 +3777,40 @@ valign="top">
     Merry code: number_digit( '9' )
     Merry result: 9
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ## O
 
 ### Obj
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>Obj</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">object</font> <font
-class="fun">Obj(</font><font class="args">string
-s</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Obj&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;object&lt;/font&gt; &lt;font
+class="fun"&gt;Obj(&lt;/font&gt;&lt;font class="args"&gt;string
+s&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> object </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; object &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Obj() is used to retrieve an object's reference through the object's
-string-name.<br/>For instance, if you have a string objectname,
+string-name.&lt;br/&gt;For instance, if you have a string objectname,
 which contains the name of an object you need to access, you could do ob
-= Obj( objectname );<br/>If the objectname is user-specified, you
-mustn't count on its validity; if the object <objectname> does not
-exist, Obj() will return nil. if( ob ) /* object not exist error
-handling */<br/>If the object is static, i.e. the name of the
+= Obj( objectname );&lt;br/&gt;If the objectname is user-specified, you
+mustn't count on its validity; if the object &lt;objectname&gt; does not
+exist, Obj() will return nil. if( ob ) /\* object not exist error
+handling \*/&lt;br/&gt;If the object is static, i.e. the name of the
 object is predetermined and won't ever change, you are encouraged to use
 the syntax ${objectname} instead. This is the exact same thing as Obj()
 except that a reference in ${}'s will be updated automatically if the
-object is ever renamed. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+object is ever renamed. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: Obj( "Generic:UrMale" )
     Merry result: <Generic:UrMale>
@@ -3816,29 +3818,29 @@ valign="top"> **Example(s):** </td> <td valign="top">
     Merry code: Obj( "Something:nonexistent" )
     Merry result: nil
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### object_name
+### object\_name
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>object_name</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;object\_name&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">string</font> <font
-class="fun">object_name(</font><font class="args">object
-obj</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;object\_name(&lt;/font&gt;&lt;font class="args"&gt;object
+obj&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> string
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return the name of
-object obj.<br/> </td> </tr>
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return the name of
+object obj.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code:  object_name($actor)
     Runtime error: object_name() is replaced by name() and ur_name()
@@ -3849,69 +3851,69 @@ valign="top">
     Merry code:  ur_name($actor)
     Merry result:  "/base/obj/thing#4803"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#find_object">find_object</a> </td>
-</tr> </table>
+&lt;a href="\#find\_object"&gt;find\_object&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### obstat
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>obstat</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;obstat&lt;/td&gt;
 
-</tr>
+&lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### oneof
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>oneof</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;oneof&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">string</font> <font
-class="fun">oneof(</font><font class="args">string alt1,
-string alt2, ...</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;oneof(&lt;/font&gt;&lt;font class="args"&gt;string alt1,
+string alt2, ...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> string
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Similar to the SAM
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Similar to the SAM
 oneof, {One\|two\|three}, oneof() can be used to produce a random string
-based on a number of alternatives. </td> </tr> <tr>
+based on a number of alternatives. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     oneof( "George", "James", "John" ) -> either "George", "James" or "John".
     "Mr. " + oneof( "George", "James", "John" ) + " " + oneof( "Georgeson", "Jameson", "Johnson" ) -> Mr. George/James/John Georgeson/Jameson/Johnson, e.g. Mr. George Johnson.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### ordinal
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>ordinal</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">ordinal(</font><font class="args">string
-str</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;ordinal&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;ordinal(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Convert a string expression of an ordinal number into an integer value.
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: ordinal( "first" )
     Merry result: 1
@@ -3925,168 +3927,168 @@ Convert a string expression of an ordinal number into an integer value.
     Merry code: ordinal( "ninetyninth" )
     Merry result: 99
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#cardinal">cardinal</a>, <a
-href="#desc_ordinal">desc_ordinal</a> and <a
-href="#desc_cardinal">desc_cardinal</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#cardinal"&gt;cardinal&lt;/a&gt;, &lt;a
+href="\#desc\_ordinal"&gt;desc\_ordinal&lt;/a&gt; and &lt;a
+href="\#desc\_cardinal"&gt;desc\_cardinal&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ## P
 
-### pad_left
+### pad\_left
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>pad_left</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">pad_left(</font><font class="args">string
-var, int size</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;pad\_left&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;pad\_left(&lt;/font&gt;&lt;font class="args"&gt;string
+var, int size&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Pad var with spaces to the left, so that the result is size long.
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: pad_left( "foo", 8 )
     Merry result: "   foo"
     (note that the result above contains five spaces, but only one is displayed in non-pre style)
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#strip_left">strip_left</a>, <a
-href="#strip_right">strip_right</a>, <a
-href="#strip">strip</a> and <a
-href="#pad_right">pad_right</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#strip\_left"&gt;strip\_left&lt;/a&gt;, &lt;a
+href="\#strip\_right"&gt;strip\_right&lt;/a&gt;, &lt;a
+href="\#strip"&gt;strip&lt;/a&gt; and &lt;a
+href="\#pad\_right"&gt;pad\_right&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### pad_right
+### pad\_right
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>pad_right</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">pad_right(</font><font class="args">string
-var, int size</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;pad\_right&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;pad\_right(&lt;/font&gt;&lt;font class="args"&gt;string
+var, int size&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Pad var with spaces to the right, so that the result is size long.
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: pad_right( "foo", 8 )
     Merry result: "foo    "
     (note that the result above contains five spaces, but only one is displayed in non-pre style)
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#strip_left">strip_left</a>, <a
-href="#strip_right">strip_right</a>, <a
-href="#strip">strip</a> and <a
-href="#pad_left">pad_left</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#strip\_left"&gt;strip\_left&lt;/a&gt;, &lt;a
+href="\#strip\_right"&gt;strip\_right&lt;/a&gt;, &lt;a
+href="\#strip"&gt;strip&lt;/a&gt; and &lt;a
+href="\#pad\_left"&gt;pad\_left&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### parse_string
+### parse\_string
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>parse_string</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">parse_string(</font><font
-class="args">string format, string str</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;parse\_string&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;parse\_string(&lt;/font&gt;&lt;font
+class="args"&gt;string format, string str&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> mixed </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Parse a string as described by the grammar. The format of the grammar is
 described in the document called 'Parsing'. If parsing is successful,
 the parse tree is returned as an array. The optional third argument
 specifies the number of alternative parse trees to integrate in the
-result, if the grammar is ambiguous. parse_string() uses internal
+result, if the grammar is ambiguous. parse\_string() uses internal
 object storage to cache grammars and generated automatons, which is not
-removed until the object is destructed.<br/>This function cannot
+removed until the object is destructed.&lt;br/&gt;This function cannot
 be used from a user or editor
-object.<br/><br/>Note:<br/>The parse_string kfun is a
+object.&lt;br/&gt;&lt;br/&gt;Note:&lt;br/&gt;The parse\_string kfun is a
 very powerful parser to which you supply a grammar of your choice. It's
 reminiscent of lex and yacc if you've used them before. DGD's
-parse_string, unlike most parsers, keeps track of all your ambiguous
+parse\_string, unlike most parsers, keeps track of all your ambiguous
 matches. That fact is both a great power and a great
-responsibility.<br/><br/>What that means is that if your
+responsibility.&lt;br/&gt;&lt;br/&gt;What that means is that if your
 grammar allows something to be parsed a couple of different ways then
 DGD will keep track of them all while parsing. If there are two ways to
 parse a double-if statement with else (the else can go with either if)
-in your grammar, and you feed parse_string a chunk with fifteen of
+in your grammar, and you feed parse\_string a chunk with fifteen of
 those, you'll find that DGD is keeping track of 2^15 (that's around
 32,000) different interpretations of your file. Then it will cheerfully
 return only the first. That's slow, just in case you hadn't
-guessed.<br/><br/>However, sometimes you want ambiguous
+guessed.&lt;br/&gt;&lt;br/&gt;However, sometimes you want ambiguous
 parsing. For instance, you may have a natural language parser for player
 commands, and you'd like the player to be able to type "get down" and
 have it mean either of "get down from the platform" or "take the down
-pillow" according to two different grammar rules. DGD's parse_string
+pillow" according to two different grammar rules. DGD's parse\_string
 will return both parses, and you can decide which makes more sense where
 the player is standing at the time. Most parsers won't do this for you.
-Lucky you found DGD, hey?<br/><br/>A fellow named Steve
-Foley has graciously put together a tutorial on parse_string, with the
+Lucky you found DGD, hey?&lt;br/&gt;&lt;br/&gt;A fellow named Steve
+Foley has graciously put together a tutorial on parse\_string, with the
 aid of our own Nino (Erwin Harte). You can find it at
-<http://www.mindspring.com/~zeppo1/parse_string.html><br/>
-</td> </tr>
+<http://www.mindspring.com/~zeppo1/parse_string.html>&lt;br/&gt;
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
-<a href="#sscanf">sscanf</a>, <a
-href="#explode">explode</a> and <a
-href="#implode">implode</a> </td> </tr>
-</table>
+&lt;a href="\#sscanf"&gt;sscanf&lt;/a&gt;, &lt;a
+href="\#explode"&gt;explode&lt;/a&gt; and &lt;a
+href="\#implode"&gt;implode&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### ParseXML
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>ParseXML</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">mixed</font> <font
-class="fun">ParseXML(</font><font class="args">string
-XML</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;ParseXML&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;ParseXML(&lt;/font&gt;&lt;font class="args"&gt;string
+XML&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> mixed </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; mixed &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 ParseXML() is used to convert an XML string to the appropriate value (a
-SAM-string, for instance).<br/>Like the Bilbo $sam(), ParseXML()
+SAM-string, for instance).&lt;br/&gt;Like the Bilbo $sam(), ParseXML()
 used with UnSAM() constitute Merry's portal to the XML/SAM engine. It's
 not going to be used as much as Bilbo's is, because SAM has few
 abilities that Merry does not have natively. To emulate $sam(foo), use
-UnSAM(ParseXML("foo")).<br/><br/>The real use of UnSAM() is
+UnSAM(ParseXML("foo")).&lt;br/&gt;&lt;br/&gt;The real use of UnSAM() is
 to handle binary SAM data stored in e.g. descriptions. If you have a
 room with a description containing oneof's, for example, and you want to
 create a text representation of this, you'd want to do something
-like,<br/>str = UnSAM(Get(this,
-"details:default:description:examine")); </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+like,&lt;br/&gt;str = UnSAM(Get(this,
+"details:default:description:examine")); &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: ParseXML( "{sam-style|one|of}" )
     Merry result: X[S] {sam-style|one|of}
@@ -4100,176 +4102,176 @@ valign="top">
     Merry code: ParseXML( "You are <describe what=\"$actor\"/>, the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!" )
     Merry result: X[S] You are <describe what="$(actor)"/>, the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#UnSAM">UnSAM</a> </td> </tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#UnSAM"&gt;UnSAM&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### Popup
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Popup</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Popup&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">void</font>
-<font class="fun">Popup(</font><font
-class="args">object recipient, object source, string
-what</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> void
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;void&lt;/font&gt;
+&lt;font class="fun"&gt;Popup(&lt;/font&gt;&lt;font
+class="args"&gt;object recipient, object source, string
+what&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; void
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> There is a new
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; There is a new
 Merry function called Popup(). If the user is running an official Skotos
 client (Java, Zealous or Alice) this will cause a browser window to pop
 up for the player, filled with whatever content you specify. For
-example,<br/><br/>Popup($actor, $actor."base:environment",
-"painting");<br/>will popup a window to $actor, displaying the
+example,&lt;br/&gt;&lt;br/&gt;Popup($actor, $actor."base:environment",
+"painting");&lt;br/&gt;will popup a window to $actor, displaying the
 contents of the property html:painting in the actor's current
-room.<br/><br/>Unsurprisingly, popup window content is
+room.&lt;br/&gt;&lt;br/&gt;Unsurprisingly, popup window content is
 written in HTML, and we're lucky in that SAM -- which we normally use to
 write text description -- is closely related to
-HTML.<br/><br/>As an example, we might
-have...<br/><br/>room.html:painting =
-X\[S\]<br/><BODY bgcolor="black"><br/><IMG
-src="<http://www.mydomain.com/images/painting.jpg%22/%3E>;<br/></BODY><br/><br/>which
+HTML.&lt;br/&gt;&lt;br/&gt;As an example, we might
+have...&lt;br/&gt;&lt;br/&gt;room.html:painting =
+X\[S\]&lt;br/&gt;&lt;BODY bgcolor="black"&gt;&lt;br/&gt;&lt;IMG
+src="<http://www.mydomain.com/images/painting.jpg%22/%3E>;&lt;br/&gt;&lt;/BODY&gt;&lt;br/&gt;&lt;br/&gt;which
 wouldn't look good -- it'd be up to you to do cook up some nice looking
 stylesheet, or something -- but you get the
-idea.<br/><br/>Of course, SAM can do more than just
+idea.&lt;br/&gt;&lt;br/&gt;Of course, SAM can do more than just
 represent static HTML. SAM for popups can use the same active tags that
 it does for text... we can pull values from the room and apply logic to
 the values. For example, display different paintings depending on the
-light level of the room...<br/><br/>room.html:painting =
-X\[S\]<br/><BODY
-bgcolor="$(this.painting:bgcolor)"><br/>{? \| $this.base:dark
-\|<br/><IMG
+light level of the room...&lt;br/&gt;&lt;br/&gt;room.html:painting =
+X\[S\]&lt;br/&gt;&lt;BODY
+bgcolor="$(this.painting:bgcolor)"&gt;&lt;br/&gt;{? \| $this.base:dark
+\|&lt;br/&gt;&lt;IMG
 src="<http://www.mydomain.com/images/painting-in-dark.jpg%22/%3E>;
-\|<br/><IMG
-src="<http://www.mydomain.com/images/painting-in-light.jpg%22/%3E>;<br/>}<br/></BODY><br/><br/>Again,
-you get the basic idea.<br/><br/>These popups are built on
+\|&lt;br/&gt;&lt;IMG
+src="<http://www.mydomain.com/images/painting-in-light.jpg%22/%3E>;&lt;br/&gt;}&lt;br/&gt;&lt;/BODY&gt;&lt;br/&gt;&lt;br/&gt;Again,
+you get the basic idea.&lt;br/&gt;&lt;br/&gt;These popups are built on
 top of a general way for browsers to fetch the value of a property from
 an in-game object. This system a special form of the basic URL syntax
 you are used to from browsing the web. A URL that fetches the property
 'html:painting' from 'Zell:Rooms:PaintingRoom' and displays it would
 look like, /SAM/Prop/Zell:Rooms:PaintingRoom/painting and that is in
 fact precisely the URL constructed by the Popup() call in Merry,
-above.<br/><br/>The special format of this URL allows us to
+above.&lt;br/&gt;&lt;br/&gt;The special format of this URL allows us to
 use relative linking in a very handy way. Let's add a hyperlink to our
-example:<br/><br/>room.html:painting =
-X\[S\]<br/><BODY
-bgcolor="$(this.painting:bgcolor)"><br/><A
-href="painting-closeup"><br/>{? \| $this.base:dark
-\|<br/><IMG
+example:&lt;br/&gt;&lt;br/&gt;room.html:painting =
+X\[S\]&lt;br/&gt;&lt;BODY
+bgcolor="$(this.painting:bgcolor)"&gt;&lt;br/&gt;&lt;A
+href="painting-closeup"&gt;&lt;br/&gt;{? \| $this.base:dark
+\|&lt;br/&gt;&lt;IMG
 src="<http://www.mydomain.com/images/painting-in-dark.jpg%22/%3E>;
-\|<br/><IMG
-src="<http://www.mydomain.com/images/painting-in-light.jpg%22/%3E>;<br/>}<br/></A><br/></BODY><br/><br/>You
+\|&lt;br/&gt;&lt;IMG
+src="<http://www.mydomain.com/images/painting-in-light.jpg%22/%3E>;&lt;br/&gt;}&lt;br/&gt;&lt;/A&gt;&lt;br/&gt;&lt;/BODY&gt;&lt;br/&gt;&lt;br/&gt;You
 will note that the 'href' attribute of the link is a relative URL. The
 browser will automatically expand this to
 /SAM/Prop/Zell:Rooms:PaintingRoom/painting-closeup and so if you click
 on the link, you will be taken to the contents of the property
 'html:painting-closeup' in the same object as 'html:painting' is already
 defined. This makes it easy to create links that navigate between web
-properties in a single object.<br/><br/>For further
+properties in a single object.&lt;br/&gt;&lt;br/&gt;For further
 complexity, Merry can now be embedded anywhere in SAM -- either to be
 included in the stream of text, or as attribute value to another SAM
 tag. For example, let's say we want to automate the example above with
 different paintings even further. We could dynamically create the URL
 from the derived property
-base:light-category:<br/><br/>room.html:painting =
-X\[S\]<br/><BODY bgcolor="black"><br/><IMG
-src='$\[<br/>/* MERRY: add the light category into the middle of
-the URL */<br/>"http://www.mydomain.com/images/painting-"
-+<br/>$this."base:light-category"
-+<br/>".jpg"<br/>\]'/><br/></BODY><br/><br/>Things
+base:light-category:&lt;br/&gt;&lt;br/&gt;room.html:painting =
+X\[S\]&lt;br/&gt;&lt;BODY bgcolor="black"&gt;&lt;br/&gt;&lt;IMG
+src='$\[&lt;br/&gt;/\* MERRY: add the light category into the middle of
+the URL \*/&lt;br/&gt;"http://www.mydomain.com/images/painting-"
++&lt;br/&gt;$this."base:light-category"
++&lt;br/&gt;".jpg"&lt;br/&gt;\]'/&gt;&lt;br/&gt;&lt;/BODY&gt;&lt;br/&gt;&lt;br/&gt;Things
 get -really- exciting when you begin to use the zform and zact SAM tags,
 which allow a Merry script to be executed on the server when the user
 hits a submit button or a link. This means popups can contain controls,
 such as start story configuration panels.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### pow
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>pow</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;pow&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">float</font> <font
-class="fun">pow(</font><font class="args">float x, float
-y</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;pow(&lt;/font&gt;&lt;font class="args"&gt;float x, float
+y&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> float
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return x to the
-power y.<br/> </td> </tr>
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return x to the
+power y.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: pow(10.0, 3.0)
     Merry result: 1000.0
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-<a href="#exp">exp</a>, <a href="#log">log</a>
-and <a href="#log10">log10</a> </td> </tr>
-</table>
+&lt;a href="\#exp"&gt;exp&lt;/a&gt;, &lt;a href="\#log"&gt;log&lt;/a&gt;
+and &lt;a href="\#log10"&gt;log10&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### PRE
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>PRE</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">string</font> <font
-class="fun">PRE(</font><font class="args">string
-str</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;PRE&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;PRE(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Use PRE() to get the equivalent of the HTML <PRE> tag. </td>
-</tr>
+Use PRE() to get the equivalent of the HTML &lt;PRE&gt; tag. &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#TAG">TAG</a> </td>
-</tr>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#TAG"&gt;TAG&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### prefixed_map
+### prefixed\_map
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>prefixed_map</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;prefixed\_map&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">mapping</font>
-<font class="fun">prefixed_map(</font><font
-class="args">mapping map, string prefix</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> mapping
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;mapping&lt;/font&gt;
+&lt;font class="fun"&gt;prefixed\_map(&lt;/font&gt;&lt;font
+class="args"&gt;mapping map, string prefix&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; mapping
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Extract all
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Extract all
 elements from map where the indice (key) begins with
-prefix.<br/>There are known issues with mappings that contain
+prefix.&lt;br/&gt;There are known issues with mappings that contain
 non-alphanumeric characters, that may result in invalid results for this
-specific function. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td>
+specific function. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: prefixed_map( ([ "Monday" : "Meatloaf", "Tuesday" : "Chicken", "Wednesday" : "Tater tots", "Thursday" : "Fish", "Friday" : "Leftovers" ]), "Monday" )
     Merry result: ([ "Monday":"Meatloaf" ])
@@ -4277,512 +4279,512 @@ valign="top"> **Example(s):** </td>
     Merry code: prefixed_map( ([ "ape" : "monkey", "adam" : "pig", "bertram" : "prince" ]), "a" )
     Merry result: ([ "adam":"pig", "ape":"monkey" ])
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### previous_object
+### previous\_object
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>previous_object</td> </tr> <tr>
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">varargs object</font> <font
-class="fun">previous_object(</font><font
-class="args">int n</font><font class="fun">)</font>
-</td>
+&lt;/td&gt; &lt;td&gt;previous\_object&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;varargs object&lt;/font&gt; &lt;font
+class="fun"&gt;previous\_object(&lt;/font&gt;&lt;font
+class="args"&gt;int n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> varargs object </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Return the object n+1 (default: 1)
-steps back in the call_other chain.<br/>If the object is
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; varargs object &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Return the object n+1 (default: 1)
+steps back in the call\_other chain.&lt;br/&gt;If the object is
 destructed, or the number of steps is larger than the number of
-call_others involved, zero is returned.<br/>
+call\_others involved, zero is returned.&lt;br/&gt;
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: previous_object()
     Merry result: </usr>
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#call_other">call_other</a>, <a
-href="#this_object">this_object</a> and <a
-href="#call_trace">call_trace</a> </td> </tr>
-</table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#call\_other"&gt;call\_other&lt;/a&gt;, &lt;a
+href="\#this\_object"&gt;this\_object&lt;/a&gt; and &lt;a
+href="\#call\_trace"&gt;call\_trace&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### previous_program
+### previous\_program
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>previous_program</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">previous_program(</font><font
-class="args">varargs int n</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;previous\_program&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;previous\_program(&lt;/font&gt;&lt;font
+class="args"&gt;varargs int n&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return the name of the object with the function n+1 (default: 1) steps
 back in the function call chain. If the number of steps is larger than
-the number of function calls involved, nil is returned.<br/>
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+the number of function calls involved, nil is returned.&lt;br/&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: previous_program()
     Merry result: "/usr/SkotOS/lib/merrynode"
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#previous_object">previous_object</a> and <a
-href="#call_trace">call_trace</a> </td> </tr>
-</table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#previous\_object"&gt;previous\_object&lt;/a&gt; and &lt;a
+href="\#call\_trace"&gt;call\_trace&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### proper
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>proper</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">proper(</font><font class="args">string
-str</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;proper&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;proper(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Make sure the first letter of each space-delimited word in str is
-capitalized. </td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+capitalized. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     "the kingdom of sweden" -> "The Kingdom Of Sweden"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#lower_case">lower_case</a>, <a
-href="#upper_case">upper_case</a>, <a
-href="#capitalize">capitalize</a> and <a
-href="#decapitalize">decapitalize</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#lower\_case"&gt;lower\_case&lt;/a&gt;, &lt;a
+href="\#upper\_case"&gt;upper\_case&lt;/a&gt;, &lt;a
+href="\#capitalize"&gt;capitalize&lt;/a&gt; and &lt;a
+href="\#decapitalize"&gt;decapitalize&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ## Q
 
-### query_editor
+### query\_editor
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>query_editor</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">query_editor(</font><font
-class="args">object obj</font><font
-class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;query\_editor&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;query\_editor(&lt;/font&gt;&lt;font
+class="args"&gt;object obj&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return the editor status of an object. This is either "command", if the
 editor instance is in command mode, "insert", if the editor instance is
 in input mode, or 0, if there is no editor instance for the given
-object.<br/> </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+object.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: query_editor($actor)
     Merry result: nil
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### query_ip_name
+### query\_ip\_name
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>query_ip_name</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;query\_ip\_name&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">string</font>
-<font class="fun">query_ip_name(</font><font
-class="args">object user</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt;
+&lt;font class="fun"&gt;query\_ip\_name(&lt;/font&gt;&lt;font
+class="args"&gt;object user&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return the IP name
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return the IP name
 of a user, as a string, or nil if the given object is not a user object.
 If the IP name could not be resolved, the IP number is returned,
-instead.<br/> </td> </tr>
+instead.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:**
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#query_ip_number">query_ip_number</a>, <a
-href="#send_datagram">send_datagram</a>,
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#query\_ip\_number"&gt;query\_ip\_number&lt;/a&gt;, &lt;a
+href="\#send\_datagram"&gt;send\_datagram&lt;/a&gt;,
 
-<a href="#send_message">send_message</a>, <a
-href="#this_user">this_user</a> and <a
-href="#users">users</a> </td> </tr> </table>
+&lt;a href="\#send\_message"&gt;send\_message&lt;/a&gt;, &lt;a
+href="\#this\_user"&gt;this\_user&lt;/a&gt; and &lt;a
+href="\#users"&gt;users&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### query_ip_number
+### query\_ip\_number
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>query_ip_number</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;query\_ip\_number&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">string</font> <font
-class="fun">query_ip_number(</font><font
-class="args">object user</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string </td>
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;query\_ip\_number(&lt;/font&gt;&lt;font
+class="args"&gt;object user&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Return the ip number of a user, as a
-string, or 0 if the given object is not a user object. </td>
-</tr>
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Return the ip number of a user, as a
+string, or 0 if the given object is not a user object. &lt;/td&gt;
+&lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ## R
 
 ### random
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>random</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">random(</font><font class="args">int
-mod</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;random&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;random(&lt;/font&gt;&lt;font class="args"&gt;int
+mod&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> int </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return a positive random number between 0 and integer specified within
-() minus 1. <br/>The example would return a random number between
-1 and 5 due to the modifier of +1. <br/>If modifier is less than
-1, 0 is returned. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+() minus 1. &lt;br/&gt;The example would return a random number between
+1 and 5 due to the modifier of +1. &lt;br/&gt;If modifier is less than
+1, 0 is returned. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     random(5)+1
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### replace_html
+### replace\_html
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>replace_html</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;replace\_html&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">string</font>
-<font class="fun">replace_html(</font><font
-class="args">string str</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt;
+&lt;font class="fun"&gt;replace\_html(&lt;/font&gt;&lt;font
+class="args"&gt;string str&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Use replace_html()
-to escape HTML. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Use replace\_html()
+to escape HTML. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     "foo & bar" -> "foo &amp; bar"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### replace_strings
+### replace\_strings
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>replace_strings</td>
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">string</font> <font
-class="fun">replace_strings(</font><font
-class="args">string str, string swaps...</font><font
-class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;replace\_strings&lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;replace\_strings(&lt;/font&gt;&lt;font
+class="args"&gt;string str, string swaps...&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Replace substrings in str given in swaps. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+Replace substrings in str given in swaps. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: replace_strings( "You, someone, must something!", "someone", "Kalle", "something", "jump" )
     Merry result: "You, Kalle, must jump!"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### replace_xml
+### replace\_xml
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>replace_xml</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;replace\_xml&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">string</font> <font
-class="fun">replace_xml(</font><font class="args">string
-str</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> string </td>
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;replace\_xml(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Escape a string, adding a backslash
-character before any character significant to SAM. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Escape a string, adding a backslash
+character before any character significant to SAM. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code:      ParseXML( "1<2 & 3>2" )
     Runtime error:   XML: file N/A line 1: unexpected token
 
     Merry code: replace_xml( "1<2 & 3>2" )
-    Merry result: "1\\<2 \\&amp; 3\\>2"
+    Merry result: "1\\&lt;2 \\&amp; 3\\&gt;2"
 
     Merry code: ParseXML( replace_xml( "1<2 & 3>2" ))
-    Merry result: X[S] 1\<2 \&amp; 3\>2
+    Merry result: X[S] 1\&lt;2 \&amp; 3\&gt;2
 
     Merry code: UnSAM( ParseXML( replace_xml( "1<2 & 3>2" )))
-    Merry result: "1<2 &amp; 3>2"
+    Merry result: "1&lt;2 &amp; 3&gt;2"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ParseXML">ParseXML</a> and <a
-href="#UnSAM">UnSAM</a> </td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ParseXML"&gt;ParseXML&lt;/a&gt; and &lt;a
+href="\#UnSAM"&gt;UnSAM&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### restore_object
+### restore\_object
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>restore_object</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;restore\_object&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">int</font> <font
-class="fun">restore_object(</font><font
-class="args">string file</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> int
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;restore\_object(&lt;/font&gt;&lt;font
+class="args"&gt;string file&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; int
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Restore all global
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Restore all global
 variables in an object that are not private or static from a file. All
 variables which qualify, but were not restored and do not contain object
 values, will be set to 0. 1 is returned if the variables could be
-restored, 0 otherwise.<br/> </td> </tr>
+restored, 0 otherwise.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:**
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#save_object">save_object</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#save\_object"&gt;save\_object&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### reverse
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>reverse</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed *</font> <font
-class="fun">reverse(</font><font class="args">mixed
-*orig</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;reverse&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed \*&lt;/font&gt; &lt;font
+class="fun"&gt;reverse(&lt;/font&gt;&lt;font class="args"&gt;mixed
+\*orig&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> mixed * </td> </tr> <tr>
-<td valign="top"> **Description:** </td> <td
-valign="top"> Reverse the array <orig>, result being an array
-listing the values of <orig> backwards.
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; mixed \* &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Reverse the array &lt;orig&gt;, result being an array
+listing the values of &lt;orig&gt; backwards.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: reverse( ({ "ape", "monkey", "giraffe" }) )
     Merry result: ({ "giraffe", "monkey", "ape" })
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#reverse_mapping">reverse_mapping</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#reverse\_mapping"&gt;reverse\_mapping&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
-### reverse_lookup
+### reverse\_lookup
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>reverse_lookup</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">mixed</font> <font
-class="fun">reverse_lookup(</font><font
-class="args">mapping map, mixed val</font><font
-class="fun">)</font> </td> </tr>
+&lt;td&gt;reverse\_lookup&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;mixed&lt;/font&gt; &lt;font
+class="fun"&gt;reverse\_lookup(&lt;/font&gt;&lt;font
+class="args"&gt;mapping map, mixed val&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> mixed </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; mixed &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
 Mappings are sequences of pairs, each pair containing an indice (key)
 and a value. The ordinary way to read from a map is to read the values
-by providing the indice - map\[<indice>\] == <value>. The
-reverse_lookup function is used to read the indices by providing the
+by providing the indice - map\[&lt;indice&gt;\] == &lt;value&gt;. The
+reverse\_lookup function is used to read the indices by providing the
 values.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: reverse_lookup( ([ "a":1, "b":2, "c":3 ]), 2 )
     Merry result: "b"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#map_indices">map_indices</a> and <a
-href="#map_values">map_values</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#map\_indices"&gt;map\_indices&lt;/a&gt; and &lt;a
+href="\#map\_values"&gt;map\_values&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### reverse_mapping
+### reverse\_mapping
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>reverse_mapping</td>
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">mapping</font> <font
-class="fun">reverse_mapping(</font><font
-class="args">mapping map</font><font
-class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;reverse\_mapping&lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;mapping&lt;/font&gt; &lt;font
+class="fun"&gt;reverse\_mapping(&lt;/font&gt;&lt;font
+class="args"&gt;mapping map&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> mapping </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; mapping &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Reverse a mapping by setting indice->value, and
-value->indice.<br/>Note that if a mapping contains several
+Reverse a mapping by setting indice-&gt;value, and
+value-&gt;indice.&lt;br/&gt;Note that if a mapping contains several
 identical values, such as (\[ "foo" : "bar", "foo2" : "bar" \]), a call
-to reverse_mapping will result in a "mapping is not injective" runtime
-error. </td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+to reverse\_mapping will result in a "mapping is not injective" runtime
+error. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: reverse_mapping( ([ "foo" : "bar", "name" : "kalle" ]) )
     Merry result: ([ "bar":"foo", "kalle":"name" ])
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
-### rfc_1123_date
+### rfc\_1123\_date
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>rfc_1123_date</td> </tr> <tr> <td
-valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;rfc\_1123\_date&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">rfc_1123_date(</font><font class="args">int
-n</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td>
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;rfc\_1123\_date(&lt;/font&gt;&lt;font class="args"&gt;int
+n&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt;
 
-<td valign="top"> string </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
+&lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
 Extract a UNIX time stamp date as a string, formatted RFC-1123
-compliant. </td> </tr> <tr> <td valign="top">
+compliant. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: rfc_1123_date( time() )
     Merry result: "Sat, 31 May 2003 14:21:43 GMT"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ctime">ctime</a>, <a
-href="#time">time</a>, <a
-href="#short_time">short_time</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;,
 
-<a href="#humanized_date">humanized_date</a>, <a
-href="#days">days</a> and <a
-href="#smalltime">smalltime</a>
+&lt;a href="\#humanized\_date"&gt;humanized\_date&lt;/a&gt;, &lt;a
+href="\#days"&gt;days&lt;/a&gt; and &lt;a
+href="\#smalltime"&gt;smalltime&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## S
 
-### save_object
+### save\_object
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>save_object</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;save\_object&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">save_object(</font><font class="args">string
-file</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;save\_object(&lt;/font&gt;&lt;font class="args"&gt;string
+file&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Save all global variables in an object that are not
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Save all global variables in an object that are not
 private or static to a file. Only non-zero and non-object values are
-actually saved.<br/> </td> </tr>
+actually saved.&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### Set
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Set</td> </tr> <tr> <td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Set&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Syntax:**
 
-</td> <td> <font class="ret">void</font>
-<font class="fun">Set(</font><font class="args">object
-ob, string property, mixed value</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> void
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;void&lt;/font&gt;
+&lt;font class="fun"&gt;Set(&lt;/font&gt;&lt;font class="args"&gt;object
+ob, string property, mixed value&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; void
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Set() is used to
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Set() is used to
 set a property in an object to a value. It has a built-in shorter syntax
-as well,<br/><br/>Set( x, "y", z ) -> x."y" =
-z;<br/><br/>The shorter version only works if y is an
+as well,&lt;br/&gt;&lt;br/&gt;Set( x, "y", z ) -&gt; x."y" =
+z;&lt;br/&gt;&lt;br/&gt;The shorter version only works if y is an
 absolute string value ("abc" is absolute, $property is not), otherwise
-the Set() function must be used. </td> </tr> <tr>
-<td valign="top">
+the Set() function must be used. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     $foo = "I'ma value.";
     Set( ob, "prop", $foo ); /* Set "prop" in ob to "I'ma value." (as defined in $foo) */
@@ -4800,136 +4802,136 @@ the Set() function must be used. </td> </tr> <tr>
     Currently, Set( x, "y", z ); can be shortened to x."y" = z;
     But this only works if the property name argument (y) is absolute. That is, we cannot: x.$foo = z;
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a href="#Get">Get</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#Get"&gt;Get&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### set_by_int
+### set\_by\_int
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>set_by_int</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;set\_by\_int&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">set_by_int(</font><font
-class="args">mapping bigmap, int ix, mixed val</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;set\_by\_int(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, int ix, mixed val&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Set the value in <bigmap> for the indice
-specified using integer identifier <ix> to <val>.
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Set the value in &lt;bigmap&gt; for the indice
+specified using integer identifier &lt;ix&gt; to &lt;val&gt;.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#get_by_int">get_by_int</a>,
-<a href="#clear_by_int">clear_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;,
 
-<a href="#get_by_ob">get_by_ob</a>, <a
-href="#set_by_ob">set_by_ob</a>,
+&lt;a href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;, &lt;a
+href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;,
 
-<a href="#clear_by_ob">clear_by_ob</a>, <a
-href="#get_by_str">get_by_str</a>,
+&lt;a href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;, &lt;a
+href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;,
 
-<a href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### set_by_ob
+### set\_by\_ob
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>set_by_ob</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;set\_by\_ob&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">set_by_ob(</font><font class="args">mapping
-bigmap, string str, mixed val</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;set\_by\_ob(&lt;/font&gt;&lt;font class="args"&gt;mapping
+bigmap, string str, mixed val&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Set the value in <bigmap> for the indice
-specified using object identifier <ob> to <val>.
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Set the value in &lt;bigmap&gt; for the indice
+specified using object identifier &lt;ob&gt; to &lt;val&gt;.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#get_by_int">get_by_int</a>,
-<a href="#set_by_int">set_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;,
+&lt;a href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#clear_by_int">clear_by_int</a>, <a
-href="#get_by_ob">get_by_ob</a>,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;, &lt;a
+href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;,
 
-<a href="#clear_by_ob">clear_by_ob</a>, <a
-href="#get_by_str">get_by_str</a>,
+&lt;a href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;, &lt;a
+href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;,
 
-<a href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### set_by_str
+### set\_by\_str
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>set_by_str</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;set\_by\_str&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">set_by_str(</font><font
-class="args">mapping bigmap, string str, mixed
-val</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;set\_by\_str(&lt;/font&gt;&lt;font
+class="args"&gt;mapping bigmap, string str, mixed
+val&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Set the value in <bigmap> for the indice
-specified using string identifier <str> to <val>.
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Set the value in &lt;bigmap&gt; for the indice
+specified using string identifier &lt;str&gt; to &lt;val&gt;.
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#get_by_int">get_by_int</a>,
-<a href="#set_by_int">set_by_int</a>,
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#get\_by\_int"&gt;get\_by\_int&lt;/a&gt;,
+&lt;a href="\#set\_by\_int"&gt;set\_by\_int&lt;/a&gt;,
 
-<a href="#clear_by_int">clear_by_int</a>, <a
-href="#get_by_ob">get_by_ob</a>,
+&lt;a href="\#clear\_by\_int"&gt;clear\_by\_int&lt;/a&gt;, &lt;a
+href="\#get\_by\_ob"&gt;get\_by\_ob&lt;/a&gt;,
 
-<a href="#set_by_ob">set_by_ob</a>, <a
-href="#clear_by_ob">clear_by_ob</a>,
+&lt;a href="\#set\_by\_ob"&gt;set\_by\_ob&lt;/a&gt;, &lt;a
+href="\#clear\_by\_ob"&gt;clear\_by\_ob&lt;/a&gt;,
 
-<a href="#get_by_str">get_by_str</a>, <a
-href="#set_by_str">set_by_str</a> and <a
-href="#clear_by_str">clear_by_str</a>
+&lt;a href="\#get\_by\_str"&gt;get\_by\_str&lt;/a&gt;, &lt;a
+href="\#set\_by\_str"&gt;set\_by\_str&lt;/a&gt; and &lt;a
+href="\#clear\_by\_str"&gt;clear\_by\_str&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### SetVar
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>SetVar</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;SetVar&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret"></font> <font
-class="fun">SetVar(</font><font class="args">string n,
-mixed v</font><font class="fun">)</font> </td>
-</tr>
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;SetVar(&lt;/font&gt;&lt;font class="args"&gt;string n,
+mixed v&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:**
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:**
 
-</td> <td valign="top"> SetVar() is used to set the value of
+&lt;/td&gt; &lt;td valign="top"&gt; SetVar() is used to set the value of
 a variable with a possibly constructed name, usually used when the
-variable's name is unresolved at compile time. </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+variable's name is unresolved at compile time. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     $property = "address";
     $value = "Skogsb. 27";
@@ -4939,64 +4941,64 @@ valign="top">
      * Emits "Skogsb. 27", found in $address, to $actor. 
      */
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#GetVar">GetVar</a>, <a
-href="#Set">Set</a> and <a href="#Get">Get</a>
-</td> </tr> </table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#GetVar"&gt;GetVar&lt;/a&gt;, &lt;a
+href="\#Set"&gt;Set&lt;/a&gt; and &lt;a href="\#Get"&gt;Get&lt;/a&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### short_time
+### short\_time
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>short_time</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;short\_time&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">string</font> <font
-class="fun">short_time(</font><font class="args">int
-stamp</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> string </td> </tr>
+&lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;short\_time(&lt;/font&gt;&lt;font class="args"&gt;int
+stamp&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Extract a brief string version of a UNIX timestamp date
-(stamp). </td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Extract a brief string version of a UNIX timestamp date
+(stamp). &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: short_time( time() )
     Merry result: "May 31 08:28"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ctime">ctime</a>, <a
-href="#time">time</a>, <a
-href="#humanized_date">humanized_date</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#humanized\_date"&gt;humanized\_date&lt;/a&gt;,
 
-<a href="#rfc_1123_date">rfc_1123_date</a>, <a
-href="#days">days</a> and <a
-href="#smalltime">smalltime</a>
+&lt;a href="\#rfc\_1123\_date"&gt;rfc\_1123\_date&lt;/a&gt;, &lt;a
+href="\#days"&gt;days&lt;/a&gt; and &lt;a
+href="\#smalltime"&gt;smalltime&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### sin
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>sin</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;sin&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">sin(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;sin(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> float </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the sine of the argument.<br/> </td>
-</tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the sine of the argument.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: sin(0.0)
     Merry result: 0.0
@@ -5007,30 +5009,30 @@ valign="top"> Return the sine of the argument.<br/> </td>
     Merry code: sin(1.0)
     Merry result: 0.84147098
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a href="#cos">cos</a>
-and <a href="#tan">tan</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#cos"&gt;cos&lt;/a&gt;
+and &lt;a href="\#tan"&gt;tan&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### sinh
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>sinh</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;sinh&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">sinh(</font><font class="args">float
-x</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;sinh(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> float </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the hyperbolic sine of the argument.<br/>
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the hyperbolic sine of the argument.&lt;br/&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Example(s):** </td> <td valign="top">
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: sinh(0.0)
     Merry result: 0.0
@@ -5041,150 +5043,150 @@ valign="top"> Return the hyperbolic sine of the argument.<br/>
     Merry code: sinh(1.0)
     Merry result: 1.1752012
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#cosh">cosh</a> and <a
-href="#tanh">tanh</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#cosh"&gt;cosh&lt;/a&gt; and &lt;a
+href="\#tanh"&gt;tanh&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### sizeof
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>sizeof</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;sizeof&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">sizeof(</font><font class="args">mixed
-*arr</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;sizeof(&lt;/font&gt;&lt;font class="args"&gt;mixed
+\*arr&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> sizeof() is used to determine the size of an array.
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; sizeof() is used to determine the size of an array.
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: sizeof( ({ "foo", "bar", "george", "hamster" }) )
     Merry result: 4
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#map_sizeof">map_sizeof</a> and <a
-href="#strlen">strlen</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#map\_sizeof"&gt;map\_sizeof&lt;/a&gt; and &lt;a
+href="\#strlen"&gt;strlen&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Slay
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Slay</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Slay&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">Slay(</font><font class="args">object
-ob</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;Slay(&lt;/font&gt;&lt;font class="args"&gt;object
+ob&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Slay() undoes what Spawn() does.<br/>A word of
-warning though: there is no such thing as a 'trashcan'.<br/>Know
-what you're doing. </td> </tr> <tr>
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Slay() undoes what Spawn() does.&lt;br/&gt;A word of
+warning though: there is no such thing as a 'trashcan'.&lt;br/&gt;Know
+what you're doing. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Slay( $steaming_hot_cup_of_java );
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#Spawn">Spawn</a> and <a
-href="#Duplicate">Duplicate</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#Spawn"&gt;Spawn&lt;/a&gt; and &lt;a
+href="\#Duplicate"&gt;Duplicate&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### smalltime
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>smalltime</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;smalltime&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">smalltime(</font><font class="args">int
-stamp</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;smalltime(&lt;/font&gt;&lt;font class="args"&gt;int
+stamp&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the hour and minute of the UNIX timestamp date
-(stamp). </td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the hour and minute of the UNIX timestamp date
+(stamp). &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: smalltime( time () )
     Merry result: "08:29"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ctime">ctime</a>, <a
-href="#time">time</a>, <a
-href="#humanized_date">humanized_date</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt;, &lt;a
+href="\#time"&gt;time&lt;/a&gt;, &lt;a
+href="\#humanized\_date"&gt;humanized\_date&lt;/a&gt;,
 
-<a href="#rfc_1123_date">rfc_1123_date</a>, <a
-href="#days">days</a> and <a
-href="#short_time">short_time</a>
+&lt;a href="\#rfc\_1123\_date"&gt;rfc\_1123\_date&lt;/a&gt;, &lt;a
+href="\#days"&gt;days&lt;/a&gt; and &lt;a
+href="\#short\_time"&gt;short\_time&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Social
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>Social</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;Social&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">Social(</font><font class="args">object ob,
-string verb, string adverb, string evoke, string prep1, NRef *obs1,
-string prep2, NRef *obs2, ...</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;Social(&lt;/font&gt;&lt;font class="args"&gt;object ob,
+string verb, string adverb, string evoke, string prep1, NRef \*obs1,
+string prep2, NRef \*obs2, ...&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Social() is a shortcut for what could actually be
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Social() is a shortcut for what could actually be
 accomplished through the use of Act(), by calling the "social" action.
 However, the social action is complex enough and socials are so common
 that this convenience function is quite warranted. Note that this
 executes real socials, not just emits. This means all the signals and
-scripts associated with the social are run as well.<br/>Social()
+scripts associated with the social are run as well.&lt;br/&gt;Social()
 can take a good amount of argument and can generate any results with the
-parser that any regular player can.<br/>Only the first two
+parser that any regular player can.&lt;br/&gt;Only the first two
 arguments are required: the object to command, and the verb to execute.
 The adverbs and evokes should be straight-forward. The last string of
 arguments specify the different targets and at least for now, more than
-one pair of preposition and object should be quite rare.<br/>In
+one pair of preposition and object should be quite rare.&lt;br/&gt;In
 some cases, though, when a Social() doesn't seem to do what you ask, you
-may have to look into Act().<br/><br/>(Hack) Set the
+may have to look into Act().&lt;br/&gt;&lt;br/&gt;(Hack) Set the
 property $(adverb:position) to one of the following, right before the
 call to Social() to determine the position of the
-adverb:<br/>PRE_VERB = "pv" e.g. 'happily wave the
-sword'<br/>PRE_ROLE = "pr" e.g. 'wave happily to the
-creature'<br/>PRE_PREP = "pp" e.g. 'wave the sword angrily at the
-mutant'<br/>PRE_EVOKE = "pe" e.g. 'wave the sword at the mutant
-angrily'<br/><br/>E.g.:<br/>$(adverb:position) =
-PRE_VERB;<br/>Social( $actor, "smile", "happily", "Hi Charles" );
--> You happily smile, "Hi Charles"<br/>
+adverb:&lt;br/&gt;PRE\_VERB = "pv" e.g. 'happily wave the
+sword'&lt;br/&gt;PRE\_ROLE = "pr" e.g. 'wave happily to the
+creature'&lt;br/&gt;PRE\_PREP = "pp" e.g. 'wave the sword angrily at the
+mutant'&lt;br/&gt;PRE\_EVOKE = "pe" e.g. 'wave the sword at the mutant
+angrily'&lt;br/&gt;&lt;br/&gt;E.g.:&lt;br/&gt;$(adverb:position) =
+PRE\_VERB;&lt;br/&gt;Social( $actor, "smile", "happily", "Hi Charles" );
+-&gt; You happily smile, "Hi Charles"&lt;br/&gt;
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Social( $actor, "smile" ); -> You smile.
     Social( $actor, "smile", "happily" ); -> You smile happily.
@@ -5193,219 +5195,219 @@ PRE_VERB;<br/>Social( $actor, "smile", "happily", "Hi Charles" );
     Social( $actor, "smile", "happily", nil, "at", ({ $actor, NewNRef( $actor, "toe" ) }) ); -> You smile happily at yourself and your toe.
     Social( $actor, "turn", "seriously", nil, nil, NewNRef( $actor, "head" ), "to", NewNRef( $actor, "feet" ) ); -> You turn seriously your head to your feet.
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a href="#Act">Act</a>,
-<a href="#EmitTo">EmitTo</a> and <a
-href="#EmitIn">EmitIn</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#Act"&gt;Act&lt;/a&gt;,
+&lt;a href="\#EmitTo"&gt;EmitTo&lt;/a&gt; and &lt;a
+href="\#EmitIn"&gt;EmitIn&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### spaces
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>spaces</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">spaces(</font><font class="args">int
-num</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;spaces&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;spaces(&lt;/font&gt;&lt;font class="args"&gt;int
+num&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return a string of num spaces. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+Return a string of num spaces. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: spaces( 5 )
     Merry result: "   "
     (note that the result above contains five spaces, but only one is displayed in non-pre style)
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#pad_left">pad_left</a> and <a
-href="#pad_right">pad_right</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#pad\_left"&gt;pad\_left&lt;/a&gt; and &lt;a
+href="\#pad\_right"&gt;pad\_right&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### Spawn
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>Spawn</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">object</font> <font
-class="fun">Spawn(</font><font class="args">object
-ob</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;Spawn&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;object&lt;/font&gt; &lt;font
+class="fun"&gt;Spawn(&lt;/font&gt;&lt;font class="args"&gt;object
+ob&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> object </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; object &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Extremely straight-forward, this is how we generate new objects. Merry
 can only create spawns of existing ur-objects, though this limitation
 may go out the door in time. The spawn behaves exactly as spawns do
-throughout the Skotos system. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+throughout the Skotos system. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     $steaming_hot_cup_of_java = Spawn( ${Generic:drink:mug-coffee} );
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#Duplicate">Duplicate</a> and <a
-href="#Slay">Slay</a> </td> </tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#Duplicate"&gt;Duplicate&lt;/a&gt; and &lt;a
+href="\#Slay"&gt;Slay&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### sqrt
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt;
 
-**Function:** </td> <td>sqrt</td> </tr>
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret">float</font> <font
-class="fun">sqrt(</font><font class="args">float
-x</font><font class="fun">)</font>
+**Function:** &lt;/td&gt; &lt;td&gt;sqrt&lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;sqrt(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return the square root of the argument.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Return the square root of the argument.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: sqrt(2.0)
     Merry result: 1.4142136
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### sscanf
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>sscanf</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;sscanf&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">int</font> <font
-class="fun">sscanf(</font><font class="args">string str,
-string fmt, ...</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> int
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;sscanf(&lt;/font&gt;&lt;font class="args"&gt;string str,
+string fmt, ...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Parse the string
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Parse the string
 str, using the format string fmt. The following character sequences have
-a special meaning in the format string:<br/><br/>%s match a
-substring<br/>%d match a number<br/>%f match a
-floating-point number<br/>%c match a character<br/>%% match
-single %<br/><br/>Other characters must be matched exactly.
-%*s, %*d, %*f and %*c can be used to match without assignment.
+a special meaning in the format string:&lt;br/&gt;&lt;br/&gt;%s match a
+substring&lt;br/&gt;%d match a number&lt;br/&gt;%f match a
+floating-point number&lt;br/&gt;%c match a character&lt;br/&gt;%% match
+single %&lt;br/&gt;&lt;br/&gt;Other characters must be matched exactly.
+%\*s, %\*d, %\*f and %\*c can be used to match without assignment.
 Matched substrings and numbers are assigned to the successive lvalue
 arguments following the format string. The number of matched substrings
-and numbers is returned.<br/> </td>
+and numbers is returned.&lt;br/&gt; &lt;/td&gt;
 
-</tr>
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a
-href="#parse_string">parse_string</a>, <a
-href="#explode">explode</a> and <a
-href="#implode">implode</a> </td> </tr>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a
+href="\#parse\_string"&gt;parse\_string&lt;/a&gt;, &lt;a
+href="\#explode"&gt;explode&lt;/a&gt; and &lt;a
+href="\#implode"&gt;implode&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### status
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>status</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;status&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">varargs mixed
-*</font> <font class="fun">status(</font><font
-class="args">object obj</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> varargs mixed *
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;varargs mixed
+\*&lt;/font&gt; &lt;font class="fun"&gt;status(&lt;/font&gt;&lt;font
+class="args"&gt;object obj&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; varargs mixed \*
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Called without an
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Called without an
 argument, this kfun returns information about resources used by the
 system. With an object as argument, resource usage by that object is
 given. The returned value is an array, the fields of which are described
-in the include file .<br/> </td> </tr> <tr>
-<td valign="top"> **Example(s):** </td>
+in the include file .&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: status()
     Merry result: ({ "DGD 1.2.55p2s", 997809254, 1046300140, 51470076, 1048576, 112323, 1024, 0, 0, 25037884, 24893744, 124032000, 118680792, 262144, 11447, 10000, 15, 41, 400, 40, 1048576, 8192, 243, 499975398, ({  }), "198.232.133.147" })
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### Stop
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:**
 
-</td> <td>Stop</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">void</font> <font
-class="fun">Stop(</font><font class="args">string
-identifier</font><font class="fun">)</font>
-</td>
+&lt;/td&gt; &lt;td&gt;Stop&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;void&lt;/font&gt; &lt;font
+class="fun"&gt;Stop(&lt;/font&gt;&lt;font class="args"&gt;string
+identifier&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> void </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Stop() is used to terminate a running loop,
-instantiated using the Every() function.<br/>It takes the
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; void &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Stop() is used to terminate a running loop,
+instantiated using the Every() function.&lt;br/&gt;It takes the
 identifier string returned by the Every() function as single argument.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     [Also see C. Allen's example torch at: Examples:complete:light:torch]
 
     See the Every() function reference for an example.
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#Every">Every</a> </td> </tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#Every"&gt;Every&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### Str
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>Str</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">Str(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;Str&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;Str(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> string </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
-Convert an appropriate value to a string.<br/>Note that this does
-not work with all properties.<br/>- All strings, floats, integers
-and objects are applicable.<br/>- No arrays or mappings are
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
+Convert an appropriate value to a string.&lt;br/&gt;Note that this does
+not work with all properties.&lt;br/&gt;- All strings, floats, integers
+and objects are applicable.&lt;br/&gt;- No arrays or mappings are
 applicable.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Str( 3 ) -> "3"
     Str( 3+3 ) -> "6"
@@ -5421,204 +5423,204 @@ applicable.
     Str( $actor ) -> "Marrach:players:K:kalle"
     Str( ({ "a", "b", "c" }) ) -> ERROR: cannot convert value to string
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a href="#Int">Int</a>,
-<a href="#Flt">Flt</a>, <a
-href="#dump_value">dump_value</a>, <a
-href="#mixed_to_ascii">mixed_to_ascii</a> and <a
-href="#ascii_to_mixed">ascii_to_mixed</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a href="\#Int"&gt;Int&lt;/a&gt;,
+&lt;a href="\#Flt"&gt;Flt&lt;/a&gt;, &lt;a
+href="\#dump\_value"&gt;dump\_value&lt;/a&gt;, &lt;a
+href="\#mixed\_to\_ascii"&gt;mixed\_to\_ascii&lt;/a&gt; and &lt;a
+href="\#ascii\_to\_mixed"&gt;ascii\_to\_mixed&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
-### string_to_hex
+### string\_to\_hex
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>string_to_hex</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;string\_to\_hex&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">string</font> <font
-class="fun">string_to_hex(</font><font
-class="args">string bytes</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string </td>
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;string\_to\_hex(&lt;/font&gt;&lt;font
+class="args"&gt;string bytes&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string &lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top"> Return the hexadecimal
-representation of bytes. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt; Return the hexadecimal
+representation of bytes. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     'FOO' -> 464f4f
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#hex_digit">hex_digit</a> </td> </tr>
-</table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#hex\_digit"&gt;hex\_digit&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
 ### strip
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>strip</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;strip&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">string</font> <font
-class="fun">strip(</font><font class="args">string
-str</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> string </td> </tr>
+&lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;strip(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Strip whitespace from both sides of str. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Strip whitespace from both sides of str. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     "  abc " -> "abc"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#strip_left">strip_left</a>, <a
-href="#strip_right">strip_right</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#strip\_left"&gt;strip\_left&lt;/a&gt;, &lt;a
+href="\#strip\_right"&gt;strip\_right&lt;/a&gt;,
 
-<a href="#pad_left">pad_left</a> and <a
-href="#pad_right">pad_right</a>
+&lt;a href="\#pad\_left"&gt;pad\_left&lt;/a&gt; and &lt;a
+href="\#pad\_right"&gt;pad\_right&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### strip_left
+### strip\_left
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>strip_left</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;strip\_left&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">strip_left(</font><font class="args">string
-str</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;strip\_left(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Strip whitespace from the left of str. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Strip whitespace from the left of str. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     "    abc    " --> "abc  "
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#strip_right">strip_right</a>, <a
-href="#strip">strip</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#strip\_right"&gt;strip\_right&lt;/a&gt;, &lt;a
+href="\#strip"&gt;strip&lt;/a&gt;,
 
-<a href="#pad_left">pad_left</a> and <a
-href="#pad_right">pad_right</a>
+&lt;a href="\#pad\_left"&gt;pad\_left&lt;/a&gt; and &lt;a
+href="\#pad\_right"&gt;pad\_right&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### strip_right
+### strip\_right
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>strip_right</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;strip\_right&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">strip_right(</font><font class="args">string
-str</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;strip\_right(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Strip whitespace from the right of str. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Strip whitespace from the right of str. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     "   abc " --> " abc"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#strip_left">strip_left</a>, <a
-href="#strip">strip</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#strip\_left"&gt;strip\_left&lt;/a&gt;, &lt;a
+href="\#strip"&gt;strip&lt;/a&gt;,
 
-<a href="#pad_left">pad_left</a> and <a
-href="#pad_right">pad_right</a>
+&lt;a href="\#pad\_left"&gt;pad\_left&lt;/a&gt; and &lt;a
+href="\#pad\_right"&gt;pad\_right&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### strlen
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>strlen</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;strlen&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">strlen(</font><font class="args">string
-s</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;strlen(&lt;/font&gt;&lt;font class="args"&gt;string
+s&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> int </td> </tr>
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> Return the length of string s. </td> </tr>
-<tr> <td valign="top"> **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; Return the length of string s. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: strlen( "test" )
     Merry result: 4
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#map_sizeof">map_sizeof</a> and <a
-href="#sizeof">sizeof</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#map\_sizeof"&gt;map\_sizeof&lt;/a&gt; and &lt;a
+href="\#sizeof"&gt;sizeof&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### structure_propmap
+### structure\_propmap
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>structure_propmap</td> </tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;structure\_propmap&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### switch
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>switch</td> </tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;switch&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Syntax:** </td> <td>
-<font class="ret"></font> <font
-class="fun">switch(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr>
+&lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
+&lt;font class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;switch(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:**
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:**
 
-</td> <td valign="top"> The switch() statement is in a way
-an extension of if(). For example,<br/>if( $a == 1 ) EmitTo(
-$actor, "One" );<br/>if( $a == 2 ) EmitTo( $actor, "Two"
-);<br/>if( $a == 3 ) EmitTo( $actor, "Three" );<br/>- can
-also be written as,<br/>switch( $a ){<br/>case 1: EmitTo(
-$actor, "One" ); break;<br/>case 2: EmitTo( $actor, "Two" );
-break;<br/>case 3: EmitTo( $actor, "Three" );
-break;<br/>}<br/><br/>Within the switch() block, the
+&lt;/td&gt; &lt;td valign="top"&gt; The switch() statement is in a way
+an extension of if(). For example,&lt;br/&gt;if( $a == 1 ) EmitTo(
+$actor, "One" );&lt;br/&gt;if( $a == 2 ) EmitTo( $actor, "Two"
+);&lt;br/&gt;if( $a == 3 ) EmitTo( $actor, "Three" );&lt;br/&gt;- can
+also be written as,&lt;br/&gt;switch( $a ){&lt;br/&gt;case 1: EmitTo(
+$actor, "One" ); break;&lt;br/&gt;case 2: EmitTo( $actor, "Two" );
+break;&lt;br/&gt;case 3: EmitTo( $actor, "Three" );
+break;&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;Within the switch() block, the
 case and default keywords are used to check conditions, both concluded
 using the break keyword. Several case statements can be made in which
 case the code after the first TRUE case statement is executed regardless
-until the next break. Example:<br/><br/>switch( $a
-){<br/>case 1: EmitTo( $actor, "One." ); /* no break;
-*/<br/>case 2: EmitTo( $actor, "Two." ); break;<br/>case 3:
-EmitTo( $actor, "Three." ); break;<br/>}<br/>If $a is 1, the
+until the next break. Example:&lt;br/&gt;&lt;br/&gt;switch( $a
+){&lt;br/&gt;case 1: EmitTo( $actor, "One." ); /\* no break;
+\*/&lt;br/&gt;case 2: EmitTo( $actor, "Two." ); break;&lt;br/&gt;case 3:
+EmitTo( $actor, "Three." ); break;&lt;br/&gt;}&lt;br/&gt;If $a is 1, the
 output will be "One." followed by "Two." but if $a is 2 the output will
-be "Two." only.<br/>If $a is 3, the output will be "Three." only.
+be "Two." only.&lt;br/&gt;If $a is 3, the output will be "Three." only.
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Example #1:
     -----------
@@ -5704,77 +5706,77 @@ be "Two." only.<br/>If $a is 3, the output will be "Three." only.
     (which will result in a '1' which means TRUE (they are the same))
     --------
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#if">if</a> and <a
-href="#break">break</a> </td> </tr> </table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#if"&gt;if&lt;/a&gt; and &lt;a
+href="\#break"&gt;break&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## T
 
 ### tabulate
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>tabulate</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">tabulate(</font><font class="args">mixed
-*arrlist...</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;tabulate&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;tabulate(&lt;/font&gt;&lt;font class="args"&gt;mixed
+\*arrlist...&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 For a fixed-sized font, render the arrays in arrlist in a table.
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### TAG
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>TAG</td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;TAG&lt;/td&gt;
 
-</tr> <tr> <td valign="top"> **Syntax:** </td>
-<td> <font class="ret">string</font> <font
-class="fun">TAG(</font><font class="args">string str,
-string tag</font><font class="fun">)</font>
-</td> </tr> <tr> <td valign="top">
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Syntax:** &lt;/td&gt;
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;TAG(&lt;/font&gt;&lt;font class="args"&gt;string str,
+string tag&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**Return value(s):** </td> <td valign="top"> string
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Use TAG() to
-colorize text using the client user's preset theme colors. </td>
-</tr>
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Use TAG() to
+colorize text using the client user's preset theme colors. &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#PRE">PRE</a> </td>
-</tr> </table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#PRE"&gt;PRE&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### tan
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
 
-<td valign="top"> **Function:** </td>
-<td>tan</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">tan(</font><font class="args">float
-x</font><font class="fun">)</font>
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;tan&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;tan(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
 Return the tangent of the
-argument.<br/><br/>Note:<br/>For values close to a
-multiple of PI/2, the result may be inaccurate.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+argument.&lt;br/&gt;&lt;br/&gt;Note:&lt;br/&gt;For values close to a
+multiple of PI/2, the result may be inaccurate.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: tan(0.0)
     Merry result: 0.0
@@ -5785,30 +5787,30 @@ multiple of PI/2, the result may be inaccurate.<br/> </td>
     Merry code: tan(1.5)
     Merry result: 14.10142
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#cos">cos</a> and <a
-href="#sin">sin</a> </td> </tr> </table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#cos"&gt;cos&lt;/a&gt; and &lt;a
+href="\#sin"&gt;sin&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ### tanh
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>tanh</td> </tr> <tr> <td valign="top">
-**Syntax:** </td> <td> <font
-class="ret">float</font> <font
-class="fun">tanh(</font><font class="args">float
-x</font><font class="fun">)</font>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;tanh&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;float&lt;/font&gt; &lt;font
+class="fun"&gt;tanh(&lt;/font&gt;&lt;font class="args"&gt;float
+x&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> float </td>
-</tr> <tr> <td valign="top"> **Description:**
-</td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; float &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Description:**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
-Return the hyperbolic tangent of the argument.<br/> </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+Return the hyperbolic tangent of the argument.&lt;br/&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: tanh(0.0)
     Merry result: 0.0
@@ -5819,103 +5821,103 @@ Return the hyperbolic tangent of the argument.<br/> </td>
     Merry code: tanh(1.5)
     Merry result: 0.90514825
 
-</td> </tr> <tr> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
 
-**See also:** </td> <td valign="top"> <a
-href="#cosh">cosh</a> and <a
-href="#sinh">sinh</a> </td> </tr> </table>
+**See also:** &lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#cosh"&gt;cosh&lt;/a&gt; and &lt;a
+href="\#sinh"&gt;sinh&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### this_object
+### this\_object
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>this_object</td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> object </td> </tr>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;this\_object&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; object &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> The this_object() function returns the internal object
-name for 'this'. </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; The this\_object() function returns the internal object
+name for 'this'. &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: this_object()
     Merry result: </usr/SkotOS/merry/4a6e774b0814ac8f2c8c693ec75c0e5b>
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#previous_object">previous_object</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#previous\_object"&gt;previous\_object&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
 ### time
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>time</td> </tr> <tr> <td valign="top">
-**Return value(s):** </td> <td valign="top"> int
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;time&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Return value(s):** &lt;/td&gt; &lt;td valign="top"&gt; int
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Return the current
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Return the current
 time as an integer. The time can be converted into a string with the
-kfun ctime().<br/> </td> </tr> <tr> <td
-valign="top"> **Example(s):** </td>
+kfun ctime().&lt;br/&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: time()
     Merry result: 1049521697
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ctime">ctime</a> </td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ctime"&gt;ctime&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### to_hex
+### to\_hex
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>to_hex</td> </tr> <tr> <td
-valign="top"> **Syntax:**
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;to\_hex&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:**
 
-</td> <td> <font class="ret">string</font>
-<font class="fun">to_hex(</font><font
-class="args">string bytes</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):** </td> <td
-valign="top"> string
+&lt;/td&gt; &lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt;
+&lt;font class="fun"&gt;to\_hex(&lt;/font&gt;&lt;font
+class="args"&gt;string bytes&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):** &lt;/td&gt; &lt;td
+valign="top"&gt; string
 
-</td> </tr> <tr> <td valign="top">
-**Description:** </td> <td valign="top"> Transform a
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Description:** &lt;/td&gt; &lt;td valign="top"&gt; Transform a
 sequence of characters (a string) into a sequence of hexadecimal values.
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     Merry code: to_hex( "Kalle" )
     Merry result: "4b616c6c65"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ### typeof
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
 
-<td>typeof</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">int</font> <font
-class="fun">typeof(</font><font class="args">mixed
-value</font><font class="fun">)</font> </td>
-</tr>
+&lt;td&gt;typeof&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;int&lt;/font&gt; &lt;font
+class="fun"&gt;typeof(&lt;/font&gt;&lt;font class="args"&gt;mixed
+value&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Return value(s):** </td>
-<td valign="top"> int </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):** &lt;/td&gt;
+&lt;td valign="top"&gt; int &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
 Return the type of a value. The return values are declared in the
-include file. <br/>
+include file. &lt;br/&gt;
 
-</td> </tr> <tr> <td valign="top">
-**Example(s):** </td> <td valign="top">
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt;
+**Example(s):** &lt;/td&gt; &lt;td valign="top"&gt;
 
     typeof( nil ) == 0 /* T_NIL */
     typeof( 123 ) == 1 /* T_INT */
@@ -5925,40 +5927,40 @@ include file. <br/>
     typeof( ({ "a", "b", "c" }) ) == 5 /* T_ARRAY */
     typeof( ([ "foo" : "bar" ]) ) == 6 /* T_MAPPING */
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-</table>
+&lt;/table&gt;
 
 ## U
 
 ### UnSAM
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>UnSAM</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;UnSAM&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt;
 
-<font class="ret">string</font> <font
-class="fun">UnSAM(</font><font class="args">mixed
-SAM</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> string </td> </tr>
+&lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;UnSAM(&lt;/font&gt;&lt;font class="args"&gt;mixed
+SAM&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td> <td
-valign="top"> UnSAM() is used to convert a SAM-string into a regular
-string.<br/>Like the Bilbo $sam(), ParseXML() used with UnSAM()
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt; &lt;td
+valign="top"&gt; UnSAM() is used to convert a SAM-string into a regular
+string.&lt;br/&gt;Like the Bilbo $sam(), ParseXML() used with UnSAM()
 constitute Merry's portal to the XML/SAM engine. It's not going to be
 used as much as Bilbo's is, because SAM has few abilities that Merry
 does not have natively. To emulate $sam(foo), use
-UnSAM(ParseXML("foo")).<br/><br/>The real use of UnSAM() is
+UnSAM(ParseXML("foo")).&lt;br/&gt;&lt;br/&gt;The real use of UnSAM() is
 to handle binary SAM data stored in e.g. descriptions. If you have a
 room with a description containing oneof's, for example, and you want to
 create a text representation of this, you'd want to do something
-like,<br/>str = UnSAM(Get(this,
-"details:default:description:examine")); </td> </tr>
-<tr> <td valign="top"> **Example(s):** </td>
+like,&lt;br/&gt;str = UnSAM(Get(this,
+"details:default:description:examine")); &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: UnSAM( ParseXML( "{sam-style|one|of}" ))
     Merry result: "sam-style"
@@ -5971,153 +5973,153 @@ like,<br/>str = UnSAM(Get(this,
     Merry code:   UnSAM( ParseXML( "You are <describe what=\"$actor\"/>, the {heroic|fantastic|extraordinary|hulkhoganish|awesome|illiterate|analphabetic|dyslectic} {thief|villain|joe|wizard|viking|lord|knight|master} {of|from} {Sweden|Norway|York|Denmark|London|Scandinavia}!" )
     Example result: "You are StoryCoder Kalle, the fanatic lord from Scandinavia!"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#ParseXML">ParseXML</a> </td>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#ParseXML"&gt;ParseXML&lt;/a&gt; &lt;/td&gt;
 
-</tr> </table>
+&lt;/tr&gt; &lt;/table&gt;
 
-### upper_case
+### upper\_case
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>upper_case</td> </tr> <tr> <td
-valign="top">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;upper\_case&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt;
 
-**Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">upper_case(</font><font class="args">string
-str</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td>
+**Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;upper\_case(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt;
 
-<td valign="top"> string </td> </tr> <tr> <td
-valign="top"> **Description:** </td> <td valign="top">
-Capitalize (uppercase) every letter in str. </td> </tr>
-<tr> <td valign="top"> **Example(s):**
+&lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Description:** &lt;/td&gt; &lt;td valign="top"&gt;
+Capitalize (uppercase) every letter in str. &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
 
-</td> <td valign="top">
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     "SkotOS" -> "SKOTOS"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#lower_case">lower_case</a>, <a
-href="#capitalize">capitalize</a>,
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#lower\_case"&gt;lower\_case&lt;/a&gt;, &lt;a
+href="\#capitalize"&gt;capitalize&lt;/a&gt;,
 
-<a href="#decapitalize">decapitalize</a> and <a
-href="#proper">proper</a>
+&lt;a href="\#decapitalize"&gt;decapitalize&lt;/a&gt; and &lt;a
+href="\#proper"&gt;proper&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
-### url_absolute
+### url\_absolute
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>url_absolute</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;url\_absolute&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">url_absolute(</font><font
-class="args">string url</font><font
-class="fun">)</font> </td> </tr> <tr> <td
-valign="top"> **Return value(s):**
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;url\_absolute(&lt;/font&gt;&lt;font
+class="args"&gt;string url&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Return value(s):**
 
-</td> <td valign="top"> string </td> </tr>
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: url_absolute( "/page?somearg=somevalue" )
     Merry result: "http://marrach.skotos.net:8080/page?somearg=somevalue"
 
-</td> </tr>
+&lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#url_decode">url_decode</a>,
-<a href="#url_encode">url_encode</a> and <a
-href="#make_url">make_url</a> </td> </tr>
-</table>
+&lt;tr&gt; &lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#url\_decode"&gt;url\_decode&lt;/a&gt;,
+&lt;a href="\#url\_encode"&gt;url\_encode&lt;/a&gt; and &lt;a
+href="\#make\_url"&gt;make\_url&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;/table&gt;
 
-### url_decode
+### url\_decode
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>url_decode</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;url\_decode&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt;
 
-<td> <font class="ret">string</font> <font
-class="fun">url_decode(</font><font class="args">string
-str</font><font class="fun">)</font> </td>
-</tr> <tr> <td valign="top"> **Return value(s):**
-</td> <td valign="top"> string </td>
+&lt;td&gt; &lt;font class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;url\_decode(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return value(s):**
+&lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
 
-</tr>
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td> <td
-valign="top">
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt; &lt;td
+valign="top"&gt;
 
     Merry code: url_decode( "Hi,+I'm+Kalle+%26+this+is+an+evil+smiley%3A+%3E%3A-)" )
     Merry result: "Hi, I'm Kalle & this is an evil smiley: >:-)"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
 
-</td> <td valign="top"> <a
-href="#url_encode">url_encode</a>, <a
-href="#make_url">make_url</a> and <a
-href="#url_absolute">url_absolute</a> </td>
-</tr> </table>
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#url\_encode"&gt;url\_encode&lt;/a&gt;, &lt;a
+href="\#make\_url"&gt;make\_url&lt;/a&gt; and &lt;a
+href="\#url\_absolute"&gt;url\_absolute&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt; &lt;/table&gt;
 
-### url_encode
+### url\_encode
 
-<table border="0" cellpadding="5" cellspacing="0">
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt;
 
-<tr> <td valign="top"> **Function:** </td>
-<td>url_encode</td> </tr> <tr> <td
-valign="top"> **Syntax:** </td> <td> <font
-class="ret">string</font> <font
-class="fun">url_encode(</font><font class="args">string
-str</font><font class="fun">)</font>
+&lt;tr&gt; &lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;url\_encode&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td
+valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;string&lt;/font&gt; &lt;font
+class="fun"&gt;url\_encode(&lt;/font&gt;&lt;font class="args"&gt;string
+str&lt;/font&gt;&lt;font class="fun"&gt;)&lt;/font&gt;
 
-</td> </tr> <tr> <td valign="top"> **Return
-value(s):** </td> <td valign="top"> string </td>
-</tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Return
+value(s):** &lt;/td&gt; &lt;td valign="top"&gt; string &lt;/td&gt;
+&lt;/tr&gt;
 
-<tr> <td valign="top"> **Example(s):** </td>
+&lt;tr&gt; &lt;td valign="top"&gt; **Example(s):** &lt;/td&gt;
 
-<td valign="top">
+&lt;td valign="top"&gt;
 
     Merry code: url_encode( "Hi, I'm Kalle & this is an evil smiley: >:-)" )
     Merry result: "Hi,+I'm+Kalle+%26+this+is+an+evil+smiley%3A+%3E%3A-)"
 
-</td> </tr> <tr> <td valign="top"> **See also:**
-</td> <td valign="top"> <a
-href="#url_decode">url_decode</a>, <a
-href="#make_url">make_url</a> and <a
-href="#url_absolute">url_absolute</a>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **See also:**
+&lt;/td&gt; &lt;td valign="top"&gt; &lt;a
+href="\#url\_decode"&gt;url\_decode&lt;/a&gt;, &lt;a
+href="\#make\_url"&gt;make\_url&lt;/a&gt; and &lt;a
+href="\#url\_absolute"&gt;url\_absolute&lt;/a&gt;
 
-</td> </tr> </table>
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 ## W
 
 ### while
 
-<table border="0" cellpadding="5" cellspacing="0"> <tr>
-<td valign="top"> **Function:** </td>
-<td>while</td> </tr> <tr>
+&lt;table border="0" cellpadding="5" cellspacing="0"&gt; &lt;tr&gt;
+&lt;td valign="top"&gt; **Function:** &lt;/td&gt;
+&lt;td&gt;while&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **Syntax:** </td> <td> <font
-class="ret"></font> <font
-class="fun">while(</font><font
-class="args"><condition></font><font
-class="fun">)</font> </td> </tr>
+&lt;td valign="top"&gt; **Syntax:** &lt;/td&gt; &lt;td&gt; &lt;font
+class="ret"&gt;&lt;/font&gt; &lt;font
+class="fun"&gt;while(&lt;/font&gt;&lt;font
+class="args"&gt;&lt;condition&gt;&lt;/font&gt;&lt;font
+class="fun"&gt;)&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt;
 
-<tr> <td valign="top"> **Description:** </td>
+&lt;tr&gt; &lt;td valign="top"&gt; **Description:** &lt;/td&gt;
 
-<td valign="top"> While-loops are used when a block of code needs
-to be repeated until certain condition requirements are met. </td>
-</tr> <tr> <td valign="top"> **Example(s):**
-</td> <td valign="top">
+&lt;td valign="top"&gt; While-loops are used when a block of code needs
+to be repeated until certain condition requirements are met. &lt;/td&gt;
+&lt;/tr&gt; &lt;tr&gt; &lt;td valign="top"&gt; **Example(s):**
+&lt;/td&gt; &lt;td valign="top"&gt;
 
     Example #1:
     -----------
@@ -6155,10 +6157,10 @@ to be repeated until certain condition requirements are met. </td>
     /* Warning: this script will loop eternally, or rather -- until an "Out of ticks" error occurs. It is not recommended to test it. */
     ----------
 
-</td> </tr> <tr>
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
 
-<td valign="top"> **See also:** </td> <td
-valign="top"> <a href="#for">for</a> and <a
-href="#do">do</a> </td> </tr> </table>
+&lt;td valign="top"&gt; **See also:** &lt;/td&gt; &lt;td
+valign="top"&gt; &lt;a href="\#for"&gt;for&lt;/a&gt; and &lt;a
+href="\#do"&gt;do&lt;/a&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 -- Main.KalleAlm - 1 Feb 2005
