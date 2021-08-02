@@ -12,22 +12,22 @@ The systems below are often written by Story Builders, and everything here is at
 The hardest part of a new system is often just... starting. Getting in and getting a feel for it. How can you do that with SkotOS? Here are some starting points.
 
 * [Your First Week with SkotOS](../FirstWeek/)
-* [Learning the Ropes](./Learning-the-Ropes.md)
-* [Merry Lesson One](./MerryLesson1.md)
-* [Traits Tuturial](./TraitsTutorial.md)
+* [Learning the Ropes](./Getting_Started/Learning-the-Ropes.md)
+* [Merry Lesson One](./Tutorials_and_Examples/Merry/MerryLesson1.md)
+* [Traits Tuturial](./Tutorials_and_Examples/Building_Objects/Traits_Tutorial.md)
 
 ## In-Game Systems
 
-* WOE objects: [Overview](./woe_workflow.md) [Some Important WOE Objects](./Key_Woe_Objects.md)
-* [Things, /base/obj/thing and UrThings](./ThingsAndUrThings.md)
-* [Consent System](./ConsentSystem.md)
-* Description System: [Quick Summary](./DescriptionSystemQuickSummary.md) or [In-Depth Details](./DescriptionSystem.md)
-* Detail System: [QuickSummary](./DetailSystemQuickSummary.md) or [In-Depth Details](./DetailSystem.md)
-* [The Movement System](./MovementSystem.md)
-* [The Proximity System](./ProximitySystem.md)
-* [Staff +Commands](./Staff_Plus_Commands.md)
-* [Shared Objects and the Proof System](./SharedObjectsAndProofSystem.md)
-* [The Sync System](./SyncSystem.md)
+* WOE objects: [Overview](./Tree_of_Woe/woe_workflow.md) [Some Important WOE Objects](./Tree_of_Woe/Key_Woe_Objects.md)
+* [Things, /base/obj/thing and UrThings](./SkotOS_Objects/ThingsAndUrThings.md)
+* [Consent System](./In-Game_Systems/ConsentSystem.md)
+* Description System: [Quick Summary](./Getting_Started/DescriptionSystemQuickSummary.md) or [In-Depth Details](./In-Game_Systems/DescriptionSystem.md)
+* Detail System: [QuickSummary](./Getting_Started/DetailSystemQuickSummary.md) or [In-Depth Details](./In-Game_Systems/DetailSystem.md)
+* [The Movement System](./In-Game_Systems/MovementSystem.md)
+* [The Proximity System](./In-Game_Systems/ProximitySystem.md)
+* [Staff +Commands](./The_Parser/Staff_Plus_Commands.md)
+* [Shared Objects and the Proof System](./Plugins/SharedObjectsAndProofSystem.md)
+* [The Sync System](./Plugins/SyncSystem.md)
 
 ## SAM and MERRY
 
@@ -35,15 +35,14 @@ Most SkotOS in-game building happens in SAM, the markup language of SkotOS, and 
 
 Both, especially MERRY, interact extensively with WOE objects.
 
-* [SAM and MERRY: the Two SkotOS Languages](./LanguageExplanation.md)
-* [SAM Quick Summary](./QuickSummarySAMSystem.md)
-* [How to Write SAM Tags](./HowToWriteSAMTags.md)
-* [SAM Technical Details](./SamIntro.md)
-* [How to Write SAM Tags](./HowToWriteSAMTags.md)
-* [Properties and Values](./PropertiesAndValues.md)
-* [The Signal System](./SignalSystem.md)
-* [The Merry System: a Technical Summary](./MerrySystem.md)
-* [Tips on Writing Merry](./MerryTips.md)
+* [SAM and MERRY: the Two SkotOS Languages](./SkotOS_Languages/LanguageExplanation.md)
+* [SAM Quick Summary](./Getting_Started/QuickSummarySAMSystem.md)
+* [How to Write SAM Tags](./Tutorials_and_Examples/SAM/HowToWriteSAMTags.md)
+* [SAM Technical Details](./SkotOS_Languages/SAM_Language/SamIntro.md)
+* [Properties and Values](./SkotOS_Objects/Object_Types/Standard_Object/PropertiesAndValues.md)
+* [The Signal System](./In-Game_Systems/SignalSystem.md)
+* [The Merry System: a Technical Summary](./Getting_Started/MerrySystem.md)
+* [Tips on Writing Merry](./SkotOS_Languages/Merry_Language/MerryTips.md)
 
 ## Skotos Builders Twiki (TODO: convert more)
 
