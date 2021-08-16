@@ -1,3 +1,7 @@
+---
+sort: 2
+---
+
 # Staff + Commands
 
 ## NOTE:
