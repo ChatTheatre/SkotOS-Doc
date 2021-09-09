@@ -2,7 +2,7 @@
 
 TAS Help is subject to change without notice, but this is a sample
 output of the current (as of 19 Nov 2004) TAS Help output, so you do not
-need to keep scrollin up if you are trying to work in a window but want
+need to keep scrolling up if you are trying to work in a window but want
 to see the TAS Help output.
 
 \* \<font color=\"blue\"\>+tas help\</font\> is the brief basic help.
@@ -52,7 +52,7 @@ help for TAS.
     +tas note '(note)
           Adds specified note to your current claimed assist
     +tas note (task number) '(note)
-          Adds specifed note to specifed task number
+          Adds specified note to specified task number
     +tas shift (task number) (character)
           Shifts login alert status to character specified
 
@@ -132,7 +132,7 @@ help for TAS.
     +tas note '(note)
           Adds specified note to your current claimed assist
     +tas note (task number) '(note)
-          Adds specifed note to specifed task number
+          Adds specified note to specified task number
     +tas shift (task number) (character)
           Shifts login alert status to character specified
 
@@ -158,15 +158,15 @@ help for TAS.
     +tas flags
           Lists current defined flags
     +tas flag (task number) (flag)
-          Flags specified task with specifed flag
+          Flags specified task with specified flag
     +tas note '(note)
           Adds specified note to your current claimed assist
     +tas note (task number) '(note)
-          Adds specifed note to specifed task number
+          Adds specified note to specified task number
     +tas attach (task number)
           Opens popup so you can attach multi-line note
     +tas priority (task number) (priority number)
-          Sets specifed tasks priority to specified priority
+          Sets specified tasks priority to specified priority
     +tas assign
           Lists any tasks that have been assigned to you
     +tas assign (task number) (player)
@@ -252,7 +252,7 @@ help for TAS.
     +tas watch (task number)
           Adds specified task number to your watch list
     +tas forget (task number)
-          Removes specifed task number from your watch list
+          Removes specified task number from your watch list
 
     Misc Help
     ---------
