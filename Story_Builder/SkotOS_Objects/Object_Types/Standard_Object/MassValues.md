@@ -1,3 +1,7 @@
+---
+sort: 2
+---
+
 ### [Mass Values](MassValues)
 
 The following are mass values for actual items around the Skotos house,

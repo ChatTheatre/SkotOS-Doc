@@ -1,3 +1,7 @@
+---
+sort: 3
+---
+
 Densities of Various Materials. Some more values can be found at
 
 <http://www.simetric.co.uk/si_materials.htm> &lt;br /&gt;

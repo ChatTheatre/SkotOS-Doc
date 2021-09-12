@@ -1,3 +1,7 @@
+---
+sort: 9
+---
+
 # Properties and Values
 
 ## Objects, properties, property types and values.
