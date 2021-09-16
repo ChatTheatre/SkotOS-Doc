@@ -1,3 +1,7 @@
+---
+sort: 1
+---
+
 Any physical object can and usually does have
 properties, which are general purpose storage containers for values.
 Common ways to set properties include the +setprop command, Merry\'s Set() function, and the \<set-property\> SAM tag.

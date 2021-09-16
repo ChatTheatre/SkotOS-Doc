@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# The Proximity System - a Technical Summary
+# The Consent System - a Technical Summary
 
 See also: [ProximitySystem](./ProximitySystem.md)
 
