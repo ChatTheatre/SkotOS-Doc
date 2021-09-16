@@ -34,7 +34,7 @@ A spawn only has an Ur-object, so it's basically exactly the same as its Ur-obje
 
 ## Derived Properties
 
-A **Thing** is comprised of the following **derived properties**. For a more detailed look, check out [Derived Properties](./DerivedPropeties.md).
+A **Thing** is comprised of the following **derived properties**. For a more detailed look, check out [Derived Properties](./DerivedProperties.md).
 
 #### Base:Transient
 This includes an object's environment (base:environment) and inventory (base:inventory). These properties do not get set directly in WOE but can be modified with code and by naturally interacting with the environment (chatter moves rooms or items are placed into container object). This information is useful to view in WOE to see where an object resides in the game world or to see the contents of a container object.
