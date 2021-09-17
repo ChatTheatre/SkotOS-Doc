@@ -94,7 +94,7 @@ Each object has a notes section that allows staff to share notes about the objec
 
 ## Examples and Tutorials
 
-* [Building a Simple Object](../Tutorials_and_Examples/Building_Objects/BuildASimpleObjectTutorial.md)
+* [Building a Simple Object](../Tutorials_and_Examples/Building_Objects/BuildAnObjectFromScratchTutorial.md)
 * [Building a Container](../Tutorials_and_Examples/Building_Objects/BuildAContainerTutorial.md)
 * [Building a Room](../Tutorials_and_Examples/Building_Objects/BuildAContainerTutorial.md)
 * [Building with Ur Objects](../Tutorials_and_Examples/Building_Objects/BuildingWithUrsTutorial.md)
