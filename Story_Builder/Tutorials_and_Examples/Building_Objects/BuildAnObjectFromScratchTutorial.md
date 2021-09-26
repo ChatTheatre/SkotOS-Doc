@@ -23,16 +23,21 @@ To create an object from scratch, use the +cobj command. The syntax for the comm
 
 This command is fairly straightforward and the only question you need to ask yourself is where do you want to save the object? The command will give you a suggestion but you can use anything you want. However, you should avoid using spaces or special characters, and do not save anything in the root directory. 
 
+If you are the only one using the server, something like 'Props:wand' would be fine. However, it can get confusing if you have multiple people creating props. You may want to establish a universal naming convention for how objects should be stored, and you may also want to incorporate a QA process before objects go live on your server. For example, 'Props:unreviewed:wand' would be a suitable location for objects waiting to be reviewed, but even better would be a folder with your character name + props:unreviewed:wand. Then once the object is reviewed and ready to go live, it can be moved to the appropriate place.
+
 `+cobj object wand` = saved to root directory = BAD
 
-`+cobj object Props:wand` = saved to "Props" folder = GOOD
+`+cobj object Sarah:props:unreviewed:wand` = saved to "Sarah:props:unreviewed" folder = GOOD
+
 
 So let's go ahead and create our object.
 
 ```
-+cobj object Tutorials:BuildingObjects:BuildAnObjectFromScratch:wand
++cobj object Sarah:props:unreviewed:wand
 Done! [V] [E] [X] [MStamp]
 ```
+
+
 
 If all goes well, you will see the above "Done!" message followed by four hyperlinks.
 
@@ -227,3 +232,5 @@ Now we will be able to *wield* our wand!
 ## Final Thoughts
 
 All objects should go through an extensive QA process before releasing to the public. At the very least, have someone else do a quick once over to check for typos or other settings you may have missed.
+
+The finished prop I created can be found here 'Tutorials:BuildingObjects:BuildAnObjectFromScratch:wand'.
