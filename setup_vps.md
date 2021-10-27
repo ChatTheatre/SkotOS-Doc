@@ -15,8 +15,8 @@ For best reliability and stability, set your SkotOS instance up on a virtual pri
 
 Linode has proven to be a very stable locale for SkotOS games with high uptime, but any VPS should do the job. The following referrals codes can be used if you want to earn a month of free time:
 
-> Linode Referral Code: https://www.linode.com/?r=3c7fa15a78407c9a3d4aefb027539db2557b3765
-> Digital Ocean: http://www.digitalocean.com/?refcode=a6060686b88a
+    > Linode Referral Code: https://www.linode.com/?r=3c7fa15a78407c9a3d4aefb027539db2557b3765
+    > Digital Ocean: http://www.digitalocean.com/?refcode=a6060686b88a
 
 ## You'll Install a SkotOS Game, Not "Just SkotOS"
 
