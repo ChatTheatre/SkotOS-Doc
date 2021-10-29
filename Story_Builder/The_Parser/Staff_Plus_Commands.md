@@ -68,7 +68,7 @@ sort: 2
    * Shortcut used to bring up the bugs queue of the TAS system
 
 #### +busy
-   * Usage:+busy [on|off]
+   * Usage: +busy [on|off]
    * Blocks (on) or unblocks (off) incoming pages
 
 #### +cc
@@ -107,7 +107,8 @@ sort: 2
    * Use +advapp to create a CYOA (Create Your Own Adventure) script set.
 
 #### +dark
-   * Usage: Hides/unhides your name from the who list
+   * Usage: +dark
+   * Hides/unhides your name from the who list
 
 #### +delays [target]
    * Shows the #delays() running in the target.
@@ -199,6 +200,10 @@ sort: 2
    * Usage: +goto woename
    * Teleport/move into a specific object, specified by its name in the system. 
    * For more information, type: +man goto
+   
+#### +grab
+   * Usage: +grab playername
+   * Bring a player to your environment
 
 #### +guides
    * Usage: +guides
@@ -426,7 +431,7 @@ See also:
    * Used to display code scripts so that full-stops aren't added to the end like they do when you use the parser to say "message".
 
 #### +readall
-   * +readall
+   * Usage: +readall
 
 #### +recursive-move
    * Usage: +recursive [move] "[old]=[new]"
@@ -447,7 +452,8 @@ See also:
    
 #### +return
    * Usage: +return (character optional)
-   * Using +return by itself will send you back to your virtual home if it is set. +return character sends that char to their virtual home if it is set
+   * Using '+return' by itself will send you back to your virtual home if it is set. 
+   * Using '+return character' sends that char to their virtual home if it is set
 
 #### +revisions
    * Usage: +revisions \<object\>
@@ -575,7 +581,7 @@ See also:
 
 #### +tas
    * Usage: +tas (brings up helpfile)
-   * Task and Assist System. Very extensive system for the filing of assists, bugs, typos, ideas, and socials. Also allows staff to file tasks into personal queues. __As a staff member, you must become familiar with the system as it will be used often. It is not a complicated system, but there are a lot of commands to review. Any questions on its usage, please ask Geli.__
+   * Task and Assist System. Very extensive system for the filing of assists, bugs, typos, ideas, and socials. Also allows staff to file tasks into personal queues.
 
 #### +title
    * Usage: +title character "title"
