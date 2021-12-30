@@ -8,9 +8,9 @@ SkotOS opens a number of interfaces to its userbase, various services, intrepid 
 
 A given instance of SkotOS starts at a "portbase", normally a big multiple of 1000, such as 3000, 6000 or 9000. It isn't ***required*** to be a multiple of 1000, but it makes the mental math easier.
 
-Out of the box, [ChatTheatre's SkotOS on GitHub](https://github.com/ChatTheatre/SkotOS) is configured with a portbase of 10000.
+Out of the box, [ChatTheatre's SkotOS on GitHub](https://github.com/ChatTheatre/SkotOS) is configured with a portbase of 11000.
 
-Other ports are given relative to the portbase. For instance the Telnet Port is at portbase + 98, so out of the box you would telnet to local port 10098 to get to it. On a different instance with a portbase of 6000, you would telnet to port 6098 to get to it.
+Other ports are given relative to the portbase. For instance the Telnet Port is at portbase + 98, so out of the box you would telnet to local port 11098 to get to it. On a different instance with a portbase of 6000, you would telnet to port 6098 to get to it.
 
 You can set the portbase in the [instance file](Instance_File.md).
 
@@ -21,19 +21,21 @@ Your DGD configuration file specifies where to find these ports. But it will nee
 Here's an example section of skotos.dgd:
 
 ```
-telnet_port     = ([ "*": 10098 /* Telnet */ ]);
-binary_port     = ([ "*": 10099, /* DGD-style Binary */
-                     "*": 10017, /* UserAPI::Broadcast */
-                     "*": 10070, /* UserDB / AuthD as server */
-                     "*": 10071, /* UserDB / CtlD as server */
-                     "*": 10080, /* webport */
-                     "*": 10089, /* DevSys::initd - some kind of HTTP port? */
-                     "*": 10090, /* WOE / Tree of Woe */
-                     "*": 10091, /* DevSys::ExportD for exporting XML objects */
-                     "*": 10443 /* TextIF */ ]);
+telnet_port     = ([ "*": 11098 /* Telnet */ ]);
+binary_port     = ([ "*": 11099, /* DGD-style Binary */
+                     "*": 11017, /* UserAPI::Broadcast */
+                     "*": 11070, /* UserDB / AuthD as server */
+                     "*": 11071, /* UserDB / CtlD as server */
+                     "*": 11080, /* webport */
+                     "*": 11089, /* DevSys::initd - some kind of HTTP port? */
+                     "*": 11090, /* WOE / Tree of Woe */
+                     "*": 11091, /* DevSys::ExportD for exporting XML objects */
+                     "*": 11443 /* TextIF */ ]);
 ```
 
 One advantage of skotos.dgd is that it can show you all the ports you have open. If it's not listed in DGD's configuration file, it's not open.
+
+Your skotos.dgd file may be generated via dgd-tools and the dgd-manifest command, if you're using them.
 
 ## Telnet Port, Binary Port
 
