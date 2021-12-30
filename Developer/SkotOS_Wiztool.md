@@ -2,7 +2,7 @@
 
 # About Wiztool
 
-Each of the games has a "wiztool" port at XX98 (e.g. 10098 for your default setup), which can be used to access a number of functions that sit between the [Layers](../Maintainer/Layers.md) of DGD's Kernel Library functionality, and the underlying SkotOS LPC code that runs the ChatTheatre.
+Each of the games has a "wiztool" port at XX98 (e.g. 11098 for your default setup), which can be used to access a number of functions that sit between the [Layers](../Maintainer/Layers.md) of DGD's Kernel Library functionality, and the underlying SkotOS LPC code that runs the ChatTheatre.
 
 You should rarely need to use this functionality as a maintainer, and you should be aware that you have the opportunity to do basically permanent damage to your server (depending on when/how you do backups, etc.)
 
@@ -14,15 +14,15 @@ You'll also need the correct "access" flag, which is "gables" by default. Again,
 
 ## Accessing the Wiztool
 
-From the same machine (your local server, or the VPS server) you can telnet to port 10098 (with the [default portbase](./SkotOS_Ports.md)). By default the local config will allow you to give any account name and password successfully. By default your VPS installation will allow the "skott" account with the master password you configured in the StackScript. If you change your thin-auth password that will be reflected for the telnet port as well.
+From the same machine (your local server, or the VPS server) you can telnet to port 11098 (with the [default portbase](./SkotOS_Ports.md)). By default the local config will allow you to give any account name and password successfully. By default your VPS installation will allow the "skott" account with the master password you configured in the StackScript. If you change your thin-auth password that will be reflected for the telnet port as well.
 
 So:
 
-    telnet localhost 10098
+    telnet localhost 11098
 
 Or:
 
-    telnet gables.my-subdomain.com 10098
+    telnet gables.my-subdomain.com 11098
 
 ## Wiztool Commands
 

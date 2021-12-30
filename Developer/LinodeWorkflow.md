@@ -95,7 +95,7 @@ The skott user has both [StoryBuilder](../Story_Builder/) and [Wiztool](../Devel
 
 Let's say you've made a change to a DGD source file. Good! Now, how do you make it work? The old compiled code is still in memory (and/or skotos.database). So how do you use something new?
 
-If it's one source file, log in to the telnet port (telnet localhost 10098) with an admin user (e.g. "skott", with the password you originally configured.) Then cd into the appropriate subdirectory of and compile the file. If the file is called /usr/System/sys/foo.c, you'd type "cd /usr/System/sys" and then "compile foo.c". That will replace the old "foo" object with the one you just modified if all goes well.
+If it's one source file, log in to the telnet port (telnet localhost 11098) with an admin user (e.g. "skott", with the password you originally configured.) Then cd into the appropriate subdirectory of and compile the file. If the file is called /usr/System/sys/foo.c, you'd type "cd /usr/System/sys" and then "compile foo.c". That will replace the old "foo" object with the one you just modified if all goes well.
 
 If it's a library file (it will have /lib in the path) then you'll need to "upgrade foo.c" instead, which will recompile all objects using that library.
 
