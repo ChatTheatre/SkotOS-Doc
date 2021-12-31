@@ -24,10 +24,14 @@ SkotOS uses a different Jitsi installation than the default out-of-the-box Jitsi
 
 JWT login is *mostly* supported by Jitsi Meet, though not perfectly. You can find instructions for how to install JWT for Jitsi in multiple places:
 
-* [Meetrix blog post](https://meetrix.io/blog/webrtc/jitsi/meet/how-to-authenticate-users-to-Jitsi-meet-using-JWT-tokens.html) (note: some typos)
-* [Doganbros blog post](https://doganbros.com/index.php/jitsi/jitsi-installation-with-jwt-support-on-ubuntu-20-04-lts/)
+* [Meetrix blog post](https://meetrix.io/blog/webrtc/jitsi/meet/how-to-authenticate-users-to-Jitsi-meet-using-JWT-tokens.html) (note: some typos, including in package names)
+* [Doganbros blog post](https://doganbros.com/index.php/jitsi/jitsi-installation-with-jwt-support-on-ubuntu-20-04-lts/) (note: left/right quotes should instead be plain single quotes)
+* [Jitsi JWT setup guide](https://meetrix.io/blog/webrtc/jitsi/meet/how-to-authenticate-users-to-Jitsi-meet-using-JWT-tokens.html) - useful for additional reference
+* the [token_moderation Jitsi plugin](https://github.com/nvonahsen/jitsi-token-moderation-plugin) - you'll need to install this
 
-These are *both* install instructions - either is fine, but you may find omissions/errors in either one, so it's useful to have both and compare them.
+The top two are both install instructions - either is fine, but you will find omissions/errors in either one, so it's useful to have both and compare them.
+
+Once you have a successful Jitsi-with-JWT installation, follow the directions in the bottom link to install token_moderation.
 
 Note that Debian and Ubuntu work in slightly different ways here - **I recommend using Ubuntu, not Debian, for your Jitsi installation**. It's just easier to debug. I've hit significant problems trying to install Jitsi with JWT on Debian.
 
