@@ -53,6 +53,15 @@ jitsi_host my_jitsi.my_domain.com
 
 Obviously replace "my_jitsi.my_domain.com" with your actual Jitsi DNS name.
 
+Now you'll need your SkotOS server to use the new settings in the instance file. Connect to the telnet port (normally: "telnet localhost 11098" or "telnet game.my_domain.com 11098"), log in as your privileged "skott" account and do the following:
+
+~~~
+cd /usr/System
+compile initd.c
+~~~
+
+This will re-read the instance file and use the new settings.
+
 ### Running chat_admin_server
 
 First, "git clone" a copy of [the chat_admin_server repo](https://github.com/ChatTheatre/chat_admin_server). Copy config-example.json to config.json in the same directory. You're going to need to fill in the config file properly, and you'll need to run the server.
