@@ -7,20 +7,20 @@ Newer SkotOS games support using [Jitsi](https://meet.jit.si/) for audio and vid
 
 Note: Jitsi for SkotOS uses a nonstandard Jitsi config. So you can't use a hosted meet.jit.si server, including the free one. You'll need to run a custom hosted Jitsi instance.
 
-## Basic Setup
+## Multi-Host Setup
 
 Jitsi runs on a separate server from the SkotOS game-related apps. That's partly because Jitsi can use a lot of server resources like memory and bandwidth. And it's partly because Jitsi is quite particular about its setup, so it's hard to install "bare" on the same server.
 
-Docker-based Jitsi install is possible, but it can make the server resource problems even more severe. You'll also need a bit of expertise with Docker-Compose to modify the configuration files appropriately. It's easier to use a separate standalone Jitsi server in most cases.
+Docker-based Jitsi install is possible, but it can make the server resource problems even more severe. You'll also need a bit of expertise with Docker-Compose to modify the configuration files appropriately. Even if you install with Docker, I recommend using a separate host.
 
-## How to Install a Jitsi Server
+## How to Install Your Jitsi Server
+
+(Note: look for jitsi_stackscript.sh in the SkotOS deploy directory. If that's unsuitable for some reason, use the directions below.)
 
 SkotOS uses a different Jitsi installation than the default out-of-the-box Jitsi configuration. It needs two nonstandard things:
 
 * support for JWT login
 * the [token_moderation Jitsi plugin](https://github.com/nvonahsen/jitsi-token-moderation-plugin)
-
-(TODO: put together a SkotOS Ubuntu-based StackScript to install these)
 
 JWT login is *mostly* supported by Jitsi Meet, though not perfectly. You can find instructions for how to install JWT for Jitsi in multiple places:
 
@@ -39,9 +39,47 @@ Also, it's expected that you have to add the `?jwt=XXXX` parameter to the end of
 
 Current Jitsi JWT doesn't support websockets. So make sure that BOSH (XMPP-over-HTTP) is set up correctly on the usual HTTP/HTTPS ports and do *not* use Websocket XMPP protocols. The Jitsi JWT guides above do this correctly, if you use them.
 
-## Using Jitsi with SkotOS
+## Using Jitsi with SkotOS Deploy Scripts
 
 Having a Jitsi server installed is nice. Let's talk about how to hook it up to your SkotOS server.
+
+By default, a newly-installed SkotOS server does *not* have Jitsi set up. Once you've set up Jitsi, you'll need to run a script to set it up.
+
+Recent SkotOS stackscripts will clone the chat_admin_server source into /var/chat_admin_server. First, go to that directory and run "git checkout main" and "git pull" to make sure it's up-to-date. There should be a deploy/skotos directory containing useful scripts.
+
+Here are some scripts you should find there:
+
+* configure-jitsi.sh - set up chat_admin_server with your Jitsi server
+* unconfigure-jitsi.sh - unhook chat_admin_server from Jitsi and shut it down
+* start-chat-admin.sh - a task run automatically via cron to run chat_admin_server if it's not already
+
+There should be a cron task for the skotos user that runs start-chat-admin.sh once per minute if (and only if) there's no file in /var/chat_admin_server to tell it not to (called NO_START.txt).
+
+After you've correctly installed your Jitsi server by one of the methods on this page you can hook it up to SkotOS by running configure-jitsi.sh. You'll need your JWT app ID and JWT app secret from your Jitsi install, and the DNS name of your Jitsi server. Once you have them, here's what you run:
+
+~~~
+/var/chat_admin_server/deploy/skotos/configure-jitsi.sh my-jitsi-fqdn.my-domain.com MyJitsiJWTAppId MyJitsiJWTAppSecret
+~~~
+
+Use your own Jitsi hostname, app ID and app secret instead of the placeholders above.
+
+Once you've run that, the script will tell you to telnet into your DGD server and recompile a file called /usr/System/initd.c. That's how you tell DGD to reload its instance file and use the new Jitsi settings.
+
+## Finding Your Settings
+
+I assume you have the hostname for your Jitsi server &mdash; that's just the name you use in the browser or with SSH to get to the server. But your JWT app ID and app secret can be a bit harder to find. They're sensitive information (like passwords), so often they won't be printed anywhere obvious. You should ***absolutely not*** email them around or otherwise let other people see them &mdash; anybody with your Jitsi JWT app ID and app secret can be a moderator on your Jitsi server on any channel, kick anybody else off, etc, and you can't stop them (until you change the passwords.)
+
+So: where do you find those? You'll need to ssh into your Jitsi server and look in a file called something like "/etc/prosody/conf.avail/myjitsi.my-domain.com.cfg.lua". I say "something like" that because it will have your Jitsi hostname in the filename, not "myjitsi.my-domain.com" like I show here.
+
+Open the config file and search for "app_id". You should find a line with "app_id=something" and the next line will start with "app_secret=". The things in quotes (don't include the quotes) are your Jitsi JWT app ID and your Jitsi JWT app secret.
+
+So you'll need them to run configure-jitsi.sh And the hostname in the config file's name is the hostname you should use with configure-jitsi.sh.
+
+Once you've run that, the script will tell you to telnet into your DGD server and recompile a file called /usr/System/initd.c. That's how you tell DGD to reload its instance file and use the new Jitsi settings.
+
+## Configuring Jitsi by Hand
+
+It's possible that configure-jitsi.sh won't work for you for some reason. You can read through it and see what it does. I've also documented the basic steps below. The more your Jitsi configuration is different from what we expect, the more likely you are to need to make some changes manually.
 
 For SkotOS Jitsi support, you'll need to modify the instance file for your DGD server, and you'll need to run chat_admin_server.
 
@@ -70,15 +108,15 @@ This will re-read the instance file and use the new settings.
 
 First, "git clone" a copy of [the chat_admin_server repo](https://github.com/ChatTheatre/chat_admin_server). Copy config-example.json to config.json in the same directory. You're going to need to fill in the config file properly, and you'll need to run the server.
 
-The Jitsi domain ("meet.jitsi") can stay the same if you use the install instructions for Jitsi with JWT above. Otherwise, change it to match your internal Jitsi XMPP domain.
+The Jitsi domain should match your internal Jitsi XMPP domain. That can be meet.jitsi for a Docker install, but it's usually based on your Jitsi hostname. Look in your prosody config file under /etc/prosody/config.avail on the lines with VirtualHost to check.
 
-The Jitsi app_id and secret should match the ones in your Jitsi configuration (TODO: add instructions for which files to check for these.)
+The Jitsi app_id and secret should match the ones in your Jitsi configuration (see above for how to check.)
 
-The "outbound" config is for the Jitsi port of your SkotOS server. If you're running chat_admin on the same host as SkotOS, you won't need to change the config from host 127.0.0.1 and port 11091. If you're running them on two separate servers, please be very careful of your firewall rules, and change the JSON configuration to the new location.
+The "outbound" config is for the Jitsi port of your SkotOS server. If you're running chat_admin_server on the same host as SkotOS, you won't need to change the config from host 127.0.0.1 and port 11091.
 
-The "inbound" config is if you want to connect to the server for credentials or testing &mdash; SkotOS doesn't need it and won't use it. You can remove that section completely, or leave it as-is.
+The "inbound" config is if you want to connect to the server for credentials or testing &mdash; SkotOS doesn't need it and won't use it. You can remove that section completely, or leave it as-is. If you're running chat_admin_server on a different host than SkotOS's DGD server for some reason, please be ***very careful of your firewall rules***, and change the JSON configuration to the new location. It's a very bad idea to run chat_admin_server unfirewalled on the open internet.
 
-Note that if you install a new Jitsi server and want to use it, you'll need to update the JSON configuration file and restart chat_admin_server.
+After you update the JSON configuration file, you should restart chat_admin_server.
 
 Once you've done all that, you'll need to make sure that chat_admin_server is running. It's a Node.js program, so your SkotOS server should already have Node installed. To run the server:
 
@@ -86,7 +124,7 @@ Once you've done all that, you'll need to make sure that chat_admin_server is ru
 node src/main.js config.json
 ~~~
 
-You'll need to add this to your cron setup, or otherwise make sure the server gets started automatically.
+You'll need to add this to your cron setup, or otherwise make sure the server gets started automatically. There's a chat_admin_server deploy script that can run the server for you (see above) or you can do it manually like this.
 
 ## Jitsi and Local Dev (Don't, If You Can Avoid It)
 
