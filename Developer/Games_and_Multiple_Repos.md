@@ -14,6 +14,58 @@ You can find more documentation on DGD manifest [in its own repository](https://
 
 Dgd-manifest puts together a DGD root directory from the files of the different components of the application. Most commonly that's the core SkotOS root directory as a base, and then the plugins in appropriate subdirectories, and then the game overlays its own files on top.
 
+Here's an example of how that can be done:
+
+~~~
+{
+    "name": "vRWOT Virtual Conference Space",
+    "version": "0.1.0",
+    "description": "A virtual meeting place",
+    "config": {
+      "app_root": "root",
+      "editors": 0,
+      "telnet_ports": [11098],
+      "ports": [11099, 11017, 11070, 11071, 11080, 11089, 11090, 11091, 11443],
+      "dump_file": "skotos.database"
+    },
+    "unbundled_goods": [
+        {
+            "name": "SkotOS",
+            "git": {
+                "url": "https://github.com/ChatTheatre/SkotOS.git",
+                "branch": "master"
+            },
+            "paths": {
+                "skoot": "."
+            },
+            "dependencies": [
+                "https://raw.githubusercontent.com/ChatTheatre/mgeneric-combat-plugin/main/mgeneric-combat-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/language-plugin/main/language-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/article-plugin/main/article-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/azmail-plugin/main/azmail-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/mgeneric-plugin/main/mgeneric-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/shared-plugin/main/shared-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/effects-plugin/main/effects-plugin.goods",
+                "https://raw.githubusercontent.com/ChatTheatre/nip-plugin/main/nip-plugin.goods"
+            ]
+        }
+    ]
+}
+~~~
+
+In this example, vRWOT uses core SkotOS from ChatTheatre/SkotOS's master branch, and also adds a list of additional plugins from .goods files (DGD-manifest libraries) with raw GitHub URLs.
+
+## Clean It All Up
+
+There are a lot of points of connection here. How do you make sure a change you made gets used? Here's the whole list of things that you might need to do. If you want to be sure you're getting a clean install, do all of them.
+
+* first, update your SkotOS, plugin and game code; commit and push as needed; remove extraneous files
+* make sure the game's dgd.manifest points to the correct repo and branch for SkotOS core and/or plugins
+* stop any server(s) currently running (e.g. with deploy_scripts/mac/stop_server.sh)
+* consider removing skotos.database, with all the in-memory objects; this will destroy *all* user data if you do it, which can be good or bad depending
+* dgd-manifest install - this will rebuild your root directory with the latest code from SkotOS and plugins, and remove any files it doesn't recognise
+* run setup.sh or equivalent (set up libraries and dependencies, start servers, etc)
+
 ## Limitations of DGD-Manifest
 
 Dgd-manifest doesn't ever try to combine multiple files into one. So anything you want to use with it needs to deal with that. It *is* fine for dgd-manifest to put files from different plugins into the same directory. And sometimes a game will include a modified version of a parent file. But if you want to combine content from multiple plugins, or from a game and a plugin, that's hard. So keep it in mind.

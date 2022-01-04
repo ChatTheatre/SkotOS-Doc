@@ -2,6 +2,8 @@
 
 When developing SkotOS and SkotOS-based apps/games on a Linode server, there are particular operations you'll want to accomplish. You may also want to know just how the [server was installed](./setup_vps.md).
 
+Some of this workflow is about dealing with [multiple repos](./Games_and_Multiple_Repos.md) and/or files vs in-memory objects. So that's relevant here too.
+
 ## Debugging
 
 You can see quite a few of the logfiles in realtime if you run /var/skotos/deploy_scripts/stackscript/show_all_logs.sh. This shows the DGD logfile, websocket tunnel logs and auth server logs.
