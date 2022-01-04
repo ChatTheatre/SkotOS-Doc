@@ -2,7 +2,9 @@
 
 Jitsi is a recent addition to SkotOS, and quite heavy on the operational requirements. Here, you can find some notes on working with it.
 
-Note that this is about writing new Jitsi capabilities and problems we've had when doing so: you can also read about [how Jitsi currently works with SkotOS](./JitsiIntegration.md).
+Note that this is about writing new Jitsi capabilities and problems we've had when doing so: you can also read about [how to install Jitsi for SkotOS](../setup_jitsi.md) and [how Jitsi currently works with SkotOS](./JitsiIntegration.md).
+
+Note that most of this is just historical notes, not in any particular order. This page is *not* a good description of how SkotOS is currently using Jitsi.
 
 ## A Tiny Jitsi History
 
@@ -17,6 +19,16 @@ In Jitsi, a [room only exists if somebody is in it](https://jitsi.org/security/)
 If everybody gets full rights ("unsecured"), that means anybody can kick anybody else out of a room. But it also means anybody can create a room, and you don't need a privileged moderator to be in every room. That's how we're initially building. But it means our participants can, if they know a little Jitsi and Javascript, do things they aren't supposed to &mdash; e.g. mute everybody, kick other guests, or set a password on the room so nobody can get in until they leave. So in the long term, we have to switch to the Host model rather than unsecured.
 
 In the short term, we punted on that and used the "unsecured" model. We [tried quite hard](https://github.com/WebOfTrustInfo/prototype_vRWOT/issues/5) to make the Host model work. You can see a lot of it in the commit history of SkotOS/deploy_scripts/stackscript/linode_stackscript.sh, for instance. And in the attempted work in [the currently unused SkotOS-jitsi-admin repo](https://github.com/ChatTheatre/SkotOS-jitsi-admin).
+
+## Salvation... Sort Of.
+
+It turns out there are some disclaimers to the logic above, which save us. The room basically *never* exists without anybody in it. But you *can* keep a room from automatically granting moderator rights to everybody by using Jitsi's JWT authentication and a plugin (called token_moderation) to keep particular people from being allowed to be moderators.
+
+So: only hand out non-moderator tokens and nobody is a moderator, so nobody can lock down the room (e.g. by changing the password) or throw out your other users. Good!
+
+In return, we need a [non-standard Jitsi setup](../setup_jitsi.md), so using hosted Jitsi isn't an option.
+
+That's the direction we're currently (Jan 2021) running with. It looks promising.
 
 ## What Would a Better Model Look Like?
 

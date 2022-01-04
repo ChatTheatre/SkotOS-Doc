@@ -44,14 +44,6 @@ Note that the user may mute *themselves* or choose not to subscribe to Jitsi, an
 
 "Not connected to Jitsi" is also a perfectly good setting on the user's part and shouldn't/can't be overridden by the server-sent SKOOT events.
 
-## Jitsi Security Model
-
-SkotOS uses an [unsecured](https://jitsi.org/security/) Jitsi installation. That way rooms can be created dynamically on-demand. To avoid users abusing their automatically-granted moderator powers, we hide the Jitsi UI as much as possible.
-
-This means we don't expose the full normal web UI via NGinX on meet.&lt;game-domain&gt;, though we ***do*** expose the Jitsi external JS API since that's needed for SkotOS-based games to use Jitsi.
-
-But we can hook into the Jitsi API to get simple information like muting, subscribing to rooms and user lists in a fairly straightforward way.
-
 ## Improving Security
 
 You can read more about [Jitsi work and improvements](./JitsiWork.md) here if you'd like some history of how we came to these decisions and/or would like to improve our Jitsi integration model.
