@@ -2,31 +2,38 @@
 
 Jitsi is an open-source project that allows scalable audio and video chat with large numbers of users via WebRTC in the browser. It does a lot more than that, in fact.
 
-SkotOS uses it for scriptable audio chat. Let's talk about how the two work together.
+SkotOS uses it for scriptable audio chat. Let's talk about how the two work together. This is a developer background document. We also have a [how to set up Jitsi](../setup_jitsi.md) document.
 
-(NOTE: some of this isn't implemented as I write this. These docs should be updated in June 2021 or later.)
+Last updated: Jan 2021.
 
 ## MERRY Instructions
 
 Want to mess with audio chat from Merry? Here's the quick version:
 
-There's a client_control action that can be used to send a SKOOT code. You can send that action from Merry using Act(). It takes two arguments: an $id and a $val. The $id should be one of the codes below (80, 81 or 82). Each code below says what the $val should be.
+There's a client_control action that can be used to send a SKOOT code. You can send that action from Merry using Act(). It takes two arguments: an $id and a $val. The $id should be 80, and the val should be a structure of JSON arguments.
 
-80 (CHAT_SET_ROOM): set the Jitsi room. The value should be the name of the new Jitsi room. A user may only subscribe to one Jitsi room at a time. Jitsi room names don't distinguish between upper- and lowercase, and they ignore spaces (and punctuation?)
-81 (CHAT_SET_MUTED): the value should be "true" or "false". Note that the user may always choose to be disconnected or unmuted and you can't override that. But if you mute them, you should later send an unmute.
-82 (CHAT_SET_NAME): set the user's Jitsi display name (a.k.a. nickname.)
+This will only work if the user is using a sufficiently-recent version of Orchil on a Jitsi-enabled SkotOS game. It's harmless to send these codes when they're unsupported &mdash; they don't do anything if Jitsi isn't set up or isn't working for some reason.
 
-This will only work if the user is using a sufficiently-recent version of Orchil on a Jitsi-enabled SkotOS game. But it's normally harmless to send these codes when they're unsupported.
+Here are the JSON fields and what they do:
+
+domain (string): the hostname of the Jitsi server (may change, rarely.)
+name (string): the Jitsi name/nickname of the user (should not change.)
+room (string): the Jitsi room to connect to, if present.
+roomPrefix (string): prefix to add before the room name (currently unused/ignored.)
+muted (string, values "muted" or "unmuted"): whether to mute/unmute the user, at the server's request.
+jwt (string): jwt token permitting access to the specified room. If room is given, jwt should be as well.
+
+Note that nearly all fields are optional in at least some cases. If name, domain, muted, room, etc. don't change, it's fine to simple not supply them. Some (e.g. muted) never have to be supplied at all if they retain their default initial value.
 
 ## MERRY Actual Instructions
 
 Do you not use Merry that often? I'm a bit new to it too. Log into the game and there's a command-line tool that will let you evaluate little snippets of Merry code. It can be finicky, but it'll do this quite nicely.
 
 ~~~
-+tool merry eval Act($actor, "client_control", $id: 82, $val: "DoesntReadExampleText"), 0
++tool merry eval Act($actor, "client_control", $id: 80, $val: "{ 'muted': 'muted' }"), 0
 ~~~
 
-That will send message 82 ("change my Jitsi nickname") to the supplied value ("DoesntReadExampleText"). You can see the result of this in the Javascript console for your game client.
+That will send message 80 (Jitsi info) with the supplied value (server-mute the user). You can see the result of this in the Javascript console for your game client.
 
 Note that if you send a CHAT_SET_MUTED (81) message, you won't be able to unmute yourself with the buttons. You'll have to send another server message to unmute.
 
