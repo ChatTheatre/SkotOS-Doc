@@ -2,6 +2,12 @@
 
 SkotOS is an old codebase, rich in alternatives and duplication. Common activities have been done in more than one way over the years, and authentication is no exception. However, a rework in March of 2021 significantly reduced the authentication methods for ChatTheatre/SkotOS. Older methods are documented below, but labelled as removed. If you're working on other SkotOS codebases you're likely to encounter these other authentication methods which are no longer included in ChatTheatre's SkotOS code.
 
+## Wafer - the insecure Dev Authentication Server
+
+[Wafer](https://github.com/ChatTheatre/wafer) is a small Ruby server that supports SkotOS authentication protocols (see AuthD and CtlD below.) It's barely an authentication server at all &mdash; it doesn't even check that your passwords are right, it just approves everybody.
+
+But it's very easy to set up and use. If you're running a local copy of SkotOS on your Mac, Wafer is what the setup scripts will run for you.
+
 ## Thin-Auth - the Production Authentication Server
 
 There's a program called [Thin-Auth](https://github.com/ChatTheatre/thin-auth) written in PHP that will manage your accounts for you. Full setup instructions are [on its GitHub page](https://github.com/ChatTheatre/thin-auth) but you'll need to run MariaDB, Apache, PHP and a couple of PHP servers to use it. It also wants to be at a very specific location in your file system. I don't recommend it for development for these reasons.

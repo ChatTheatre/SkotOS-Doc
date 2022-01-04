@@ -87,6 +87,8 @@ The "skott" account is okay, but you'll want others over time &mdash; especially
 * Have them create a new account through the normal login URL
 * In thin-auth, you can set their account_type to "developer" - also add the appropriate access flag (usually "gables")
 
+If you're using the dev-mode-only [Wafer](https://github.com/ChatTheatre/wafer) authentication server (like if you're running in local mode on your Mac) then Wafer will handle this automatically for you. You should never use Wafer in production, though. It's designed to be 100% insecure. With thin-auth you'll need to actually secure your server a bit.
+
 ## Building
 
 The skott user has both [StoryBuilder](../Story_Builder/) and [Wiztool](../Developer/SkotOS_Wiztool.md) permissions. You can use both.
