@@ -9,7 +9,7 @@ A SID is an object that supplies some structural and datatype information for a 
 Let's take a look at a few examples. The following SIDs define the structure of a UDat object.
 
 ```
-**SID:UserAPI:UDat**
+SID:UserAPI:UDat
 
 SID:Element   [   ns='UserAPI'   tag='UDat'   ] V E X
     SID:Children V E X
@@ -27,7 +27,7 @@ This is the root of the UDat structure and contains the following data:
 It inherits two child nodes: *SID:Core:Properties* and *SID:UserAPI:Bodies*.
 
 ```
-*SID:Core:Properties*
+SID:Core:Properties
 
 SID:Element   [   ns='Core'   tag='Properties'   recpoint='true'   newitem='set_property(#New Property Name, #New Property Value, #1)'   ] V E X
     SID:Children V E X
@@ -39,7 +39,7 @@ SID:Element   [   ns='Core'   tag='Properties'   recpoint='true'   newitem='set_
 ```
 
 ```
-*SID:Core:Property*
+SID:Core:Property
 
 SID:Element   [   type='lpc_mixed'   ns='Core'   tag='Property'   query='query_property(property)'   delitem='clear_property(property)'   ] V E X
     SID:Children V E X
@@ -53,34 +53,34 @@ SID:Element   [   type='lpc_mixed'   ns='Core'   tag='Property'   query='query_p
 SID:Core:Properties will allow UDat objects to have **Core:Properties** (defined by *ns* and *tag*) in the data structure. It's child object is *SID:Core:Property* which defines how each individual Core:Property is handled.
 
 SID:Core:Properties 
-    * Element data:
-        * ns = "Core" namespace
-        * tag = "Properties" element name
-        * recpoint = This will either be true or false. In a case such as this, where a child element can have multiple iterations of itself, this needs to be set to true.
-        * newitem = The function that is called when an iteration of this element is created or modified.
-    * Callbacks
-        * call = Callbacks are class functions that can be accessed at the Merry level using the *Call* Merry function.
+   * Element data:
+      * ns = "Core" namespace
+      * tag = "Properties" element name
+      * recpoint = This will either be true or false. In a case such as this, where a child element can have multiple iterations of itself, this needs to be set to true.
+      * newitem = The function that is called when an iteration of this element is created or modified.
+   * Callbacks
+      * call = Callbacks are class functions that can be accessed at the Merry level using the *Call* Merry function.
         
 SID:Core:Property
-    * Element data:
-        * type = The element's type. "lpc_mixed" is similar to a mixed variable in Merry which means they can accept any data type.
-        * ns = "Core" namespace.
-        * tag = "Property" element name.
-        * query = The function that is used to return the information within the element. It take "property" as an argument which is defined in SID:Attribute.
-        * delitem = The function that is called when this element is deleted in an object. It take "property" as an argument which is defined in SID:Attribute.
-    * Attributes data:
-        * There can be more than one attribute. Each attribute has the following data:
-            * id = This data's label.
-            * atype = The data type of the label. In this case, it must be a "lpc_str" which is just a String data type.
-    * Iterator data:
-        * As mentioned before, the Core:Property element can have more than one iteration. SID:Iterator assists with the parsing of the data in Tree of Woe by iterating through every Core:Property.
-            * var = The temp variable name. The current iteration is stored there.
-            * call = The function that is called with each iteration. The temp variable is available to this function.
-    * Callbacks
-        * call = Gives access to the set_property class function.
+   * Element data:
+      * type = The element's type. "lpc_mixed" is similar to a mixed variable in Merry which means they can accept any data type.
+      * ns = "Core" namespace.
+      * tag = "Property" element name.
+      * query = The function that is used to return the information within the element. It take "property" as an argument which is defined in SID:Attribute.
+      * delitem = The function that is called when this element is deleted in an object. It take "property" as an argument which is defined in SID:Attribute.
+   * Attributes data:
+      * There can be more than one attribute. Each attribute has the following data:
+         * id = This data's label.
+         * atype = The data type of the label. In this case, it must be a "lpc_str" which is just a String data type.
+   * Iterator data:
+      * As mentioned before, the Core:Property element can have more than one iteration. SID:Iterator assists with the parsing of the data in Tree of Woe by iterating through every Core:Property.
+         * var = The temp variable name. The current iteration is stored there.
+         * call = The function that is called with each iteration. The temp variable is available to this function.
+   * Callbacks
+      * call = Gives access to the set_property class function.
 
 ```
-**SID:UserAPI:Bodies**
+SID:UserAPI:Bodies
 
 SID:Element   [   ns='UserAPI'   tag='Bodies'   recpoint='true'   ] V E X
     SID:Children V E X
@@ -91,7 +91,7 @@ SID:Element   [   ns='UserAPI'   tag='Bodies'   recpoint='true'   ] V E X
 ```
 
 ```
-**SID:UserAPI:Body**
+SID:UserAPI:Body
 
 SID:Element   [   ns='UserAPI'   tag='Body'   ] V E X
     SID:Children V E X
@@ -108,7 +108,7 @@ Similar to Core:Properties and Core:Property SIDs, **SID:UserAPI:Bodies** and **
 Now let's look at a UDat object:
 
 ```
-**UserAPI:UDats:a:admin**
+UserAPI:UDats:a:admin
 
 UserAPI:UDat V E X
     Core:Properties [ #26 ] V E X N
@@ -137,34 +137,34 @@ UserAPI:Body   [   char='admin:gables'   body='Chatters:Gables:ad:admin'   ] V E
 ### SID Structure Overview
 
 **SID:Element**
-    * type = The data type of the object. Examples: XML_PCDATA, LPC_STR, LPC_OBJ
-    * ns = The element's namespace.
-    * tag = The element's name.
-    * recpont = true or false. Can this element have multipe iterations of itself?
-    * transient = true or false. Transient data is not saved when saving an object's state.
-    * query = The function that is used to return the information within the element.
-    * newitem = The function that is called when an iteration of this element is created or modified.
-    * delitem = The function that is called when an iteration of this element is deleted.
-    * comment = A short description of the element that is visible in the Tree of Woe.
+   * type = The data type of the object. Examples: XML_PCDATA, LPC_STR, LPC_OBJ
+   * ns = The element's namespace.
+   * tag = The element's name.
+   * recpont = true or false. Can this element have multipe iterations of itself?
+   * transient = true or false. Transient data is not saved when saving an object's state.
+   * query = The function that is used to return the information within the element.
+   * newitem = The function that is called when an iteration of this element is created or modified.
+   * delitem = The function that is called when an iteration of this element is deleted.
+   * comment = A short description of the element that is visible in the Tree of Woe.
 
 **SID:Children**
-    * SID:Child
-        * node = The woename of the SID child node.
-    * *There can be more than one child node.*
+   * SID:Child
+      * node = The woename of the SID child node.
+   * *There can be more than one child node.*
     
 **SID:Attributes**
-    * SID:Attribute
-        * id = The attribute's label.
-        * atype = The attribute label's data type.
-        * acomment = A short description of the attribute that is visible in the Tree of Woe.
-        * areadonly = true or false. Can this attribute be modified?
-        * aquery = The function that is used to return the information within this attribute.
-    * *There can be more than one attribute.*
+   * SID:Attribute
+      * id = The attribute's label.
+      * atype = The attribute label's data type.
+      * acomment = A short description of the attribute that is visible in the Tree of Woe.
+      * areadonly = true or false. Can this attribute be modified?
+      * aquery = The function that is used to return the information within this attribute.
+   * *There can be more than one attribute.*
 
 **SID:Iterator**
-    * var = The temp variable name. The current iteration is stored there.
-    * call = The function that is called with each iteration. The temp variable is available to this function.
+   * var = The temp variable name. The current iteration is stored there.
+   * call = The function that is called with each iteration. The temp variable is available to this function.
     
 * Callbacks
-    * call = A function that can be called in this object.
-    * *There can be more than one callback.*
+   * call = A function that can be called in this object.
+   * *There can be more than one callback.*
