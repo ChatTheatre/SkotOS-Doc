@@ -7,6 +7,8 @@ Newer SkotOS games support using [Jitsi](https://meet.jit.si/) for audio and vid
 
 Note: Jitsi for SkotOS uses a nonstandard Jitsi config. So you can't use a hosted meet.jit.si server, including the free one. You'll need to run a custom hosted Jitsi instance.
 
+This guide assumes you already have [SkotOS installed on a VPS](/setup_vps.md). Jitsi is normally installed after SkotOS is already working.
+
 ## Multi-Host Setup
 
 Jitsi runs on a separate server from the SkotOS game-related apps. That's partly because Jitsi can use a lot of server resources like memory and bandwidth. And it's partly because Jitsi is quite particular about its setup, so it's hard to install "bare" on the same server.
