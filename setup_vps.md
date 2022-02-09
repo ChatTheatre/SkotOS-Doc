@@ -8,6 +8,7 @@ This document is about how to set up a server with SkotOS for development. You m
 * [Workflow with a SkotOS VPS Server](./Developer/LinodeWorkflow.md)
 * [SkotOS for local development](./setup.md)
 * [Exploring SkotOS](./Developer/Exploring_SkotOS.md)
+* [Set up Jitsi for A/V Chat](./setup_jitsi.md)
 
 ## Hosting and Referral Codes
 
