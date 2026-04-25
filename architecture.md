@@ -48,3 +48,31 @@ In addition, the normal SkotOS setup requires other software, including:
 * Node.js
 * Apache
 * NGinX
+
+## Production Deployment Topology
+
+The components above can be deployed in various shapes. The shape that production SkotOS games tend to converge on has two notable patterns worth calling out, because they shape how diagnosis and recovery work in practice.
+
+### Two IPs on One VM
+
+A production SkotOS box typically has two public IPs assigned to the same network interface. One is the user-facing IP and serves apache (and through apache, all browser-driven traffic to thin-auth, the Orchil client, and image vhosts). The other is the admin IP and is where DGD itself binds its own listeners — telnet, binary, and the HTTP/HTTPS ports DGD opens for the in-game flow.
+
+This split lets apache own TLS termination and vhost routing for the user-facing layer without colliding with DGD's own network footprint. From `ip -br addr show` on a healthy production box, both IPs appear on `eth0`.
+
+DNS for the public-facing hostnames (`login.<domain>`, `client.<domain>`, `images.<domain>`) points at the user-facing IP. DNS for the game-session hostname (typically `chat.<domain>`) points at the admin IP, where DGD answers directly.
+
+This is a useful pattern but not required. Single-IP deploys put apache in front of DGD's HTTP layer with a reverse-proxy vhost; the user experience is identical.
+
+### Hostname Layout
+
+Production deploys converge on a small, conventional set of subdomains. Each one routes differently. The table below shows the canonical layout; replace `<domain>` with your game's domain.
+
+| Hostname | Served by | Purpose |
+|---|---|---|
+| `<domain>` | apache | Public landing page; usually redirects to login. |
+| `login.<domain>` | apache + thin-auth PHP | Sign-in, account management, billing, support. HTTPS-only. |
+| `client.<domain>` | apache | Static Orchil JS, CSS, HTML, and per-game theme assets. |
+| `chat.<domain>` | DGD direct | Game session entry; the URL the "Play Game" link sends users to. |
+| `images.<domain>` | apache | Image assets for the game UI. |
+
+The `chat.<domain>` host is the one most often misunderstood, because it is the only hostname where the browser hits DGD directly rather than going through apache.
