@@ -14,6 +14,9 @@ This is a grab-bag of documentation from commercial SkotOS games, including the 
 It could use a proper reorganisation.
 
 * [Maintenance](./Maintenance.md)
+* [Healthy State](./Healthy_State.md) &mdash; what processes, listeners and crons should be running on a working production deploy
+* [Diagnostics](./Diagnostics.md) &mdash; symptom-to-cause table and the diagnostic order for an outage
+* [Inherited Deployment](./Inherited_Deployment.md) &mdash; taking over a SkotOS box that has not been touched in years
 * [Authentication](./Authentication.md)
 * [Users and Logins](./Users_and_Logins.md)
 * [Layers of the SkotOS server](./Layers.md)

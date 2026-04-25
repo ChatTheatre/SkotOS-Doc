@@ -2,7 +2,9 @@
 
 Caution: some of this is specific to older SkotOS games and hasn't been updated.
 
-This document describes the normal care and maintenance of a SkotOS instance
+This document describes the normal care and maintenance of a SkotOS instance.
+
+For diagnosing an outage rather than running normal maintenance, see [Diagnostics](./Diagnostics.md). For a checklist of what should be running on a healthy production deploy, see [Healthy State](./Healthy_State.md). For taking over a deployment that has not been touched in years, see [Inherited Deployment](./Inherited_Deployment.md).
 
 ![](SkotOS-Ecosystem-Diagram.png)
 
@@ -59,6 +61,51 @@ These are a vital component in the Orchil client, which flows through the HTML f
 * * * * * /var/skotos/support/misc/smtp-queue 8000
 ```
 This keeps mail flowing from the game.
+
+### Log Rotation
+
+`/var/log/userdb.log` is the noisiest log on a production SkotOS box. The thin-auth daemons write a multi-line entry for every authentication, every property lookup, and every keepalive cycle of `restartuserdb.sh`. Without aggressive log rotation, this file alone can fill a partition.
+
+The default Debian logrotate config does not cover `userdb.log`. Add a config that does. A minimal known-good shape:
+
+```
+/var/log/userdb.log {
+    daily
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+}
+```
+
+`copytruncate` matters because the PHP daemons hold the file open and do not respond to `SIGHUP`. Without it, rotation creates new files but the daemons keep writing to the old (now-renamed) file, and the rotation has no effect.
+
+`compress` matters because plain-text rotated copies of `userdb.log` can each be several gigabytes. This is the failure mode most commonly observed on production boxes that run for years without intervention: the rotated copies accumulate uncompressed, exhaust the partition, and cascade to `mariadb`, `certbot`, and DGD failure.
+
+After dropping the config in place, run `logrotate --debug /etc/logrotate.d/userdb` (or `--force` to actually rotate) and confirm.
+
+### TLS Certificate Renewal
+
+Production deploys typically use Let's Encrypt with the `apache` authenticator. The relevant cron line is:
+
+```
+1 5 1-2 * * /usr/bin/certbot renew
+```
+
+Two failure modes worth knowing about:
+
+1. **Disk full** prevents `certbot` from writing new certs and config. Renewals fail silently for months. The first symptom is a browser cert-expired warning. Free disk first; renewal can then proceed.
+2. **Authenticator service down** prevents the renewal from completing the ACME challenge. If `/etc/letsencrypt/renewal/<host>.conf` says `authenticator = apache` and `apache2.service` is FAILED, `certbot renew` will not succeed even with disk free. Get apache running, then renew.
+
+To force a renewal after a long outage:
+
+```sh
+certbot renew --force-renewal --non-interactive
+```
+
+Older `certbot` versions impose a randomised non-interactive sleep of up to several minutes before starting. This is normal and expected. Do not kill the process for several minutes.
 
 ### Standard Backups
 

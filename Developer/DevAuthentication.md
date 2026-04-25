@@ -2,6 +2,8 @@
 
 SkotOS is an old codebase, rich in alternatives and duplication. Common activities have been done in more than one way over the years, and authentication is no exception. However, a rework in March of 2021 significantly reduced the authentication methods for ChatTheatre/SkotOS. Older methods are documented below, but labelled as removed. If you're working on other SkotOS codebases you're likely to encounter these other authentication methods which are no longer included in ChatTheatre's SkotOS code.
 
+For the operations side of authentication on a production deploy &mdash; what processes should be running, how `userdb-authctl` is supposed to be supervised, and how to diagnose when an auth-related component has died &mdash; see the maintainer pages: [Maintenance](../Maintainer/Maintenance.md), [Healthy State](../Maintainer/Healthy_State.md), and [Diagnostics](../Maintainer/Diagnostics.md).
+
 ## Wafer - the insecure Dev Authentication Server
 
 [Wafer](https://github.com/ChatTheatre/wafer) is a small Ruby server that supports SkotOS authentication protocols (see AuthD and CtlD below.) It's barely an authentication server at all &mdash; it doesn't even check that your passwords are right, it just approves everybody.
